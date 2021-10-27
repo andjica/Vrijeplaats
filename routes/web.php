@@ -24,9 +24,7 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/add-adv', 'HomeController@addadv');
-Route::get('/appartementen-en-hotels', 'HomeController@hotel');
-Route::get('/eten-en-drinken', 'HomeController@restourant');
-Route::get('/medical', 'HomeController@medical');
+
 Route::get('/categorie/{name}', 'HomeController@categories');
 //user edit
 Route::group(['middleware' => ['auth', 'verified']], function () {
