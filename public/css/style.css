@@ -26267,3 +26267,8 @@ button.mfp-arrow:active {
 	0% {opacity:0;}
 	100% {opacity:1;}
   }
+
+  .primary-color
+  {
+	  background-color: #ed008c !important;
+  }
