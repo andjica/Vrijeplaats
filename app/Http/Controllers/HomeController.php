@@ -49,21 +49,6 @@ class HomeController extends Controller
     }
 
     
-    public function hotel()
-    {
-        return view('categories.hotels');
-    }
-
-    public function restourant()
-    {
-        return view('user.restourant');
-    }
-
-    public function medical()
-    {
-        
-        return view('user.medical');
-    }
 
     public function categories($name)
     {
