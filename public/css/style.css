@@ -3196,18 +3196,18 @@ fieldset:disabled a.btn {
 
 .btn-primary {
 	color: #fff;
-	background: #ff5a5f -webkit-gradient(linear, left top, left bottom, from(#ff7377), to(#ff5a5f)) repeat-x;
-	background: #ff5a5f linear-gradient(180deg, #ff7377, #ff5a5f) repeat-x;
-	border-color: #ff5a5f;
+	background: #ed008c -webkit-gradient(linear, left top, left bottom, from(#ed008c), to(#a8157c)) repeat-x;
+	background: #ed008c linear-gradient(180deg, #ed008c, #a8157c) repeat-x;
+	border-color: #ed008c;
 	-webkit-box-shadow: none;
 	box-shadow: none
 }
 
 .btn-primary:hover {
 	color: #fff;
-	background: #ff343a -webkit-gradient(linear, left top, left bottom, from(#ff5257), to(#ff343a)) repeat-x;
-	background: #ff343a linear-gradient(180deg, #ff5257, #ff343a) repeat-x;
-	border-color: #ff272e
+	background: #ed008c -webkit-gradient(linear, left top, left bottom, from(#ed008c), to(#a8157c)) repeat-x;
+	background: #ed008c linear-gradient(180deg, #ed008c, #a8157c) repeat-x;
+	border-color:#ed008c
 }
 
 .btn-primary:focus,
@@ -19603,7 +19603,7 @@ iframe {
 }
 
 .icon-box-style-01:hover {
-	background: #ff5a5f;
+	background:#99bffd;
 	color: #fff!important
 }
 
@@ -20587,8 +20587,8 @@ iframe {
 .testimonials-slider.arrow-top .testimonial-icon .icon {
 	width: 60px;
 	height: 48px;
-	stroke: #ff5a5f;
-	fill: #ff5a5f
+	stroke: black;
+	fill: black;
 }
 
 .testimonials-slider.arrow-top .position {
@@ -20670,7 +20670,7 @@ iframe {
 }
 
 .store .content-left .badge-primary {
-	background: #ff5a5f
+	background: black;
 }
 
 .store .content-right {
@@ -21286,7 +21286,7 @@ iframe {
 }
 
 .form-search-ajax .item:hover {
-	background: #ff5a5f
+	background: #99bffd;
 }
 
 .form-search-ajax .item:hover a {
@@ -26272,3 +26272,8 @@ button.mfp-arrow:active {
   {
 	  background-color: #ed008c !important;
   }
+
+  /* .text-white
+  {
+	  color: white !important;
+  } */

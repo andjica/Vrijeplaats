@@ -56,7 +56,8 @@ echo $c->icon
         </div>
     </div>
         <div class="col-xl-2 button">
-        <button type="submit" class="btn btn-primary btn-lg btn-icon-left btn-block"><i class="fa fa-search"></i>Zoeken!
+        <button type="submit" class="btn btn-primary primary-color btn-lg btn-icon-left btn-block">
+            <i class="fa fa-search"></i>Zoeken!
         </button>
         </div>
     </div>

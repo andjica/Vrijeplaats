@@ -18,7 +18,7 @@
 </a>
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="#">Home <span class="caret"><i class="fa fa-angle-down"></i></span></a>
+<a class="nav-link text-white" href="#">Home <span class="caret"><i class="fa fa-angle-down"></i></span></a>
 <ul class="sub-menu x-animated x-fadeInUp">
 <li class="nav-item"><a class="nav-link" href="{{asset('/')}}">Home</a>
 </li>
