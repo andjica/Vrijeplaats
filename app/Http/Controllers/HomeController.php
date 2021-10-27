@@ -69,6 +69,11 @@ class HomeController extends Controller
     {
         $category = Category::where('link', 'LIKE', $name) 
         ->orWhere('name', 'LIKE', $name)->first();
-        return $category;
+
+        if($category->id == 2)
+        {
+            return view('categories.hotels', compact('category'));
+        }
+        return view('categories.foods', compact('category'));
     }
 }
