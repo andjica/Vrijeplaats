@@ -37,177 +37,47 @@ echo $c->icon
  </ul>
 </div>
 </div>
-<div class="col-xl-4 mb-4 mb-xl-0 py-3 px-4 bg-white position-relative rounded-right form-search-item">
-<label for="key-word" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Welke gewenste locatie?</label>
-<div class="input-group dropdown show">
-<input type="text"  autocomplete="true" id="region" name="region" class="form-control form-control-mini border-0 px-0 bg-transparent" placeholder="Rotterdam" data-toggle="dropdown" aria-haspopup="true">
-<a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
-<i class="fa fa-chevron-down"></i>
-</a>
-<ul class="dropdown-menu form-search-ajax" aria-labelledby="region" id="cities">
-@foreach($cities as $city)
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-{{$city->name}}
-</a>
-</li>
-@endforeach
-</ul>
-</div>
-</div>
-<div class="col-xl-2 button">
-<button type="submit" class="btn btn-primary btn-lg btn-icon-left btn-block"><i class="fa fa-search"></i>Zoeken!
-</button>
-</div>
-</div>
+    <div class="col-xl-4 mb-4 mb-xl-0 py-3 px-4 bg-white position-relative rounded-right form-search-item">
+        <label for="key-word" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Welke gewenste locatie?</label>
+        <div class="input-group dropdown show">
+        <input type="text"  autocomplete="true" id="region" name="region" class="form-control form-control-mini border-0 px-0 bg-transparent" placeholder="Rotterdam" data-toggle="dropdown" aria-haspopup="true">
+        <a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
+        <i class="fa fa-chevron-down"></i>
+        </a>
+        <ul class="dropdown-menu form-search-ajax" aria-labelledby="region" id="cities">
+        @foreach($cities as $city)
+        <li class="dropdown-item item">
+        <a href="#" class="link-hover-dark-white">
+        {{$city->name}}
+        </a>
+        </li>
+        @endforeach
+        </ul>
+        </div>
+    </div>
+        <div class="col-xl-2 button">
+        <button type="submit" class="btn btn-primary btn-lg btn-icon-left btn-block"><i class="fa fa-search"></i>Zoeken!
+        </button>
+        </div>
+    </div>
 </form>
 </div>
 <div class="font-size-lg mb-4">
 Bekijk hier een van onze grootste aanbod vrijeplaatsen!
 </div>
 <div class="list-inline pb-8 flex-wrap my-n2">
-
-<div class="list-inline-item py-2">
-<a href="explore-sidebar-grid.html" class="card border-0 icon-box-style-01 link-hover-dark-white">
-<div class="card-body p-0">
-    <img src="./images/spotlight.png" style="    height: 42px;">
-
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Spotlight
-</span>
-</div>
-</a>
-</div>
-<div class="list-inline-item py-2">
-<a href="explore-sidebar-grid.html" class="card border-0 icon-box-style-01 link-hover-dark-white">
-<div class="card-body p-0">
-<img src="./images/sport.png" style="    height: 42px;">
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Sport
-</span>
-</div>
-</a>
-</div>
-<div class="list-inline-item py-2">
-<a href="explore-sidebar-grid.html" class="card border-0 link-hover-dark-white icon-box-style-01">
-<div class="card-body p-0">
-    <img src="./images/beauty-treatment.png" style="    height: 42px;">
-
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Beauty &amp; welness
-</span>
-</div>
-</a>
-</div>
-<div class="list-inline-item py-2">
-<a href="{{asset('/eten-en-drinken')}}" class="card border-0 link-hover-dark-white icon-box-style-01">
-<div class="card-body p-0">
-    <img src="./images/fast-food.png" style="    height: 42px;">
-
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Eten en Drinken
-</span>
-</div>
-</a>
-</div>
-<div class="list-inline-item py-2">
-<a href="explore-sidebar-grid.html" class="card border-0 link-hover-dark-white icon-box-style-01">
-<div class="card-body p-0">
-    <img src="./images/tickets.png" style="    height: 42px;">
-
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Tickets
-</span>
-</div>
-</a>
-</div>
-
-<div class="list-inline pb-8 flex-wrap my-n2">
-<div class="list-inline-item py-2">
-<a href="explore-sidebar-grid.html" class="card border-0 icon-box-style-01 link-hover-dark-white">
-<div class="card-body p-0">
-<svg class="icon icon-pizza">
-<use xlink:href="#icon-pizza"></use>
-</svg>
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Foods
-</span>
-</div>
-</a>
- </div>
-<div class="list-inline-item py-2">
-<a href="{{asset('/appartementen-en-hotels')}}" class="card border-0 icon-box-style-01 link-hover-dark-white">
-<div class="card-body p-0">
-<svg class="icon icon-bed">
-<use xlink:href="#icon-bed"></use>
-</svg>
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Hotels
-</span>
-</div>
-</a>
-</div>
-<div class="list-inline-item py-2">
-<a href="explore-sidebar-grid.html" class="card border-0 icon-box-style-01 link-hover-dark-white">
-<div class="card-body p-0">
-<svg class="icon icon-brush2">
-<use xlink:href="#icon-brush2"></use>
-</svg>
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Jobs
-</span>
-</div>
-</a>
-</div>
-<div class="list-inline-item py-2">
-<a href="{{asset('/medical')}}" class="card border-0 link-hover-dark-white icon-box-style-01">
-<div class="card-body p-0">
-<svg class="icon icon-pharmaceutical">
-<use xlink:href="#icon-pharmaceutical"></use>
-</svg>
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Medicals
-</span>
-</div>
-</a>
-</div>
-<div class="list-inline-item py-2">
-<a href="explore-sidebar-grid.html" class="card border-0 link-hover-dark-white icon-box-style-01">
-<div class="card-body p-0">
-<svg class="icon icon-cog">
-<use xlink:href="#icon-cog"></use>
-</svg>
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Services
-</span>
-</div>
-</a>
-</div>
-<div class="list-inline-item py-2">
-<a href="explore-sidebar-grid.html" class="card border-0 link-hover-dark-white icon-box-style-01">
-<div class="card-body p-0">
-<svg class="icon icon-bag">
-<use xlink:href="#icon-bag"></use>
-</svg>
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Shopping
-</span>
-</div>
-</a>
-</div>
-<div class="list-inline-item py-2">
-<a href="explore-sidebar-grid.html" class="card border-0 link-hover-dark-white icon-box-style-01">
-<div class="card-body p-0">
-<svg class="icon icon-car">
-<use xlink:href="#icon-car"></use>
-</svg>
-<span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-Automotive
-</span>
-</div>
-</a>
-</div>
-</div>
+    @foreach($categories as $category)
+    <div class="list-inline-item py-2">
+        <a href="explore-sidebar-grid.html" class="card border-0 link-hover-dark-white icon-box-style-01">
+        <div class="card-body p-0" style="font-size:27px">
+            @php echo $category->icon @endphp
+            <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
+            {{$category->name}}
+            </span>
+        </div>
+        </a>
+    </div>
+    @endforeach
 </div>
 <div class="home-main-how-it-work bg-white pt-11">
 <div class="container">
