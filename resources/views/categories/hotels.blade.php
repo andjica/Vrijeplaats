@@ -3,13 +3,14 @@
 @section('content')
 @include('user.top-campain')
 <section id="section-01" class="">
-<div class="">
+<div class="container" id="container-desk">
 <div class="row">
     <div class="col-lg-6">
-    <div class="row">
+    <div class="row mt-2">
     <div class="col-lg-12 pr-0">
         @foreach($posts as $post)
-                <div class="store media align-items-stretch bg-white">
+        
+                <div class="store media align-items-stretch bg-white mt-2">
                 
                 <div class="position-relative store-image" style="background-image: url()}}')">
                 <div class="image-content position-absolute d-flex align-items-center">
@@ -23,7 +24,11 @@
                 </div>
                 
                 <div class="media-body pt-4 pb-3 px-5">
-                <a href="listing-details-full-image.html" class="h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">{{$post->title}}</span></a>
+                <a href="listing-details-full-image.html" class="h5 text-dark d-inline-block mb-2">
+                    <span class="letter-spacing-25">{{$post->title}}</span>
+                </a>
+                <br>
+                
                 <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
                 <li class="list-inline-item"><span class="badge badge-success d-inline-block mr-1">4.8</span><span>2 rating</span>
                 </li>
@@ -42,21 +47,23 @@
                     
                     @endphp
                     @isset($images)
+                   
+                    <span class="product-new-label">BEST PRICE</span>
                     <img src="{{asset('/images/posts/'.$images->url)}}" alt="testimonial" class="img-fluid" style="max-width:40%; border-radius:10px;">
                     @endisset
-                <div class=" font-size-sm pl-3" style ="    margin-top: 30px;">
+                <div class=" font-size-sm pl-3">
                 {{$post->title}}<br>
                   {{$post->main_description}}<br>
                 <a href="" class="btn  btn-sm btn-success mt-4"  >Go to buy ticket and find out</a>
                 </div>
                 </div>
-                <div class="border-top pt-3 mt-5 lh-12">
+                
+                <div class="mt-3 text-secondary text-decoration-none address">
                 <span class="d-inline-block mr-1">
                     <i class="fas fa-location-arrow"></i>
-                 </span>
-                <a href="#" class="text-secondary text-decoration-none address">92
-                Halsey St,
-                Brooklyn, NY</a>
+                 </span>{{$post->full_address}}</div>
+                <div class="border-top pt-3 mt-5 lh-12">
+            
                 </div>
                 </div>
                 </div>
@@ -70,20 +77,23 @@
         @endphp
         @isset($postfirst)
         <div class="col-lg-6 pl-0">
-        <div class="mapouter"><div class="gmap_canvas">
-            <iframe width="1080" height="1080" id="gmap_canvas" src="https://maps.google.com/maps?q={{$postfirst->geo_city_latitude}}+{{$postfirst->geo_city_longlatitude}}&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                 frameborder="0" scrolling="no" marginheight="0" 
-                 marginwidth="0"></iframe><a href="https://123movies-to.org"></a>
-                    <br><style>.mapouter{position:relative;text-align:right;height:1080px;width:1080px;}</style>
-                    <a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:1080px;width:1080px;}</style>
-                </div></div>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                <iframe width="100%" height="1080px" id="gmap_canvas" src="https://maps.google.com/maps?q={{$postfirst->geo_address_latitude}}+{{$postfirst->geo_address_longlatitude}}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                     frameborder="0" scrolling="no" marginheight="0" 
+                    marginwidth="0"></iframe><a href="https://123movies-to.org"></a>
+                    <br><style>.mapouter{position:relative;text-align:right;height:1080px;width:100%;}</style>
+                    <a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>
+                    .gmap_canvas {overflow:hidden;background:none!important;height:1080px;width:100%;}</style>
+                </div>
+            </div>
         </div>
         @endisset
-    <div>
-</div>
+
 
 </div>
 </div>
+
 </section>
 <section id="section-04" class="pt-12 pb-11 post-style-2 bg-gray-01">
 <div class="container">

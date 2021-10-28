@@ -26273,7 +26273,17 @@ button.mfp-arrow:active {
 	  background-color: #ed008c !important;
   }
 
-  /* .text-white
+  #container-desk
   {
-	  color: white !important;
-  } */
+	  max-width: 100% !important;
+  }
+
+  .product-new-label{color:#fff;
+	background-color:#ef5777;
+	font-size:12px;
+	text-transform:uppercase;
+	padding:2px 7px;
+	display:block;
+	position:absolute;
+	top:150px;
+	left:50}

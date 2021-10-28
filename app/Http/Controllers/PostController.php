@@ -75,6 +75,8 @@ class PostController extends Controller
         {
             $newCity = new City();
             $newCity->name = request()->autocompletecity;
+            $newCity->geo_latitude = request()->citylatitude;
+            $newCity->geo_long_latitude = request()->citylongitude;
             $newCity->save();
 
             $post->city_id = $newCity->id;

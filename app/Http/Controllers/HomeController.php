@@ -53,9 +53,9 @@ class HomeController extends Controller
 
     public function categories($name)
     {
-        $category = Category::where('link', 'LIKE', $name) 
-        ->orWhere('name', 'LIKE', $name)->first();
-
+        
+        $category = Category::where('link', 'LIKE',  "%{$name}%")->first();
+       
         //hotels
         if($category->id == 2)
         {
@@ -70,7 +70,7 @@ class HomeController extends Controller
             return view('categories.foods', compact('category'));
         }
         //medical
-        else if($category->id == 7)
+        else if($category->id == 4)
         {
             return view('categories.medical', compact('category'));
         }

@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('main_description');
             $table->text('description');
             $table->string('phone')->nullable();
+            $table->integer('category_id')->unsigned()->index();
             $table->integer('city_id');
             $table->string('geo_city_latitude');
             $table->string('geo_city_longlatitude');
@@ -36,7 +37,6 @@ class CreatePostsTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('youtube')->nullable();
             $table->string('linkedin')->nullable();
-            $table->integer('category_id')->unsigned()->index();
             $table->integer('user_id')->unsigned()->index();
 
             $table->timestamps();
