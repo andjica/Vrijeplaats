@@ -69,7 +69,7 @@ Bekijk hier een van onze grootste aanbod vrijeplaatsen!
 <div class="list-inline pb-8 flex-wrap my-n2">
     @foreach($categories as $category)
     <div class="list-inline-item py-2">
-        <a href="explore-sidebar-grid.html" class="card border-0 link-hover-dark-white icon-box-style-01">
+        <a href="{{asset('/categorie/'.$category->link)}}" class="card border-0 link-hover-dark-white icon-box-style-01">
         <div class="card-body p-0" style="font-size:27px">
             @php echo $category->icon @endphp
             <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
