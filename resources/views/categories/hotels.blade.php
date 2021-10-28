@@ -8,8 +8,10 @@
     <div class="col-lg-6">
     <div class="row">
     <div class="col-lg-12 pr-0">
+        @foreach($posts as $post)
                 <div class="store media align-items-stretch bg-white">
-                <div class="position-relative store-image" style="background-image: url('images/shop/hotels-shop-4.jpg')">
+                
+                <div class="position-relative store-image" style="background-image: url()}}')">
                 <div class="image-content position-absolute d-flex align-items-center">
                 <div class="content-right ml-auto d-flex">
                 <a href="images/shop/full-hotels-shop-4.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" data-original-title="Quickview">
@@ -19,29 +21,32 @@
                 </div>
                 </div>
                 </div>
+                
                 <div class="media-body pt-4 pb-3 px-5">
-                <a href="listing-details-full-image.html" class="h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">Paradico’s Beach Luxury Hotel</span></a>
+                <a href="listing-details-full-image.html" class="h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">{{$post->title}}</span></a>
                 <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
                 <li class="list-inline-item"><span class="badge badge-success d-inline-block mr-1">4.8</span><span>2 rating</span>
                 </li>
                 <li class="list-inline-item separate"></li>
-                <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$4.00</span></li>
+                <li class="list-inline-item"><span class="mr-1">From</span>
+                <span class="text-danger font-weight-semibold">${{$post->price_first}}</span></li>
                 <li class="list-inline-item separate"></li>
-                <li class="list-inline-item"><span class="text-green">There are still tickets
-                <i class="fas fa-smile-beam"></i></span></li>
+                <li class="list-inline-item"><span class="text-green">There are still {{$post->count_of_ticket}} tickets
+                <i class="fas fa-gift fa-2x"></i></span></li>
                 </ul>
                 <div class="media">
-                
-                    <img src="{{asset('/images/')}}/blog/thi.jpg" alt="testimonial" class="img-fluid" style="max-width:40%; border-radius:10px;">
-                
-                <div class="lh-14 font-size-sm pl-3" style ="    margin-top: 30px;">
-                    There is also free complimentary
-                wi-fi for
-                the room and there is a turn down service in the eve..
-                They specialize in makgeolli...There is also free complimentary
-                wi-fi for
-                the room and there is a turn down service in the eve..
-                They specialize in makgeolli...
+               
+                    @php 
+                    $images = $post->images;
+                    $images = $images->first();
+                    
+                    @endphp
+                    @isset($images)
+                    <img src="{{asset('/images/posts/'.$images->url)}}" alt="testimonial" class="img-fluid" style="max-width:40%; border-radius:10px;">
+                    @endisset
+                <div class=" font-size-sm pl-3" style ="    margin-top: 30px;">
+                {{$post->title}}<br>
+                  {{$post->main_description}}<br>
                 <a href="" class="btn  btn-sm btn-success mt-4"  >Go to buy ticket and find out</a>
                 </div>
                 </div>
@@ -55,13 +60,25 @@
                 </div>
                 </div>
                 </div>
+                @endforeach
             </div>
         </div>
         </div>
+        @php
+           $postfirst =   $posts->first();
+          
+        @endphp
+        @isset($postfirst)
         <div class="col-lg-6 pl-0">
         <div class="mapouter"><div class="gmap_canvas">
-            <iframe width="1080" height="1080" id="gmap_canvas" src="https://maps.google.com/maps?q=rotterdam&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:1080px;width:1080px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:1080px;width:1080px;}</style></div></div>
+            <iframe width="1080" height="1080" id="gmap_canvas" src="https://maps.google.com/maps?q={{$postfirst->geo_city_latitude}}+{{$postfirst->geo_city_longlatitude}}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                 frameborder="0" scrolling="no" marginheight="0" 
+                 marginwidth="0"></iframe><a href="https://123movies-to.org"></a>
+                    <br><style>.mapouter{position:relative;text-align:right;height:1080px;width:1080px;}</style>
+                    <a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:1080px;width:1080px;}</style>
+                </div></div>
         </div>
+        @endisset
     <div>
 </div>
 
