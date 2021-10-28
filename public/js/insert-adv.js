@@ -245,6 +245,7 @@ $('#insert-advertising').on('submit', function(e){
    let errors = [];
 
    let title = $('#title').val();
+   let shortdesc = $('#shortdesc').val();
    let city = $('#autocomplete-city').val();
    let phone = $('#phone').val();
    let address = $('#autocomplete').val();
@@ -257,6 +258,12 @@ $('#insert-advertising').on('submit', function(e){
    {
        errors.push = "Mistake";
        document.getElementById('title-er').innerHTML = "Titel is verplicht veld";
+       e.preventDefault();
+   }
+   if(shortdesc == "")
+   {
+       errors.push = "Mistake";
+       document.getElementById('shortdesc-er').innerHTML = "Hoofdbeschrijving is verplicht veld";
        e.preventDefault();
    }
    if(phone == "")
