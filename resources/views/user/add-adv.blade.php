@@ -23,6 +23,14 @@
             <small class="text-danger" id="title-er"></small>
             </div>
             <div class="form-group mb-4">
+            <div class="text-dark font-weight-semibold font-size-md mb-2 lh-15">Short description
+            <a href="#" class="text-darker-light d-inline-block ml-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Give a main short description for post">
+                <i class="fas fa-question-circle"></i></a>
+            </div>
+            <textarea class="form-control" id="shortdesc" name="shortdesc"></textarea>
+            <small class="text-danger" id="shortdesc-er"></small>
+            </div>
+            <div class="form-group mb-4">
             <div class="mb-2 d-flex align-items-center lh-15">
             <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="city">City</label>
             <a href="#" class="text-darker-light d-inline-block ml-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Region of listing">
@@ -133,14 +141,14 @@
             <div class="row mb-4">
             
             <div class="col-md-6 mb-4 mb-md-0">
-            <i class="fa fa-whatsapp text-success"></i>
+            <i class="fab fa-whatsapp text-success"></i>
             <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="Your Whatsapp contact nummber">
             <small class="text-danger" id="whatsapp-er"></small>
 
             </div>
            
             <div class="col-md-6">
-            <i class="fa fa-facebook-square text-info"></i>
+            <i class="fab fa-facebook-square text-info"></i>
             <input type="text" class="form-control" id="facebook" name="facebook" placeholder="Your Facebook URL">
             <small class="text-danger" id="facebook-er"></small>
 
@@ -149,7 +157,7 @@
             <div class="row mb-4">
           
             <div class="col-md-6 mb-4 mb-md-0">
-            <i class="fa fa-linkedin text-info"></i>
+            <i class="fab fa-linkedin text-info"></i>
             <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Your Linkedln URL">
             <small class="text-danger" id="linkedin-er"></small>
 
@@ -157,13 +165,13 @@
             </div>
             <div class="row mb-4">
             <div class="col-md-6 mb-4 mb-md-0">
-            <i class="fa fa-youtube text-danger"></i>
+            <i class="fab fa-youtube text-danger"></i>
             <input type="text" class="form-control" id="youtube" name="youtube" placeholder="Your Youtube URL">
             <small class="text-danger" id="youtube-er"></small>
 
             </div>
             <div class="col-md-6">
-            <i class="fa fa-instagram"></i>
+            <i class="fab fa-instagram"></i>
             <input type="text" class="form-control" id="instagram" name="instagram" placeholder="Your Instagram URL">
             <small class="text-danger" id="instagram-er"></small>
 
