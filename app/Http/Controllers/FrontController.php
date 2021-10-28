@@ -20,7 +20,7 @@ class FrontController extends Controller
     public function index()
     {
 
-        
+        // $groupone = Category::
         return view('index', $this->data);
     }
 

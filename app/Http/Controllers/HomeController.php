@@ -59,8 +59,9 @@ class HomeController extends Controller
         //hotels
         if($category->id == 2)
         {
+            
             $posts = Post::where('category_id', $category->id)
-            ->orderBy('created_at', 'desc')->get();
+            ->orderBy('created_at', 'desc')->paginate(5);
             
             return view('categories.hotels', compact('category', 'posts'));
         }

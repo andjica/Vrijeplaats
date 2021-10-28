@@ -70,6 +70,9 @@
                 @endforeach
             </div>
         </div>
+        <div class="d-flex justify-content-center mt-2 mb-3">
+            {{ $posts->links() }}
+        </div>
         </div>
         @php
            $postfirst =   $posts->first();
@@ -79,12 +82,12 @@
         <div class="col-lg-6 pl-0">
             <div class="mapouter">
                 <div class="gmap_canvas">
-                <iframe width="100%" height="1080px" id="gmap_canvas" src="https://maps.google.com/maps?q={{$postfirst->geo_address_latitude}}+{{$postfirst->geo_address_longlatitude}}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                <iframe width="100%" height="1680px" id="gmap_canvas" src="https://maps.google.com/maps?q={{$postfirst->geo_address_latitude}}+{{$postfirst->geo_address_longlatitude}}&t=&z=13&ie=UTF8&iwloc=&output=embed"
                      frameborder="0" scrolling="no" marginheight="0" 
                     marginwidth="0"></iframe><a href="https://123movies-to.org"></a>
-                    <br><style>.mapouter{position:relative;text-align:right;height:1080px;width:100%;}</style>
+                    <br><style>.mapouter{position:relative;text-align:right;height:1680px;width:100%;}</style>
                     <a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>
-                    .gmap_canvas {overflow:hidden;background:none!important;height:1080px;width:100%;}</style>
+                    .gmap_canvas {overflow:hidden;background:none!important;height:1680px;width:100%;}</style>
                 </div>
             </div>
         </div>

@@ -51,6 +51,8 @@
     <script type="text/javascript" src="{{asset('/js/')}}/insert-info.js"></script>
     <script type="text/javascript" src="{{asset('/js/')}}/edit-info.js"></script>
     <script type="text/javascript" src="{{asset('/js/')}}/insert-adv.js"></script>
+
+    
     <!-- End custom scripts -->
 </body>
 </html>

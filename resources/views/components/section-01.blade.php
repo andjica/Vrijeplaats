@@ -48,7 +48,7 @@ echo $c->icon
         @foreach($cities as $city)
         <li class="dropdown-item item">
         <a href="#" class="link-hover-dark-white">
-        {{$city->name}}
+        <i class="fas fa-location-arrow"></i>{{$city->name}}
         </a>
         </li>
         @endforeach
