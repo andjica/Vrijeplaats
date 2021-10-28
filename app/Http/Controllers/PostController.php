@@ -55,6 +55,7 @@ class PostController extends Controller
         $post = new Post();
         $post->user_id = auth()->user()->id;
         $post->title = request()->title;
+        $post->main_description = request()->shortdesc;
         $post->category_id = request()->category;
         $post->phone = request()->phone;
         $post->website = request()->website;
@@ -67,7 +68,7 @@ class PostController extends Controller
         $post->price_discount = request()->currentprice;
         $post->price_first = request()->firstprice;
         $post->valid_until = request()->validuntil;
-        
+    
         //city
         $city = City::where('name', request()->autocompletecity)->first();
         if($city == null)

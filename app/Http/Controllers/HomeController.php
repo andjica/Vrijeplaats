@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\UserView;
+use App\Post;
 
 class HomeController extends Controller
 {
@@ -58,7 +59,10 @@ class HomeController extends Controller
         //hotels
         if($category->id == 2)
         {
-            return view('categories.hotels', compact('category'));
+            $posts = Post::where('category_id', $category->id)
+            ->orderBy('created_at', 'desc')->get();
+            
+            return view('categories.hotels', compact('category', 'posts'));
         }
         //restourants
         else if($category->id == 3)
