@@ -30,7 +30,8 @@
                 <br>
                 
                 <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-                <li class="list-inline-item"><span class="badge badge-success d-inline-block mr-1">4.8</span><span>2 rating</span>
+                <li class="list-inline-item">
+                    <span class="badge badge-success d-inline-block mr-1"><i class="fas fa-hourglass-start"></i></span><span>Buy ticket untli {{$post->valid_until}}</span>
                 </li>
                 <li class="list-inline-item separate"></li>
                 <li class="list-inline-item"><span class="mr-1">From</span>
@@ -54,7 +55,7 @@
                 <div class=" font-size-sm pl-3">
                 {{$post->title}}<br>
                   {{$post->main_description}}<br>
-                <a href="" class="btn  btn-sm btn-success mt-4"  >Go to buy ticket and find out</a>
+                <a href="{{asset('/categorie='.$post->category->link.'/city='.$post->city->name.'/name='.$post->title)}}" class="btn  btn-sm btn-success mt-4"  >Go to buy ticket and find out</a>
                 </div>
                 </div>
                 

@@ -26286,4 +26286,39 @@ button.mfp-arrow:active {
 	display:block;
 	position:absolute;
 	top:150px;
-	left:50}
+	left:50
+}
+
+
+.display-days
+{
+	font-size: 50px;
+}
+.display-hours
+{
+	font-size: 40px;
+}
+.display-minutes
+{
+	font-size: 30px;
+}
+.display-seconds
+{
+	font-size: 20px;
+}
+
+.img-fluid-two
+{
+	max-width: 350px;
+	height: fit-content;
+}
+
+.margin-c-h
+{
+	margin-left: 170px;
+}
+
+.padding-t-s
+{
+	padding-top: 50px;
+}

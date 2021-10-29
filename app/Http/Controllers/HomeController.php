@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\UserView;
 use App\Post;
+use App\City;
 
 class HomeController extends Controller
 {
@@ -77,5 +78,21 @@ class HomeController extends Controller
         }
         return 5;
         
+    }
+
+    public function getpost($name, $city, $title)
+    {
+
+        $category = Category::where('link', 'LIKE',  "%{$name}%")
+        ->first();
+       
+        $city = City::where('name', 'LIKE', "%{$city}%")
+        ->first();
+       
+        $post = Post::where('title', 'LIKE',  "%{$title}%")
+        ->where('category_id', $category->id)->first();
+        
+        
+        return view('categories.gethotel', compact('post', 'category', 'city'));
     }
 }
