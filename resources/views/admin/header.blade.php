@@ -7,7 +7,7 @@
 <span></span>
 </div>
 <a class="navbar-brand navbar-brand-mobile" href="{{asset('/')}}">
-<img src="{{asset('/images/')}}/logo.jpeg" alt="VrijePlaats">
+<img src="{{asset('/images/')}}/logo.jpeg" alt="VrijePlaats" width="70px">
 </a>
 <a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
 <i class="fas fa-search"></i></a>

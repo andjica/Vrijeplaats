@@ -54,6 +54,18 @@
 </select>
 
 </div>
+<div class="form-group mb-4">
+            <div class="mb-2 d-flex align-items-center lh-15">
+            <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="address">Your Full Address
+            (Geolocation) </label>
+            <input type="text" name="autocompleteaddress" id="autocomplete" class="form-control" placeholder="Enter Location">
+
+                <input type="hidden" id="latitude" name="adresslatitude" class="form-control">
+                <input type="hidden" name="adresslongitude" id="longitude" class="form-control">
+               
+            </div>
+            <small class="text-danger" id="address-er"></small>
+</div>
 <div class="form-group mb-2">
 <label for="bio" class="font-size-md text-dark font-weight-semibold mb-1">Bio</label>
 <textarea class="form-control" id="bio" name="bio" placeholder="Korte omschrijving over jou..."></textarea>

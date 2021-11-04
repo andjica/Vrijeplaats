@@ -2,7 +2,7 @@
 <div class="container-fluid">
 <div class="user-profile media align-items-center mb-6">
 <div class="image mr-3">
-    <img src="{{asset('/images/')}}/logo.jpeg" alt="User image" class="rounded-circle">
+    <img src="{{asset('/images/')}}/logo.jpeg" alt="User image" class="rounded-circle" width="70px">
 </div>
  <div class="media-body lh-14">
 <span class="text-dark d-block font-size-md">Howdy,</span>
@@ -34,17 +34,19 @@ Listing</a></li>
 </a>
 </li>
 <li class="list-group-item p-0 mb-2 lh-15">
-<a href="#invoice" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="fasse">
-<span class="d-inline-block mr-3"><svg class="icon icon-receipt"><use xlink:href="#icon-receipt"></use></svg></span>
-<span>Invoices</span>
-<span class=" ml-auto"><i class="fas fa-chevron-down"></i></span>
-</a>
-<ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="invoice">
-<li class="list-group-item p-0 mb-2 lh-15"><a href="panel-invoice-listing.html" class="link-hover-dark-primary font-size-md">Invoice
-Listing</a></li>
-<li class="list-group-item p-0 mb-2 lh-15"><a href="panel-invoice-details.html" class="link-hover-dark-primary font-size-md">Invoice
-Details</a></li>
-</ul>
+    <a href="#invoice" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="fasse">
+    <span class="d-inline-block mr-3"><svg class="icon icon-receipt"><use xlink:href="#icon-receipt"></use></svg></span>
+    <span>Invoices</span>
+    <span class=" ml-auto"><i class="fas fa-chevron-down"></i></span>
+    </a>
+        <ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="invoice">
+            <li class="list-group-item p-0 mb-2 lh-15">
+                <a href="{{asset('/admin-invoices')}}" class="link-hover-dark-primary font-size-md">Invoice
+                Listing</a></li>
+            <li class="list-group-item p-0 mb-2 lh-15"><a href="panel-invoice-details.html" class="link-hover-dark-primary font-size-md">Invoice
+                Details</a>
+            </li>
+        </ul>
 </li>
 <li class="list-group-item p-0 mb-2 lh-15">
 <a href="panel-package.html" class="d-flex align-items-center link-hover-dark-primary font-size-md">
