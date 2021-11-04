@@ -118,7 +118,7 @@ $('#userimage').change(function(e){
     let fname = $('#firstname').val();
     let lname = $('#lastname').val();
     let email = $('#email').val();
-   
+    let address = $('#autocomplete').val();
 
 
     let errors = [];
@@ -160,7 +160,12 @@ $('#userimage').change(function(e){
       e.preventDefault();
     }
    
-
+    if(address == "")
+    {
+        errors.push = "Mistake";
+        document.getElementById('address-er').innerHTML = "Adres is verplicht veld";
+        e.preventDefault();
+    }
   
     
     if(errors.length == 0)

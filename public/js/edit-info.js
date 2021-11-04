@@ -119,7 +119,8 @@ $('#editinfo').on('submit', function(e){
   let fname = $('#firstname2').val();
   let lname = $('#lastname2').val();
   let email = $('#email2').val();
- 
+  let address = $('#autocomplete').val();
+
 
 
   let errors = [];
@@ -160,6 +161,12 @@ $('#editinfo').on('submit', function(e){
     errors.push = "Mistake";
     e.preventDefault();
   }
+  if(address == "")
+    {
+        errors.push = "Mistake";
+        document.getElementById('address-er').innerHTML = "Adres is verplicht veld";
+        e.preventDefault();
+    }
  
 
 
