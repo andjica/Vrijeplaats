@@ -25768,10 +25768,9 @@ button.mfp-arrow:hover,
 button.mfp-arrow:focus,
 button.mfp-arrow:active {
 	background-color: transparent!important;
-	border-color: transparent!important
+	border-color: transparent!important;
 }
 
-.mfp-zoom-in {}
 
 .mfp-zoom-in .mfp-with-anim {
 	opacity: 0;
@@ -26337,4 +26336,21 @@ border-radius: 23px!important;
     padding-top: 23.5px;
     padding-bottom: 23.5px;
     border-radius: 20px;
+}
+
+.dashboards .facts-box .view {
+    background: -webkit-gradient(linear,left top,right top,color-stop(20%,#d10000),to(#ff6a52));
+    background: linear-gradient(to right,#d10000 20%,#ff6a52);
+}
+.dashboards .facts-box .card {
+    padding: 37px 50px;
+    color: #fff;
+}
+
+.dashboards .facts-box .fact-icon {
+    font-size: 60px;
+    padding-left: 30
+px
+;
+    opacity: .5;
 }

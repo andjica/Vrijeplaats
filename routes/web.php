@@ -36,6 +36,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('/insert-advertising', 'PostController@store');
 });
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/admin-home', 'AdminController@index');
+});
+
 
 
 

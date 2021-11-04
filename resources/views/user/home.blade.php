@@ -28,6 +28,24 @@
     </div>
     </div>
   </section>
- 
+  <div class="page-right px-3 border">
+      <div class="card rounded-0 border-0 contact py-6 px-3">
+        <div class="card-body text-center p-0">
+          <div class="contact-icon text-dark mb-3">
+            <svg class="icon icon-headset">
+              <use xlink:href="#icon-headset"></use>
+            </svg>
+          </div>
+            <div class="text-dark font-size-md mb-5">
+              <p class="mb-2">Heb een probleem en
+                ondersteuning nodig?<br> Bel ons direct
+              </p>
+                <p class="font-weight-semibold h5 mb-2">(+34) 967-123-888</p>
+                <p>Of chat met ons</p>
+            </div>
+            <a href="#" class="btn btn-primary font-size-md px-8 lh-15">Contact Us</a>
+      </div>
+      </div>
+      </div>
 </div>
 @endsection

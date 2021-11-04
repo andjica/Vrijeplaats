@@ -35,13 +35,21 @@ class HomeController extends Controller
     {
 
         $userId = auth()->user()->id;
-        $user = UserView::where('user_id', $userId)->first();
-        if(!$user)
+        if(auth()->user()->role_id == 2)
         {
-            //go to edit user profile first and than surf
-            return redirect('bewerk-profiel');
+            $user = UserView::where('user_id', $userId)->first();
+            if(!$user)
+            {
+                //go to edit user profile first and than surf
+                return redirect('/bewerk-profiel');
+            }
+            return view('user.home', $this->data);
         }
-        return view('user.home', $this->data);
+        else
+        {
+            return redirect('/admin-home');
+        }
+        
     }
 
    
