@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Notifications\VerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\UserView;
+use App\Purchase;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -42,5 +43,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function userview()
     {
         return $this->hasOne(UserView::class);
+    }
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
     }
 }

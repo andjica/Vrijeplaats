@@ -7,6 +7,7 @@ use App\User;
 use App\Image;
 use App\City;
 use App\category;
+use App\Purchase;
 
 class Post extends Model
 {
@@ -30,5 +31,10 @@ class Post extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function purchases()
+    {
+        return $this->belongsTo(Purchase::class);
     }
 }
