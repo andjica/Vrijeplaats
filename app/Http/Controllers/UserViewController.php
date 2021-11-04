@@ -47,6 +47,7 @@ class UserViewController extends Controller
         $userinfo->facebook = request()->facebook;
         $userinfo->instagram = request()->instagram;
         $userinfo->user_id = auth()->user()->id;
+        $userinfo->address = request()->autocompleteaddress;
 
         if(request()->userimage)
         {
@@ -113,7 +114,7 @@ class UserViewController extends Controller
         $userinfo->facebook = request()->facebook2;
         $userinfo->instagram = request()->instagram2;
         $userinfo->user_id = auth()->user()->id;
-
+        $userinfo->address = request()->autocompleteaddress;
         if(request()->userimage2)
         {
             
