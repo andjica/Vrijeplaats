@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Post;
+use App\User;
+
 
 class AdminController extends Controller
 {
@@ -14,6 +17,12 @@ class AdminController extends Controller
     }
     public function index()
     {
-        return view('admin.index', $this->data);
+        $posts = Post::all();
+        $countposts = Post::where('count_of_ticket', '>', 0)->count();
+        
+        $users = User::All();
+        $countusers = User::count();
+
+        return view('admin.index', compact('posts', 'countposts', 'users', 'countusers'), $this->data);
     }
 }

@@ -13,9 +13,11 @@
     <div class="features card-deck">
         <div class="card rounded-0 border-0 bg-transparent mb-6">
             <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
-                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 text-primary lh-1">15</span>
-                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">All <br> Listings</span>
-            </div>
+                @isset($countposts)
+                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 text-primary lh-1">{{$countposts}}</span>
+                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Active <br> POSTS</span>
+                @endisset
+             </div>
         </div>
         <div class="card rounded-0 border-0 bg-transparent mb-6">
             <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
@@ -51,7 +53,7 @@ been
 approved!
 </div>
 <div class="ml-auto">
-<a href="#" class="alert-button py-0 font-size-h3 lh-1" data-dismiss="alert" aria-label="Close"><i class="fal fa-times"></i></a>
+<a href="#" class="alert-button py-0 font-size-h3 lh-1" data-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></a>
 </div>
 </div>
 <div class="facts-box mb-6 row">
@@ -78,7 +80,7 @@ approved!
 <span class="font-size-lg">Total Reviews</span>
 </div>
 <div class="fact-icon">
-<i class="fal fa-star"></i>
+<i class="fas fa-star"></i>
 </div>
 </div>
 </div>
@@ -91,7 +93,7 @@ approved!
 <span class="font-size-lg">Times Bookmarked</span>
 </div>
 <div class="fact-icon">
-<i class="fal fa-bookmark"></i>
+<i class="fas fa-bookmark"></i>
 </div>
 </div>
 </div>
@@ -126,7 +128,7 @@ been approved!
 <td>
 <div class="icon-box no-shape icon-box-style-03 d-flex">
 <span class="icon-box-icon">
-<i class="fal fa-bookmark"></i>
+<i class="fas fa-bookmark"></i>
 </span>
 <div class="content-box"><a href="#" class="font-weight-semibold link-hover-dark-primary">David
 Eggsy</a>
@@ -142,7 +144,7 @@ listing!
 <td>
 <div class="icon-box no-shape icon-box-style-03 d-flex">
 <span class="icon-box-icon">
-<i class="fal fa-star"></i>
+<i class="fas fa-star"></i>
 </span>
 <div class="content-box"><a href="#" class="font-weight-semibold link-hover-dark-primary">Kathy
 Brown</a>
@@ -175,7 +177,7 @@ been approved!
 <td>
 <div class="icon-box no-shape icon-box-style-03 d-flex">
 <span class="icon-box-icon">
-<i class="fal fa-bookmark"></i>
+<i class="fas fa-bookmark"></i>
 </span>
 <div class="content-box"><a href="#" class="font-weight-semibold link-hover-dark-primary">David
 Eggsy</a>
@@ -191,7 +193,7 @@ listing!
 <td>
 <div class="icon-box no-shape icon-box-style-03 d-flex">
 <span class="icon-box-icon">
-<i class="fal fa-star"></i>
+<i class="fas fa-star"></i>
 </span>
 <div class="content-box"><a href="#" class="font-weight-semibold link-hover-dark-primary">Kathy
 Brown</a>

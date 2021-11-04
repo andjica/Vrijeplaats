@@ -77,98 +77,10 @@ listing</a></li>
 </div>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">test
-<span class="caret"><i class="fa fa-angle-down"></i></span>
-</a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item">
-<a class="nav-link" href="#">Shop <span class="caret"><i class="fa fa-angle-down"></i></span></a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item"><a class="nav-link" href="shop-listing.html">Shop
-listing</a></li>
-<li class="nav-item"><a class="nav-link" href="shop-checkout.html">Shop
-checkout</a></li>
-<li class="nav-item"><a class="nav-link" href="shop-my-account.html">Shop
-my account</a></li>
-<li class="nav-item"><a class="nav-link" href="shop-Winkelen-cart.html">Shop
-Winkelen cart</a></li>
-<li class="nav-item"><a class="nav-link" href="shop-single-product.html">Shop single
-product</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Panel <span class="caret"><i class="fa fa-angle-down"></i></span></a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item"><a class="nav-link" href="panel-dashboard.html">
-dashboard</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-ad-campaigns-active.html">
-ad campaigns active</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-ad-campaigns-start-new.html">
-ad campaign start new</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-invoice-details.html">
-invoice details</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-invoice-listing.html">
-invoice listing</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-my-favourite.html"> my
-favourite</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-my-listing.html"> my
-listing</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-my-profile.html"> my
-profile</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-package.html">
-package</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-review-received.html">
-review received</a></li>
-<li class="nav-item"><a class="nav-link" href="panel-review-submitted.html">
-review submitted</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Other pages <span class="caret"><i class="fa fa-angle-down"></i></span></a>
-<div class="sub-menu x-menu-mega x-animated x-fadeInUp">
-<div class="container">
-<div class="row w-100">
-<div class="col-lg-6">
-<ul class="mega-menu-col">
-<li class="nav-item"><a class="nav-link" href="page-404.html">
-404</a></li>
-<li class="nav-item"><a class="nav-link" href="page-about.html">
-about</a></li>
-<li class="nav-item"><a class="nav-link" href="page-coming-soon.html">
-comming soon</a></li>
-<li class="nav-item"><a class="nav-link" href="page-contact.html">
-contact</a></li>
-<li class="nav-item"><a class="nav-link" href="page-faqs.html">
-faqs</a></li>
-<li class="nav-item"><a class="nav-link" href="page-how-it-work.html">
-how it work</a></li>
-<li class="nav-item"><a class="nav-link" href="page-pricing-plan.html">
-pricing plan</a></li>
-</ul>
-</div>
-<div class="col-lg-6">
-<ul class="mega-menu-col">
-<li class="nav-item"><a class="nav-link" href="page-privacy-policy.html">
-privacy
-policy</a></li>
-<li class="nav-item"><a class="nav-link" href="page-submit-listing.html">submit
-listing</a></li>
-<li class="nav-item"><a class="nav-link" href="page-terms-and-condition.html">Term
-and condition</a></li>
-<li class="nav-item"><a class="nav-link" href="page-typography.html">
-typography</a></li>
- <li class="nav-item"><a class="nav-link" href="page-common-elements.html">
-Common elements</a></li>
-<li class="nav-item"><a class="nav-link" href="page-under-construction.html">
-under
-construction</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</li>
-</ul>
+
+<a class="mobile-button-search nav-link" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
+    <i class="fas fa-search"></i></a>
+
 </li>
 <li class="nav-item">
 <a class="nav-link" href="#">test<span class="caret"><i class="fa fa-angle-down"></i></span></a>
