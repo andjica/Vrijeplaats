@@ -6,15 +6,16 @@
 <div class="navbar-toggler toggle-icon" data-toggle="collapse" data-target="#navbar-main-menu">
 <span></span>
 </div>
-<a class="navbar-brand navbar-brand-mobile" href="index.html">
-<img src="images/logo.png" alt="TheDir">
+<a class="navbar-brand navbar-brand-mobile" href="{{asset('/')}}">
+<img src="{{asset('/images/')}}/logo.jpeg" alt="VrijePlaats">
 </a>
 <a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
 <i class="fas fa-search"></i></a>
 </div>
 <div class="collapse navbar-collapse" id="navbar-main-menu">
-<a class="navbar-brand d-none d-xl-block" href="index.html">
-<img src="images/logo.png" alt="TheDir">
+<a class="navbar-brand d-none d-xl-block" href="{{asset('/')}}">
+<img src="{{asset('/images/')}}/logo.jpeg" alt="VrijePlaats" width="70px">
+
 </a>
 <div class="form-search form-search-style-04 d-flex mr-auto">
 <form>

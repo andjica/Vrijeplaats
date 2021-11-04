@@ -20,27 +20,37 @@
              </div>
         </div>
         <div class="card rounded-0 border-0 bg-transparent mb-6">
+        @isset($countusers)
             <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
-                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 text-darker-light lh-1">0</span>
-                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Pending<br> Listings</span>
+                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 text-darker-light lh-1">{{$countusers}}</span>
+                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13"> geregistreerde<br> gebruikers</span>
             </div>
+            @endisset
         </div>
     <div class="card rounded-0 border-0 bg-transparent mb-6">
+    @isset($counthotels)
         <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
-            <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 published">12</span>
-            <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">published<br> Listings</span>
+            <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 published">{{$counthotels}}</span>
+            @isset($hotels)
+            <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">@php echo $hotels->category->icon @endphp posts from <br> {{$hotels->category->name}}</span>
+            @endisset
         </div>
+        @endisset
     </div>
     <div class="card rounded-0 border-0 bg-transparent mb-6">
         <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
-            <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 experied">2</span>
-            <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Experied<br> Listings</span>
+            @isset($expiredposts)
+            <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 experied">{{$expiredposts}}</span>
+            <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Experied<br> Posts</span>
+            @endisset
         </div>
     </div>
     <div class="card rounded-0 border-0 bg-transparent mb-6">
             <div class="card-body d-flex align-items-center p-6 bg-white">
-                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 active">1</span>
+            @isset($countcategories)
+                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 active">{{$countcategories}}</span>
                 <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Active campaign <br> Listings</span>
+                @endisset
             </div>
         </div>
     </div>
@@ -100,170 +110,78 @@ approved!
 </div>
 </div>
  <div class="row tables">
-<div class="col-xl-6 mb-6 mb-xl-0">
-<div class="card rounded-0 border-0 reccent-activities">
-<div class="card-body">
-<h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
-Recent
-Activities</h5>
-<div class="table-responsive">
-<table class="table">
-<tbody>
-<tr>
-<td>
-<div class="icon-box no-shape icon-box-style-03 d-flex">
-<span class="icon-box-icon">
-<svg class="icon icon-layers"><use xlink:href="#icon-layers"></use></svg>
-</span>
-<div class="content-box">Your listing <a href="listing-details-full-image.html" class="font-weight-semibold link-hover-dark-primary">Hotel
-Govendor</a>
-has
-been approved!
-</div>
-</div>
-</td>
-<td>8 Hours ago</td>
-</tr>
-<tr>
-<td>
-<div class="icon-box no-shape icon-box-style-03 d-flex">
-<span class="icon-box-icon">
-<i class="fas fa-bookmark"></i>
-</span>
-<div class="content-box"><a href="#" class="font-weight-semibold link-hover-dark-primary">David
-Eggsy</a>
-bookmarked your <a href="listing-details-full-image.html" class="font-weight-semibold link-hover-dark-primary">Thai
-Taste’s Restaurant</a>
-listing!
-</div>
-</div>
-</td>
-<td>15 Hours ago</td>
-</tr>
- <tr>
-<td>
-<div class="icon-box no-shape icon-box-style-03 d-flex">
-<span class="icon-box-icon">
-<i class="fas fa-star"></i>
-</span>
-<div class="content-box"><a href="#" class="font-weight-semibold link-hover-dark-primary">Kathy
-Brown</a>
-left a review <a href="panel-review-submitted.html" class="font-weight-semibold link-hover-dark-primary">5
-Star</a>
-on
-<a href="listing-details-full-image.html" class="font-weight-semibold link-hover-dark-primary">Roman
-Kraft Hotel</a>
-</div>
-</div>
-</td>
-<td>1 days ago</td>
-</tr>
-<tr>
-<td>
-<div class="icon-box no-shape icon-box-style-03 d-flex">
-<span class="icon-box-icon">
-<svg class="icon icon-layers"><use xlink:href="#icon-layers"></use></svg>
-</span>
-<div class="content-box">Your listing <a href="listing-details-full-image.html" class="font-weight-semibold link-hover-dark-primary">Hotel
-Govendor</a>
-has
-been approved!
-</div>
-</div>
-</td>
-<td>8 Hours ago</td>
-</tr>
-<tr>
-<td>
-<div class="icon-box no-shape icon-box-style-03 d-flex">
-<span class="icon-box-icon">
-<i class="fas fa-bookmark"></i>
-</span>
-<div class="content-box"><a href="#" class="font-weight-semibold link-hover-dark-primary">David
-Eggsy</a>
-bookmarked your <a href="listing-details-full-image.html" class="font-weight-semibold link-hover-dark-primary">Thai
-Taste’s Restaurant</a>
-listing!
-</div>
-</div>
-</td>
-<td>15 Hours ago</td>
-</tr>
-<tr>
-<td>
-<div class="icon-box no-shape icon-box-style-03 d-flex">
-<span class="icon-box-icon">
-<i class="fas fa-star"></i>
-</span>
-<div class="content-box"><a href="#" class="font-weight-semibold link-hover-dark-primary">Kathy
-Brown</a>
-left a review <a href="panel-review-submitted.html" class="font-weight-semibold link-hover-dark-primary">5
-Star</a>
-on
-<a href="listing-details-full-image.html" class="font-weight-semibold link-hover-dark-primary">
-Roman Kraft Hotel</a>
-</div>
-</div>
-</td>
-<td>1 days ago</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="col-xl-6">
-<div class="card rounded-0 border-0 invoices">
-<div class="card-body">
-<h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
-Invoices</h5>
-<div class="table-responsive-sm">
- <table class="table">
-<thead>
-<tr>
-<th>ID</th>
-<th>Date</th>
-<th>Plan</th>
-<th>Amount</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="panel-invoice-details.html" class="link-hover-dark-blue">INV-00001</a>
-</td>
-<td>22/10/2017</td>
-<td>Basic</td>
-<td>$264.00</td>
-<td><span class="status paid">Paid</span></td>
-</tr>
-<tr>
-<td>
-<a href="panel-invoice-details.html" class="link-hover-dark-blue">INV-00002</a>
-</td>
-<td>15/16/2016</td>
-<td>Premium</td>
-<td>$528.00</td>
-<td><span class="status overdue">Overdue</span></td>
-</tr>
-<tr>
-<td>
-<a href="panel-invoice-details.html" class="link-hover-dark-blue">INV-00003</a>
-</td>
-<td>18/10/2017</td>
-<td>Ultimate</td>
-<td>$1,528.00</td>
-<td><span class="status pending">Pending</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
+        <div class="col-xl-6 mb-6 mb-xl-0">
+            <div class="card rounded-0 border-0 reccent-activities">
+                <div class="card-body">
+                    <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
+                        Recent
+                        Categories</h5>
+                            <div class="table-responsive">
+                                <table class="table">
+                                <tbody>
+                                    @foreach($categories as $c)
+                                <tr>
+                                <td>
+                                    <div class="icon-box no-shape icon-box-style-03 d-flex">
+                                    <span class="icon-box-icon">
+                                    <svg class="icon icon-layers">
+                                       @php echo $c->icon @endphp
+                                    </svg>
+                                    </span>
+                                    <div class="content-box">
+                                        <a href="{{asset('/categorie/'.$c->link)}}" class="font-weight-semibold link-hover-dark-primary">
+                                    {{$c->name}}</a>
+                                   
+                                    </div>
+                                    </div>
+                                </td>
+                                <td><a href="" class="text-success">Meer over</a></td>
+                                </tr>
+                                @endforeach
+                 
+                           
+                            </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card rounded-0 border-0 invoices">
+                <div class="card-body">
+                    <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
+                    Invoices</h5>
+                    <div class="table-responsive-sm">
+                    <table class="table">
+                        <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Plan</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                        <tbody>
+                    @foreach($limitpurchases as $p)
+                        <tr>
+                        <td>
+                        <a href="panel-invoice-details.html" class="link-hover-dark-blue">INV-00001</a>
+                        </td>
+                        <td>{{$p->created_at}}</td>
+                        <td>{{$p->post->title}}</td>
+                        <td>{{$p->total}}</td>
+                        <td><span class="status paid">Paid</span></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                 </table>
+                 <a href="" class="text-success">View more invoices</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </div>
 <div class="page-right px-3">
 <div class="card rounded-0 border-0 contact py-6 px-3">
