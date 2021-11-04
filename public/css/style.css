@@ -26322,3 +26322,19 @@ button.mfp-arrow:active {
 {
 	padding-top: 50px;
 }
+
+.form-search-item{
+	background: rgb(237, 0, 140) !important;
+border-radius: 23px!important;
+}
+
+.form-search.form-search-style-02 .input-group {
+    position: static;
+    border-radius: 20px;
+    padding-left: 10px;
+}.form-search.form-search-style-02 .btn {
+    font-size: 20px;
+    padding-top: 23.5px;
+    padding-bottom: 23.5px;
+    border-radius: 20px;
+}
