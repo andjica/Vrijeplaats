@@ -1,10 +1,12 @@
 <div class="sidebar">
 <div class="container-fluid">
 <div class="user-profile media align-items-center mb-6">
-<div class="image mr-3"><img src="images/other/account-campaign.png" alt="User image" class="rounded-circle"></div>
+<div class="image mr-3">
+    <img src="{{asset('/images/')}}/logo.jpeg" alt="User image" class="rounded-circle">
+</div>
  <div class="media-body lh-14">
 <span class="text-dark d-block font-size-md">Howdy,</span>
-<span class="mb-0 h5">Logan Cee!</span>
+<span class="mb-0 h5">{{auth()->user()->name}}</span>
 </div>
 </div>
 <ul class="list-group list-group-flush list-group-borderless">
