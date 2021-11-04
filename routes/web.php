@@ -38,7 +38,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin-home', 'AdminController@index');
-    Route::get('/admin-invoices', 'AdminController@invocies');
+    Route::get('/admin-invoices', 'AdminController@invoices');
+    Route::get('/admin-invoice={idinvoice}', 'AdminController@invoice');
 });
 
 
