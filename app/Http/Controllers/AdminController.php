@@ -42,4 +42,12 @@ class AdminController extends Controller
         $purchases = Purchase::orderBy('created_at', 'desc')->get();
         return view('admin.invoices', compact('purchases'), $this->data);
     }
+
+    public function invoice($idinvoice)
+    {
+        $purchase = Purchase::where('inv_id', 'LIKE',  "%{$idinvoice}%")
+        ->first();
+        
+        return view('admin.invoice', compact('purchase'), $this->data);
+    }
 }
