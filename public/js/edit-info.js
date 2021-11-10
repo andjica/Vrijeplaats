@@ -1,3 +1,27 @@
+$('#usercategory2').on('change', function(){
+  let findrole = $(this).find(":selected").val();
+
+  if(findrole == "Company")
+  {
+    
+     document.getElementById('findrole').style.display = "block";
+  }
+  else if(findrole == "USER")
+  {
+     
+       document.getElementById('findrole2').style.display = "none";
+    
+     
+  }
+  else
+  {
+    document.getElementById('findrole').style.display = "none";
+  }
+
+  
+
+});
+
 $('#userimage2').change(function(e){
     var fileName = e.target.files[0].name;
     // alert(fileName + ' is the selected file .');
@@ -16,8 +40,21 @@ $('#userimage2').change(function(e){
     
     
   });
-
-  $("#email2").keyup(function(){
+  $("#companykvk").on('keyup',function(){
+   
+    var companykvk = $("#companykvk").val();
+    var filter = /^[0-9]*$/;
+    if (!filter.test(companykvk)) {
+      //alert('Please provide a valid email address');
+      $("#companykvk-er").text(companykvk +" Bedrijf kvk nummer moet in nummer staan");
+      companykvk.focus;
+      //return false;
+    } else {
+        $("#companykvk-er").text("");
+    }
+});
+  
+  $("#email2").on('keyup',function(){
    
     var email = $("#email2").val();
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -30,7 +67,7 @@ $('#userimage2').change(function(e){
         $("#empty2email").text("");
     }
 });
-$("#firstname2").keyup(function(){
+$("#firstname2").on('keyup',function(){
  
   var firstname = $("#firstname2").val();
 
@@ -43,7 +80,7 @@ $("#firstname2").keyup(function(){
   }
  });
 
-$("#lastname2").keyup(function(){
+$("#lastname2").on('keyup',function(){
  
  var lastname = $("#lastname2").val();
 
@@ -55,7 +92,7 @@ $("#lastname2").keyup(function(){
      $("#lastname2empty").text("");
  }
 });
-$("#phone2").keyup(function(){
+$("#phone2").on('keyup',function(){
  
   var phone = $("#phone2").val();
 
@@ -71,7 +108,7 @@ $("#phone2").keyup(function(){
  });
 
 
-$("#instagram2").keyup(function(){
+$("#instagram2").on('keyup',function(){
  
  var instagram = $("#instagram2").val();
  var filter = /^(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/;
@@ -85,7 +122,7 @@ $("#instagram2").keyup(function(){
  }
 });
 
-$("#linkedin2").keyup(function(){
+$("#linkedin2").on('keyup',function(){
  
   var linkedin = $("#linkedin2").val();
   var filter = /^(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/;
@@ -98,7 +135,7 @@ $("#linkedin2").keyup(function(){
       $("#linkedin2error").text("");
   }
  });
- $("#facebook2").keyup(function(){
+ $("#facebook2").on('keyup',function(){
  
   var facebook = $("#facebook2").val();
   var filter = /^(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/;
@@ -115,17 +152,17 @@ $("#linkedin2").keyup(function(){
 $('#editinfo').on('submit', function(e){
   
   
-
+  
   let fname = $('#firstname2').val();
   let lname = $('#lastname2').val();
   let email = $('#email2').val();
   let address = $('#autocomplete').val();
-
+  // let companykvk = $('#companykvk').val();
 
 
   let errors = [];
-  let regemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  let regurl = /^(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/;
+  // let regemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  // let regurl = /^(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/;
   
 
   if(email == "")
@@ -135,38 +172,36 @@ $('#editinfo').on('submit', function(e){
      document.getElementById('empty2email').innerHTML = "Email address is verplicht veld";
      e.preventDefault();
   }
-  else if(!regemail.test(email))
-  {
-    errors.push = "Mistake";
-    
-    document.getElementById('empty2email').innerHTML = "Verkeerd email adres";
-    e.preventDefault();
-  }
-  else
-  {
-    document.getElementById('empty2email').innerHTML = "";
-   
-  }
+ 
 
   if(fname == "")
   {
-    document.getElementById("firstnameempty").innerHTML = "Voornaam is verplicht veld";
+    document.getElementById("firstname2empty").innerHTML = "Voornaam is verplicht veld";
     errors.push = "Mistake";
     e.preventDefault();
     
   }
   if(lname == "")
   {
-    document.getElementById("lastnameempty").innerHTML = "Achternaam is verplicht veld";
+    
+    document.getElementById("lastname2empty").innerHTML = "Achternaam is verplicht veld";
     errors.push = "Mistake";
     e.preventDefault();
   }
+
   if(address == "")
-    {
+  {
         errors.push = "Mistake";
         document.getElementById('address-er').innerHTML = "Adres is verplicht veld";
         e.preventDefault();
-    }
+  }
+
+  // if(companykvk == "")
+  // {
+  //   errors.push = "Mistake";
+  //   document.getElementById('companykvk-er').innerHTML = "Company KVK is verplicht veld";
+  //   e.preventDefault();
+  // }
  
 
 
