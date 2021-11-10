@@ -108,6 +108,8 @@ class UserViewController extends Controller
         $userinfo->firstname = request()->firstname2;
         $userinfo->lastname = request()->lastname2;
         $userinfo->company = request()->usercategory2;
+        $userinfo->company_kvk = request()->companykvk;
+        $userinfo->company_btw = request()->companybtw;
         $userinfo->phone = request()->phone2;
         $userinfo->bio = request()->bio2;
         $userinfo->linkedin = request()->linkedin2;
