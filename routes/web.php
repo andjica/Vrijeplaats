@@ -13,6 +13,7 @@
 
 Route::get('/', 'FrontController@index');
 Route::get('/about', 'FrontController@about');
+Route::get('/contact', 'FrontController@contact');
 // Route::get('/proba', 'FrontController@proba');
 
 Auth::routes(['verify' => true]);
@@ -40,6 +41,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin-home', 'AdminController@index');
     Route::get('/admin-invoices', 'AdminController@invoices');
     Route::get('/admin-invoice={idinvoice}', 'AdminController@invoice');
+    Route::get('/admin-posts', 'AdminController@posts');
 });
 
 
