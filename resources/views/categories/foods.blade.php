@@ -3,408 +3,85 @@
 @section('content')
 @include('user.top-campain')
 <section id="section-01" class="">
-<div class="">
+<nav aria-label="breadcrumb m-3">
+  <ol class="breadcrumb m-3 bg-light">
+    <li class="breadcrumb-item"><a href="{{asset('/')}}">Home</a></li>
+    @isset($category)
+    <li class="breadcrumb-item"><a href="{{asset('/categorie/'.$category->link)}}">{{$category->name}}</a></li>
+    @endisset
+  </ol>
+</nav>
+<div class="container" id="container-desk">
+
 <div class="row">
     <div class="col-lg-6">
-    <div class="row equal-height">
-<div class="col-lg-6 mb-6">
-<div class="store card border-0 rounded-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-image.html">
-<img src="{{asset('images')}}/shop/popular-place-2.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="{{asset('images')}}/shop/full-popular-place-2.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bookmark"><i class="fa fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4">
-<a href="listing-details-full-image.html" class="card-title h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">Fruit Cake - Halsey St </span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">4.8</span><span class="number">2 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$4.0</span></li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span></li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3"><img src="{{asset('images')}}/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">They specialize in makgeolli at
-this
-Korean-style pub in Seorae Village. And they use...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1"><i class="fas fa-location-arrow"></i>
 
-</span>
-<a href="#" class="text-secondary text-decoration-none address">92
-Halsey St,
-Brooklyn, NY</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 mb-6">
-<div class="store card border-0 rounded-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-image.html">
-<img src="{{asset('images')}}/shop/popular-place-3.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="{{asset('images')}}/shop/full-popular-place-3.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bookmark"><i class="fa fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4">
-<a href="listing-details-full-image.html" class="card-title h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">EBI Coffe Vintage - Hobbits Ave St</span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success d-inline-block mr-1">4.7</span><span class="number">6 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$2.50</span></li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span></li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3"><img src="{{asset('images')}}/listing/testimonial-5.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">After a yoga class changed her
-life, Maz
-became
-vegan, launched...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1"><i class="fas fa-location-arrow"></i>
-
-</span>
-<a href="#" class="text-secondary text-decoration-none address">275
-Hobbits
-Ave St,
-Queen, NY</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 mb-6">
-<div class="store card border-0 rounded-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-image.html">
-<img src="{{asset('images')}}/shop/popular-place-5.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="{{asset('images')}}/shop/full-popular-place-5.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" data-gtf-mfp="true" title="" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bookmark"><i class="fa fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4">
-<a href="listing-details-full-image.html" class="card-title h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">Meet Grilled - Lower Rd St</span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success d-inline-block mr-1">4.8</span><span class="number">2 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$12.50</span></li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-danger">Close now!</span>
-</li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3"><img src="{{asset('images')}}/listing/testimonial-3.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">Established in 1895, these
-style merchants have set the standard in Sydney suiting for
-generations...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1"><i class="fas fa-location-arrow"></i>
-
-</span>
-<a href="#" class="text-secondary text-decoration-none address">212
-Lower
-Rd St,
-Linden,
-NY</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 mb-6">
-<div class="store card border-0 rounded-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-image.html">
-<img src="{{asset('images')}}/shop/popular-place-6.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="{{asset('images')}}/shop/full-popular-place-6.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" data-original-title="Quickview">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bookmark"><i class="fa fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4">
-<a href="listing-details-full-image.html" class="card-title h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">Water Melon Pudding - 55 Orchar..</span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success d-inline-block mr-1">4.9</span><span class="number">6 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$3.20</span></li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span></li>
-</ul>
-<div class="media">
- <a href="#" class="d-inline-block mr-3"><img src="{{asset('images')}}/listing/testimonial-5.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">Overlooking Bloomsbury's Russell
-Square
-and
-a 2 minutes' walk from the tube station of the same name...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1"><i class="fas fa-location-arrow"></i>
-
-</span>
-<a href="#" class="text-secondary text-decoration-none address">55
-Orchard
-St, Jeersy
-City, NY</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 mb-6">
-<div class="store card border-0 rounded-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-image.html">
-<img src="{{asset('images')}}/shop/popular-place-1.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="{{asset('images')}}/shop/full-popular-place-1.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bookmark"><i class="fa fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4">
-<a href="listing-details-full-image.html" class="card-title h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">Japan Rice Mixed Seafood</span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">5.0</span><span class="number">4 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$9.0</span></li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span>
-</li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3"><img src="{{asset('images')}}/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">Overlooking Bloomsbury’s Russell
-Square and a
-2
-minutes’ walk from the tube station of the same name...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1"><i class="fas fa-location-arrow"></i>
-
-</span>
-<a href="#" class="text-secondary text-decoration-none address">534
-Salem
-Rd St,
-Newark, NY</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 mb-6">
-<div class="store card border-0 rounded-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-image.html">
-<img src="{{asset('images')}}/shop/popular-place-4.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="{{asset('images')}}/shop/full-popular-place-4.jpg" class="item viewing" data-toggle="tooltip" data-gtf-mfp="true" data-placement="top" title="" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bookmark"><i class="fa fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4">
-<a href="listing-details-full-image.html" class="card-title h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">Strawberry Cocktail - Main St</span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-warning d-inline-block mr-1">4.4</span><span class="number">4 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$5.00</span></li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span>
-</li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3"><img src="{{asset('images')}}/listing/testimonial-2.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">Most items can be packed securely
-in
-these boxes, which are available in several sizes...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1"><i class="fas fa-location-arrow"></i>
-
-</span>
-<a href="#" class="text-secondary text-decoration-none address">
-306 Main St, Queen, NY</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 mb-6">
-<div class="store card border-0 rounded-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-image.html">
-<img src="{{asset('images')}}/shop/top-place-1.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="{{asset('images')}}/shop/full-top-place-1.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" data-original-title="Quickview">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bookmark"><i class="fa fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4">
-<a href="listing-details-full-image.html" class="card-title h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">Thai’s Taste Restaurant</span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">5.0</span><span class="number">4 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$9.0</span></li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span>
-</li>
- </ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3"><img src="{{asset('images')}}/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">Overlooking Bloomsbury’s Russell
-Square and a
-2
-minutes’ walk from the tube station of the same name...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1"><i class="fas fa-location-arrow"></i>
-
-</span>
-<a href="#" class="text-secondary text-decoration-none address">534
-Salem
-Rd St,
-Newark, NY</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 mb-6">
-<div class="store card border-0 rounded-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-image.html">
-<img src="{{asset('images')}}/shop/top-place-2.jpg" alt="store 2" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="{{asset('images')}}/shop/full-top-place-2.jpg" data-gtf-mfp="true" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bookmark"><i class="fa fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4">
-<a href="listing-details-full-image.html" class="card-title h5 text-dark d-inline-block mb-2"><span class="letter-spacing-25">Pepperoni’s Pizza Restaurant</span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-warning d-inline-block mr-1">4.4</span><span class="number">4 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$5.00</span></li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span>
-</li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3"><img src="{{asset('images')}}/listing/testimonial-2.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">Most items can be packed securely
-in
-these boxes, which are available in several sizes...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1"><i class="fas fa-location-arrow"></i>
-
-</span>
-<a href="#" class="text-secondary text-decoration-none address">
-306 Main St, Queen, NY</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="store-listing-style-04">
+    @foreach($restourants as $p)
+    
+    <div class="store-listing-item">
+                    <div class="d-flex align-items-center flex-wrap flex-lg-nowrap border-bottom py-4 py-lg-0">
+                    <div class="store media align-items-stretch py-4">
+                    @php 
+                    $images = $p->images;
+                    $images = $images->first();
+                    
+                    @endphp
+                    @isset($images)
+                    <a href="listing-details-full-image.html" class="store-image">
+                    <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}">
+                    </a>
+                    @endisset
+                    <div class="media-body px-0 pt-4 pt-md-0">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
+                        <span class="letter-spacing-25">{{$p->title}} </span>
+                    </a>
+                    <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">
+                    <li class="list-inline-item">
+                        <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">numm of ticket</span>
+                    </li>
+                    <li class="list-inline-item separate"></li>
+                    <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">€{{$p->price_first}}</span>
+                    </li>
+                    <li class="list-inline-item separate"></li>
+                    <li class="list-inline-item"><a href="#" class="link-hover-secondary-primary">
+                   
+                    <i class="fas fa-gift"></i>
+                         
+                    <span>{{$p->category->name}}</span>
+                    </a></li>
+                    </ul>
+                    <div class="border-top pt-2 d-flex">
+                    <span class="d-inline-block mr-1"><i class="fa fa-map-marker-alt">
+                    </i>
+                    </span>
+                    <a href="#" class="text-secondary text-decoration-none address">{{$p->full_address}}</a>
+                    <div class="ml-0 ml-sm-auto">
+                    <span class="label">Status:</span>
+                    @php 
+                        $datenow =  Carbon\Carbon::now();
+                    @endphp
+                    @if($datenow > $p->valid_until)
+                    <span class="status experied">Experied</span>
+                    @else
+                    <span class="status active">Active until <small>{{$p->valid_until}}</small></span>
+                    @endif
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="action ml-0 ml-lg-auto mt-3 mt-lg-0 align-items-center flex-wrap flex-sm-nowrap w-100 w-lg-auto">
+                  
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
+                   
+                        FIND OUT
+                    </a>
+                    </div>
+                    </div>
+                    </div>
+        
+        @endforeach
+    </div>
         </div>
         <div class="col-lg-6 pl-0">
         <div class="mapouter"><div class="gmap_canvas">

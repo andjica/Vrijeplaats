@@ -65,27 +65,20 @@ class HomeController extends Controller
         
         $category = Category::where('link', 'LIKE',  "%{$name}%")->first();
        
-        //hotels
-        if($category->id == 2)
+       
+        if($category)
         {
             
             $posts = Post::where('category_id', $category->id)
             ->orderBy('created_at', 'desc')->paginate(5);
             
-            return view('categories.hotels', compact('category', 'posts'), $this->data);
+            return view('categories.index', compact('category', 'posts'), $this->data);
         }
-        //restourants
-        else if($category->id == 3)
+        else
         {
-            $restourants = Post::where('category_id', $category->id)->get();
-            
-            return view('categories.foods', compact('category', 'restourants'), $this->data);
+            return abort(404);
         }
-        //medical
-        else if($category->id == 4)
-        {
-            return view('categories.medical', compact('category'), $this->data);
-        }
+      
         return 5;
         
     }
@@ -102,7 +95,14 @@ class HomeController extends Controller
         $post = Post::where('title', 'LIKE',  "%{$title}%")
         ->where('category_id', $category->id)->first();
         
-        
-        return view('categories.gethotel', compact('post', 'category', 'city'), $this->data);
+        if($post)
+        {
+            return view('categories.getpost', compact('post', 'category', 'city'), $this->data);
+
+        }
+        else
+        {
+            return abort(404);
+        }
     }
 }

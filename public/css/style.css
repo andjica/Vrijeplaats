@@ -217,7 +217,7 @@ figure {
 img {
 	vertical-align: middle;
 	border-style: none;
-	max-width: 100%;
+	max-width: 120%;
 	height: auto
 }
 
@@ -20893,7 +20893,7 @@ iframe {
 }
 
 .store-listing-style-04 .store .store-image {
-	margin-right: 23px;
+	margin-right: 55px;
 	-ms-flex: 0 0 155px;
 	-webkit-box-flex: 0;
 	flex: 0 0 155px;
@@ -26349,8 +26349,11 @@ border-radius: 23px!important;
 
 .dashboards .facts-box .fact-icon {
     font-size: 60px;
-    padding-left: 30
-px
-;
+    padding-left: 30px;
     opacity: .5;
+}
+
+.ma-wrapper
+{
+	margin-top: 150px !important;
 }

@@ -4,7 +4,14 @@
 
 @include('user.top-campain')
 <section id="section-01" class="">
-
+<nav aria-label="breadcrumb m-3">
+  <ol class="breadcrumb m-3 bg-light">
+    <li class="breadcrumb-item"><a href="{{asset('/')}}">Home</a></li>
+    @isset($category)
+    <li class="breadcrumb-item"><a href="{{asset('/categorie/'.$category->link)}}">{{$category->name}}</a></li>
+    @endisset
+  </ol>
+</nav>
 <div class="container" id="container-desk">
 
 <div class="row">
