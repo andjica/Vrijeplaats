@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\UserView;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -52,7 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            
+            'customercompany' => ['required']
         ]);
     }
 
@@ -64,11 +65,30 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+         $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role_id' => 2
         ]);
+
+        
+
+        $userinfo = new UserView();
+        $userinfo->firstname = $user->name;
+        $userinfo->user_id = $user->id;
+        
+        if($data['customercompany'] == 1)
+        {
+            $userinfo->company = 'USER';
+        }
+        else
+        {
+            $userinfo->company = 'COMPANY';
+        }
+        $userinfo->save();
+
+        return $user;
+
     }
 }

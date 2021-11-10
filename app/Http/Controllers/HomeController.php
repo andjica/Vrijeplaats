@@ -72,17 +72,19 @@ class HomeController extends Controller
             $posts = Post::where('category_id', $category->id)
             ->orderBy('created_at', 'desc')->paginate(5);
             
-            return view('categories.hotels', compact('category', 'posts'));
+            return view('categories.hotels', compact('category', 'posts'), $this->data);
         }
         //restourants
         else if($category->id == 3)
         {
-            return view('categories.foods', compact('category'));
+            $restourants = Post::where('category_id', $category->id)->get();
+            
+            return view('categories.foods', compact('category', 'restourants'), $this->data);
         }
         //medical
         else if($category->id == 4)
         {
-            return view('categories.medical', compact('category'));
+            return view('categories.medical', compact('category'), $this->data);
         }
         return 5;
         
@@ -101,6 +103,6 @@ class HomeController extends Controller
         ->where('category_id', $category->id)->first();
         
         
-        return view('categories.gethotel', compact('post', 'category', 'city'));
+        return view('categories.gethotel', compact('post', 'category', 'city'), $this->data);
     }
 }

@@ -7,7 +7,7 @@ use App\Category;
 use App\Post;
 use App\User;
 use App\Purchase;
-
+use Carbon;
 
 class AdminController extends Controller
 {
@@ -15,11 +15,12 @@ class AdminController extends Controller
     {
      
         $this->data['categories'] = Category::all();
+        $this->data['countposts'] =  Post::where('count_of_ticket', '>', 0)->count();
     }
     public function index()
     {
         $posts = Post::all();
-        $countposts = Post::where('count_of_ticket', '>', 0)->count();
+       
         $expiredposts = Post::where('count_of_ticket', '==', 0)->count();
         
         $users = User::All();
@@ -33,7 +34,7 @@ class AdminController extends Controller
         $limitpurchases = Purchase::orderBy('created_at', 'desc')->limit(3)->get();
         
 
-        return view('admin.index', compact('posts', 'countposts', 'users', 
+        return view('admin.index', compact('posts', 'users', 
         'countusers', 'hotels', 'counthotels', 'expiredposts', 'countcategories', 'limitpurchases'), $this->data);
     }
 
@@ -48,6 +49,18 @@ class AdminController extends Controller
         $purchase = Purchase::where('inv_id', 'LIKE',  "%{$idinvoice}%")
         ->first();
         
+        $p = $purchase->user->userview->address;
+        
         return view('admin.invoice', compact('purchase'), $this->data);
+    }
+
+    public function posts()
+    {
+        $posts = Post::orderBy('created_at')->paginate(3);
+       
+        $datenow =  Carbon\Carbon::now();
+        $postsexpired = Post::where('valid_until', '<', $datenow)->get();
+        
+        return view('admin.posts', compact('posts', 'postsexpired'), $this->data);
     }
 }
