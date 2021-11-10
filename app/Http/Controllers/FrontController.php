@@ -29,10 +29,12 @@ class FrontController extends Controller
         return view('pages.about', $this->data);
     }
 
-    public function proba()
+   
+
+    public function contact()
     {
-        $posts = Post::All();
-        return view('pages.proba', compact('posts'));
+        
+        return view('pages.contact', $this->data);
     }
 
     
