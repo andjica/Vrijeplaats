@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container mt-5">
 
     <section class="jumbotron text-center">
     <div class="container">

@@ -57,14 +57,47 @@
 <select class="form-control" name="usercategory2" id="usercategory2"> 
     @if(auth()->user()->userview->company == "USER")
     <option value="USER">For me - like user</option> 
-    <option value="Company">For Company, company representer</option> 
+    <option value="Company" id="company">For Company, company representer</option> 
     @else
     <option value="Company">For Company, company representer</option> 
-    <option value="USER">For me - like user</option> 
+    <option value="USER" id="user">For me - like user</option> 
     @endif
 </select>
 
 </div>
+@if(auth()->user()->userview->company == 'Company')
+<div class="findrole2" id="findrole2">
+        <div class="form-group mb-4 pt-3 pb-3">
+             <div class="mb-2 d-flex align-items-center lh-15">
+             <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="companykvk">Company KVK nummber</label>
+                <input type="text" class="form-control" id="companykvk" name="companykvk" value="{{auth()->user()->userview->company_kvk}}"> 
+                <small class="text-danger" id="companykvk-er"></small>
+            </div>
+        </div>
+        <div class="form-group mb-4 pb-3">
+             <div class="mb-2 d-flex align-items-center lh-15">
+             <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="companybtw">Company BTW nummber</label>
+                <input type="text" class="form-control" id="companybtw" name="companybtw" value="{{auth()->user()->userview->company_btw}}">
+            </div>
+        </div>
+</div>
+@else
+<div class="findrole" id="findrole" style="display:none">
+        <div class="form-group mb-4 pt-3 pb-3">
+             <div class="mb-2 d-flex align-items-center lh-15">
+             <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="companykvk">Company KVK nummber</label>
+                <input type="text" class="form-control" id="companykvk" name="companykvk" value="{{auth()->user()->userview->company_kvk}}"> 
+                <small class="text-danger" id="companykvk-er"></small>
+            </div>
+        </div>
+        <div class="form-group mb-4 pb-3">
+             <div class="mb-2 d-flex align-items-center lh-15">
+             <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="companybtw">Company BTW nummber</label>
+                <input type="text" class="form-control" id="companybtw" name="companybtw" value="{{auth()->user()->userview->company_btw}}">
+            </div>
+        </div>
+</div>
+@endif
 <div class="form-group mb-4">
             <div class="mb-2 d-flex align-items-center lh-15">
             <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="address">Your Full Address
@@ -77,6 +110,7 @@
             </div>
             <small class="text-danger" id="address-er"></small>
 </div>
+
 <div class="form-group mb-2">
 <label for="bio2" class="font-size-md text-dark font-weight-semibold mb-1">Bio</label>
 <textarea class="form-control" id="bio2" name="bio2" placeholder="Korte omschrijving over jou...">{{auth()->user()->userview->bio}}</textarea>

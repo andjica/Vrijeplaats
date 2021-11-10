@@ -1,55 +1,68 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-            <a class="navbar-brand navbar-brand-mobile" href="{{asset('/')}}">
-                <img src="{{asset('/images/')}}/logosmall.jpeg" alt="Vrijeplaats" width="150px;"> 
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<header id="header" class="main-header header-sticky header-sticky-smart header-style-01 header-float text-uppercase">
+<div class="sticky-area-wrap"><div class="header-wrapper sticky-area" style="      height: 80px;  background: #ED008c;">
+<div class="container container-1720">
+<nav class="navbar navbar-expand-xl">
+<div class="header-mobile d-flex d-xl-none flex-fill justify-content-between align-items-center">
+<div class="navbar-toggler toggle-icon" data-toggle="collapse" data-target="#navbar-main-menu">
+<span></span>
+</div>
+<a class="navbar-brand navbar-brand-mobile" href="{{asset('/')}}">
+<img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats">
+</a>
+<a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
+    <i class="fas fa-search"></i></a>
+</div>
+<div class="collapse navbar-collapse" id="navbar-main-menu" style="    height: 80px;">
+<a class="navbar-brand d-none d-xl-block mr-auto" style="max-height: 80px !important; border-radius: 100%;" href="{{asset('/')}}">
+<img src="{{asset('/images/')}}/logo.jpeg" style=" border-radius: 100%;" alt="TheDir">
+</a>
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link text-white" href="{{asset('/')}}">Home</a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{asset('about')}}">About Vrijeplaats</a>
 
-                    </ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{asset('contact')}}">Contact</a>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                        <li class="nav-item">
-                                <a class="nav-link text-dark" href="{{ asset('/home') }}"><svg class="icon icon-user-circle-o">
-                                    <use xlink:href="#icon-user-circle-o"></use></svg>{{ __('Your panel') }}</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+</li>
+<li class="nav-item">
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+<a class="mobile-button-search nav-link" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
+    <i class="fas fa-search"></i></a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+</li>
+
+@if(auth()->user())
+<li class="nav-item dropdown">
+<a class="nav-link" href="{{asset('/logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</li>
+@else
+<li class="nav-item dropdown">
+<a class="nav-link" href="{{asset('/login')}}"><i class="fas fa-sign-out-alt"></i> Login</a>
+</li>
+@endif
+</ul>
+
+<div class="header-customize justify-content-end align-items-center d-none d-xl-flex">
+@if(auth()->user())
+<a href="{{asset('/home')}}" class="btn btn-info mr-2">Go to panel</a>
+
+@else
+
+@endif
+<div class="header-customize-item button">
+<a href="{{asset('add-adv')}}" class="btn btn-primary btn-icon-right">Add
+Listing
+<i class="fas fa-angle-right"></i></a>
+</div>
+</div>
+
+</div>
+</nav>
+</div>
+</div></div>
+</header>

@@ -7,14 +7,14 @@
 <span></span>
 </div>
 <a class="navbar-brand navbar-brand-mobile" href="{{asset('/')}}">
-<img src="{{asset('/images/')}}/logo.jpeg" alt="VrijePlaats" width="70px">
+<img src="{{asset('/images/')}}/logosmall.jpeg" alt="VrijePlaats" width="70px">
 </a>
 <a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
 <i class="fas fa-search"></i></a>
 </div>
 <div class="collapse navbar-collapse" id="navbar-main-menu">
 <a class="navbar-brand d-none d-xl-block" href="{{asset('/')}}">
-<img src="{{asset('/images/')}}/logo.jpeg" alt="VrijePlaats" width="70px">
+<img src="{{asset('/images/')}}/logosmall.jpeg" alt="VrijePlaats"  width="70px">
 
 </a>
 <div class="form-search form-search-style-04 d-flex mr-auto">

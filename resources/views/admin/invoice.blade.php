@@ -12,15 +12,13 @@
                 <div class="mb-9 row flex-md-nowrap">
                     <div class="col-md-4 mb-4 mb-md-0">
                     <div class="mb-5">
-                        <img src="images/logo.png" alt="Thedir">
+                        <img src="{{asset('/images/')}}/logosmall.jpeg" alt="Vrijeplaats" width="100px">
                         </div>
                         <div class="text-dark font-size-md lh-1625">
                         <address>
-                        Stack Creative Studio<br>
+                       Vrijeplaats<br>
                         4025 Oak Avenue,<br>
-                        New York,<br>
-                        NY 10092,<br>
-                        United States
+                        Rotterdam, Netherlands
                         </address>
                         </div>
                     </div>
@@ -30,11 +28,8 @@
                         </div>
                         <div class="text-dark font-size-md lh-1625">
                         <address>
-                        Mr. Bret Lezama<br>
-                        4879 Westfall Avenue,<br>
-                        Albuquerque,<br>
-                        New Mexico-87102.<br>
-                        Mexico
+                        {{$purchase->user->userview->firstname}} {{$purchase->user->userview->lastname}}<br>
+                        <p>{{$purchase->user->userview->address}}</p>
                         </address>
                         </div>
                     </div>
@@ -49,7 +44,7 @@
                         </div>
                         <div class="">
                         <span class="text-dark font-weight-semibold">Issued:</span>
-                        <span> 20/07/2017 </span>
+                        <span> {{$purchase->created_at->format('d-m-Y')}} </span>
                         </div>
                         <span class="text-secondary">
                         Due 7 days from date of issue
@@ -62,26 +57,27 @@
                 <thead>
                 <tr>
                 <th style="width:34%">items &amp; description</th>
-                <th>quantity</th>
+                <th>Ticket valid until</th>
                 <th>price</th>
-                <th>VAT</th>
                 <th class="text-right">total</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                <td>Premium Plan</td>
-                <td>1 Years</td>
-                <td>$59.00/mo</td>
-                <td>10%</td>
-                <td>$599.00</td>
+                <td>{{$purchase->post->title}} - <br>{{$purchase->category->name}} <br>
+                {{$purchase->post->full_address}}<br>
+
+                </td>
+                <td>{{$purchase->post->valid_until}}</td>
+                <td>€{{$purchase->total}}</td>
+                <td class="text-right">€{{$purchase->total}}</td>
                 </tr>
                 </tbody>
                 </table>
                 </div>
                 <div class="d-flex mt-4">
                 <div class="ml-auto text-right">
-                <span class="text-dark font-size-lg d-block font-weight-semibold total">Invoice Total: $599.00</span>
+                <span class="text-dark font-size-lg d-block font-weight-semibold total">Invoice Total: €{{$purchase->total}}</span>
                 <span class="font-size-md">Paid via Credit Card</span>
                 </div>
                 </div>

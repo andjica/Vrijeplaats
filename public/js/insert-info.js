@@ -168,7 +168,7 @@ $('#userimage').change(function(e){
     }
   
     
-    if(errors.length == 0)
+    if(errors.count == 0)
     {
       return true;
     }

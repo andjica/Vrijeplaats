@@ -23,58 +23,18 @@
 <li class="nav-item"><a class="nav-link" href="{{asset('/')}}">Home</a>
 </li>
 @foreach($categories as $c)
-<li class="nav-item"><a class="nav-link" href="{{asset('/')}}">{{$c->name}}</a>
+<li class="nav-item"><a class="nav-link" href="{{asset('/categorie/'.$c->link)}}">{{$c->name}}</a>
 </li>
 @endforeach
 </ul>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">Test<span class="caret"><i class="fa fa-angle-down"></i></span></a>
-<div class="sub-menu x-menu-mega x-animated x-fadeInUp width-800">
-<div class="container">
-<div class="row w-100">
-<div class="col-lg-4">
-<h5>Group 01</h5>
-<ul class="mega-menu-col">
+<a class="nav-link" href="{{asset('about')}}">About Vrijeplaats</a>
 
-<li class="nav-item"><a class="nav-link" href="elements/button.html">Buttons</a>
 </li>
+<li class="nav-item">
+<a class="nav-link" href="{{asset('contact')}}">Contact</a>
 
-</ul>
-</div>
-<div class="col-lg-4">
-<h5>Group 02</h5>
-<ul class="mega-menu-col">
-<li class="nav-item"><a class="nav-link" href="elements/heading.html">Heading</a>
-</li>
-<li class="nav-item"><a class="nav-link" href="elements/icon-box.html">Icon
-box</a></li>
-<li class="nav-item"><a class="nav-link" href="elements/image-box.html">Image
-box</a></li>
-<li class="nav-item"><a class="nav-link" href="elements/listing.html">Listing</a>
-</li>
-<li class="nav-item"><a class="nav-link" href="elements/post.html">Post</a>
-</li>
-</ul>
-</div>
-<div class="col-lg-4">
-<h5>Group 03</h5>
-<ul class="mega-menu-col">
-<li class="nav-item"><a class="nav-link" href="elements/store.html">Store</a>
-</li>
-<li class="nav-item"><a class="nav-link" href="elements/tab.html">Tab</a>
-</li>
-<li class="nav-item"><a class="nav-link" href="elements/table-listing.html">Table
-listing</a></li>
-<li class="nav-item"><a class="nav-link" href="elements/testimonial.html">Testimonial</a>
-</li>
-<li class="nav-item"><a class="nav-link" href="elements/widget.html">Widget</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 </li>
 <li class="nav-item">
 
@@ -82,49 +42,7 @@ listing</a></li>
     <i class="fas fa-search"></i></a>
 
 </li>
-<li class="nav-item">
-<a class="nav-link" href="#">test<span class="caret"><i class="fa fa-angle-down"></i></span></a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item">
-<a class="nav-link" href="#"> layout
-<span class="caret"><i class="fa fa-angle-down"></i></span>
-</a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item"><a class="nav-link" href="explore-full-map-grid.html"> full
-map grid</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-full-map-list.html"> full
-map list</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-half-map-grid.html"> half
-map grid</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-half-map-list.html"> half
-map list</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-sidebar-grid.html"> sidebar
-grid</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-sidebar-list.html"> sidebar
-list</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Listing details
-<span class="caret"><i class="fa fa-angle-down"></i></span>
-</a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item"><a class="nav-link" href="listing-details-full-gallery.html">
- full gallery</a></li>
-<li class="nav-item"><a class="nav-link" href="listing-details-full-image.html">
-full image</a></li>
-<li class="nav-item"><a class="nav-link" href="listing-details-full-map.html">
-full map</a></li>
-<li class="nav-item"><a class="nav-link" href="listing-details-gallery.html">gallery</a>
-</li>
-<li class="nav-item"><a class="nav-link" href="listing-details-image.html"> image</a>
-</li>
-<li class="nav-item"><a class="nav-link" href="listing-details-no-image.html"> no
-image</a></li>
-</ul>
-</li>
-</ul>
-</li>
+
 @if(auth()->user())
 <li class="nav-item dropdown">
 <a class="nav-link" href="{{asset('/logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a>

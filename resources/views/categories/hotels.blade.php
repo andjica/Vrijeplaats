@@ -1,76 +1,81 @@
 @extends('layouts.app')
 
 @section('content')
+
 @include('user.top-campain')
 <section id="section-01" class="">
+
 <div class="container" id="container-desk">
+
 <div class="row">
     <div class="col-lg-6">
-    <div class="row mt-2">
-    <div class="col-lg-12 pr-0">
-        @foreach($posts as $post)
-        
-                <div class="store media align-items-stretch bg-white mt-2">
-                
-                <div class="position-relative store-image" style="background-image: url()}}')">
-                <div class="image-content position-absolute d-flex align-items-center">
-                <div class="content-right ml-auto d-flex">
-                <a href="images/shop/full-hotels-shop-4.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" data-original-title="Quickview">
-                <i class="fas fa-location-arrow"></i>
-                </a>
-                <a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bookmark"><i class="fal fa-bookmark"></i></a>
-                </div>
-                </div>
-                </div>
-                
-                <div class="media-body pt-4 pb-3 px-5">
-                <a href="listing-details-full-image.html" class="h5 text-dark d-inline-block mb-2">
-                    <span class="letter-spacing-25">{{$post->title}}</span>
-                </a>
-                <br>
-                
-                <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-                <li class="list-inline-item">
-                    <span class="badge badge-success d-inline-block mr-1"><i class="fas fa-hourglass-start"></i></span><span>Buy ticket untli {{$post->valid_until}}</span>
-                </li>
-                <li class="list-inline-item separate"></li>
-                <li class="list-inline-item"><span class="mr-1">From</span>
-                <span class="text-danger font-weight-semibold">${{$post->price_first}}</span></li>
-                <li class="list-inline-item separate"></li>
-                <li class="list-inline-item"><span class="text-green">There are still {{$post->count_of_ticket}} tickets
-                <i class="fas fa-gift fa-2x"></i></span></li>
-                </ul>
-                <div class="media">
-               
+ 
+    <div class="store-listing-style-04">
+        @foreach($posts as $p)
+            <div class="store-listing-item">
+                    <div class="d-flex align-items-center flex-wrap flex-lg-nowrap border-bottom py-4 py-lg-0">
+                    <div class="store media align-items-stretch py-4">
                     @php 
-                    $images = $post->images;
+                    $images = $p->images;
                     $images = $images->first();
                     
                     @endphp
                     @isset($images)
-                   
-                    <span class="product-new-label">BEST PRICE</span>
-                    <img src="{{asset('/images/posts/'.$images->url)}}" alt="testimonial" class="img-fluid" style="max-width:40%; border-radius:10px;">
+                    <a href="listing-details-full-image.html" class="store-image">
+                    <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}">
+                    </a>
                     @endisset
-                <div class=" font-size-sm pl-3">
-                {{$post->title}}<br>
-                  {{$post->main_description}}<br>
-                <a href="{{asset('/categorie='.$post->category->link.'/city='.$post->city->name.'/name='.$post->title)}}" class="btn  btn-sm btn-success mt-4"  >Go to buy ticket and find out</a>
-                </div>
-                </div>
-                
-                <div class="mt-3 text-secondary text-decoration-none address">
-                <span class="d-inline-block mr-1">
-                    <i class="fas fa-location-arrow"></i>
-                 </span>{{$post->full_address}}</div>
-                <div class="border-top pt-3 mt-5 lh-12">
-            
-                </div>
-                </div>
-                </div>
-                @endforeach
+                    <div class="media-body px-0 pt-4 pt-md-0">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
+                        <span class="letter-spacing-25">{{$p->title}} </span>
+                    </a>
+                    <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">
+                    <li class="list-inline-item">
+                        <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">numm of ticket</span>
+                    </li>
+                    <li class="list-inline-item separate"></li>
+                    <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">€{{$p->price_first}}</span>
+                    </li>
+                    <li class="list-inline-item separate"></li>
+                    <li class="list-inline-item"><a href="#" class="link-hover-secondary-primary">
+                   
+                    <i class="fas fa-gift"></i>
+                         
+                    <span>{{$p->category->name}}</span>
+                    </a></li>
+                    </ul>
+                    <div class="border-top pt-2 d-flex">
+                    <span class="d-inline-block mr-1"><i class="fa fa-map-marker-alt">
+                    </i>
+                    </span>
+                    <a href="#" class="text-secondary text-decoration-none address">{{$p->full_address}}</a>
+                    <div class="ml-0 ml-sm-auto">
+                    <span class="label">Status:</span>
+                    @php 
+                        $datenow =  Carbon\Carbon::now();
+                    @endphp
+                    @if($datenow > $p->valid_until)
+                    <span class="status experied">Experied</span>
+                    @else
+                    <span class="status active">Active until <small>{{$p->valid_until}}</small></span>
+                    @endif
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="action ml-0 ml-lg-auto mt-3 mt-lg-0 align-items-center flex-wrap flex-sm-nowrap w-100 w-lg-auto">
+                  
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
+                   
+                        FIND OUT
+                    </a>
+                    </div>
+                    </div>
+                    </div>
+                    @endforeach
             </div>
-        </div>
+      
+         
         <div class="d-flex justify-content-center mt-2 mb-3">
             {{ $posts->links() }}
         </div>

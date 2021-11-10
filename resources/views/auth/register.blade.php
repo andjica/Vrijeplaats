@@ -38,7 +38,15 @@
                                 @endif
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            <label for="customercompany" class="col-md-4 col-form-label text-md-right">{{ __('Customer or Company ') }}</label>
+                            <div class="col-md-6">
+                            <select name="customercompany" class="form-control">
+                                <option value="1">Customer</option>
+                                <option value="2">Company / business</option>
+                            </select>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

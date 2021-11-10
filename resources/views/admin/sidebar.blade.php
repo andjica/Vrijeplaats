@@ -11,7 +11,7 @@
 </div>
 <ul class="list-group list-group-flush list-group-borderless">
 <li class="list-group-item p-0 mb-2 lh-15 active">
-<a href="panel-dashboard.html" class="d-flex align-items-center link-hover-dark-primary font-size-md">
+<a href="{{asset('/admin-home')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
 <span class="d-inline-block mr-3"><i class="fas fa-cog"></i></span>
 <span>Dashboard</span>
 </a>
@@ -20,10 +20,12 @@
 <a href="#listing" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="fasse">
 <span class="d-inline-block mr-3"><svg class="icon icon-layers"><use xlink:href="#icon-layers"></use></svg></span>
 <span>My Listing</span>
-<span class=" ml-auto"><i class="fas fa-chevron-down"></i></span>
+<span class=" ml-auto">
+    <i class="fas fa-chevron-down"></i></span>
 </a>
 <ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="listing">
-<li class="list-group-item p-0 mb-2 lh-15"><a href="panel-my-listing.html" class="link-hover-dark-primary font-size-md">My
+<li class="list-group-item p-0 mb-2 lh-15">
+    <a href="{{asset('/admin-posts')}}" class="link-hover-dark-primary font-size-md">My
 Listing</a></li>
 </ul>
 </li>
