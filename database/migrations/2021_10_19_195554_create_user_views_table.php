@@ -15,10 +15,13 @@ class CreateUserViewsTable extends Migration
     {
         Schema::create('user_views', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
             $table->string('image')->nullable();
             $table->string('company')->nullable();
+            $table->string('company_kvk')->nullable();
+            $table->string('company_btw')->nullable();
+            $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->text('bio')->nullable();
             $table->string('linkedin')->nullable();
