@@ -7,6 +7,7 @@ use App\Category;
 use App\UserView;
 use App\Post;
 use App\City;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -104,5 +105,15 @@ class HomeController extends Controller
         {
             return abort(404);
         }
+    }
+
+    public function getallposts()
+    {
+        $timenow = Carbon::now();
+        
+        $posts = Post::where('valid_until', '>', $timenow)
+        ->orderBy('created_at', 'desc')->paginate(6);
+        
+        return view('categories.posts', compact('posts'), $this->data);
     }
 }

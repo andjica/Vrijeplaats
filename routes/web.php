@@ -27,6 +27,7 @@ Route::get('/add-adv', 'HomeController@addadv');
 
 Route::get('/categorie/{name}', 'HomeController@categories');
 Route::get('/categorie={name}/city={city}/name={title}', 'HomeController@getpost');
+Route::get('/all-categories', 'HomeController@getallposts');
 //user edit
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/bewerk-profiel', 'UserViewController@create');

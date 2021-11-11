@@ -2,10 +2,10 @@
 <section id="section-03" class="pb-8 our-directory">
 <div class="container">
 <div class="mb-7">
-<h2 class="mb-0">
+<h1 class="mb-0">
 <span class="font-weight-semibold">Hot Deals </span>
 <span class="font-weight-light">Bekijk hier onze vrijeplaatsen</span>
-</h2>
+</h1>
 </div>
 
 </div>

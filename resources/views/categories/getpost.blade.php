@@ -426,57 +426,92 @@
 </div>
 <div class="card-body px-0 pb-0">
 <ul class="list-group list-group-flush">
-<li class="list-group-item bg-transparent d-flex text-dark px-0">
-<label class="mb-0">Self Check-in</label>
-<span class="ml-auto font-weight-semibold">Smartlock</span>
-</li>
-<li class="list-group-item bg-transparent d-flex text-dark px-0">
-<label class="mb-0">Room Type</label>
-<span class="ml-auto font-weight-semibold">Private Room</span>
-</li>
-<li class="list-group-item bg-transparent d-flex text-dark px-0">
-<label class="mb-0">Beds</label>
-<span class="ml-auto font-weight-semibold">6</span>
-</li>
-<li class="list-group-item bg-transparent d-flex text-dark px-0">
-<label class="mb-0">Bed Type</label>
-<span class="ml-auto font-weight-semibold">Fixed With Air Condition</span>
-</li>
-<li class="list-group-item bg-transparent d-flex text-dark px-0">
-<label class="mb-0">Happy Hours</label>
-<span class="text-green ml-auto font-weight-semibold">Yes</span>
-</li>
-<li class="list-group-item bg-transparent d-flex text-dark px-0">
-<label class="mb-0">Smoking</label>
-<span class="text-danger ml-auto font-weight-semibold">No</span>
-</li>
-<li class="list-group-item bg-transparent d-flex text-dark px-0 pt-3">
-<a href="#">Show More <span class="d-inline-block ml-2"><i class="fal fa-chevron-down"></i></span>
-</a>
-</li>
+    @if($post->user->userview->company == 'Company')
+    <li class="list-group-item bg-transparent d-flex text-dark px-0">
+    <label class="mb-0">Company name</label>
+    <span class="ml-auto font-weight-semibold">{{$post->user->userview->company_name}}</span>
+    </li>
+    <li class="list-group-item bg-transparent d-flex text-dark px-0">
+    <label class="mb-0">Company representer who post this post</label>
+    <span class="ml-auto font-weight-semibold">{{$post->user->userview->firstname}}</span>
+    </li>
+    @else
+        <li class="list-group-item bg-transparent d-flex text-dark px-0">
+            <label class="mb-0">User who post this post</label>
+            <span class="ml-auto font-weight-semibold">{{$post->user->userview->firstname}} {{$post->user->userview->lastname}}</span>
+        </li>
+    @endif
+
+    <li class="list-group-item bg-transparent d-flex text-dark px-0">
+    <label class="mb-0">Contact info</label>
+    <span class="ml-auto font-weight-semibold">{{$post->user->email}}</span>
+    </li>
+    <li class="list-group-item bg-transparent d-flex text-dark px-0">
+        <span class="item-icon mr-3"><i class="fa fa-map-marker-alt"></i></span>
+        <span class="card-text">{{$post->full_address}}</span>
+    </li>
+    @if($post->phone)
+    <li class="list-group-item bg-transparent d-flex text-dark px-0">
+        <span class="item-icon mr-3">
+        <i class="fas fa-phone"></i>
+        </span>
+        <span class="card-text">{{$post->phone}}</span>
+    </li>
+    @else
+
+    @endif
+    @if($post->website)
+    <li class="list-group-item bg-transparent d-flex text-dark px-0">
+    <span class="item-icon mr-3"><i class="fas fa-globe"></i></span>
+    <span class="card-text">
+        <a href="{{$post->website}}">{{$post->website}}</a></span>
+    </li>
+    @else
+
+    @endif
+
+    
+    <li class="list-group-item bg-transparent d-flex text-dark px-0 pt-4">
+    <div class="social-icon origin-color si-square text-center">
+    <ul class="list-inline">
+        @if($post->facebook)
+        <li class="list-inline-item si-facebook">
+        <a target="_blank" title="Facebook" href="{{$post->facebook}}">
+        <i class="fab fa-facebook-f">
+        </i>
+        <span>Facebook</span>
+        </a>
+        </li>
+        @else
+
+        @endif
+       
+        @if($post->linkedin)
+        <li class="list-inline-item si-tumblr">
+        <a target="_blank" title="linkedin" href="#">
+        <i class="fab fa-linkedin"></i><span>Linkedin</span>
+        </a>
+        </li>
+        @else
+
+        @endif
+
+        @if($post->whatsapp)
+        <li class="list-inline-item bg-success">
+        <a target="_blank" title="whatsapp" href="#">
+        <i class="fab fa-whatsapp-square"></i><span>whatsaap</span>
+        </a>
+        </li>
+        @else
+
+        @endif
+
+
+
 </ul>
 </div>
 </div>
-<div class="card p-4 widget border-0 contact bg-gray-06 rounded-0 mb-6">
-    <div class="card-title mb-0 border-bottom pb-2">
-        <div class="media">
-            <div class="image mr-3">
-                <img src="{{asset('/images/')}}/logosmall.jpeg" alt="Contact US" class="img-fluid">
-               
-        </div>
-        <div class="media-body lh-14 font-size-sm">
-            <span class="font-weight-semibold text-dark text-capitalize d-block font-size-md name">For more information</span>
-            <span class="text-gray d-block mb-2">San Francisco, CA, USA</span>
-            <div class="d-flex pb-4 align-items-center">
-            <a href="#" class="btn btn-primary font-size-base py-0 px-1 mr-2 rounded-sm"> 
-                <i class="fas fa-envelope-square  text-white"></i>Contact US</a>
-            
-            </div>
-        </div>
-        </div>
-    </div>
 
-</div>
 
 </div>
 </div>

@@ -83,7 +83,7 @@ Bekijk hier een van onze grootste aanbod vrijeplaatsen!
 <div class="home-main-how-it-work bg-white pt-11">
 <div class="container">
 <h2 class="mb-8">
-<span>bekijk</span>
+<span>Bekijk</span>
 <span class="font-weight-light">Hoe vrijeplaats te werk gaat</span>
 </h2>
 <div class="row no-gutters pb-11">

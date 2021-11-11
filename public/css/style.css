@@ -26323,14 +26323,15 @@ button.mfp-arrow:active {
 }
 
 .form-search-item{
-	background: rgb(237, 0, 140) !important;
-border-radius: 23px!important;
+	 border: 2px solid pink !important;
+	
 }
 
 .form-search.form-search-style-02 .input-group {
     position: static;
-    border-radius: 20px;
+    border-radius: 7px;
     padding-left: 10px;
+	height: 48px;
 }.form-search.form-search-style-02 .btn {
     font-size: 20px;
     padding-top: 23.5px;
