@@ -33,7 +33,6 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 
-
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body style="overflow-x: hidden;">
@@ -47,6 +46,8 @@
       @include('user.footer')
     </div>
 
+     
+    @yield('footer-content')
     <!-- Custom scripts -->
     <script type="text/javascript" src="{{asset('/js/')}}/summernote.js"></script>
     <script type="text/javascript" src="{{asset('/js/')}}/google-geo-parameters.js"></script>

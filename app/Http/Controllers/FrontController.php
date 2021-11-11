@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\City;
 use App\Post;
+use Carbon\Carbon;
 
 class FrontController extends Controller
 {
@@ -20,8 +21,12 @@ class FrontController extends Controller
     public function index()
     {
 
-        // $groupone = Category::
-        return view('index', $this->data);
+        $timenow = Carbon::now();
+        
+        $posts = Post::where('valid_until', '>', $timenow)
+        ->inRandomOrder()->limit(4)->get();
+        
+        return view('index', compact('posts'), $this->data);
     }
 
     public function about()

@@ -14,7 +14,6 @@
 Route::get('/', 'FrontController@index');
 Route::get('/about', 'FrontController@about');
 Route::get('/contact', 'FrontController@contact');
-// Route::get('/proba', 'FrontController@proba');
 
 Auth::routes(['verify' => true]);
 

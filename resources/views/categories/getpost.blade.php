@@ -3,6 +3,7 @@
 @section('content')
 @include('user.top-campain')
 @isset($post)
+<script src="{{asset('/vendors/')}}/jquery.min.js"></script>
 
 <div class="container">
 
@@ -103,216 +104,216 @@
     </div>
 
 <div class="block-more-listing mt-8 border-top pt-6">
-<h4 class="font-size-md mb-5">More Listing By <span class="text-danger">Ron Weasley</span></h4>
-<div class="slick-slider arrow-top store-grid-style slick-initialized" data-slick-options="{&quot;slidesToShow&quot;: 2, &quot;autoplay&quot;:false,&quot;dots&quot;:false,&quot;responsive&quot;:[{&quot;breakpoint&quot;: 992,&quot;settings&quot;: {&quot;slidesToShow&quot;: 1}}]}"><div class="slick-list draggable" style="height: 476.675px;"><div class="slick-track" style="opacity: 1; width: 1600px; transform: translate3d(0px, 0px, 0px);"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 400px;"><div><div class="box" style="width: 100%; display: inline-block;">
-<div class="store card rounded-0 border-0">
-<div class="position-relative store-image">
+        <h4 class="font-size-md mb-5">More Listing By <span class="text-danger">Ron Weasley</span></h4>
+        <div class="slick-slider arrow-top store-grid-style slick-initialized" data-slick-options="{&quot;slidesToShow&quot;: 2, &quot;autoplay&quot;:false,&quot;dots&quot;:false,&quot;responsive&quot;:[{&quot;breakpoint&quot;: 992,&quot;settings&quot;: {&quot;slidesToShow&quot;: 1}}]}"><div class="slick-list draggable" style="height: 476.675px;"><div class="slick-track" style="opacity: 1; width: 1600px; transform: translate3d(0px, 0px, 0px);"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 400px;"><div><div class="box" style="width: 100%; display: inline-block;">
+        <div class="store card rounded-0 border-0">
+        <div class="position-relative store-image">
 
-<a href="listing-details-full-gallery.html" tabindex="0">
-<img src="" alt="store 1" class="card-img-top rounded-0">
-</a>
+        <a href="listing-details-full-gallery.html" tabindex="0">
+        <img src="" alt="store 1" class="card-img-top rounded-0">
+        </a>
 
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
- <a href="../../images/shop/full-popular-place-1.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="0" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="0" data-original-title="Bookmark"><i class="fal fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4 border-right border-left">
-<a href="listing-details-full-gallery.html" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0"><span class="letter-spacing-25">Japan Rice Mixed Seafood</span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">5.0</span><span class="number">4 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$9.0</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span>
-</li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3" tabindex="0"><img src="../../images/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">Overlooking
-Bloomsbury’s
-Russell
-Square and a 2
-minutes’ walk from the tube station of the same name...
-</div>
-</div>
- </div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent border-left border-right border-bottom">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1">
-<i class="fal fa-map-marker-alt"></i>
-</span>
-<a href="#" class="text-secondary pr-3 text-decoration-none address" tabindex="0">534
-Salem Rd
-St,
-Newark, NY</a>
-</div>
-</div>
-</div>
-</div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 400px;"><div><div class="box" style="width: 100%; display: inline-block;">
-<div class="store card rounded-0 border-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-gallery.html" tabindex="0">
-<img src="../../images/shop/popular-place-2.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="../../images/shop/full-popular-place-2.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="0" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="0" data-original-title="Bookmark"><i class="fal fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4 border-right border-left">
-<a href="listing-details-full-gallery.html" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0"><span class="letter-spacing-25">Fruit Cake - Halsey St </span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">4.8</span><span class="number">2 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$4.0</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span>
-</li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3" tabindex="0"><img src="../../images/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">They specialize in
-makgeolli
-at this
-Korean-style pub in Seorae Village. And they use...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent border-left border-right border-bottom">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1">
-<i class="fal fa-map-marker-alt"></i>
-</span>
-<a href="#" class="text-secondary pr-3 text-decoration-none address" tabindex="0">92
-Halsey St,
-Brooklyn, NY</a>
-</div>
-</div>
-</div>
-</div></div></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 400px;"><div><div class="box" style="width: 100%; display: inline-block;">
-<div class="store card rounded-0 border-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-gallery.html" tabindex="-1">
-<img src="../../images/shop/popular-place-1.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="../../images/shop/full-popular-place-1.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="-1" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
- <a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="-1" data-original-title="Bookmark"><i class="fal fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4 border-right border-left">
-<a href="listing-details-full-gallery.html" class="card-title h5 text-dark d-inline-block mb-2" tabindex="-1"><span class="letter-spacing-25">Japan Rice Mixed Seafood</span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">5.0</span><span class="number">4 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$9.0</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span>
-</li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3" tabindex="-1"><img src="../../images/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">Overlooking
-Bloomsbury’s
-Russell
-Square and a 2
-minutes’ walk from the tube station of the same name...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent border-left border-right border-bottom">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1">
-<i class="fal fa-map-marker-alt"></i>
-</span>
-<a href="#" class="text-secondary pr-3 text-decoration-none address" tabindex="-1">534
-Salem Rd
-St,
-Newark, NY</a>
-</div>
-</div>
-</div>
-</div></div></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 400px;"><div><div class="box" style="width: 100%; display: inline-block;">
-<div class="store card rounded-0 border-0">
-<div class="position-relative store-image">
-<a href="listing-details-full-gallery.html" tabindex="-1">
-<img src="../../images/shop/popular-place-2.jpg" alt="store 1" class="card-img-top rounded-0">
-</a>
-<div class="image-content position-absolute d-flex align-items-center">
-<div class="content-right ml-auto d-flex">
-<a href="../../images/shop/full-popular-place-2.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="-1" data-original-title="Quick view">
-<svg class="icon icon-expand">
-<use xlink:href="#icon-expand"></use>
-</svg>
-</a>
-<a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="-1" data-original-title="Bookmark"><i class="fal fa-bookmark"></i></a>
-</div>
-</div>
-</div>
-<div class="card-body pb-4 border-right border-left">
-<a href="listing-details-full-gallery.html" class="card-title h5 text-dark d-inline-block mb-2" tabindex="-1"><span class="letter-spacing-25">Fruit Cake - Halsey St </span></a>
-<ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
-<li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">4.8</span><span class="number">2 rating</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$4.0</span>
-</li>
-<li class="list-inline-item separate"></li>
-<li class="list-inline-item"><span class="text-green">Open now!</span>
- </li>
-</ul>
-<div class="media">
-<a href="#" class="d-inline-block mr-3" tabindex="-1"><img src="../../images/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
-</a>
-<div class="media-body lh-14 font-size-sm">They specialize in
-makgeolli
-at this
-Korean-style pub in Seorae Village. And they use...
-</div>
-</div>
-</div>
-<div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent border-left border-right border-bottom">
-<div class="border-top pt-3">
-<span class="d-inline-block mr-1">
-<i class="fal fa-map-marker-alt"></i>
-</span>
-<a href="#" class="text-secondary pr-3 text-decoration-none address" tabindex="-1">534
-Salem Rd
-St,
-Newark, NY</a>
-</div>
-</div>
-</div>
-</div></div></div></div></div><div class="slick-arrows"><div class="slick-prev slick-arrow slick-disabled" aria-label="Previous" aria-disabled="true" style=""><i class="fas fa-chevron-left"></i></div><div class="slick-next slick-arrow" aria-label="Next" style="" aria-disabled="false"><i class="fas fa-chevron-right"></i></div></div></div>
-</div>
+        <div class="image-content position-absolute d-flex align-items-center">
+        <div class="content-right ml-auto d-flex">
+        <a href="../../images/shop/full-popular-place-1.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="0" data-original-title="Quick view">
+        <svg class="icon icon-expand">
+        <use xlink:href="#icon-expand"></use>
+        </svg>
+        </a>
+        <a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="0" data-original-title="Bookmark"><i class="fal fa-bookmark"></i></a>
+        </div>
+        </div>
+        </div>
+        <div class="card-body pb-4 border-right border-left">
+        <a href="listing-details-full-gallery.html" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0"><span class="letter-spacing-25">Japan Rice Mixed Seafood</span></a>
+        <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
+        <li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">5.0</span><span class="number">4 rating</span>
+        </li>
+        <li class="list-inline-item separate"></li>
+        <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$9.0</span>
+        </li>
+        <li class="list-inline-item separate"></li>
+        <li class="list-inline-item"><span class="text-green">Open now!</span>
+        </li>
+        </ul>
+        <div class="media">
+        <a href="#" class="d-inline-block mr-3" tabindex="0"><img src="../../images/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
+        </a>
+        <div class="media-body lh-14 font-size-sm">Overlooking
+        Bloomsbury’s
+        Russell
+        Square and a 2
+        minutes’ walk from the tube station of the same name...
+        </div>
+        </div>
+        </div>
+        <div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent border-left border-right border-bottom">
+        <div class="border-top pt-3">
+        <span class="d-inline-block mr-1">
+        <i class="fal fa-map-marker-alt"></i>
+        </span>
+        <a href="#" class="text-secondary pr-3 text-decoration-none address" tabindex="0">534
+        Salem Rd
+        St,
+        Newark, NY</a>
+        </div>
+        </div>
+        </div>
+        </div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 400px;"><div><div class="box" style="width: 100%; display: inline-block;">
+        <div class="store card rounded-0 border-0">
+        <div class="position-relative store-image">
+        <a href="listing-details-full-gallery.html" tabindex="0">
+        <img src="../../images/shop/popular-place-2.jpg" alt="store 1" class="card-img-top rounded-0">
+        </a>
+        <div class="image-content position-absolute d-flex align-items-center">
+        <div class="content-right ml-auto d-flex">
+        <a href="../../images/shop/full-popular-place-2.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="0" data-original-title="Quick view">
+        <svg class="icon icon-expand">
+        <use xlink:href="#icon-expand"></use>
+        </svg>
+        </a>
+        <a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="0" data-original-title="Bookmark"><i class="fal fa-bookmark"></i></a>
+        </div>
+        </div>
+        </div>
+        <div class="card-body pb-4 border-right border-left">
+        <a href="listing-details-full-gallery.html" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0"><span class="letter-spacing-25">Fruit Cake - Halsey St </span></a>
+        <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
+        <li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">4.8</span><span class="number">2 rating</span>
+        </li>
+        <li class="list-inline-item separate"></li>
+        <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$4.0</span>
+        </li>
+        <li class="list-inline-item separate"></li>
+        <li class="list-inline-item"><span class="text-green">Open now!</span>
+        </li>
+        </ul>
+        <div class="media">
+        <a href="#" class="d-inline-block mr-3" tabindex="0"><img src="../../images/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
+        </a>
+        <div class="media-body lh-14 font-size-sm">They specialize in
+        makgeolli
+        at this
+        Korean-style pub in Seorae Village. And they use...
+        </div>
+        </div>
+        </div>
+        <div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent border-left border-right border-bottom">
+        <div class="border-top pt-3">
+        <span class="d-inline-block mr-1">
+        <i class="fal fa-map-marker-alt"></i>
+        </span>
+        <a href="#" class="text-secondary pr-3 text-decoration-none address" tabindex="0">92
+        Halsey St,
+        Brooklyn, NY</a>
+        </div>
+        </div>
+        </div>
+        </div></div></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 400px;"><div><div class="box" style="width: 100%; display: inline-block;">
+        <div class="store card rounded-0 border-0">
+        <div class="position-relative store-image">
+        <a href="listing-details-full-gallery.html" tabindex="-1">
+        <img src="../../images/shop/popular-place-1.jpg" alt="store 1" class="card-img-top rounded-0">
+        </a>
+        <div class="image-content position-absolute d-flex align-items-center">
+        <div class="content-right ml-auto d-flex">
+        <a href="../../images/shop/full-popular-place-1.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="-1" data-original-title="Quick view">
+        <svg class="icon icon-expand">
+        <use xlink:href="#icon-expand"></use>
+        </svg>
+        </a>
+        <a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="-1" data-original-title="Bookmark"><i class="fal fa-bookmark"></i></a>
+        </div>
+        </div>
+        </div>
+        <div class="card-body pb-4 border-right border-left">
+        <a href="listing-details-full-gallery.html" class="card-title h5 text-dark d-inline-block mb-2" tabindex="-1"><span class="letter-spacing-25">Japan Rice Mixed Seafood</span></a>
+        <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
+        <li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">5.0</span><span class="number">4 rating</span>
+        </li>
+        <li class="list-inline-item separate"></li>
+        <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$9.0</span>
+        </li>
+        <li class="list-inline-item separate"></li>
+        <li class="list-inline-item"><span class="text-green">Open now!</span>
+        </li>
+        </ul>
+        <div class="media">
+        <a href="#" class="d-inline-block mr-3" tabindex="-1"><img src="../../images/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
+        </a>
+        <div class="media-body lh-14 font-size-sm">Overlooking
+        Bloomsbury’s
+        Russell
+        Square and a 2
+        minutes’ walk from the tube station of the same name...
+        </div>
+        </div>
+        </div>
+        <div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent border-left border-right border-bottom">
+        <div class="border-top pt-3">
+        <span class="d-inline-block mr-1">
+        <i class="fal fa-map-marker-alt"></i>
+        </span>
+        <a href="#" class="text-secondary pr-3 text-decoration-none address" tabindex="-1">534
+        Salem Rd
+        St,
+        Newark, NY</a>
+        </div>
+        </div>
+        </div>
+        </div></div></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 400px;"><div><div class="box" style="width: 100%; display: inline-block;">
+        <div class="store card rounded-0 border-0">
+        <div class="position-relative store-image">
+        <a href="listing-details-full-gallery.html" tabindex="-1">
+        <img src="../../images/shop/popular-place-2.jpg" alt="store 1" class="card-img-top rounded-0">
+        </a>
+        <div class="image-content position-absolute d-flex align-items-center">
+        <div class="content-right ml-auto d-flex">
+        <a href="../../images/shop/full-popular-place-2.jpg" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="-1" data-original-title="Quick view">
+        <svg class="icon icon-expand">
+        <use xlink:href="#icon-expand"></use>
+        </svg>
+        </a>
+        <a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="-1" data-original-title="Bookmark"><i class="fal fa-bookmark"></i></a>
+        </div>
+        </div>
+        </div>
+        <div class="card-body pb-4 border-right border-left">
+        <a href="listing-details-full-gallery.html" class="card-title h5 text-dark d-inline-block mb-2" tabindex="-1"><span class="letter-spacing-25">Fruit Cake - Halsey St </span></a>
+        <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
+        <li class="list-inline-item"><span class="badge badge-success mr-1 d-inline-block">4.8</span><span class="number">2 rating</span>
+        </li>
+        <li class="list-inline-item separate"></li>
+        <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">$4.0</span>
+        </li>
+        <li class="list-inline-item separate"></li>
+        <li class="list-inline-item"><span class="text-green">Open now!</span>
+        </li>
+        </ul>
+        <div class="media">
+        <a href="#" class="d-inline-block mr-3" tabindex="-1"><img src="../../images/listing/testimonial-1.png" alt="testimonial" class="rounded-circle">
+        </a>
+        <div class="media-body lh-14 font-size-sm">They specialize in
+        makgeolli
+        at this
+        Korean-style pub in Seorae Village. And they use...
+        </div>
+        </div>
+        </div>
+        <div class="card-footer rounded-0 border-top-0 pb-3 pt-0 bg-transparent border-left border-right border-bottom">
+        <div class="border-top pt-3">
+        <span class="d-inline-block mr-1">
+        <i class="fal fa-map-marker-alt"></i>
+        </span>
+        <a href="#" class="text-secondary pr-3 text-decoration-none address" tabindex="-1">534
+        Salem Rd
+        St,
+        Newark, NY</a>
+        </div>
+        </div>
+        </div>
+        </div></div></div></div></div><div class="slick-arrows"><div class="slick-prev slick-arrow slick-disabled" aria-label="Previous" aria-disabled="true" style=""><i class="fas fa-chevron-left"></i></div><div class="slick-next slick-arrow" aria-label="Next" style="" aria-disabled="false"><i class="fas fa-chevron-right"></i></div></div></div>
+        </div>
 </div>
 </div>
 <div class="sidebar col-xl-4">
@@ -333,59 +334,66 @@ Newark, NY</a>
 <div class="card p-4 widget border-0 infomation pt-0 bg-gray-06">
 <div class="card-body px-0 py-2">
 <ul class="list-group list-group-flush">
-<li class="list-group-item bg-transparent d-flex text-dark px-0">
-<span class="item-icon mr-3"><i class="fal fa-map-marker-alt"></i></span>
-<span class="card-text">125 Mountain St, Brooklyn, NY</span>
-</li>
-<li class="list-group-item bg-transparent d-flex text-dark px-0">
-<span class="item-icon mr-3">
-<svg class="icon icon-telephone">
-<use xlink:href="#icon-telephone"></use>
-</svg>
-</span>
-<span class="card-text">(301) 453-8688</span>
-</li>
-<li class="list-group-item bg-transparent d-flex text-dark px-0">
-<span class="item-icon mr-3"><i class="fal fa-globe"></i></span>
-<span class="card-text"><a href="#">www.thaistaste.com</a></span>
-</li>
-<li class="list-group-item bg-transparent d-flex text-dark px-0 pt-4">
-<div class="social-icon origin-color si-square text-center">
-<ul class="list-inline">
-<li class="list-inline-item si-facebook">
- <a target="_blank" title="Facebook" href="#">
-<i class="fab fa-facebook-f">
-</i>
-<span>Facebook</span>
-</a>
-</li>
-<li class="list-inline-item si-twitter">
-<a target="_blank" title="Twitter" href="#">
-<i class="fab fa-twitter">
-</i>
-<span>Twitter</span>
-</a>
-</li>
-<li class="list-inline-item si-google">
-<a target="_blank" title="Google plus" href="#">
-<svg class="icon icon-google-plus-symbol">
-<use xlink:href="#icon-google-plus-symbol"></use>
-</svg>
-<span>Google plus</span>
-</a>
-</li>
-<li class="list-inline-item si-tumblr">
-<a target="_blank" title="Tumblr" href="#">
-<i class="fab fa-tumblr"></i>
-<span>Tumblr</span>
-</a>
-</li>
-<li class="list-inline-item si-rss">
-<a target="_blank" title="RSS" href="#">
-<i class="fas fa-rss"></i>
-<span>RSS</span>
-</a>
-</li>
+    <li class="list-group-item bg-transparent d-flex text-dark px-0">
+        <span class="item-icon mr-3"><i class="fa fa-map-marker-alt"></i></span>
+        <span class="card-text">{{$post->full_address}}</span>
+    </li>
+    @if($post->phone)
+    <li class="list-group-item bg-transparent d-flex text-dark px-0">
+        <span class="item-icon mr-3">
+        <i class="fas fa-phone"></i>
+        </span>
+        <span class="card-text">{{$post->phone}}</span>
+    </li>
+    @else
+
+    @endif
+    @if($post->website)
+    <li class="list-group-item bg-transparent d-flex text-dark px-0">
+    <span class="item-icon mr-3"><i class="fas fa-globe"></i></span>
+    <span class="card-text">
+        <a href="{{$post->website}}">{{$post->website}}</a></span>
+    </li>
+    @else
+
+    @endif
+
+    
+    <li class="list-group-item bg-transparent d-flex text-dark px-0 pt-4">
+    <div class="social-icon origin-color si-square text-center">
+    <ul class="list-inline">
+        @if($post->facebook)
+        <li class="list-inline-item si-facebook">
+        <a target="_blank" title="Facebook" href="{{$post->facebook}}">
+        <i class="fab fa-facebook-f">
+        </i>
+        <span>Facebook</span>
+        </a>
+        </li>
+        @else
+
+        @endif
+       
+        @if($post->linkedin)
+        <li class="list-inline-item si-tumblr">
+        <a target="_blank" title="linkedin" href="#">
+        <i class="fab fa-linkedin"></i><span>Linkedin</span>
+        </a>
+        </li>
+        @else
+
+        @endif
+
+        @if($post->whatsapp)
+        <li class="list-inline-item bg-success">
+        <a target="_blank" title="whatsapp" href="#">
+        <i class="fab fa-whatsapp-square"></i><span>whatsaap</span>
+        </a>
+        </li>
+        @else
+
+        @endif
+
 </ul>
 </div>
 </li>
@@ -596,6 +604,9 @@ Newark, NY</a>
 
 
 @endisset
+
+
+
 
 <script>
      
