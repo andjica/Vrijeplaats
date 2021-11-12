@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 mt-5">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -77,6 +77,16 @@
                             </div>
                         </div>
                     </form>
+                    <div class="card-footer mt-4">
+                    <p class="text-dark">Om te kunnen volgen en winkelen op de site van VrijePlaats 
+                    is het noodzakelijk om je te registreren.
+                     Door te registreren stellen wij de identiteit van de gebruiker vast en verbinden wij ons ertoe uw persoonsgegevens te bewaren.
+                   
+                    <br><br>Vrijeplaats biedt de mogelijkheid tot twee soorten registratie: 
+                    <br> als gebruiker - die tickets kan ruilen - verkopen en kopen, en ook om alle tickets te maken
+                    <br>een andere mogelijkheid is om je als bedrijf te registreren en ook om tickets te ruilen en te maken.
+                    </p>    
+                </div>
                 </div>
             </div>
         </div>

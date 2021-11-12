@@ -24,7 +24,7 @@ class FrontController extends Controller
         $timenow = Carbon::now();
         
         $posts = Post::where('valid_until', '>', $timenow)
-        ->inRandomOrder()->limit(4)->get();
+        ->inRandomOrder()->limit(3)->get();
 
         $lastposts = Post::where('valid_until', '>', $timenow)
         ->orderBy('created_at', 'desc')->limit(3)->get();
@@ -43,6 +43,11 @@ class FrontController extends Controller
     {
         
         return view('pages.contact', $this->data);
+    }
+
+    public function partner()
+    {
+        return view('pages.partner', $this->data);
     }
 
     

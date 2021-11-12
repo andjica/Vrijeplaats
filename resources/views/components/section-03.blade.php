@@ -10,11 +10,9 @@
 
 </div>
 <div class="container">
-<div class="tab-content">
-    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all">
-        <div class="arrow-top full-slide custom-nav equal-height slick-initialized slick-slider" data-slick-options="{&quot;slidesToShow&quot;: 5,&quot;autoplay&quot;:false,&quot;dots&quot;:false,&quot;arrows&quot;:false,&quot;responsive&quot;:[{&quot;breakpoint&quot;: 2000,&quot;settings&quot;: {&quot;slidesToShow&quot;: 4}},{&quot;breakpoint&quot;: 1500,&quot;settings&quot;: {&quot;slidesToShow&quot;: 3}},{&quot;breakpoint&quot;: 1000,&quot;settings&quot;: {&quot;slidesToShow&quot;: 2}},{&quot;breakpoint&quot;: 770,&quot;settings&quot;: {&quot;slidesToShow&quot;: 1}}]}"><div class="slick-list draggable" style="height: 527.65px;"><div class="slick-track" style="opacity: 1; width: 2580px; transform: translate3d(0px, 0px, 0px);">
+<div class="row">
         @foreach($posts as $p)
-        <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 430px;"><div><div class="box" data-animate="fadeInUp" style="width: 100%; display: inline-block;">
+        <div class="col-lg-4" data-animate="zoomIn">
                 <div class="store card border-0 rounded-0">
                 <div class="position-relative store-image">
                     @php 
@@ -86,13 +84,9 @@
                     </ul>
                     </div>
                     </div>
-                </div>
-        </div>
+                
         @endforeach
-        </div><div class="slick-arrows"></div></div>
         </div>
-
-    </div>
-</div>
+        </div>
 
 </section>

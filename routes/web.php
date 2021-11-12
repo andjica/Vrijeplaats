@@ -14,9 +14,10 @@
 Route::get('/', 'FrontController@index');
 Route::get('/about', 'FrontController@about');
 Route::get('/contact', 'FrontController@contact');
-
+Route::get('/become-partner', 'FrontController@partner');
 Auth::routes(['verify' => true]);
 
+Route::post('/be-partner', 'EmailController@bepartner');
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 

@@ -23,8 +23,13 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'verified']);
-
+       
         $this->data['categories'] = Category::all();
+
+        $timenow = Carbon::now();
+        $this->data['lastposts'] = Post::where('valid_until', '>', $timenow)
+        ->orderBy('created_at', 'desc')->limit(3)->get();
+        
     }
 
     /**
@@ -95,10 +100,15 @@ class HomeController extends Controller
        
         $post = Post::where('title', 'LIKE',  "%{$title}%")
         ->where('category_id', $category->id)->first();
+
+        $timenow = Carbon::now();
+        $randomactiveposts = Post::where('category_id', $category->id)
+        ->where('valid_until', '>', $timenow)
+        ->limit(3)->inRandomOrder()->get();
         
         if($post)
         {
-            return view('categories.getpost', compact('post', 'category', 'city'), $this->data);
+            return view('categories.getpost', compact('post', 'category', 'city', 'randomactiveposts'), $this->data);
 
         }
         else

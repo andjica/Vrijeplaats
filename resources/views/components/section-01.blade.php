@@ -23,18 +23,18 @@ Zoek waar een vrijeplaats voor vrij is!
 <a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
 <i class="fa fa-chevron-down"></i>
 </a>
-<ul id="andjicasearch" class="dropdown-menu form-search-ajax" aria-labelledby="key-word">
-@foreach($categories as $c)
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-@php
-echo $c->icon
-@endphp
-<span class="font-size-md">{{$c->name}}</span>
-</a>
-</li>
-@endforeach
- </ul>
+    <ul id="andjicasearch" class="dropdown-menu form-search-ajax" aria-labelledby="key-word">
+    @foreach($categories as $c)
+    <li class="dropdown-item item">
+        <a href="#" class="link-hover-dark-white">
+        @php
+        echo $c->icon
+        @endphp
+        <span class="font-size-md">{{$c->name}}</span>
+        </a>
+    </li>
+    @endforeach
+    </ul>
 </div>
 </div>
     <div class="col-xl-4 mb-4 mb-xl-0 py-3 px-4 bg-white position-relative rounded-right form-search-item">
@@ -66,19 +66,21 @@ echo $c->icon
 <div class="font-size-lg mb-4">
 Bekijk hier een van onze grootste aanbod vrijeplaatsen!
 </div>
-<div class="list-inline pb-8 flex-wrap my-n2">
-    @foreach($categories as $category)
-    <div class="list-inline-item py-2">
-        <a href="{{asset('/categorie/'.$category->link)}}" class="card border-0 link-hover-dark-white icon-box-style-01">
-        <div class="card-body p-0" style="font-size:27px">
-            @php echo $category->icon @endphp
-            <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-            {{$category->name}}
-            </span>
+    <div class="row pl-3">
+    <div class="list-inline ">
+        @foreach($categories as $category)
+        <div class="list-inline-item py-2">
+            <a href="{{asset('/categorie/'.$category->link)}}" class="card border-0 link-hover-dark-white icon-box-style-01">
+            <div class="card-body p-0" style="font-size:27px">
+                @php echo $category->icon @endphp
+                <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
+                {{$category->name}}
+                </span>
+            </div>
+            </a>
         </div>
-        </a>
+        @endforeach
     </div>
-    @endforeach
 </div>
 <div class="home-main-how-it-work bg-white pt-11">
 <div class="container">
