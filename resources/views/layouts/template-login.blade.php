@@ -1,4 +1,132 @@
-<footer class="main-footer main-footer-style-01 bg-pattern-01 pt-12 pb-8">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('/css/')}}/fontawesome.css">
+    <link rel="stylesheet" href="{{asset('/css/')}}/magnific-popup.css">
+    <link rel="stylesheet" href="{{asset('/css/')}}/slick.css">
+    <link rel="stylesheet" href="{{asset('/css/')}}/animate.css">
+
+    <link rel="stylesheet" href="{{asset('/css/')}}/style.css">
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&libraries=places" ></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"data-auto-a11y="true"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="overflow-x: hidden;">
+  <div id="site-wrapper" class="site-wrapper panel dashboards">
+        
+      
+<header id="header" class="main-header  header-sticky header-sticky-smart header-style-10 text-uppercase">
+<div class="sticky-area-wrap"><div class="header-wrapper sticky-area border-bottom" style="">
+<div class="container-fluid">
+<nav class="navbar navbar-expand-xl">
+<div class="header-mobile d-flex d-xl-none flex-fill justify-content-between align-items-center">
+<div class="navbar-toggler toggle-icon" data-toggle="collapse" data-target="#navbar-main-menu">
+<span></span>
+</div>
+<a class="navbar-brand navbar-brand-mobile" href="{{asset('/')}}">
+<img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats">
+</a>
+
+</div>
+<div class="collapse navbar-collapse" id="navbar-main-menu" style="    height: 80px;">
+<a class="navbar-brand d-none d-xl-block mr-auto" style="max-height: 80px !important; border-radius: 100%;" href="{{asset('/')}}">
+<img src="{{asset('/images/')}}/logo.jpeg" style=" border-radius: 100%;" alt="TheDir">
+</a>
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link text-dark" href="#">Home <span class="caret"><i class="fa fa-angle-down"></i></span></a>
+<ul class="sub-menu x-animated x-fadeInUp">
+<li class="nav-item"><a class="nav-link" href="{{asset('/')}}">Home</a>
+</li>
+
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{asset('about')}}">About Vrijeplaats</a>
+
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{asset('contact')}}">Contact</a>
+
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{asset('become-partner')}}">Een partner worden
+</a>
+
+</li>
+
+
+@if(auth()->user())
+<li class="nav-item dropdown">
+<a class="nav-link" href="{{asset('/logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</li>
+
+</ul>
+<div class="header-customize justify-content-end align-items-center d-none d-xl-flex">
+
+<div class="header-customize-item button">
+<a class="mr-2 btn btn-info" href="{{asset('/home')}}"><i class="fas fa-sign-out-alt"></i> Go to panel</a>
+</div>
+</div>
+
+@else
+<li class="nav-item dropdown">
+<a class="nav-link" href="{{asset('/login')}}"><i class="fas fa-sign-out-alt"></i> Sing in</a>
+</li>
+</ul>
+@endif
+
+
+<div class="header-customize justify-content-end align-items-center d-none d-xl-flex ml-2">
+
+<div class="header-customize-item button">
+<a href="{{asset('add-adv')}}" class="btn btn-primary btn-icon-right">Add
+Listing
+<i class="fas fa-angle-right"></i></a>
+</div>
+</div>
+
+</div>
+</nav>
+</div>
+</div></div>
+</header>
+
+        <main class="py-4">
+            @yield('content')
+        </main>
+      
+
+
+
+    </div>
+
+     
+    <footer class="main-footer main-footer-style-01 bg-pattern-01 pt-12 pb-8">
 <div class="footer-second">
  <div class="container">
 <div class="row">
@@ -263,7 +391,6 @@ account
 </form>
 </div>
 </div>
-    @include('components.search-popup')
 <script src="{{asset('/vendors/')}}/jquery.min.js"></script>
 
 <script src="{{asset('/vendors/')}}/popper.js"></script>
@@ -351,3 +478,14 @@ account
 </symbol>
 </defs>
 </svg>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="{{asset('/js/')}}/summernote.js"></script>
+    <script type="text/javascript" src="{{asset('/js/')}}/google-geo-parameters.js"></script>
+    <script type="text/javascript" src="{{asset('/js/')}}/insert-info.js"></script>
+    <script type="text/javascript" src="{{asset('/js/')}}/edit-info.js"></script>
+    <script type="text/javascript" src="{{asset('/js/')}}/insert-adv.js"></script>
+
+    
+    <!-- End custom scripts -->
+</body>
+</html>

@@ -10,6 +10,14 @@
 </div>
 <div class="mb-7">
 <h3 class="mb-7">Ohh! Page Not Found</h3>
+@isset($error)
+
+<div class="alert alert-danger">
+    <h5>
+{{ $error }}
+</h5>
+</div>
+@endisset
 <div class="text-gray">Pagina niet gevonden
 Het lijkt erop dat we niet kunnen vinden wat u zoekt. <br>
 Misschien kan zoeken helpen of teruggaan naar de startpagina. <a href="{{asset('/')}}" class="text-primary text-decoration-underline">Homepage</a>.

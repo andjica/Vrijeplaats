@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\City;
 use App\Post;
 use App\User;
 use App\Purchase;
@@ -16,6 +17,7 @@ class AdminController extends Controller
     {
      
         $this->data['categories'] = Category::all();
+        $this->data['cities'] = City::all();
         $this->data['countposts'] =  Post::where('count_of_ticket', '>', 0)->count();
     }
     public function index()

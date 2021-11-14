@@ -73,7 +73,7 @@ Campaigns Start new</a></li>
 <li class="list-group-item p-0 mb-2 lh-15">
 <a href="#review" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="fasse">
 <span class="d-inline-block mr-3"><i class="fas fa-star"></i></span>
-<span>Reviews</span>
+<span>Categories</span>
 <span class=" ml-auto"> <i class="fas fa-chevron-down"></i></span>
 </a>
 <ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="review">

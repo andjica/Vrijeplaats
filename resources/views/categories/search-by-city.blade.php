@@ -6,20 +6,10 @@
 <section id="section-01" class="">
 <nav aria-label="breadcrumb m-3">
   <ol class="breadcrumb m-3 bg-light">
-    <li class="breadcrumb-item">
-        <a href="{{asset('/')}}">Home </a></li>
-        
-        @isset($category)
-        <li class="breadcrumb-item">
-            <a href="{{asset('/category/'.$category->link)}}">{{$category->name}}</a>
-        </li>
-        @endisset
-        @isset($city)
-        <li class="breadcrumb-item">
-            <a href="{{asset('/city/'.$city->link)}}">{{$city->name}}</a>
-        </li>
-        @endisset
-       
+    <li class="breadcrumb-item"><a href="{{asset('/')}}">Home</a></li>
+    @isset($city)
+    <li class="breadcrumb-item"><a href="{{asset('/city/'.$city->name)}}">{{$city->name}}</a></li>
+    @endisset
   </ol>
 </nav>
 <div class="container" id="container-desk">

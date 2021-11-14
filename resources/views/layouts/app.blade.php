@@ -38,7 +38,7 @@
 <body style="overflow-x: hidden;">
   <div id="site-wrapper" class="site-wrapper panel dashboards">
         
-       @include('user.nav')
+       @include('components.header')
 
         <main class="py-4">
             @yield('content')

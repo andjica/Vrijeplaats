@@ -25,6 +25,7 @@ class HomeController extends Controller
         $this->middleware(['auth', 'verified']);
        
         $this->data['categories'] = Category::all();
+        $this->data['cities'] = City::all();
 
         $timenow = Carbon::now();
         $this->data['lastposts'] = Post::where('valid_until', '>', $timenow)
@@ -85,7 +86,29 @@ class HomeController extends Controller
             return abort(404);
         }
       
-        return 5;
+        
+        
+    }
+    public function cities($name)
+    {
+        
+        $city = City::where('name', 'LIKE',  "%{$name}%")->first();
+       
+       
+        if($city)
+        {
+            
+            $posts = Post::where('city_id', $city->id)
+            ->orderBy('created_at', 'desc')->paginate(5);
+            
+            return view('categories.search-by-city', compact('city', 'posts'), $this->data);
+        }
+        else
+        {
+            return abort(404);
+        }
+      
+        
         
     }
 
@@ -136,20 +159,27 @@ class HomeController extends Controller
         ->first();
 
        
-        $city = request()->city;
-        $citysearch = City::where('name', 'LIKE', "%{$city}%")
+        $citysearch = request()->city;
+        $city = City::where('name', 'LIKE', "%{$citysearch}%")
         ->first();
 
+        $timenow = Carbon::now();
         $posts = Post::where('category_id', $category->id)
-        ->where('city_id', $citysearch->id)->get();
+        ->where('city_id', $city->id)
+        ->where('valid_until','>', $timenow)
+        ->paginate(6);
 
         if($posts->count() != 0)
         {
-            return view('categories.filter-category-city', compact('posts'), $this->data);
+            return view('categories.filter-category-city', compact('posts', 'city', 'category'), $this->data);
+        }
+        else if($posts->count() == 0)
+        {
+            return view('errors.404', $this->data,['error' => 'Filter by category '.$name.' and city '.$city->name.' doesnt have result']);
         }
         else
         {
-            return abort(404)->with('error', 'Nije dobro');
+            return abort(404);
         }
         
     }

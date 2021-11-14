@@ -27,6 +27,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/add-adv', 'HomeController@addadv');
 
 Route::get('/categorie/{name}', 'HomeController@categories');
+Route::get('/city/{name}', 'HomeController@cities');
+
 Route::get('/categorie={name}/city={city}/name={title}', 'HomeController@getpost');
 Route::get('/all-categories', 'HomeController@getallposts');
 Route::get('/categorie={name}/city={city}', 'HomeController@categorycity');
@@ -45,6 +47,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin-invoice={idinvoice}', 'AdminController@invoice');
     Route::get('/admin-posts', 'AdminController@posts');
     Route::get('/admin-partners', 'AdminController@partners');
+
+    Route::get('/create-category', 'CategoryController@create');
 });
 
 
