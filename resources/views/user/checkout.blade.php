@@ -124,9 +124,10 @@
         </li>
       </ul>
 
-      <form class="card p-2">
+      <form class="card p-2" action="{{asset('/mollie-paymnet')}}" method="GET">
+      @csrf
         <div class="input-group">
-         
+            <input type="hidden" name="postid" value="{{$post->id}}">
           <div class="input-group-append">
             <button type="submit" class="btn btn-warning">Submit payment</button>
           </div>

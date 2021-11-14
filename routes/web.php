@@ -42,7 +42,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     //Mollie Payment 
     Route::get('/buy-ticket/{id}', 'MolliePaymentController@buyticket');
+    Route::get('/mollie-paymnet','MolliePaymentController@preparePayment')->name('mollie.payment');
+    Route::get('/payment-success','MolliePaymentController@paymentSuccess')->name('payment.success');
+    
 });
+
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin-home', 'AdminController@index');
