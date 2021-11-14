@@ -48,7 +48,29 @@ class CategoryController extends Controller
      */
     public function store()
     {
-        return request()->all();
+        request()->validate([
+            'name' => 'required',
+            'icons' => 'required'
+        ],
+        [
+            'name.required' => 'De categorienaam is een verplicht veld',
+            'icon.required' => 'Het pictogram is een verplicht veld'
+        ]);
+        $icon = Icon::whereIn('id', request()->icons)->first();
+        
+        $category = new Category();
+        $category->name = request()->name;
+        $category->description = request()->description;
+
+        $link = strtolower(request()->name);
+        $link = str_replace(" ", '-', $link);
+
+        $category->link = $link;
+        $category->icon = $icon->name;
+
+        $category->save();
+        return redirect()->back()->with('success', 'Je hebt met succes een nieuwe categorie aangemaakt');
+
     }
 
     /**

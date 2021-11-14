@@ -23,15 +23,28 @@
                                 <label for="category">Category name</label>
                                 <input type="text" name="name" class="form-control" id="name" aria-describedby="name" placeholder="Example gifts">
                                 <small id="emailHelp" class="form-text text-muted">Give a short name to your category</small>
+                                @if ($errors->has('name'))  <p style="color:red;">{{$errors->first('name')}}</p> @endif
+
                             </div>
                             <div class="form-group">
                                 <label for="description">Dscription</label>
                                 <textarea class="form-control" id="description" name="description"></textarea>
                             </div>
-                        
+                            @foreach($icons as $i)
+                                <div class="form-check fa-2x m-4" style="display:inline-block">
+                                <input class="form-check-input" type="radio" value="{{$i->id}}" name="icons[]" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                <p class="dispay-4">@php echo $i->name @endphp</p>
+                                </label>
+                               
+
+                                </div>
+                                @endforeach
+                                @if ($errors->has('icons'))  <p style="color:red;">{{$errors->first('icons')}}</p> @endif
                             <input type="submit" class="btn btn-success btn-lg btn-block" value="Create">
                             </form>
-                           
+                          
+                                                  
                             </div>
                         </div>
                     </div>
