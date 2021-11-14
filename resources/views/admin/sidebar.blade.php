@@ -59,12 +59,13 @@ Listing</a></li>
 <li class="list-group-item p-0 mb-2 lh-15">
 <a href="#adcampaign" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="fasse">
 <span class="d-inline-block mr-3"><i class="fas fa-bullhorn"></i></span>
-<span>Ad Campaigns</span>
+<span>New partners</span>
 <span class=" ml-auto"><i class="fas fa-chevron-down"></i></span>
 </a>
 <ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="adcampaign">
-<li class="list-group-item p-0 mb-2 lh-15"><a href="panel-ad-campaigns-active.html" class="link-hover-dark-primary font-size-md">Ad
-Campaigns Active</a></li>
+<li class="list-group-item p-0 mb-2 lh-15">
+    <a href="{{asset('/admin-partners')}}" class="link-hover-dark-primary font-size-md">
+New partners</a></li>
 <li class="list-group-item p-0 mb-2 lh-15"><a href="panel-ad-campaigns-start-new.html" class="link-hover-dark-primary font-size-md">Ad
 Campaigns Start new</a></li>
 </ul>

@@ -16,13 +16,17 @@ We’re Building The Destination For Getting Things Done
 <div class="container">
     <div class="row">
         <div class="col-lg-10 p-3">
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{session('success')}}
+        </div>
+        @endif
             <div class="block-form-review bg-gray-06 px-5 pb-6">
             <h4 class="font-size-md pb-1 border-bottom pt-4 mb-4">
             Become partner &amp; Vrijeplaats 2021
             </h4>
-            <form class="form-control" action="{{asset('/be-partner/')}}" method="POST">
+            <form  action="{{asset('/be-partner/')}}" method="POST">
             @csrf
-            
             <div class="form-row mx-0">
             <div class="col-sm-10 form-group mb-4 pl-0 pr-0 pr-sm-3">
             <label for="contactpersoon">Contactpersoon</labez>

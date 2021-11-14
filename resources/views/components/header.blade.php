@@ -37,6 +37,11 @@
 
 </li>
 <li class="nav-item">
+<a class="nav-link" href="{{asset('become-partner')}}">Een partner worden
+</a>
+
+</li>
+<li class="nav-item">
 
 <a class="mobile-button-search nav-link" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
     <i class="fas fa-search"></i></a>

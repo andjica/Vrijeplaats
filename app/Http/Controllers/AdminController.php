@@ -7,6 +7,7 @@ use App\Category;
 use App\Post;
 use App\User;
 use App\Purchase;
+use App\UserSignature;
 use Carbon;
 
 class AdminController extends Controller
@@ -62,5 +63,11 @@ class AdminController extends Controller
         $postsexpired = Post::where('valid_until', '<', $datenow)->get();
         
         return view('admin.posts', compact('posts', 'postsexpired'), $this->data);
+    }
+
+    public function partners()
+    {
+        $partners = UserSignature::orderBy('created_at', 'desc')->get();
+        return view('admin.partners', compact('partners'), $this->data);
     }
 }
