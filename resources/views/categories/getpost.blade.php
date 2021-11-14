@@ -69,9 +69,11 @@
                     <span id="hours" class="display-hours text-dark"></span><b class="text-dark">Hours</b>
                     <span id="minutes" class="display-minutes text-dark"></span><b class="text-dark">Minutes</b>
                     <span id="seconds" class="display-seconds text-dark"></span><b class="text-dark">Seconds</b>
+                    <form action="{{asset('/buy-ticket/'.$post->id)}}" method="GET">
                     <button class="btn btn-primary font-size-md btn-lg lh-base btn-block">
                         Buy ticket
                     </button>
+                    </form>
                 </div>
              
     </div>

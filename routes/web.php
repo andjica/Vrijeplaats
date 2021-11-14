@@ -39,6 +39,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('/edit-user-info', 'UserViewController@edit');
 
     Route::post('/insert-advertising', 'PostController@store');
+
+    //Mollie Payment 
+    Route::get('/buy-ticket/{id}', 'MolliePaymentController@buyticket');
 });
 
 Route::group(['middleware' => ['auth']], function () {
