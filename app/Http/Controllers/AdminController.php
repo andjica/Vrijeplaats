@@ -13,6 +13,7 @@ use Carbon;
 
 class AdminController extends Controller
 {
+    public $data = [];
     public function __construct()
     {
      

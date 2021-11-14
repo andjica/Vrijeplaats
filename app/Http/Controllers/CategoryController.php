@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Category;
+use App\City;
+use App\Post;
 class CategoryController extends Controller
 {
     /**
@@ -11,6 +13,15 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $data = [];
+    public function __construct()
+    {
+     
+        $this->data['categories'] = Category::all();
+        $this->data['cities'] = City::all();
+        $this->data['countposts'] =  Post::where('count_of_ticket', '>', 0)->count();
+    }
+
     public function index()
     {
         //
@@ -23,7 +34,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('ádmin')
+        return view('admin.category.create-category', $this->data);
     }
 
     /**

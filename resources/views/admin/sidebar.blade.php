@@ -77,8 +77,8 @@ Campaigns Start new</a></li>
 <span class=" ml-auto"> <i class="fas fa-chevron-down"></i></span>
 </a>
 <ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="review">
-<li class="list-group-item p-0 mb-2 lh-15"><a href="panel-review-received.html" class="link-hover-dark-primary font-size-md">Review
-received</a></li>
+<li class="list-group-item p-0 mb-2 lh-15">
+    <a href="{{asset('/create-category')}}" class="link-hover-dark-primary font-size-md">Create category</a></li>
 <li class="list-group-item p-0 mb-2 lh-15"><a href="panel-review-submitted.html" class="link-hover-dark-primary font-size-md">Review
 submitted</a></li>
 </ul>
