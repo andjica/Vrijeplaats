@@ -11,18 +11,67 @@
             <div class="container-fluid">
                 <div class="page-content-wrapper d-flex flex-column justify-content-center">
                     <div class="row">
-                    <div class="col-xl-10">
+                    <div class="col-xl-8">
                         <div class="card rounded-0 border-0 invoices">
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
-                                Invoices</h5>
+                                Create a new category</h5>
                                 <div class="table-responsive-sm">
-                            
+                            <form action="{{asset('/insert-category')}}" method="POST">
+                            @csrf 
+                            <div class="form-group">
+                                <label for="category">Category name</label>
+                                <input type="text" name="name" class="form-control" id="name" aria-describedby="name" placeholder="Example gifts">
+                                <small id="emailHelp" class="form-text text-muted">Give a short name to your category</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Dscription</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                        
+                            <input type="submit" class="btn btn-success btn-lg btn-block" value="Create">
+                            </form>
                            
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-4 mb-6 mb-xl-0">
+            <div class="card rounded-0 border-0 reccent-activities">
+                <div class="card-body">
+                    <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
+                        Recent
+                        Categories</h5>
+                            <div class="table-responsive">
+                                <table class="table">
+                                <tbody>
+                                    @foreach($categories as $c)
+                                <tr>
+                                <td>
+                                    <div class="icon-box no-shape icon-box-style-03 d-flex">
+                                    <span class="icon-box-icon">
+                                    <svg class="icon icon-layers">
+                                       @php echo $c->icon @endphp
+                                    </svg>
+                                    </span>
+                                    <div class="content-box">
+                                        <a href="{{asset('/categorie/'.$c->link)}}" class="font-weight-semibold link-hover-dark-primary">
+                                    {{$c->name}}</a>
+                                   
+                                    </div>
+                                    </div>
+                                </td>
+                                <td><a href="" class="text-success">Meer over</a></td>
+                                </tr>
+                                @endforeach
+                 
+                           
+                            </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
                     </div>
                 </div>
             </div>
