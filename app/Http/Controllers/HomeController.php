@@ -126,4 +126,31 @@ class HomeController extends Controller
         
         return view('categories.posts', compact('posts'), $this->data);
     }
+    
+    public function categorycity($name, $city)
+    {
+        
+        $name = request()->category;
+        
+        $category = Category::where('name', 'LIKE',  "%{$name}%")
+        ->first();
+
+       
+        $city = request()->city;
+        $citysearch = City::where('name', 'LIKE', "%{$city}%")
+        ->first();
+
+        $posts = Post::where('category_id', $category->id)
+        ->where('city_id', $citysearch->id)->get();
+
+        if($posts->count() != 0)
+        {
+            return view('categories.filter-category-city', compact('posts'), $this->data);
+        }
+        else
+        {
+            return abort(404)->with('error', 'Nije dobro');
+        }
+        
+    }
 }

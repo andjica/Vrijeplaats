@@ -12,13 +12,14 @@ Zoek waar een vrijeplaats voor vrij is!
 </p>
 </div>
 <div class="form-search form-search-style-02 pb-9 fadeInDown animated" data-animate="fadeInDown">
-<form>
+<form action="{{asset('/categorie={name}/city={name}')}}" method="GET">
+@csrf
 <div class="row align-items-end no-gutters">
 <div class="col-xl-6 mb-4 mb-xl-0 py-3 px-4 bg-white border-right position-relative rounded-left form-search-item">
 <label for="key-word" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Wat zoek je precies?</label>
 <div class="input-group dropdown show">
-<input type="text" autocomplete="true" id="key-word"
- name="key-word" class="form-control form-control-mini border-0 px-0 bg-transparent"
+<input type="text" autocomplete="true" id="key-word" name="category"
+ class="form-control form-control-mini border-0 px-0 bg-transparent"
   placeholder="Hapjes, Auto's en nog meer" data-toggle="dropdown" aria-haspopup="true">
 <a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
 <i class="fa fa-chevron-down"></i>
@@ -31,6 +32,7 @@ Zoek waar een vrijeplaats voor vrij is!
         echo $c->icon
         @endphp
         <span class="font-size-md">{{$c->name}}</span>
+       
         </a>
     </li>
     @endforeach
@@ -40,7 +42,7 @@ Zoek waar een vrijeplaats voor vrij is!
     <div class="col-xl-4 mb-4 mb-xl-0 py-3 px-4 bg-white position-relative rounded-right form-search-item">
         <label for="key-word" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Welke gewenste locatie?</label>
         <div class="input-group dropdown show">
-        <input type="text"  autocomplete="true" id="region" name="region" class="form-control form-control-mini border-0 px-0 bg-transparent" placeholder="Rotterdam" data-toggle="dropdown" aria-haspopup="true">
+        <input type="text"  autocomplete="true" name="city" id="region" class="form-control form-control-mini border-0 px-0 bg-transparent" placeholder="Rotterdam" data-toggle="dropdown" aria-haspopup="true">
         <a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
         <i class="fa fa-chevron-down"></i>
         </a>
@@ -49,16 +51,17 @@ Zoek waar een vrijeplaats voor vrij is!
         <li class="dropdown-item item">
         <a href="#" class="link-hover-dark-white">
         <i class="fas fa-location-arrow"></i>{{$city->name}}
-        </a>
+        
+         </a>
         </li>
         @endforeach
         </ul>
         </div>
     </div>
         <div class="col-xl-2 button">
-        <button type="submit" class="btn btn-primary primary-color btn-lg btn-icon-left btn-block">
-            <i class="fa fa-search"></i>Zoeken!
-        </button>
+        <input type="submit" class="btn btn-primary primary-color btn-lg btn-icon-left btn-block" value="Zoeken!">
+           
+       
         </div>
     </div>
 </form>
