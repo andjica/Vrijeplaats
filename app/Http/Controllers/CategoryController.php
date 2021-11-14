@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\City;
 use App\Post;
+use App\Icon;
+
 class CategoryController extends Controller
 {
     /**
@@ -34,7 +36,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create-category', $this->data);
+        $icons = Icon::all();
+        return view('admin.category.create-category', compact('icons'), $this->data);
     }
 
     /**
@@ -43,9 +46,9 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        return request()->all();
     }
 
     /**
