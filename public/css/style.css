@@ -19887,9 +19887,11 @@ iframe {
 
 .banner {
 	background-size: cover;
-	background-position: center;
+	background-position: top;
 	background-repeat: no-repeat;
-	position: relative
+	position: relative;
+	background-image: url("https://vrijeplaats.nl/public/images/other/bannergirl.jpg");
+
 }
 
 .banner::after {
@@ -19900,7 +19902,7 @@ iframe {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background: rgba(0, 0, 0, .4)
+	/* background: rgba(0, 0, 0, .4) */
 }
 
 .banner .container {
@@ -23255,9 +23257,7 @@ iframe {
 	color: #000
 }
 
-.banner {
-	background-image: url("http://localhost/vrijeplaats/public/images/other/about.jpg")
-}
+
 
 .page-about .banner .heading {
 	max-width: 830px;
@@ -26385,11 +26385,12 @@ button.mfp-arrow:active {
 		padding-top: 11px;
 
 	}
+	
 }
 
 .btn-primary{
-	background:inherit !important;
-	color:black !important;
+	background-color: #ed008c !important;
+	color: black !important;
 }
 .main-header .nav-link{
 	font-size:14px !important;
@@ -26406,6 +26407,12 @@ button.mfp-arrow:active {
 	.navbar-brand {
 		margin-right: 0;
 		display: none;
+	}
+
+	
+	.banner{
+		background-image: url("https://vrijeplaats.nl/public/images/other/bannergirl.jpg");
+		background-position: -10px 33px;
 	}
 }
 

@@ -17,6 +17,10 @@ class FrontController extends Controller
     {
         $this->data['categories'] = Category::all();
         $this->data['cities'] = City::all();
+
+        $timenow = Carbon::now();
+        $this->data['randomposts'] = Post::where('valid_until', '>', $timenow)
+        ->inRandomOrder()->first();
     }
     public function index()
     {

@@ -17,16 +17,16 @@ De laatste</span>
         @foreach($lastposts as $p)
         <div class="col-md-4 mb-4" data-animate="zoomIn">
             <div class="card border-0">
-                <a href="blog-single-gallery.html" class="hover-scale">
+                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="hover-scale">
                     @php $images = $p->images->first();
                     @endphp
                     <img src="{{asset('/images/posts/'.$images->url)}}" alt="product 1" class="card-img-top image">
                 </a>
                 <div class="card-body px-0">
                 <div class="mb-2">
-                    <a href="#" class="link-hover-dark-primary">{{$p->full_address}}</a></div>
+                   {{$p->full_address}}</div>
                 <h5 class="card-title lh-13 letter-spacing-25">
-                    <a href="blog-single-gallery.html" class="link-hover-dark-primary">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="link-hover-dark-primary">
                 {{$p->title}}</a>
                 </h5>
                 <ul class="list-inline">
@@ -34,7 +34,7 @@ De laatste</span>
                         <span class="text-gray">Active until {{$p->valid_until}}</span>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#" class="link-hover-dark-primary">created by: {{$p->user->userview->firstname}} {{$p->user->userview->lastname}}</a>
+                        <a href="" class="link-hover-dark-primary">created by: {{$p->user->userview->firstname}} {{$p->user->userview->lastname}}</a>
                     </li>
                 </ul>
                 </div>
