@@ -11,11 +11,11 @@
 Zoek waar een vrijeplaats voor vrij is!
 </p>
 </div>
-<div class="form-search form-search-style-02 pb-9 fadeInDown animated" data-animate="fadeInDown">
+<div class="form-search form-search-style-02  fadeInDown animated" data-animate="fadeInDown">
 <form action="{{asset('/categorie={name}/city={name}')}}" method="GET">
 @csrf
 <div class="row align-items-end no-gutters">
-<div class="col-xl-6 mb-4 mb-xl-0 py-3 px-4 bg-white border-right position-relative rounded-left form-search-item">
+<div class="col-xl-6 mb-4 mb-xl-0 py-2 px-4 bg-white border-right position-relative rounded-left form-search-item">
 <label for="key-word" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Wat zoek je precies?</label>
 <div class="input-group dropdown show">
 <input type="text" autocomplete="true" id="key-word" name="category"
@@ -39,7 +39,7 @@ Zoek waar een vrijeplaats voor vrij is!
     </ul>
 </div>
 </div>
-    <div class="col-xl-4 mb-4 mb-xl-0 py-3 px-4 bg-white position-relative rounded-right form-search-item">
+    <div class="col-xl-4 mb-4 mb-xl-0 py-2 px-4 bg-white position-relative rounded-right form-search-item">
         <label for="key-word" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Welke gewenste locatie?</label>
         <div class="input-group dropdown show">
         <input type="text"  autocomplete="true" name="city" id="region" class="form-control form-control-mini border-0 px-0 bg-transparent" placeholder="Rotterdam" data-toggle="dropdown" aria-haspopup="true">

@@ -22,7 +22,7 @@
 
 </li>
 <li class="nav-item">
-<a class="nav-link" href="{{asset('about')}}">About Vrijeplaats</a>
+<a class="nav-link" href="{{asset('about')}}">Over Vrijeplaats</a>
 
 </li>
 <li class="nav-item">
@@ -38,7 +38,7 @@
 
 @if(auth()->user())
 <li class="nav-item dropdown">
-<a class="nav-link" href="{{asset('/logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+<a class="nav-link" href="{{asset('/logout')}}"><i class="fas fa-sign-out-alt"></i> Uitloggen</a>
 </li>
 @else
 <li class="nav-item dropdown">
@@ -49,14 +49,14 @@
 
 <div class="header-customize justify-content-end align-items-center d-none d-xl-flex">
 @if(auth()->user())
-<a href="{{asset('/home')}}" class="btn btn-info mr-2">Go to panel</a>
+<a href="{{asset('/home')}}" class="btn btn-info mr-2">Portaal</a>
 
 @else
 
 @endif
 <div class="header-customize-item button">
-<a href="{{asset('add-adv')}}" class="btn btn-primary btn-icon-right">Add
-Listing
+<a href="{{asset('add-adv')}}" class="btn btn-primary btn-icon-right">Deals
+
 <i class="fas fa-angle-right"></i></a>
 </div>
 </div>

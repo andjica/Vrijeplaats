@@ -6601,7 +6601,8 @@ input[type=button].btn-block {
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
 		-ms-flex-direction: row;
-		flex-direction: row
+		flex-direction: row;
+		width:100% !important;
 	}
 	.navbar-expand-xl .navbar-nav .dropdown-menu {
 		position: absolute
@@ -26362,4 +26363,70 @@ button.mfp-arrow:active {
 .main-background
 {
 	background-color: #ED008c !important;
+}
+
+.header-wrapper.sticky-area.border-bottom{
+	position: fixed;
+    background: #ed008c !important;
+    top: 0px;
+}
+
+.sticky-area-wrap.sticky .navbar-brand img {
+    max-height: 120px !important;
+   
+}
+
+@media screen and (min-width:568px){
+	.mobile12{
+		display:none;
+	}
+	.bruv{
+		display: flex !important;
+		padding-top: 11px;
+
+	}
+}
+
+.btn-primary{
+	background:inherit !important;
+	color:black !important;
+}
+.main-header .nav-link{
+	font-size:14px !important;
+}
+
+@media screen and (max-width:568px){
+	.main-header .nav-link {
+		font-size: 14px !important;
+		color: black !important;
+	}
+	a.mobile-button-search.nav-link{
+		display:none;
+	}
+	.navbar-brand {
+		margin-right: 0;
+		display: none;
+	}
+}
+
+.form-search-item{
+	border:none !important;
+}
+
+.form-search.form-search-style-02 .btn {
+    font-size: 20px;
+    padding-top: 23.5px;
+    padding-bottom: 23.5px;
+    background: white !important;
+    border-radius: 4px !important;
+    height: 95px;
+    border: 10px solid #ed008c;
+    border-left: white;
+    border-top: white;
+    border-bottom: white;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+    font-size: 11px !important;
 }
