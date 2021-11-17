@@ -47,7 +47,7 @@ class FrontController extends Controller
 
     public function partner()
     {
-        return view('pages.partner', $this->data);
+        return view('pages.become-partner', $this->data);
     }
 
     

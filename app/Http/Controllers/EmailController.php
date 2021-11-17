@@ -43,13 +43,10 @@ class EmailController extends Controller
         ]);
         Mail::send(new EmailBecomePartner($data));
         Mail::send(new EmailConfirmationBecomePartner($data));
-        try{
+        
             $usersignature->save();
-        }
-        catch(\Throwable $e)
-        {
-            return abort(500);
-        }
+        
+        
 
         return redirect()->back()->with('success', 'Uw bericht is succesvol doorgestuurd! Je ontvangt binnen 24 uur een nieuwe melding op je e-mailadres');
        

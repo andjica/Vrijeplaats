@@ -25,32 +25,40 @@ We’re Building The Destination For Getting Things Done
             <h4 class="font-size-md pb-1 border-bottom pt-4 mb-4">
             Become partner &amp; Vrijeplaats 2021
             </h4>
-            <form  action="{{asset('/be-partner/')}}" method="POST">
+            
+            <form  id="becomepartner" action="{{asset('/be-partner/')}}" method="POST">
             @csrf
             <div class="form-row mx-0">
             <div class="col-sm-10 form-group mb-4 pl-0 pr-0 pr-sm-3">
             <label for="contactpersoon">Contactpersoon</labez>
                 <input class="form-control" placeholder="contactperson" name="contactperson" id="contactperson">
+                <small class="text-danger" id="er-contactperson"></small>
             </div>
             <div class="col-sm-10 form-group pl-0 mb-4 pr-0 pr-sm-3">
                 <label for="naam Bedrijf/Vereniging">Naam Bedrijf/Vereniging</label>
             <input class="form-control" placeholder="Naam Bedrijf/Vereniging" name="naambedrijf" id="naambedrijf">
-            </div>
+            <small class="text-danger" id="er-naambedrijf"></small>
+   
+        </div>
             <div class="col-sm-10 form-group pl-0 mb-4 pr-0 pr-sm-3">
                 <label for="adres">Adres</label>
             <input class="form-control" placeholder="Adres" name="adres" id="adres">
+            <small class="text-danger" id="er-adres"></small>
             </div>
             <div class="col-sm-10 form-group pl-0 mb-4 pr-0 pr-sm-3">
                 <label for="Postc. Woonpl.">Postc. Woonpl.</label>
-            <input class="form-control" placeholder="Postc. Woonpl." name="post" id="post">
+            <input class="form-control" placeholder="Postc. Woonpl." name="post" id="postcode">
+            <small class="text-danger" id="er-postcode"></small>
             </div>
             <div class="col-sm-10 form-groupmb-4 px-0">
                 <label for="Telefoon">Telefoon</label>
             <input class="form-control" placeholder="Telefoon" name="telefoon" id="telefoon">
+            <small class="text-danger" id="er-telefoon"></small>
             </div>
             <div class="col-sm-10 form-groupmb-4 px-0">
                 <label for="email">Email</label>
                 <input class="form-control" placeholder="email" name="email" id="email">
+                <small class="text-danger" id="er-email"></small>
             </div>
             </div>
             
@@ -72,12 +80,12 @@ We’re Building The Destination For Getting Things Done
                 <div class="col-sm-10 form-groupmb-4 px-0">
                     <label for="signature" class="text-dark font-weight-semibold font-size-md">Handtekening opdrachtgever:</label>
                     <textarea class="form-control" name="signature" id="signature"></textarea>
+                    <small class="text-danger" id="er-signature"></small>
                 </div>
             </div>
             <div class="text-center">
-            <button class="btn btn-primary font-size-md btn-lg lh-base">Send &amp; Message
-            Review
-            </button>
+            <input type="submit" class="btn btn-primary font-size-md btn-lg lh-base" value="Send Message">
+           
             </div>
             </form>
             </div>
