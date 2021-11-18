@@ -77,7 +77,8 @@
 <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td style="width:100%;padding-right:0px;padding-left:0px;">
-<div align="center" style="line-height:10px"><img alt="Vrijeplaats" class="big" src="https://dfambusiness.com/vrijeplaats/public/images/40c07ec7-f513-4f3a-88ad-9ed70109a437.png" style="display: block; height: auto; border: 0; width: 600px; max-width: 100%;" title="Vrijeplaats" width="600"/></div>
+<div align="center" style="line-height:10px">
+<img alt="Vrijeplaats" class="big" src="https://vrijeplaats.nl/public/images/40c07ec7-f513-4f3a-88ad-9ed70109a437.png" style="display: block; height: auto; border: 0; width: 600px; max-width: 100%;" title="Vrijeplaats" width="600"/></div>
 </td>
 </tr>
 </table>
@@ -93,7 +94,7 @@
 <tbody>
 <tr>
 <td>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #6720b0; background-image: url('https://dfambusiness.com/vrijeplaats/public/images/flare.png'); background-position: top center; background-repeat: no-repeat; color: #000000;" width="600">
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #6720b0; background-image: url('https://vrijeplaats.nl/public/images/flare.png'); background-position: top center; background-repeat: no-repeat; color: #000000;" width="600">
 <tbody>
 <tr>
 <th class="column" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 0px; padding-bottom: 0px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;" width="100%">
@@ -102,7 +103,7 @@
 <td style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:40px;">
 <div style="font-family: sans-serif">
 <div style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;">
-<p style="margin: 0; font-size: 14px; text-align: center;">Good news {{$data['contactperson']}},</p>
+<p style="margin: 0; font-size: 14px; text-align: center;">Goed nieuws! {{$data['contactperson']}},</p>
 </div>
 </div>
 </td>
@@ -113,7 +114,7 @@
 <td>
 <div style="font-family: Tahoma, Verdana, sans-serif">
 <div style="font-size: 12px; font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2;">
-<p style="margin: 0; font-size: 14px; text-align: center;"><span style="font-size:26px;"><strong><span style="color:#e03add;">VRIJEPLAATS BEDANK ! </span></strong></span></p>
+<p style="margin: 0; font-size: 14px; text-align: center;"><span style="font-size:26px;"><strong><span style="color:#e03add;">VRIJEPLAATS </span></strong></span></p>
 </div>
 </div>
 </td>
@@ -122,7 +123,8 @@
 <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td style="width:100%;padding-right:0px;padding-left:0px;">
-<div align="center" style="line-height:10px"><img alt="Vrijeplaats" class="big" src="https://dfambusiness.com/vrijeplaats/public/images/logosmall.jpeg" style="display: block; height: auto; border: 0; width: 600px; max-width: 100%;" title="Vrijeplaats" width="600"/></div>
+<div align="center" style="line-height:10px">
+<img alt="Vrijeplaats" class="big" src="https://vrijeplaats.nl/public/images/logosmall.jpeg" style="display: block; height: auto; border: 0; width: 600px; max-width: 100%;" title="Vrijeplaats" width="600"/></div>
 </td>
 </tr>
 </table>
@@ -131,9 +133,9 @@
 <td style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:20px;">
 <div style="font-family: Tahoma, Verdana, sans-serif">
 <div style="font-size: 12px; font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2;">
-<p style="margin: 0; font-size: 14px; text-align: center;"><span style="font-size:30px;"><strong> Bevestiging van de aanvraag voor partnerschap</strong></span></p>
+<p style="margin: 0; font-size: 14px; text-align: center;"><span style="font-size:30px;"><strong> Bevestiging van de aanvraag voor om parter te worden</strong></span></p>
 <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 14.399999999999999px;"> </p>
-<p style="margin: 0; text-align: center;"><span style="font-size:17px;">Om een vast lid en partner van het Freeplace-platform te worden, is het noodzakelijk om binnen zeven dagen na ontvangst van deze e-mail een betaling te doen.</span></p>
+<p style="margin: 0; text-align: center;"><span style="font-size:17px;">Om lid te worden van ons platform, is het noodzakelijk om binnen zeven dagen na ontvangst van deze e-mail de betaling te doen.</span></p>
 <p style="margin: 0; mso-line-height-alt: 14.399999999999999px;"> </p>
 <p style="margin: 0; mso-line-height-alt: 14.399999999999999px;"> </p>
 <p style="margin: 0; mso-line-height-alt: 14.399999999999999px;"> </p>
@@ -161,7 +163,8 @@
 <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td style="width:100%;padding-right:0px;padding-left:0px;padding-bottom:25px;">
-<div align="right" style="line-height:10px"><img alt="Vrijeplaats" class="big" src="https://dfambusiness.com/vrijeplaats/public/images/be3f3747-6a4e-4ef0-a162-5f5e43101d8d.png" style="display: block; height: auto; border: 0; width: 600px; max-width: 100%;" title="Vrijeplaats" width="600"/></div>
+<div align="right" style="line-height:10px">
+<img alt="Vrijeplaats" class="big" src="https://vrijeplaats.nl/public/images/be3f3747-6a4e-4ef0-a162-5f5e43101d8d.png" style="display: block; height: auto; border: 0; width: 600px; max-width: 100%;" title="Vrijeplaats" width="600"/></div>
 </td>
 </tr>
 </table>
@@ -242,7 +245,8 @@
 <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td style="width:100%;padding-right:0px;padding-left:0px;">
-<div align="center" style="line-height:10px"><img alt="Vrijeplaats" class="big" src="https://dfambusiness.com/vrijeplaats/public/images/bottomwhite.png" style="display: block; height: auto; border: 0; width: 600px; max-width: 100%;" title="Vrijeplaats" width="600"/></div>
+<div align="center" style="line-height:10px">
+<img alt="Vrijeplaats" class="big" src="https://vrijeplaats.nl/public/images/bottomwhite.png" style="display: block; height: auto; border: 0; width: 600px; max-width: 100%;" title="Vrijeplaats" width="600"/></div>
 </td>
 </tr>
 </table>
@@ -267,10 +271,10 @@
 <td>
 <table align="center" border="0" cellpadding="0" cellspacing="0" class="social-table" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="144px">
 <tr>
-<td style="padding:0 2px 0 2px;"><a href="https://www.facebook.com/" target="_blank"><img alt="Facebook" height="32" src="https://dfambusiness.com/vrijeplaats/public/images/facebook2x.png" style="display: block; height: auto; border: 0;" title="Facebook" width="32"/></a></td>
-<td style="padding:0 2px 0 2px;"><a href="https://twitter.com/" target="_blank"><img alt="Twitter" height="32" src="https://dfambusiness.com/vrijeplaats/public/images/twitter2x.png" style="display: block; height: auto; border: 0;" title="Twitter" width="32"/></a></td>
-<td style="padding:0 2px 0 2px;"><a href="https://instagram.com/" target="_blank"><img alt="Instagram" height="32" src="https://dfambusiness.com/vrijeplaats/public/images/instagram2x.png" style="display: block; height: auto; border: 0;" title="Instagram" width="32"/></a></td>
-<td style="padding:0 2px 0 2px;"><a href="https://www.linkedin.com/" target="_blank"><img alt="LinkedIn" height="32" src="https://dfambusiness.com/vrijeplaats/public/images/linkedin2x.png" style="display: block; height: auto; border: 0;" title="LinkedIn" width="32"/></a></td>
+<td style="padding:0 2px 0 2px;"><a href="https://www.facebook.com/" target="_blank"><img alt="Facebook" height="32" src="https://vrijeplaats.nl/public/images/facebook2x.png" style="display: block; height: auto; border: 0;" title="Facebook" width="32"/></a></td>
+<td style="padding:0 2px 0 2px;"><a href="https://twitter.com/" target="_blank"><img alt="Twitter" height="32" src="https://vrijeplaats.nl/public/images/twitter2x.png" style="display: block; height: auto; border: 0;" title="Twitter" width="32"/></a></td>
+<td style="padding:0 2px 0 2px;"><a href="https://instagram.com/" target="_blank"><img alt="Instagram" height="32" src="https://vrijeplaats.nl/public/images/instagram2x.png" style="display: block; height: auto; border: 0;" title="Instagram" width="32"/></a></td>
+<td style="padding:0 2px 0 2px;"><a href="https://www.linkedin.com/" target="_blank"><img alt="LinkedIn" height="32" src="https://vrijeplaats.nl/public/images/linkedin2x.png" style="display: block; height: auto; border: 0;" title="LinkedIn" width="32"/></a></td>
 </tr>
 </table>
 </td>
@@ -315,7 +319,7 @@
 <table cellpadding="0" cellspacing="0" class="icons-inner" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block; margin-right: -4px; padding-left: 0px; padding-right: 0px;">
 <!--<![endif]-->
 <!-- <tr>
-<td style="text-align:center;padding-top:5px;padding-bottom:5px;padding-left:5px;padding-right:6px;"><a href="https://www.designedwithbee.com/"><img align="center" alt="Designed with BEE" class="icon" height="32" src="https://dfambusiness.com/vrijeplaats/public/images/bee.png" style="display: block; height: auto; border: 0;" width="34"/></a></td>
+<td style="text-align:center;padding-top:5px;padding-bottom:5px;padding-left:5px;padding-right:6px;"><a href="https://www.designedwithbee.com/"><img align="center" alt="Designed with BEE" class="icon" height="32" src="https://vrijeplaats.nl/public/images/bee.png" style="display: block; height: auto; border: 0;" width="34"/></a></td>
 <td style="font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:15px;color:#9d9d9d;vertical-align:middle;letter-spacing:undefined;text-align:center;"><a href="https://www.designedwithbee.com/" style="color:#9d9d9d;text-decoration:none;">Designed with BEE</a></td>
 </tr> -->
 </table>

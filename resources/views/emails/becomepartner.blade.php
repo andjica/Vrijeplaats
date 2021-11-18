@@ -103,7 +103,7 @@
 <td style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:40px;">
 <div style="font-family: sans-serif">
 <div style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;">
-<p style="margin: 0; font-size: 14px; text-align: center;">Good news ADMIN,</p>
+<p style="margin: 0; font-size: 14px; text-align: center;">Goed Nieuws ADMIN,</p>
 </div>
 </div>
 </td>
@@ -114,7 +114,7 @@
 <td>
 <div style="font-family: Tahoma, Verdana, sans-serif">
 <div style="font-size: 12px; font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2;">
-<p style="margin: 0; font-size: 14px; text-align: center;"><span style="font-size:26px;"><strong><span style="color:#e03add;">There is a new PARTNER</span></strong></span></p>
+<p style="margin: 0; font-size: 14px; text-align: center;"><span style="font-size:26px;"><strong><span style="color:#e03add;">Er is een nieuwe Partner!</span></strong></span></p>
 </div>
 </div>
 </td>
@@ -143,7 +143,7 @@
 <td style="padding-bottom:20px;padding-left:25px;padding-right:25px;padding-top:10px;">
 <div style="font-family: sans-serif">
 <div style="font-size: 12px; mso-line-height-alt: 18px; color: #ffdddd; line-height: 1.5; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;">
-<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 30px;"><span style="font-size:20px;">Iemand wilde een partnerschap aangaan en heeft contact met u opgenomen, zie nieuwe informatie</span></p>
+<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 30px;"><span style="font-size:20px;">Iemand wilt een partnerschap aangaan en heeft contact met u opgenomen, zie nieuwe informatie</span></p>
 </div>
 </div>
 </td>

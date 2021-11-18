@@ -31,7 +31,7 @@ class EmailBecomePartner extends Mailable
     {
         return $this->from(request()->email)
         ->subject('Hallo, je hebt een nieuw bericht ontvangen over de nieuwe samenwerking van: '.request()->contactperson)
-        ->to('info@abosaver.com')
+        ->to('info@vrijeplaats.nl')
         ->view('emails.becomepartner')->with('data', $this->data);
     }
 }
