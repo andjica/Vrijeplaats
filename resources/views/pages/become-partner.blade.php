@@ -107,7 +107,7 @@ Partner Worden &amp; Vrijeplaats 2022</h1>
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" oninvalid="this.setCustomValidity('  U moet voldoen aan de voorwaarden')" oninput="this.setCustomValidity('')" required="">
 
                 <label for="vrijplaats inschrijving" class="text-dark">Vrijeplaats inschrijving
-                <p> Inschrijfkosten €49,95 excl. BTW (eenmalig / Incl BTW ( €60,43))</p></label>
+                <p> Inschrijfkosten €49,95 excl. BTW (eenmalig / Incl BTW ( €60,43 )</p></label>
                 
             </div>
                 <div class="col-sm-10 form-group">

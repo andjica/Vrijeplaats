@@ -5,7 +5,7 @@
 <div class="container mt-5">
 
     <section class="jumbotron text-center">
-    <div class="container">
+    <div class="container mt-9">
       <div class="row">
         <div class="col-lg-4">
           @include('user.sidebar')
@@ -20,8 +20,11 @@
       <p class="lead text-muted">Welkom op de website van de Vrijeplaats. Op ons platform heeft u de 
           mogelijkheid om uw diensten en producten te verkopen en te bewerken.</p>
       <p>
-        
+      @if(auth()->user()->role_id == 3)
         <a href="{{asset('/add-adv')}}" class="btn btn-primary my-2"><i class="fas fa-plus-circle"></i>&nbsp;Een nieuwe advertentie maken</a>
+        @else
+
+        @endif
         <a href="{{asset('/')}}" class="btn btn-secondary my-2">Zoek en surf verder</a>
       </p>
     </div>

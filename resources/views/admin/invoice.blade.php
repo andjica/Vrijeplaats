@@ -3,9 +3,9 @@
 @section('content')
 
 <div id="wrapper-content" class="wrapper-content pt-0 pb-0">
-    <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap">
+    <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap mt-11">
         @include('admin.sidebar')
-        <div class="page-container">
+        <div class="page-container mt-7">
             <div class="container-fluid">
                 @isset($purchase)
             <div class="page-content">
@@ -82,9 +82,9 @@
                 </div>
                 </div>
                 <div class="contact-info d-flex flex-wrap flex-md-nowrap font-size-md mt-13">
-                <a href="mailto:www.example.com" class="link-hover-dark-primary">www.example.com</a>
+                <a href="mailto:www.example.com" class="link-hover-dark-primary">www.vrijeplaats.nl</a>
                 <span class="separate text-dark">|</span>
-                <a href="mailto:office@example.com" class="link-hover-dark-primary">office@example.com </a>
+                <a href="mailto:nfo@vrijeplaats.nl" class="link-hover-dark-primary">info@vrijeplaats.nl </a>
                 <span class="separate text-dark">|</span>
                 <span class="text-dark">(123) 123-456</span>
                 </div>

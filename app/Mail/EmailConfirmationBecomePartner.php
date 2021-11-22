@@ -30,7 +30,7 @@ class EmailConfirmationBecomePartner extends Mailable
     public function build()
     {
         return $this->from('info@vrijeplaats.nl', 'Vrijeplaats')
-        ->subject('Hallo, 
+        ->subject('Vrijeplaats partner aanvraag, 
         Bevestiging voor partnerschapsaanvraag')
         ->to(request()->email)
         ->view('emails.tonewpartner')->with('data', $this->data);

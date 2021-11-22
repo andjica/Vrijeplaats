@@ -5,9 +5,9 @@
 
 
 <div id="wrapper-content" class="wrapper-content pt-0 pb-0">
-<div class="page-wrapper d-flex flex-wrap flex-xl-nowrap">
+<div class="page-wrapper d-flex flex-wrap flex-xl-nowrap mt-11">
 @include('admin.sidebar')
-<div class="page-container">
+<div class="page-container mt-7">
 <div class="container-fluid">
 <div class="page-content-wrapper d-flex flex-column justify-content-center">
     <div class="features card-deck">

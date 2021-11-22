@@ -5,23 +5,18 @@
 <div class="col-sm-6 col-lg-4 mb-6 mb-lg-0">
 <div class="mb-8"><img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats" class="img-fluid"></div>
 <div class="mb-7">
-<div class="font-size-md font-weight-semibold text-dark mb-4">Global Headquaters</div>
+<div class="font-size-md font-weight-semibold text-dark mb-4">Vrijeplaats Hoofdkantoor</div>
 <p class="mb-0">
-90 Fifth Avenue, 3rd Floor<br>
-New York NY 10011<br>
-212.913.9058</p>
+Onderdeel van : Abosaver B.V
+Stationsweg Oost 281B
+3931ER Woudenberg
+Nederland
+info@abosaver.com
+KVK 82660689
+BTW NL862556508B01</p>
 </div>
 <div class="region pt-1">
-<div class="font-size-md font-weight-semibold text-dark mb-2">Recent Region</div>
-<form>
-<div class="select-custom bg-white">
-<select class="form-control bg-transparent">
-<option value="1">San Fracisco, CA</option>
-<option value="1">New York</option>
-<option value="1">LA</option>
-</select>
-</div>
-</form>
+
 </div>
 </div>
 <div class="col-md-6 col-lg mb-6 mb-lg-0">

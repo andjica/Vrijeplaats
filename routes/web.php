@@ -28,6 +28,9 @@ Route::get('/add-adv', 'HomeController@addadv');
 
 Route::get('/categorie/{name}', 'HomeController@categories');
 Route::get('/city/{name}', 'HomeController@cities');
+Route::get('/user-invoices', 'HomeController@invoices');
+Route::get('/user-invoices={idinvoice}', 'HomeController@invoice');
+
 
 Route::get('/categorie={name}/city={city}/name={title}', 'HomeController@getpost');
 Route::get('/all-categories', 'HomeController@getallposts');

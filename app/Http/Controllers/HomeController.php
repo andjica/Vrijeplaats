@@ -7,6 +7,8 @@ use App\Category;
 use App\UserView;
 use App\Post;
 use App\City;
+use App\Purchase;
+
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -181,6 +183,17 @@ class HomeController extends Controller
         {
             return abort(404);
         }
+        
+    }
+
+    public function invoices()
+    {
+        $purchases = Purchase::where('user_id', auth()->user()->id)->get();
+        return view('user.invoices', compact('purchases'), $this->data);
+    }
+
+    public function invoice($idinvoice)
+    {
         
     }
 }

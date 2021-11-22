@@ -1,8 +1,6 @@
+@extends('layouts.app')
 
-@extends('layouts.template-admin')
 @section('content')
-
-
 
 <div id="wrapper-content" class="wrapper-content pt-0 pb-0">
     <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap mt-11">
@@ -21,11 +19,9 @@
                                     <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Date of purchase</th>
-                                    <th>User</th>
+                                    <th>AANKOOPDATUM</th>
                                     <th>Post</th>
                                     <th>Price</th>
-                                    <th>Status</th>
                                     <th>Details</th>
                                 </tr>
                                 </thead>
@@ -36,12 +32,10 @@
                                     {{$p->inv_id}}
                                     </td>
                                     <td>{{$p->created_at->format('d-m-Y')}}</td>
-                                    <td>{{$p->user->userview->firstname}} {{$p->user->userview->lastname}}</td>
                                     <td>{{$p->post->title}}</td>
                                     <td>{{$p->total}}</td>
-                                    <td><span class="status paid">Paid</span></td>
                                     <td>
-                                        <a href="{{asset('/admin-invoice='.$p->inv_id)}}" class="link-hover-dark-blue">
+                                        <a href="{{asset('/user-invoice='.$p->inv_id)}}" class="link-hover-dark-blue">
                                         <span class="status overdue">Details</span>
                                         </a>
                                     </td>
