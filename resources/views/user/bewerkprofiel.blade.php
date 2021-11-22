@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="page-container">
+<div class="page-container mt-8">
     @include('user.top-campain')
-<div class="container">
+<div class="container border mt-2">
 @php
         $userId = auth()->user()->id;
         $user =\App\UserView::where('user_id', $userId)->first();
@@ -29,7 +29,7 @@
 
 
 <div class="page-content-wrapper d-flex flex-column">
-<h1 class="font-size-h4 mb-4 font-weight-normal">My Profile</h1>
+<h1 class="font-size-h4 mb-4 font-weight-normal"></h1>
 <div class="row">
 <div class="col-lg-5">
 @include('user.sidebar')

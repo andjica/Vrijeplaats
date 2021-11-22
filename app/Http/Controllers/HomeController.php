@@ -194,6 +194,12 @@ class HomeController extends Controller
 
     public function invoice($idinvoice)
     {
+       
+        $purchase = Purchase::where('inv_id', 'LIKE',  "%{$idinvoice}%")
+        ->first();
         
+        $p = $purchase->user->userview->address;
+        
+        return view('user.invoice', compact('purchase'), $this->data);
     }
 }

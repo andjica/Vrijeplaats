@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="mt-10">
 @include('user.top-campain')
+</div>
 @isset($post)
-<div class="container pt-5">
-<img class="d-block mx-auto mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+<div class="container pt-5 mt-5">
+<img class="d-block mx-auto mb-4" src="{{asset('/images/')}}/logosmall.jpeg" alt="Vrijeplaat checkout" width="120" class="img-fluid">
     <p class="lead mt-5">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
 
 

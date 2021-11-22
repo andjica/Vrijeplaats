@@ -47,29 +47,13 @@ class MolliePaymentController extends Controller
                 'redirectUrl' => route('payment.success'), // after the payment completion where you to redirect
                 ]);
             
-                $payment = Mollie::api()->payments()->get($payment->id);
-            
-                if($payment)
-                {
-                    $purchase = new Purchase();
-                    $purchase->inv_id = time().$post->id;
-                    $purchase->post_id = $post->id;
-                    $purchase->user_id = auth()->user()->id;
-                    $purchase->category_id = $post->category_id;
-                    $purchase->total = $post->price_first;
-
+            $payment = Mollie::api()->payments()->get($payment->id);
+         
+            return redirect($payment->getCheckoutUrl(), 303);
                    
-                    $purchase->save(); // redirect customer to Mollie checkout page
-
-                
-                    return redirect($payment->getCheckoutUrl(), 303);
-                   
-                   
-                }
-                else
-                {
-                    return abort(500);
-                }
+               
+               
+               
         }
         else
         {
@@ -81,7 +65,27 @@ class MolliePaymentController extends Controller
             
     }
     public function paymentSuccess() {
+        
 
+        // if ($payment->isPaid() == TRUE)
+        // {
+            
+        //         $purchase = new Purchase();
+        //         $purchase->inv_id = time().$post->id;
+        //         $purchase->post_id = $post->id;
+        //         $purchase->user_id = auth()->user()->id;
+        //         $purchase->category_id = $post->category_id;
+        //         $purchase->total = $post->price_first;
+        
+               
+        //         $purchase->save(); // redirect customer to Mollie checkout page
+            
+      
+        // }
+        // elseif ($payment->isOpen() == FALSE)
+        // {
+            
+        // }
         return redirect('/home')->with('success', 'Je hebt de coupon succesvol gekocht. BEDANKT voor het bezoeken en gebruiken van het Vrijeplaats platform');
     }
 

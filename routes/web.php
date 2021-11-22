@@ -29,7 +29,7 @@ Route::get('/add-adv', 'HomeController@addadv');
 Route::get('/categorie/{name}', 'HomeController@categories');
 Route::get('/city/{name}', 'HomeController@cities');
 Route::get('/user-invoices', 'HomeController@invoices');
-Route::get('/user-invoices={idinvoice}', 'HomeController@invoice');
+Route::get('/user-invoice={idinvoice}', 'HomeController@invoice');
 
 
 Route::get('/categorie={name}/city={city}/name={title}', 'HomeController@getpost');
@@ -46,7 +46,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     //Mollie Payment 
     Route::get('/buy-ticket/{id}', 'MolliePaymentController@buyticket');
     Route::get('/mollie-paymnet','MolliePaymentController@preparePayment')->name('mollie.payment');
-    Route::get('/payment-success','MolliePaymentController@paymentSuccess')->name('payment.success');
+    Route::post('/payment-success','MolliePaymentController@paymentSuccess')->name('payment.success');
+    Route::post('/webhooks-mollie', 'MolliePaymentController@handle')->name('webhooks.mollie');
+
     
 });
 
