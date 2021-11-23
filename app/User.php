@@ -8,6 +8,7 @@ use App\Notifications\VerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\UserView;
 use App\Purchase;
+use App\Role;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -48,5 +49,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function purchases()
     {
         return $this->hasMany(Purchase::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 }

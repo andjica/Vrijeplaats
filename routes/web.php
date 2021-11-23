@@ -62,6 +62,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/create-category', 'CategoryController@create');
     Route::post('/insert-category', 'CategoryController@store');
+
+
+    Route::get('/admin-users', 'AdminController@users');
 });
 
 

@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.template-login')
 
 @section('content')
 
-<div class="container">
+<div class="container mt-9">
     <div class="row justify-content-center mb-5">
         <div class="col-md-8">
             <div class="card">

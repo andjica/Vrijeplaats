@@ -1,6 +1,6 @@
 <form id="editinfo" action="{{asset('edit-user-info')}}" method="POST" enctype="multipart/form-data">
 @csrf
-<div class="card rounded-0 border-0 bg-white px-4 pt-3 pb-6">
+<div class="card rounded-0 border-0 bg-white px-4 pt-3 pb-6 bg-light">
 <div class="card-header p-0 bg-transparent"><h5 class="card-title text-capitalize">Profiel Details
 </h5>
 </div>
@@ -65,8 +65,15 @@
 </select>
 
 </div>
-@if(auth()->user()->userview->company == 'Company')
+@if(auth()->user()->role_id == 3)
 <div class="findrole2" id="findrole2">
+<div class="form-group mb-4 pt-3 pb-3">
+             <div class="mb-2 d-flex align-items-center lh-15">
+             <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="companyname">Company name</label>
+                <input type="text" class="form-control" id="companyname" name="companyname" value="{{auth()->user()->userview->company}}"> 
+                <small class="text-danger" id="companyname-er"></small>
+            </div>
+        </div>
         <div class="form-group mb-4 pt-3 pb-3">
              <div class="mb-2 d-flex align-items-center lh-15">
              <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="companykvk">Company KVK nummber</label>
@@ -81,6 +88,15 @@
             </div>
         </div>
 </div>
+<div class="form-group mb-4 pt-3 pb-3">
+<div class="form-group mb-4 pt-3 pb-3">
+             <div class="mb-2 d-flex align-items-center lh-15">
+             <label class="mb-0 text-dark font-weight-semibold font-size-md lh-15" for="companykvk">Post code</label>
+                <input type="text" class="form-control" id="postcode" name="postcode" value="{{auth()->user()->userview->post_code}}"> 
+                <small class="text-danger" id="postcode-er"></small>
+            </div>
+        </div>
+</div> 
 @else
 <div class="findrole" id="findrole" style="display:none">
         <div class="form-group mb-4 pt-3 pb-3">
@@ -138,5 +154,6 @@ Plus
 <small id="instagram2error" class="text-danger"></small>
 </div>
 </div>
+<input type="hidden" name="email" value="{{auth()->user()->email}}">
 <input type="submit" class="btn btn-primary btn-block font-size-lg" value="Save Change">
 </form>

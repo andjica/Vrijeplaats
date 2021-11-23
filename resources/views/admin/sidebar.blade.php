@@ -51,9 +51,9 @@ Listing</a></li>
         </ul>
 </li>
 <li class="list-group-item p-0 mb-2 lh-15">
-<a href="panel-package.html" class="d-flex align-items-center link-hover-dark-primary font-size-md">
+<a href="{{asset('/admin-users')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
 <span class="d-inline-block mr-3"><i class="fas fa-gift"></i></span>
-<span>Packages</span>
+<span>All Users</span>
 </a>
 </li>
 <li class="list-group-item p-0 mb-2 lh-15">

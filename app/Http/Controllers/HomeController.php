@@ -44,7 +44,7 @@ class HomeController extends Controller
     {
 
         $userId = auth()->user()->id;
-        if(auth()->user()->role_id == 2)
+        if(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
         {
             $user = UserView::where('user_id', $userId)->first();
             if(!$user)
