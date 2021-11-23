@@ -6,6 +6,9 @@
     <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap mt-11">
         @include('admin.sidebar')
         <div class="page-container mt-7">
+            <a href="" class="btn btn-primary text-right  btn-sm mb-2 ml-6" onclick="goBack()">   
+                <i class="fas fa-arrow-left"></i> Ga terug
+            </a>
             <div class="container-fluid">
                 @isset($purchase)
             <div class="page-content">

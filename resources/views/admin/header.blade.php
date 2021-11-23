@@ -236,10 +236,7 @@ image</a></li>
 Logout</a>
 </div>
 @endif
-<div class="header-customize-item">
-<a href="page-submit-listing.html" class="btn btn-primary btn-icon-right">Add
-Listing <i class="far fa-angle-right"></i></a>
-</div>
+
 </div>
 </div>
 </nav>

@@ -168,7 +168,7 @@ class UserViewController extends Controller
            
                 $userinfo->save();
 
-                if($userinfo->send_to_admin == 0)
+                if($userinfo->send_to_admin == 0 && $userinfo->company == "Company")
                 {
                     $data = ([
                         'contactperson'=> request()->firstname2.request()->lastname2,
@@ -183,6 +183,9 @@ class UserViewController extends Controller
                     ]);
                     Mail::send(new EmailBecomePartner($data));
                     Mail::send(new EmailConfirmationBecomePartner($data));
+
+                    $userinfo->send_to_admin = 1;
+                    $user->save();
                 }
 
                 return redirect()->back()->with('success', 'Je hebt je gegevens succesvol uitgewisseld');
@@ -190,6 +193,31 @@ class UserViewController extends Controller
             
            
         }
+    }
+
+    public function activatecompany()
+    {
+        $companyId = request()->partners;
+
+        $company = UserView::where('id', $companyId)->first() ?? abort(404);
+
+        $company->payed_status = 1;
+
+        try{
+            $company->save();
+            return redirect()->back()->with('success', 'Het bedrijf is succesvol geactiveerd');
+        }
+        catch(\Throwable $e)
+        {
+            return abort(500);
+        }
+    }
+
+    public function company($id)
+    {
+        $company = UserView::find($id) ?? abort(404);
+
+        return view('admin.company.company', compact('company'), $this->data);
     }
 
     /**

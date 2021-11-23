@@ -270,10 +270,12 @@ account
 <script src="{{asset('/vendors/')}}/jquery.waypoints.js"></script>
 <script src="{{asset('/js/')}}/app.js"></script>
 
-<script src="{{asset('/js/')}}/search.js">
-    
-    </script>
-
+<script src="{{asset('/js/')}}/search.js"></script>
+<script type="text/javascript">
+    function goBack() {
+    window.history.back();
+  }
+</script>
 <script src="{{asset('/js')}}/become-partner.js"></script>
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>

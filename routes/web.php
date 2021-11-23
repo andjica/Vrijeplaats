@@ -37,12 +37,16 @@ Route::get('/all-categories', 'HomeController@getallposts');
 Route::get('/categorie={name}/city={city}', 'HomeController@categorycity');
 //user edit
 Route::group(['middleware' => ['auth', 'verified']], function () {
+
+    //userview - company - user
     Route::get('/bewerk-profiel', 'UserViewController@create');
     Route::post('/insert-user-info', 'UserViewController@store');
     Route::post('/edit-user-info', 'UserViewController@edit');
+    Route::post('/make-company-active', 'UserViewController@activatecompany');
+    Route::get('/company/{id}', 'UserViewController@company');
 
     Route::post('/insert-advertising', 'PostController@store');
-
+  
     //Mollie Payment 
     Route::get('/buy-ticket/{id}', 'MolliePaymentController@buyticket');
     Route::get('/mollie-paymnet','MolliePaymentController@preparePayment')->name('mollie.payment');

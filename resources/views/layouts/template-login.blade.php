@@ -101,22 +101,13 @@
 @endif
 
 
-<div class="header-customize justify-content-end align-items-center d-none d-xl-flex ml-2">
-
-<div class="header-customize-item button">
-<a href="{{asset('add-adv')}}" class="btn btn-primary btn-icon-right">Add
-Listing
-<i class="fas fa-angle-right"></i></a>
-</div>
-</div>
-
 </div>
 </nav>
 </div>
 </div></div>
 </header>
 
-        <main class="py-4">
+        <main class="py-4 home-main-login">
             @yield('content')
         </main>
       

@@ -1,15 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-@include('user.top-campain')
-@isset($post)
 <script src="{{asset('/vendors/')}}/jquery.min.js"></script>
 
+<div class="mt-11">
+    @include('user.top-campain')
+</div> 
+
+@isset($post)
+
 <div class="container">
-
-    @include('categories.slider-hotel')
-
-
+         @include('categories.slider-hotel')
 </div>
 <div class="page-title bg-gray-06 pt-8 pb-3">
     <div class="container">
@@ -21,63 +22,83 @@
         <li class="breadcrumb-item">{{$post->title}}, {{$post->city->name}}</li>
     </ul>
         <div class="explore-details-top d-flex flex-wrap flex-lg-nowrap bg-white pt-5 pl-2">
-            <div class="store padding-t-s">
-                <div class="d-flex flex-wrap">
-                <h3 class="text-dark mr-3 mb-2 ml-2">{{$post->title}} </h3>
-              
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="store mt-5">
+                        <div class="d-flex flex-wrap">
+                            <div class="circle-fly">
+                            <div class="coupon p-3 bg-warning">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4 border-right">
+                                        <div class="d-flex flex-column align-items-center"><img src="https://i.imgur.com/XwBlVpS.png"><span class="d-block">T-labs</span><span class="text-black-50">Shoes</span></div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div>
+                                            <div class="d-flex flex-row justify-content-end off">
+                                                <h1>50%</h1><span>OFF</span>
+                                            </div>
+                                            <div class="d-flex flex-row justify-content-between off px-3 p-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                 </div>
-                <ul class="list-inline store-meta d-flex flex-wrap align-items-center ml-2">
-                    <li class="list-inline-item">
-                        <span class="badge badge-success d-inline-block mr-1">{{$post->count_of_ticket}}</span>
-                    <span>numm of availible tickets</span>
-                    </li>
-                    <li class="list-inline-item separate"></li>
-                    @if($post->category->id == 2)
-                    <li class="list-inline-item">
-                        <a href="{{asset('/categorie/'.$category->link)}}" class=" text-link text-decoration-none d-flex align-items-center">
-                            @php echo $post->category->icon @endphp
-                        <span>{{$post->category->name}}</span>
-                        </a>
-                    </li>
-                    @elseif($post->category->id == 3)
-                    <li class="list-inline-item">
-                        <a href="{{asset('/categorie/'.$category->link)}}" class=" text-link text-decoration-none d-flex align-items-center">
-                        @php echo $post->category->icon @endphp
+                        <h3 class="text-dark text-titlepost">{{$post->title}} </h3>
+                          
+                        </div>
+                        <br>
+                        <ul class="list-inline store-meta d-flex flex-wrap align-items-center ml-2">
+                            <li class="list-inline-item">
+                            <h5><span class="badge badge-warning">{{$post->count_of_ticket}}</span>
+                                <span>numm of availible tickets</span></h5>
+                            </li>
+                            <li class="list-inline-item separate"></li>
+                            @if($post->category->id == 2)
+                            <li class="list-inline-item">
+                                <a href="{{asset('/categorie/'.$category->link)}}" class="text-dark text-decoration-none d-flex align-items-center">
+                                    @php echo $post->category->icon @endphp
+                                <span>{{$post->category->name}}</span>
+                                </a>
+                            </li>
+                            @elseif($post->category->id == 3)
+                            <li class="list-inline-item">
+                                <a href="{{asset('/categorie/'.$category->link)}}" class="text-dark text-decoration-none d-flex align-items-center">
+                                @php echo $post->category->icon @endphp
 
-                            <span>{{$post->category->name}}</span>
-                        </a>
-                    </li>
-                    @endif
-                    <li class="list-inline-item separate"></li>
-                    <li class="list-inline-item">
-                        <span class="mr-1 text-success"><i class="fa fa-clock"></i></span>
-                        <span>Active until {{$post->valid_until}}</span>
-                    </li>
-                </ul>
-               
+                                    <span>{{$post->category->name}}</span>
+                                </a>
+                            </li>
+                            @endif
+                            <li class="list-inline-item separate"></li>
+                            <li class="list-inline-item">
+                                <span class="mr-1 text-success"><i class="fa fa-clock"></i></span>
+                                <span>Active until {{$post->valid_until}}</span>
+                            </li>
+                        </ul>
+                    
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                <div class="d-flex flex-wrap flex-sm-nowrap">
+                    <input type="hidden" id="validuntil" value="{{$post->valid_until}}">
+                    
+                            <!--andjica-->
+                    
+                        <div class="card p-1 mb-2 bg-white get-ticket border-0">
+                        <h4 id="headline">Deze aanbieding is geldig tot</h4>
+                        
+                                <h5 class="mt-7"><i class="fas fa-check text-success"></i>{{$post->valid_until}}</h5>
+                                <form action="{{asset('/buy-ticket/'.$post->id)}}" method="GET">
+                                <button class="btn btn-primary font-size-md btn-lg lh-base btn-block mt-10">
+                                    Buy ticket
+                                </button>
+                                </form>
+                        </div>
+                </div>
+                </div>
             </div>
-        <div class="d-flex flex-wrap flex-sm-nowrap">
-        <input type="hidden" id="validuntil" value="{{$post->valid_until}}">
            
-                <!--andjica-->
-           
-                <div class="card p-1 mb-2 bg-warning">
-            <h4 id="headline">Deze aanbieding is geldig tot</h4>
-                <div id="countdown">
-           
-                    <b><span id="days" class="text-success display-days"></span></b><b class="text-dark">days</b>
-                    <span id="hours" class="display-hours text-dark"></span><b class="text-dark">Hours</b>
-                    <span id="minutes" class="display-minutes text-dark"></span><b class="text-dark">Minutes</b>
-                    <span id="seconds" class="display-seconds text-dark"></span><b class="text-dark">Seconds</b>
-                    <form action="{{asset('/buy-ticket/'.$post->id)}}" method="GET">
-                    <button class="btn btn-primary font-size-md btn-lg lh-base btn-block">
-                        Buy ticket
-                    </button>
-                    </form>
-                </div>
-             
-    </div>
-                </div>
+      
         </div>
         </div>
     </div>
@@ -321,9 +342,6 @@
 </div>
 @endisset
 
-
-
-
 <script>
      
       $('.carousel').carousel({
@@ -387,4 +405,6 @@
       }, 0)
   }());
       </script>
+
+
 @endsection

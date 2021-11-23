@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\UserView;
 use App\Purchase;
 use App\Role;
+use App\Post;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -54,5 +55,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 }

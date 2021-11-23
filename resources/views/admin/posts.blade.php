@@ -5,7 +5,7 @@
 
 
 <div id="wrapper-content" class="wrapper-content pt-0 pb-0">
-    <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap">
+    <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap mt-11">
         @include('admin.sidebar')
             <div class="page-container">
                 <div class="container-fluid">

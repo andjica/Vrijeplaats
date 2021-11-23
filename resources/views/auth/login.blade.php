@@ -1,12 +1,14 @@
 @extends('layouts.template-login')
 
 @section('content')
-<div class="container mt-5">
+<div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8 mt-5">
             <div class="card mt-5">
-                <div class="card-header">{{ __('Login') }}</div>
-
+            <div class="card-header text-center bg-white">
+            <h1 class="text-login text-center">{{ __('Inloggen Vrijeplaats') }}</h1>
+            <img src="{{asset('/images/other/')}}/mobile.jpg" class="img-fluid" width="350px">
+            </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

@@ -19,14 +19,13 @@
 <li class="list-group-item p-0 mb-2 lh-15">
 <a href="#listing" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="fasse">
 <span class="d-inline-block mr-3"><svg class="icon icon-layers"><use xlink:href="#icon-layers"></use></svg></span>
-<span>My Listing</span>
+<span>Posts</span>
 <span class=" ml-auto">
     <i class="fas fa-chevron-down"></i></span>
 </a>
 <ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="listing">
 <li class="list-group-item p-0 mb-2 lh-15">
-    <a href="{{asset('/admin-posts')}}" class="link-hover-dark-primary font-size-md">My
-Listing</a></li>
+    <a href="{{asset('/admin-posts')}}" class="link-hover-dark-primary font-size-md">All posts</a></li>
 </ul>
 </li>
 <li class="list-group-item p-0 mb-2 lh-15">

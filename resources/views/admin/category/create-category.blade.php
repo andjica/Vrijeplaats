@@ -5,13 +5,16 @@
 
 
 <div id="wrapper-content" class="wrapper-content pt-0 pb-0">
-    <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap">
+    <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap mt-11">
         @include('admin.sidebar')
         <div class="page-container">
             <div class="container-fluid">
                 <div class="page-content-wrapper d-flex flex-column justify-content-center">
                     <div class="row">
                     <div class="col-xl-8">
+                    <button class="btn btn-primary text-right  btn-sm mb-2" onclick="goBack()">   
+                            <i class="fas fa-arrow-left"></i> Ga terug
+                    </button>
                         <div class="card rounded-0 border-0 invoices">
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
@@ -49,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 mb-6 mb-xl-0">
+                <div class="col-xl-4 mb-6 mb-xl-0 mt-7">
             <div class="card rounded-0 border-0 reccent-activities">
                 <div class="card-body">
                     <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">

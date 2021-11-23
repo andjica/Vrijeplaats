@@ -21981,7 +21981,16 @@ iframe {
 	line-height: .93;
 	letter-spacing: -.05em
 }
-
+.home-main-login {
+	background: #e1e8f4;
+	background-image: url("http://localhost/vrijeplaats/public/images/other/bannergirl.jpg");
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	position: relative;
+	z-index: 1;
+	padding-top: 210px
+}
 @media(max-width:767.98px) {
 	.home-main-intro .heading h1 {
 		font-size: 60px
@@ -26436,4 +26445,45 @@ button.mfp-arrow:active {
 .card-text:last-child {
     margin-bottom: 0;
     font-size: 11px !important;
+}
+
+.text-login
+{
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.get-ticket
+{
+	background-image: url("../images/other/pointing.jpg");
+	background-position: right;
+	background-size: contain;
+	height: 250px;
+	background-repeat: no-repeat;
+}
+
+.circle-fly
+{
+	position: relative;
+    bottom: 80px;
+   
+    color: green;
+    left: -31px;
+}
+.coupon {
+    border-radius: 12px;
+    box-shadow: 5px 8px 10px #d6d5d533
+}
+
+
+
+.code:hover {
+    background: green;
+    color: #fff;
+    cursor: pointer
+}
+
+.text-titlepost
+{
+	margin-top: -55px;
 }

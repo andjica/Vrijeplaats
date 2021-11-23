@@ -11,9 +11,15 @@
             <div class="container-fluid">
                 <div class="page-content-wrapper d-flex flex-column justify-content-center">
                     <div class="row">
+                   
                     <div class="col-xl-10">
+                        <button class="btn btn-primary text-right  btn-sm mb-2" onclick="goBack()">   
+                            <i class="fas fa-arrow-left"></i> Ga terug
+                        </button>
+
                         <div class="card rounded-0 border-0 invoices">
                             <div class="card-body">
+                         
                                 <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
                                 Invoices</h5>
                                 <div class="table-responsive-sm">
