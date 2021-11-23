@@ -9,6 +9,8 @@ use App\Post;
 use App\User;
 use App\Purchase;
 use App\UserSignature;
+use App\UserView;
+
 use Carbon;
 
 class AdminController extends Controller
@@ -70,7 +72,16 @@ class AdminController extends Controller
 
     public function partners()
     {
-        $partners = UserSignature::orderBy('created_at', 'desc')->get();
-        return view('admin.partners', compact('partners'), $this->data);
+        $partners = User::where('role_id', 3)->orderBy('created_at', 'desc')->get();
+        $noactive = UserView::where('payed_status', 0)->where('company', 'COMPANY')->get();
+        
+        return view('admin.partners', compact('partners', 'noactive'), $this->data);
+    }
+
+    public function users()
+    {
+        $users = User::orderBy('created_at', 'desc')->get();
+
+        return view('admin.user.users', compact('users'), $this->data);
     }
 }

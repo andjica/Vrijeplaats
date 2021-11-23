@@ -9,6 +9,9 @@ use App\Category;
 use App\City;
 use App\Post;
 use Carbon\Carbon;
+use App\Mail\EmailBecomePartner;
+use App\Mail\EmailConfirmationBecomePartner;
+use Illuminate\Support\Facades\Mail;
 
 class UserViewController extends Controller
 {
@@ -128,6 +131,7 @@ class UserViewController extends Controller
         $userinfo->firstname = request()->firstname2;
         $userinfo->lastname = request()->lastname2;
         $userinfo->company = request()->usercategory2;
+        $userinfo->company_name = request()->companyname;
         $userinfo->company_kvk = request()->companykvk;
         $userinfo->company_btw = request()->companybtw;
         $userinfo->phone = request()->phone2;
@@ -137,6 +141,7 @@ class UserViewController extends Controller
         $userinfo->instagram = request()->instagram2;
         $userinfo->user_id = auth()->user()->id;
         $userinfo->address = request()->autocompleteaddress;
+        $userinfo->post_code = request()->postcode;
         if(request()->userimage2)
         {
             
@@ -160,15 +165,30 @@ class UserViewController extends Controller
         }
         else
         {
-            try{
+           
                 $userinfo->save();
+
+                if($userinfo->send_to_admin == 0)
+                {
+                    $data = ([
+                        'contactperson'=> request()->firstname2.request()->lastname2,
+                        'naambedrijf' => request()->companyname,
+                        'companykvk' => request()->companykvk,
+                        'adres' => request()->autocompleteaddress,
+                        'post' => request()->postcode,
+                        'telefoon' => request()->phone2,
+                        'email' => auth()->user()->email,
+                        'date' => Carbon::now(),
+                        'signature' => request()->signature
+                    ]);
+                    Mail::send(new EmailBecomePartner($data));
+                    Mail::send(new EmailConfirmationBecomePartner($data));
+                }
+
                 return redirect()->back()->with('success', 'Je hebt je gegevens succesvol uitgewisseld');
 
-            }
-            catch(\Throwable $e)
-            {
-                abort(500);
-            }
+            
+           
         }
     }
 
