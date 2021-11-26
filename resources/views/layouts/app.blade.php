@@ -34,6 +34,8 @@
 
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+  
   
 </head>
 <body style="overflow-x: hidden;">
@@ -56,7 +58,6 @@
     <script type="text/javascript" src="{{asset('/js/')}}/edit-info.js"></script>
     <script type="text/javascript" src="{{asset('/js/')}}/insert-adv.js"></script>
 
-    
-    <!-- End custom scripts -->
+
 </body>
 </html>

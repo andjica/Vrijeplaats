@@ -169,8 +169,9 @@ class HomeController extends Controller
         $posts = Post::where('category_id', $category->id)
         ->where('city_id', $city->id)
         ->where('valid_until','>', $timenow)
-        ->paginate(6);
+        ->get();
 
+          
         if($posts->count() != 0)
         {
             return view('categories.filter-category-city', compact('posts', 'city', 'category'), $this->data);

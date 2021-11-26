@@ -54,5 +54,10 @@ class FrontController extends Controller
         return view('pages.become-partner', $this->data);
     }
 
+    public function proba()
+    {
+        return view('pages.proba', $this->data);
+    }
+
     
 }

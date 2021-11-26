@@ -82,5 +82,7 @@ Route::get('/config-cache', function() {
     return '<h1>Clear Config cleared</h1>';
 });
 
+Route::get('/proba', 'FrontController@proba');
+
 
 

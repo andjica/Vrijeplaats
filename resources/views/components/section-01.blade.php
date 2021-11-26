@@ -2,17 +2,18 @@
 <section id="section-01" class="home-main-intro">
 <div class="home-main-intro-container">
 <div class="container">
-<div class="heading mb-9">
+<div class="heading mb-7">
 <h1 class="mb-7">
-<span class="d-block slideInLeft animated" data-animate="slideInLeft">Bekijk Hier</span>
-<span class="font-weight-light d-block fadeInRight animated" data-animate="fadeInRight">De leukste <br>en beste deals!</span>
+<span class="d-block slideInLeft animated m-font-intro" data-animate="slideInLeft">Bekijk Hier</span>
+<span class="font-weight-light d-block fadeInRight animated n-font-intro" data-animate="fadeInRight">De leukste <br>en beste deals!</span>
 </h1>
 <p class="h5 font-weight-normal text-secondary mb-0 fadeInDown animated" data-animate="fadeInDown">
 Zoek waar een vrijeplaats voor vrij is!
 </p>
 </div>
 <div class="form-search form-search-style-02  fadeInDown animated" data-animate="fadeInDown">
-<form action="{{asset('/categorie={name}/city={name}')}}" method="GET">
+<form action="{{asset('/categorie={name}/city={name}')}}" method="GET" id="searchbycategorycity">
+
 @csrf
 <div class="row align-items-end no-gutters">
 <div class="col-xl-6 mb-4 mb-xl-0 py-2 px-4 bg-white border-right position-relative rounded-left form-search-item">

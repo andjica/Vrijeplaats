@@ -87,6 +87,8 @@ class RegisterController extends Controller
             $userinfo->company = 'COMPANY';
         }
         $userinfo->save();
+        
+        $user->sendEmailVerificationNotification();
 
         return $user;
 

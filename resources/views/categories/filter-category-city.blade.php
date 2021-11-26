@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+    <script>  
+        var category = <?php echo $category ?>;
+        var city = <?php echo $city ?>;
+        var posts = <?php  echo $posts; ?>;
+        alert(city['name']);
+    </script>
 @section('content')
 
 @include('user.top-campain')
@@ -94,7 +100,7 @@
       
          
         <div class="d-flex justify-content-center mt-2 mb-3">
-            {{ $posts->links() }}
+          
         </div>
         </div>
         @php
@@ -260,3 +266,4 @@ faucibus est sed facilisis viverra satanil...
 </section>
 
 @endsection
+

@@ -80,7 +80,7 @@ Listing
 </div></div>
 </header> -->
 
-<header id="header" class="main-header  header-sticky header-sticky-smart header-style-10 text-uppercase">
+<header id="header" class="main-header  header-sticky header-sticky-smart header-style-10 text-uppercase z-header">
 <div class="sticky-area-wrap"><div class="header-wrapper sticky-area border-bottom" style="">
 <div class="container-fluid">
 <nav class="navbar navbar-expand-xl">
@@ -89,14 +89,9 @@ Listing
 <div class="navbar-toggler toggle-icon" data-toggle="collapse" data-target="#navbar-main-menu">
 <span></span>
 </div>
-<img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats" style="border-radius: 100%;
-    width: 220px;
-    position: absolute;
-    text-align: center;
-    margin: 0px auto;
-    right: 18%;
-    left: 16%;">
-
+<a href="{{asset('/')}}">
+<img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats" class="logo-image">
+</a>
 <a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
     <i class="fas fa-search"></i></a>
 </div>

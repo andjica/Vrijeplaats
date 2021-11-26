@@ -31,6 +31,32 @@
 
 </div>
 
+<!-- <script>
+  $('#searchbycategorycity').on('submit', function(e){
+   
+   e.preventDefault();
+    var category = $('#key-word').val();
+    var city = $('#region').val();
+
+    var url = 'http://localhost/vrijeplaats/public/categorie='+category+'/city='+city;
+    
+		// Submit the form using AJAX.
+		$.ajax({
+			type: 'POST',
+			url: url,
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			data: 
+            {
+                "_token": TOKEN,
+                category : category,
+                city : city
+            },
+            success: function(response){
+                alert(response.posts);
+            }
+		})
+  });
+    </script> -->
 
 </body>
 </html>

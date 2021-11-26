@@ -492,7 +492,7 @@ mark,
 }
 
 .list-inline-item:not(:last-child) {
-	margin-right: .5rem
+	margin-right: .3rem
 }
 
 .initialism {
@@ -19320,7 +19320,7 @@ iframe {
 }
 
 .toggle-icon:hover {
-	color: #e4573d
+	color: white;
 }
 
 .toggle-icon.in>span {
@@ -19604,7 +19604,7 @@ iframe {
 }
 
 .icon-box-style-01:hover {
-	background:#99bffd;
+	background:#fcce35;
 	color: #fff!important
 }
 
@@ -21399,15 +21399,11 @@ iframe {
 	}
 }
 
-.form-search.form-search-style-02 .btn {
-	font-size: 20px;
-	padding-top: 23.5px;
-	padding-bottom: 23.5px
-}
+
 
 @media(max-width:1199.98px) {
 	.form-search.form-search-style-02 .form-search-item {
-		border: 0!important;
+		
 		border-radius: 3px!important
 	}
 }
@@ -21949,10 +21945,10 @@ iframe {
 }
 
 .home-main-intro {
-	background: #e1e8f4;
-	background-image: url("http://dfambusiness.com/vrijeplaats/public/images/other/banner4.png");
-	background-size: contain;
-	background-position: top;
+	
+	background-image: url("../images/other/banner.jpg");
+	 background-size: contain;
+	/* background-position: top; */
 	background-repeat: no-repeat;
 	position: relative;
 	z-index: 1;
@@ -21994,7 +21990,46 @@ iframe {
 @media(max-width:767.98px) {
 	.home-main-intro .heading h1 {
 		font-size: 60px
+		
 	}
+	.home-main-intro
+	{	
+		padding-top: 156px;
+		background-position: 0px 78px;
+	
+	}
+
+	.m-font-intro
+	{
+		font-size: 35px;
+		margin-bottom: 10px;
+	}
+
+	.n-font-intro
+	{
+		font-size: 30px;
+	}
+
+	.form-search.form-search-style-02 .btn
+	{
+		height: 50px !important; 
+		width: 150px;
+		margin: 0px auto;
+		font-size: 15px !important;
+		border-radius: 21px !important;
+		font-size: 20px;
+
+		background: #fcce35 !important;
+	  
+		height: 95px;
+		border: 10px solid #ed008c;
+		border-left: white;
+		border-top: white;
+		border-bottom: white;
+	}
+
+
+
 }
 
 .home-main-intro .dropdown-menu {
@@ -26333,7 +26368,7 @@ button.mfp-arrow:active {
 }
 
 .form-search-item{
-	 border: 2px solid pink !important;
+	 border: 2px solid orange !important;
 	
 }
 
@@ -26344,9 +26379,8 @@ button.mfp-arrow:active {
 	height: 48px;
 }.form-search.form-search-style-02 .btn {
     font-size: 20px;
-    padding-top: 23.5px;
-    padding-bottom: 23.5px;
-    border-radius: 20px;
+    /* padding-top: 23.5px; */
+   
 }
 
 .dashboards .facts-box .view {
@@ -26377,7 +26411,7 @@ button.mfp-arrow:active {
 .header-wrapper.sticky-area.border-bottom{
 	position: fixed;
     background: #ed008c !important;
-    top: 0px;
+    top: -6px;
 }
 
 .sticky-area-wrap.sticky .navbar-brand img {
@@ -26425,22 +26459,9 @@ button.mfp-arrow:active {
 	}
 }
 
-.form-search-item{
-	border:none !important;
-}
 
-.form-search.form-search-style-02 .btn {
-    font-size: 20px;
-    padding-top: 23.5px;
-    padding-bottom: 23.5px;
-    background: white !important;
-    border-radius: 4px !important;
-    height: 95px;
-    border: 10px solid #ed008c;
-    border-left: white;
-    border-top: white;
-    border-bottom: white;
-}
+
+
 
 .card-text:last-child {
     margin-bottom: 0;
@@ -26486,4 +26507,22 @@ button.mfp-arrow:active {
 .text-titlepost
 {
 	margin-top: -55px;
+}
+
+.logo-image
+{
+	border-radius: 100%;
+    width: 125px;
+    position: fixed;
+    text-align: center;
+    margin: 0px auto;
+    right: 18%;
+    left: 16%;
+	top: -20px;
+}
+
+.z-header
+{
+	position: fixed;
+	z-index: 10000;
 }

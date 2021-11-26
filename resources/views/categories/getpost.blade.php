@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+   
 @section('content')
 <script src="{{asset('/vendors/')}}/jquery.min.js"></script>
 
