@@ -26526,3 +26526,12 @@ button.mfp-arrow:active {
 	position: fixed;
 	z-index: 10000;
 }
+
+#map {
+	height: 500px;
+}
+
+#map label{
+	width: 150px;
+	background-position: red;
+}

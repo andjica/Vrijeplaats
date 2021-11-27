@@ -197,5 +197,6 @@
 </form>
 </div>
 </div>
+    <script type="text/javascript" src="{{asset('/js/')}}/google-geo-parameters.js"></script>
 
 @endsection

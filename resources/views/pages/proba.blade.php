@@ -46,7 +46,7 @@ function initMap() {
     [{ lat: 34.823736, lng: -111.8001857 }, "Red Rock Crossing"],
     [{ lat: 34.800326, lng: -111.7665047 }, "Bell Rock"],
   ];
-
+ console.log(tourStops);
   const image = {
     url: "http://localhost/vrijeplaats/public/images/map.png",
     // This marker is 20 pixels wide by 32 pixels high.
@@ -56,6 +56,7 @@ function initMap() {
     // The anchor for this image is the base of the flagpole at (0, 32).
     anchor: new google.maps.Point(0, 32),
   };
+  
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
 

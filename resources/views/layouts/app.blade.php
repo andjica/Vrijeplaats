@@ -34,8 +34,7 @@
 
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
-  
+
   
 </head>
 <body style="overflow-x: hidden;">
@@ -53,11 +52,11 @@
     @yield('footer-content')
     <!-- Custom scripts -->
     <script type="text/javascript" src="{{asset('/js/')}}/summernote.js"></script>
-    <script type="text/javascript" src="{{asset('/js/')}}/google-geo-parameters.js"></script>
     <script type="text/javascript" src="{{asset('/js/')}}/insert-info.js"></script>
     <script type="text/javascript" src="{{asset('/js/')}}/edit-info.js"></script>
     <script type="text/javascript" src="{{asset('/js/')}}/insert-adv.js"></script>
-
-
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  
+ 
 </body>
 </html>
