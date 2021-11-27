@@ -47,14 +47,16 @@ function initMap() {
     [{ lat: 34.800326, lng: -111.7665047 }, "Bell Rock"],
   ];
  console.log(tourStops);
+ 
+ 
   const image = {
     url: "http://localhost/vrijeplaats/public/images/map.png",
     // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(50, 30),
+    size: new google.maps.Size(30, 30),
     // The origin for this image is (0, 0).
     origin: new google.maps.Point(0, 0),
     // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 32),
+    anchor: new google.maps.Point(0, 3),
   };
   
   // Create an info window to share between markers.

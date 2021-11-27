@@ -1,5 +1,11 @@
 @extends('layouts.app')
-
+<style>
+    .gm-style-iw-d
+    {
+        width:300px;
+        max-height: 500px !important;
+    }
+    </style>
     <script>  
         var category = <?php echo $category ?>;
         var city = <?php echo $city ?>;
@@ -271,28 +277,28 @@ faucibus est sed facilisis viverra satanil...
     ></script>
 <script>
 function initMap() {
+
+
     let latitude =  city['geo_latitude'];
     let longlatitude = city['geo_long_latitude'];
     
    
     const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
+    zoom: 13,
     center: { lat: parseFloat(latitude), lng: parseFloat(longlatitude) }
-
-    
-    
-  });
+     });
 
 
 
         var locations = [];
-
+       
         const obj = posts;
 
         // Prints "name Jean-Luc Picard" followed by "rank Captain"
         Object.keys(obj).forEach(key => {
         
         console.log(key, obj[key]['geo_address_latitude']);
+        
 
         locations[key] =
         
@@ -301,43 +307,48 @@ function initMap() {
                     lat: parseFloat((key, obj[key]['geo_address_latitude'])),
                     lng:  parseFloat((key, obj[key]['geo_address_longlatitude'])) 
                 }, 
-                (key, obj[key]['title']), (key, obj[key]['price_first'])
-            ]
+                (key, obj[key]['title']),(key, obj[key]['main_description']),(key, obj[key]['firstimage']['url']), 
+                (key, obj[key]['price_first'])
+            ]; 
 
-            
-        ; 
-            
        
+            
       
         });
 
-        console.log(locations);
-     
   
   const image = {
     url: "http://localhost/vrijeplaats/public/images/map.png",
     // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(100, 50),
+    size: new google.maps.Size(80, 30),
     // The origin for this image is (0, 0).
     origin: new google.maps.Point(0, 0),
     // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 32),
+    anchor: new google.maps.Point(0, 3),
   };
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
 
-  // Create the markers.
-  locations.forEach(([position, title, price], i) => {
+  locations.forEach(([position, title, desc,firstimage, price], i) => {
     const marker = new google.maps.Marker({
 
       animation: google.maps.Animation.DROP,
       position,
       map,
       icon: image,
-      title: `${i + 1}. ${title}`,
-      label: `${price}`,
+      title: `${title}`,
+      label:{
+        text : `${price}`,
+        color: 'black',
+       
+      },
+      infoWindowContent : ` <div class="card p-2" width="300px !imortant"><h5>${title}</h5>
+      <img src="http://localhost/vrijeplaats/public/images/posts/${firstimage}" class="img-fluid mb-2" width="150px">
+      <p class="text-dark">${desc}</p><Br>
+      <a class="btn btn-primary">Find out</a>
+      </div>`,
       optimized: false,
-      
+     
 
     });
 
@@ -346,8 +357,9 @@ function initMap() {
     // Add a click listener for each marker, and set up the info window.
     marker.addListener("click", () => {
       infoWindow.close();
-      infoWindow.setContent(marker.getTitle());
+      infoWindow.setContent(marker.infoWindowContent);
       infoWindow.open(marker.getMap(), marker);
+      
     });
   });
 }

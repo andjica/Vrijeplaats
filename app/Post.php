@@ -23,6 +23,13 @@ class Post extends Model
         return $this->hasMany(Image::class, 'post_id');
     }
 
+    public function firstimage()
+    {
+        return $this->hasOne(Image::class, 'post_id');
+
+    }
+         
+
     public function city()
     {
         return $this->belongsTo(City::class);

@@ -166,11 +166,12 @@ class HomeController extends Controller
         ->first();
 
         $timenow = Carbon::now();
-        $posts = Post::where('category_id', $category->id)
+        $posts = Post::with('firstimage')->where('category_id', $category->id)
         ->where('city_id', $city->id)
         ->where('valid_until','>', $timenow)
         ->get();
 
+        
           
         if($posts->count() != 0)
         {
