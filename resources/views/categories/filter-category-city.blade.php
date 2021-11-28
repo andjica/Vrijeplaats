@@ -1,16 +1,10 @@
 @extends('layouts.app')
-<style>
-    .gm-style-iw-d
-    {
-        width:300px;
-        max-height: 500px !important;
-    }
-    </style>
+
     <script>  
         var category = <?php echo $category ?>;
         var city = <?php echo $city ?>;
         var posts = <?php  echo $posts; ?>;
-       console.log(posts);
+       
     </script>
 @section('content')
 
@@ -28,7 +22,7 @@
         @endisset
         @isset($city)
         <li class="breadcrumb-item">
-            <a href="{{asset('/city/'.$city->link)}}">{{$city->name}}</a>
+            <a href="{{asset('/city/'.$city->name)}}">{{$city->name}}</a>
         </li>
         @endisset
        
@@ -284,7 +278,7 @@ function initMap() {
     
    
     const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
+    zoom: 12,
     center: { lat: parseFloat(latitude), lng: parseFloat(longlatitude) }
      });
 
@@ -342,9 +336,9 @@ function initMap() {
         color: 'black',
        
       },
-      infoWindowContent : ` <div class="card p-2" width="300px !imortant"><h5>${title}</h5>
-      <img src="http://localhost/vrijeplaats/public/images/posts/${firstimage}" class="img-fluid mb-2" width="150px">
-      <p class="text-dark">${desc}</p><Br>
+      infoWindowContent : ` <div class="card p-2"><h5>${title}</h5>
+      <img src="http://localhost/vrijeplaats/public/images/posts/${firstimage}" class="img-fluid mt-2 mb-2" width="110px">
+      <p class="text-dark m-0">${desc}</p><Br>
       <a class="btn btn-primary">Find out</a>
       </div>`,
       optimized: false,
