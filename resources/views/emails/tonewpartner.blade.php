@@ -133,9 +133,26 @@
 <td style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:20px;">
 <div style="font-family: Tahoma, Verdana, sans-serif">
 <div style="font-size: 12px; font-family: 'Roboto', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2;">
-<p style="margin: 0; font-size: 14px; text-align: center;"><span style="font-size:30px;"><strong> Bevestiging van de aanvraag voor om parter te worden</strong></span></p>
+<p style="margin: 0; font-size: 14px; text-align: center;"><span style="font-size:30px;"><strong> Aanvraag ontvangen! Uw aanvraag is goed ontvangen.</strong></span></p>
 <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 14.399999999999999px;"> </p>
-<p style="margin: 0; text-align: center;"><span style="font-size:17px;">Om lid te worden van ons platform, is het noodzakelijk om binnen zeven dagen na ontvangst van deze e-mail de betaling te doen.</span></p>
+<p style="margin: 0; text-align: center;"><span style="font-size:17px;"> Bedankt voor het vertrouwen in Vrijeplaats. We gaan er samen wat moois van maken want FULL PLACES IS HAPPY FACES, 
+
+<br> <br> Wij werken hard om Q1 live te gaan en houden jullie hier vanzelfsprekend van op de hoogte. Klik op de onderstaande knop om te betalen.</span></p>
+<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 18px;">
+<br> <br>
+<a href="https://paymentlink.mollie.com/payment/JPvORfTt5CvTOmol7KCmI/" style="color: #fff;
+    background: #3f93f3 -webkit-gradient(linear, left top, left bottom, from(#5ca3f5), to(#3f93f3)) repeat-x;
+    background: #3f93f3 linear-gradient(
+180deg, #5ca3f5, #3f93f3) repeat-x;
+border-color: #3f93f3;
+    padding: 10px;
+    margin-top: 40px !important;
+    top: 30px !important;
+    position: relative !important;
+    text-decoration: none;
+    border-radius: 10px;
+    color: black;
+    background: white;">Betaal met: Ideal / Creditcard</a> </p>
 <p style="margin: 0; mso-line-height-alt: 14.399999999999999px;"> </p>
 <p style="margin: 0; mso-line-height-alt: 14.399999999999999px;"> </p>
 <p style="margin: 0; mso-line-height-alt: 14.399999999999999px;"> </p>
@@ -198,8 +215,12 @@
 <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 24px;"><span style="color:#e03add;font-size:16px;"><strong><span style="color:#868686;">KVK</span>: <span style="color:#000000;">82660689</span></strong></span></p>
 <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 24px;"><span style="color:#e03add;font-size:16px;"><strong><span style="color:#868686;"> BTW</span>: <span style="color:#000000;">NL862556508B01</span></strong></span></p>
 <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 24px;"><span style="color:#e03add;font-size:16px;"><strong><span style="color:#868686;">Rekening nummer</span>:<span style="color:#000000;"> NL25 INGB 0008 1787 07</span></strong></span></p>
-<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 18px;"> </p>
-<p style="margin: 0; font-size: 14px; text-align: center;">Neem voor meer informatie contact met ons op via e-mail: info@abosaver.com</p>
+
+
+	    
+
+<p style="margin: 0; font-size: 14px; text-align: center;">Neem voor meer informatie contact met ons op via e-mail: info@vrijeplaats.nl</p>
+	</form>
 </div>
 </div>
 </td>

@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'info@vrijeplaats.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'info@vrijeplaats.nl'),
         'name' => env('MAIL_FROM_NAME', 'Vrijeplaats'),
     ],
 

@@ -17,7 +17,7 @@
         
         @isset($category)
         <li class="breadcrumb-item">
-            <a href="{{asset('/category/'.$category->link)}}">{{$category->name}}</a>
+            <a href="{{asset('/categorie/'.$category->link)}}">{{$category->name}}</a>
         </li>
         @endisset
         @isset($city)
@@ -301,7 +301,10 @@ function initMap() {
                     lat: parseFloat((key, obj[key]['geo_address_latitude'])),
                     lng:  parseFloat((key, obj[key]['geo_address_longlatitude'])) 
                 }, 
-                (key, obj[key]['title']),(key, obj[key]['main_description']),(key, obj[key]['firstimage']['url']), 
+                (key, obj[key]['title']),
+                (key, obj[key]['main_description']),
+                (key, obj[key]['valid_until']),
+                (key, obj[key]['firstimage']['url']), 
                 (key, obj[key]['price_first'])
             ]; 
 
@@ -312,7 +315,7 @@ function initMap() {
 
   
   const image = {
-    url: "http://localhost/vrijeplaats/public/images/map.png",
+    url: "http://vrijeplaats.nl/public/images/map.png",
     // This marker is 20 pixels wide by 32 pixels high.
     size: new google.maps.Size(80, 30),
     // The origin for this image is (0, 0).
@@ -323,7 +326,7 @@ function initMap() {
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
 
-  locations.forEach(([position, title, desc,firstimage, price], i) => {
+  locations.forEach(([position, title, desc,valid_until, firstimage, price], i) => {
     const marker = new google.maps.Marker({
 
       animation: google.maps.Animation.DROP,
@@ -336,10 +339,12 @@ function initMap() {
         color: 'black',
        
       },
-      infoWindowContent : ` <div class="card p-2"><h5>${title}</h5>
-      <img src="http://localhost/vrijeplaats/public/images/posts/${firstimage}" class="img-fluid mt-2 mb-2" width="110px">
-      <p class="text-dark m-0">${desc}</p><Br>
-      <a class="btn btn-primary">Find out</a>
+      infoWindowContent : ` <div class="card" style="padding:10px"><h5 class="g-title-s">${title}</h5>
+      <span class="status active">Active until <small>${valid_until}</small></span>
+      <img src="../images/posts/${firstimage}" class="img-fluid mt-2 mb-2" width="110px">
+      <p class="text-dark m-0 g-desc-s">${desc}</p><Br>
+      <del>blue</del> <ins>red</ins>
+      <a class="btn btn-primary g-btn">Find out</a>
       </div>`,
       optimized: false,
      

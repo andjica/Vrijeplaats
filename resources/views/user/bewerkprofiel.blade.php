@@ -68,5 +68,5 @@
 </div>
 </div>
 </div>
-
+<script type="text/javascript" src="https://vrijeplaats.nl/public/js/google-geo-parameters.js"></script>
 @endsection

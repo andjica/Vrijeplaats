@@ -142,6 +142,7 @@ class UserViewController extends Controller
         $userinfo->user_id = auth()->user()->id;
         $userinfo->address = request()->autocompleteaddress;
         $userinfo->post_code = request()->postcode;
+        
         if(request()->userimage2)
         {
             
@@ -185,7 +186,8 @@ class UserViewController extends Controller
                     Mail::send(new EmailConfirmationBecomePartner($data));
 
                     $userinfo->send_to_admin = 1;
-                    $user->save();
+                    
+                    $userinfo->save();
                 }
 
                 return redirect()->back()->with('success', 'Je hebt je gegevens succesvol uitgewisseld');

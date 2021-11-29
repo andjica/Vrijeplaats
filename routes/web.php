@@ -50,9 +50,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     //Mollie Payment 
     Route::get('/buy-ticket/{id}', 'MolliePaymentController@buyticket');
     Route::get('/mollie-paymnet','MolliePaymentController@preparePayment')->name('mollie.payment');
-    Route::post('/payment-success','MolliePaymentController@paymentSuccess')->name('payment.success');
+    Route::get('/payment-success','MolliePaymentController@paymentSuccess')->name('payment.success');
     Route::post('/webhooks-mollie', 'MolliePaymentController@handle')->name('webhooks.mollie');
-
+    Route::get('/get-checkout-partnership', 'MolliePaymentController@handlePartnerShip');
+    Route::get('/paymentforpartership', 'MolliePaymentController@paymentforpartership');
     
 });
 
@@ -83,6 +84,11 @@ Route::get('/config-cache', function() {
 });
 
 Route::get('/proba', 'FrontController@proba');
-
+Route::get('/updateapp', function()
+{
+   
+    system('composer dump-autoload');
+    
+});
 
 
