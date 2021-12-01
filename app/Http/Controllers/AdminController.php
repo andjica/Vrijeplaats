@@ -62,8 +62,8 @@ class AdminController extends Controller
 
     public function posts()
     {
-        $posts = Post::orderBy('created_at')->paginate(3);
-       
+        $posts = Post::orderBy('created_at', 'desc')->paginate(3);
+        
         $datenow =  Carbon\Carbon::now();
         $postsexpired = Post::where('valid_until', '<', $datenow)->get();
         

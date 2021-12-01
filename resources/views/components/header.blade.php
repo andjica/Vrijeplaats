@@ -92,8 +92,7 @@ Listing
 <a href="{{asset('/')}}">
 <img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats" class="logo-image">
 </a>
-<a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
-    <i class="fas fa-search"></i></a>
+
 </div>
 <div class="collapse navbar-collapse" id="navbar-main-menu" style="    height: 80px;">
 
@@ -101,6 +100,7 @@ Listing
 
 
 <div class="col-lg-5 bruv">
+  
 <li class="nav-item">
 <a class="nav-link text-dark" href="#">Home <span class="caret"><i class="fa fa-angle-down"></i></span></a>
 <ul class="sub-menu x-animated x-fadeInUp">
@@ -140,7 +140,8 @@ Listing
 </div>
 
 <div class="col-lg-5 bruv">
-
+<li> <a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
+    <i class="fas fa-search"></i></a></li>
   @if(auth()->user())
 <li class="nav-item dropdown">
 <a class="nav-link" href="{{asset('/logout')}}"><i class="fas fa-sign-out-alt"></i> Uiloggen</a>

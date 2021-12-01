@@ -10,19 +10,22 @@
             <div class="page-container">
                 <div class="container-fluid">
                 <div class="page-content">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{session('success')}}
+                    </div>
+                    @endif
                     <div class="tabs">
-                    <ul class="nav nav-pills tab-style-01 font-size-lg" role="tablist">
-                    <li class="nav-item">
-                    <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All Listings ({{$countposts}}) </a>
-                    </li>
-                  
-               
-                    <li class="nav-item">
-                    <a class="nav-link" id="expires-tab" data-toggle="tab" href="#expires" role="tab" aria-controls="expires" aria-selected="false"> Expires
-                    Listings
-                    (2) </a>
-                    </li>
-                    </ul>
+                        <ul class="nav nav-pills tab-style-01 font-size-lg" role="tablist">
+                            <li class="nav-item">
+                            <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All Listings ({{$countposts}}) </a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" id="expires-tab" data-toggle="tab" href="#expires" role="tab" aria-controls="expires" aria-selected="false"> Expires
+                            Listings
+                            (2) </a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="tab-content">
                     <div class="tab-pane fade active show" id="all" role="tabpanel" aria-labelledby="all-tab">
@@ -84,10 +87,31 @@
                     <i class="fa fa-edit"></i>
                     Edit
                     </a>
-                    <a href="#" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
-                    <i class="fa fa-trash-alt"></i>
-                    Delete
-                    </a>
+                    <button  class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md" data-toggle="modal" data-target="#post{{$p->id}}">
+                                <i class="fa fa-trash-alt"></i>
+                                Overzicht
+                                </button>
+                                <div class="modal fade" id="post{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="postmodal" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="postmodals"><b>{{$p->title}}</b></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                       
+                                        Weet je zeker dat je het bericht onder id {{$p->id}} wilt verwijderen?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <a href="{{asset('/delete-advertising/'.$p->id)}}" class="btn btn-danger">
+                                        <i class="fas fa-trash"></i>Overzicht</a>
+                                    </div>
+                                    </div>
+                                </div>
+                         </div>   
                     </div>
                     </div>
                     </div>
@@ -160,12 +184,11 @@
                                 <i class="fa fa-edit"></i>
                                 Edit
                                 </a>
-                                <a href="#" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
-                                <i class="fa fa-trash-alt"></i>
-                                Delete
-                                </a>
+                            
+                              
                                 </div>
                                 </div>
+                               
                                 </div>
                                
                         @endforeach

@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/company/{id}', 'UserViewController@company');
 
     Route::post('/insert-advertising', 'PostController@store');
+    Route::get('/delete-advertising/{id}', 'PostController@destroy');
   
     //Mollie Payment 
     Route::get('/buy-ticket/{id}', 'MolliePaymentController@buyticket');

@@ -26550,6 +26550,7 @@ button.mfp-arrow:active {
 {
 	font-size: 18px;
 	padding-right: 56px;
+	padding-top: 7px;
 }
 
 .g-desc-s
@@ -26560,5 +26561,83 @@ button.mfp-arrow:active {
 
 .g-btn
 {
-	width: 50%;
+	width: 120px;
+	padding: 2px !important;
+	background: #ed008c !important;
 }
+
+.g-labels
+{
+	background:red !important;
+}
+
+.d-block
+{
+	display: block;
+}
+
+/* ovo je google maps novo */
+
+.gm-style-iw-d {
+    width: 100% !important;
+    max-height: 500px !important;
+    text-align: center;
+}
+
+.g-title-s {
+    font-size: 14px;
+	padding-right: 0px;
+    padding-top: 7px;
+}
+
+.gm-style img {
+    max-width: none;
+    width: 95%;
+    margin: 0px auto;
+}
+
+.gm-style .gm-style-iw-c {
+    max-width: 225px !important;
+ 
+
+}
+.mobilepro
+	{
+		display:block ;
+	}
+	.d-b-google{
+		display: block;
+	}
+
+	@media screen and (max-width:768px){
+		.d-b-google{
+			display: none;
+		}
+	}
+
+@media screen and (min-width:768px){
+	 .for-mobile-only{
+		display: none;
+	}
+	.mobilepro
+	{
+		display:none  ;
+	}
+	
+}
+
+
+.for-mobile-only{
+	position: fixed;
+    bottom: 0;
+    background: white;
+    width: 100%;
+	text-align: center;
+	z-index: 100000;
+}
+
+.modal-dialog
+{
+	margin-top: 100px;
+}
+

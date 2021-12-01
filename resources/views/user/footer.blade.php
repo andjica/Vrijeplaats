@@ -1,3 +1,36 @@
+
+<!-- <div class="for-mobile-only">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-2-s">
+                <img src="{{asset('/')}}/images/home.png">
+                <p>test</p>
+            </div> 
+            <div class="col-lg-2-s">
+            <i class="far fa-grin-beam text-primary fa-2x"></i>
+            <p>test</p>
+
+            </div>
+            <div class="col-lg-2-s">
+                <img src="{{asset('/')}}/images/logo.jpeg" class="rounded">
+            <p>test</p>
+
+            </div>
+            <div class="col-lg-2-s">
+                <img src="{{asset('/')}}/images/home.png">
+            <p>test</p>
+
+            </div>
+            <div class="col-lg-2-s">
+                <img src="{{asset('/')}}/images/home.png">
+            <p>test</p>
+
+            </div>
+        </div> 
+    </div>    
+</div>  -->
+
+
 <footer class="main-footer main-footer-style-01 bg-pattern-01 pt-12 pb-8">
 <div class="footer-second">
  <div class="container">

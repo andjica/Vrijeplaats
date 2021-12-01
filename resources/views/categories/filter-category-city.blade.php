@@ -1,11 +1,6 @@
 @extends('layouts.app')
 
-    <script>  
-        var category = <?php echo $category ?>;
-        var city = <?php echo $city ?>;
-        var posts = <?php  echo $posts; ?>;
-       
-    </script>
+   
 @section('content')
 
 @include('user.top-campain')
@@ -29,7 +24,17 @@
   </ol>
 </nav>
 <div class="container" id="container-desk">
+<div class="btn-group-sm d-flex" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-outline-light text-muted">Left</button>
+    <button type="button" class="btn btn-outline-light text-muted">Middle</button>
+    <button type="button" class="btn btn-outline-light text-muted d-b-google" id="googlemapview">
+        <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
+    </button>
 
+    <button type="button " class="mobilepro btn btn-outline-light text-muted" id="googlemapview-mobile">
+        <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
+    </button>
+</div>
 <div class="row">
     <div class="col-lg-6">
  
@@ -57,7 +62,9 @@
                         <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">numm of ticket</span>
                     </li>
                     <li class="list-inline-item separate"></li>
-                    <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">€{{$p->price_first}}</span>
+                    <li class="list-inline-item">
+                        <span class="mr-1">From</span>
+                        <span class="text-danger font-weight-semibold">€{{$p->price_discount}}</span>
                     </li>
                     <li class="list-inline-item separate"></li>
                     <li class="list-inline-item"><a href="#" class="link-hover-secondary-primary">
@@ -269,17 +276,24 @@ faucibus est sed facilisis viverra satanil...
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&callback=initMap&v=weekly"
       async
     ></script>
+  
 <script>
-function initMap() {
+
+        var category = <?php echo $category ?>;
+        var city = <?php echo $city ?>;
+        var posts = <?php  echo $posts; ?>;
+      
+    function initMap() {
 
 
-    let latitude =  city['geo_latitude'];
-    let longlatitude = city['geo_long_latitude'];
+        let latitude =  city['geo_latitude'];
+        let longlatitude = city['geo_long_latitude'];
+        
     
-   
-    const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
-    center: { lat: parseFloat(latitude), lng: parseFloat(longlatitude) }
+        const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: { lat: parseFloat(latitude), lng: parseFloat(longlatitude) },
+        fullscreenControl: true
      });
 
 
@@ -287,7 +301,8 @@ function initMap() {
         var locations = [];
        
         const obj = posts;
-
+        let categorylink = category['link'];
+        let cityname = city['name'];
         // Prints "name Jean-Luc Picard" followed by "rank Captain"
         Object.keys(obj).forEach(key => {
         
@@ -305,7 +320,10 @@ function initMap() {
                 (key, obj[key]['main_description']),
                 (key, obj[key]['valid_until']),
                 (key, obj[key]['firstimage']['url']), 
-                (key, obj[key]['price_first'])
+                (key, obj[key]['price_first']), 
+                categorylink,
+                cityname,
+                (key, obj[key]['price_discount'])
             ]; 
 
        
@@ -317,16 +335,17 @@ function initMap() {
   const image = {
     url: "http://vrijeplaats.nl/public/images/map.png",
     // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(80, 30),
+    size: new google.maps.Size(80, 60),
     // The origin for this image is (0, 0).
     origin: new google.maps.Point(0, 0),
     // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 3),
+    anchor: new google.maps.Point(0, 2),
   };
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
+  
 
-  locations.forEach(([position, title, desc,valid_until, firstimage, price], i) => {
+  locations.forEach(([position, title, desc,valid_until, firstimage, firstprice,categorylink, cityname, price], i) => {
     const marker = new google.maps.Marker({
 
       animation: google.maps.Animation.DROP,
@@ -335,16 +354,20 @@ function initMap() {
       icon: image,
       title: `${title}`,
       label:{
-        text : `${price}`,
-        color: 'black',
-       
+        text : `${price}€`,
+        color: '#ed008c',
+        fontSize: "16px",
+        fontWeight: "bold"
       },
       infoWindowContent : ` <div class="card" style="padding:10px"><h5 class="g-title-s">${title}</h5>
-      <span class="status active">Active until <small>${valid_until}</small></span>
-      <img src="../images/posts/${firstimage}" class="img-fluid mt-2 mb-2" width="110px">
-      <p class="text-dark m-0 g-desc-s">${desc}</p><Br>
-      <del>blue</del> <ins>red</ins>
-      <a class="btn btn-primary g-btn">Find out</a>
+      <span class="status active">Active until <small>${valid_until}</small><br>
+      <img src="../images/posts/${firstimage}" class="img-fluid mt-2 mb-2 d-block" width="120px">
+      
+      <p class="mb-2"><del class="text-danger display-5">${firstprice}</del> <b class="text-dark">€${price}</b></span></p>
+     
+      
+      
+      <a class="btn btn-primary g-btn" href="https://vrijeplaats.nl/public/categorie=${categorylink}/city=${cityname}/name=${title}">Find out</a>
       </div>`,
       optimized: false,
      
@@ -362,6 +385,11 @@ function initMap() {
     });
   });
 }
+
+    $('#googlemapview').click(function(){
+        var map = document.querySelector(".gm-style");
+        map.requestFullscreen();
+    });
 
         </script>
 

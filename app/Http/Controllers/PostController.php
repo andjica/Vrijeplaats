@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Post;
 use App\Image;
 use App\City;
@@ -212,6 +213,20 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id) ?? abort(404);
+        
+        $images = Image::where('post_id', $post->id)->get();
+        
+        foreach ($images as $image) {
+            $image_path = public_path('images/posts/'.$image->url);
+                if(File::exists($image_path)) {
+                    File::delete($image_path);
+                }
+
+                $image->delete();
+            }
+
+        $post->delete();
+        return redirect()->back()->with('success', 'Je hebt het bericht met succes verwijderd');
     }
 }
