@@ -135,7 +135,8 @@ approved!
                                     </div>
                                     </div>
                                 </td>
-                                <td><a href="" class="text-success">Meer over</a></td>
+                                <td>@if($c->active == "YES")<span class="text-success">Actief</span>@else <span class="text-danger">Niet actief</span>@endif</td>
+                                <td><a href="{{asset('/category/'.$c->id)}}" class="text-muted"><i class="fas fa-wrench"></i> Beheren</a></td>
                                 </tr>
                                 @endforeach
                  

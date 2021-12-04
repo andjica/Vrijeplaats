@@ -2,8 +2,10 @@
 
    
 @section('content')
-
+<div class="mt-9">
 @include('user.top-campain')
+
+</div>
 <section id="section-01" class="">
 <nav aria-label="breadcrumb m-3">
   <ol class="breadcrumb m-3 bg-light">
@@ -24,18 +26,29 @@
   </ol>
 </nav>
 <div class="container" id="container-desk">
-<div class="btn-group-sm d-flex" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-outline-light text-muted">Left</button>
-    <button type="button" class="btn btn-outline-light text-muted">Middle</button>
-    <button type="button" class="btn btn-outline-light text-muted d-b-google" id="googlemapview">
-        <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
-    </button>
+    <div class="btn-group-sm d-flex" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-outline-light text-muted">Left</button>
+        <button type="button" class="btn btn-outline-light text-muted">Middle</button>
 
-    <button type="button " class="mobilepro btn btn-outline-light text-muted" id="googlemapview-mobile">
-        <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
-    </button>
+        <button type="button" class="btn btn-outline-light text-muted d-b-google"  id="googlemapview">
+            <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
+        </button>
+
+        <a href="#map" class="mobilepro btn btn-outline-light text-muted">
+            <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
+        </a>
+        
+            <select id="sortby" class="form-control" style="width:10%">
+                <option value="0" class="form-control">Sort by</option>
+                <option value="LowerPrice" class="form-control">Lower price</option>
+                <option value="HigerPrice" class="form-control">Higer price</option>
+            </select>
+       
+
+    </div> 
+    
 </div>
-<div class="row">
+<div class="row p-2">
     <div class="col-lg-6">
  
     <div class="store-listing-style-04">
@@ -116,17 +129,8 @@
         @endphp
         @isset($postfirst)
         <div class="col-lg-6 pl-0">
-        <div id="map"></div>
-            <!-- <div class="mapouter">
-                <div class="gmap_canvas">
-                <iframe width="100%" height="1680px" id="gmap_canvas" src="https://maps.google.com/maps?q={{$postfirst->geo_address_latitude}}+{{$postfirst->geo_address_longlatitude}}&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                     frameborder="0" scrolling="no" marginheight="0" 
-                    marginwidth="0"></iframe><a href="https://123movies-to.org"></a>
-                    <br><style>.mapouter{position:relative;text-align:right;height:1680px;width:100%;}</style>
-                    <a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>
-                    .gmap_canvas {overflow:hidden;background:none!important;height:1680px;width:100%;}</style>
-                </div>
-            </div> -->
+        <div id="map" class="mapice"></div>
+           
         </div>
         @endisset
 
@@ -278,25 +282,23 @@ faucibus est sed facilisis viverra satanil...
     ></script>
   
 <script>
-
+     
         var category = <?php echo $category ?>;
         var city = <?php echo $city ?>;
         var posts = <?php  echo $posts; ?>;
-      
+        var lastpost = <?php  echo $lastpost; ?>;
+        console.log(lastpost['geo_city_longlatitude']);
     function initMap() {
 
 
-        let latitude =  city['geo_latitude'];
-        let longlatitude = city['geo_long_latitude'];
+        let latitude =  lastpost['geo_address_latitude'];
+        let longlatitude = lastpost['geo_address_longlatitude'];
         
-    
         const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 10,
         center: { lat: parseFloat(latitude), lng: parseFloat(longlatitude) },
         fullscreenControl: true
-     });
-
-
+        });
 
         var locations = [];
        
@@ -335,11 +337,11 @@ faucibus est sed facilisis viverra satanil...
   const image = {
     url: "http://vrijeplaats.nl/public/images/map.png",
     // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(80, 60),
+    size: new google.maps.Size(30, 55),
     // The origin for this image is (0, 0).
     origin: new google.maps.Point(0, 0),
     // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 2),
+    anchor: new google.maps.Point(0, 1),
   };
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
@@ -359,37 +361,58 @@ faucibus est sed facilisis viverra satanil...
         fontSize: "16px",
         fontWeight: "bold"
       },
-      infoWindowContent : ` <div class="card" style="padding:10px"><h5 class="g-title-s">${title}</h5>
+      infoWindowContent : `
+ <div class="card" style="padding:10px">
+
+ <h5 class="g-title-s">${title}</h5>
       <span class="status active">Active until <small>${valid_until}</small><br>
       <img src="../images/posts/${firstimage}" class="img-fluid mt-2 mb-2 d-block" width="120px">
       
       <p class="mb-2"><del class="text-danger display-5">${firstprice}</del> <b class="text-dark">€${price}</b></span></p>
      
       
-      
-      <a class="btn btn-primary g-btn" href="https://vrijeplaats.nl/public/categorie=${categorylink}/city=${cityname}/name=${title}">Find out</a>
-      </div>`,
+      <a class="btn btn-primary g-btn" href="http://vrijeplaats.nl/public/categorie=${categorylink}/city=${cityname}/name=${title}">Find out</a>
+      </div>
+      `,
       optimized: false,
      
 
     });
 
  
-
+    
     // Add a click listener for each marker, and set up the info window.
     marker.addListener("click", () => {
-      infoWindow.close();
+     
       infoWindow.setContent(marker.infoWindowContent);
       infoWindow.open(marker.getMap(), marker);
-      
+     
+
     });
+    
   });
 }
-
     $('#googlemapview').click(function(){
         var map = document.querySelector(".gm-style");
         map.requestFullscreen();
     });
+    let categoryname = category['name'];
+    
+    var i = 0, strLength =  categoryname.length;
+    for(i; i <  strLength; i++) {
+        categoryname =  categoryname.replace(" ", "+");
+    }
+   
+    let cityname = city['name'];
+
+    var i = 0, strLengthCity =  cityname.length;
+    for(i; i <  strLengthCity; i++) {
+        cityname =  cityname.replace(" ", "+");
+    }
+
+    console.log(cityname);
+   
+  
 
         </script>
 

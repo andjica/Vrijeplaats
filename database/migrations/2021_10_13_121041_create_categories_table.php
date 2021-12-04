@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('link');
+            $table->string('active')->nullable();
             $table->integer('subcategory')->nullable()->unsigned();
             $table->text('description');
             $table->string('icon');

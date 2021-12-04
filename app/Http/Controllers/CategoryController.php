@@ -81,7 +81,9 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id) ?? abort(404);
+        
+        return view('admin.category.show', compact('category'), $this->data);
     }
 
     /**

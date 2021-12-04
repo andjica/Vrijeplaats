@@ -171,11 +171,20 @@ class HomeController extends Controller
         ->where('valid_until','>', $timenow)
         ->get();
 
+        $lastpost = Post::where('category_id', $category->id)
+        ->where('city_id', $city->id)
+        ->where('valid_until','>', $timenow)
+        ->orderBy('created_at', 'desc')
+        ->first();
         
-          
+        if(request()->val)
+        {
+            $val = request()->val;
+            return response()->json(['val'=>$val])->header("Access-Control-Allow-Origin",  "*");
+        }
         if($posts->count() != 0)
         {
-            return view('categories.filter-category-city', compact('posts', 'city', 'category'), $this->data);
+            return view('categories.filter-category-city', compact('posts', 'city', 'category', 'lastpost'), $this->data);
         }
         else if($posts->count() == 0)
         {

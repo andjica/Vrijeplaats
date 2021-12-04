@@ -28,7 +28,7 @@
                     
                     @endphp
                     @isset($images)
-                    <a href="listing-details-full-image.html" class="store-image">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="store-image">
                     <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}">
                     </a>
                     @endisset

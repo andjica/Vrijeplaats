@@ -90,33 +90,33 @@
                     <button  class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md" data-toggle="modal" data-target="#post{{$p->id}}">
                                 <i class="fa fa-trash-alt"></i>
                                 Overzicht
-                                </button>
-                                <div class="modal fade" id="post{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="postmodal" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="postmodals"><b>{{$p->title}}</b></h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                       
-                                        Weet je zeker dat je het bericht onder id {{$p->id}} wilt verwijderen?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <a href="{{asset('/delete-advertising/'.$p->id)}}" class="btn btn-danger">
-                                        <i class="fas fa-trash"></i>Overzicht</a>
-                                    </div>
-                                    </div>
-                                </div>
-                         </div>   
+                    </button>
+                    <div class="modal fade" id="post{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="postmodal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="postmodals"><b>{{$p->title}}</b></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            Weet je zeker dat je het bericht onder id {{$p->id}} wilt verwijderen?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="{{asset('/delete-advertising/'.$p->id)}}" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>Overzicht</a>
+                        </div>
+                        </div>
                     </div>
-                    </div>
-                    </div>
-                    @endforeach
-                    </div>
+                </div>   
+            </div>
+            </div>
+            </div>
+            @endforeach
+        </div>
                     <ul class="pagination pagination-style-02">
                     
                     <li class="page-item">{{ $posts->links() }}

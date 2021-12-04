@@ -52,7 +52,9 @@ html {
 	font-family: sans-serif;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: transparent
+	-webkit-tap-highlight-color: transparent;
+	/* scroll-behavior: smooth; */
+
 }
 
 article,
@@ -217,7 +219,7 @@ figure {
 img {
 	vertical-align: middle;
 	border-style: none;
-	max-width: 120%;
+	max-width: 116%;
 	height: auto
 }
 
@@ -26636,8 +26638,15 @@ button.mfp-arrow:active {
 	z-index: 100000;
 }
 
-.modal-dialog
-{
-	margin-top: 100px;
-}
 
+
+.modal-dialog {
+	margin-top:100px !important;
+    max-width: 100%;
+    margin: 0px auto;
+    height: 100% !important;
+    justify-content: center;
+    padding: 20px;
+    margin-right: 0px !important;
+   
+}
