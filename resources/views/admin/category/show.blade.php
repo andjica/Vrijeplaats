@@ -18,6 +18,24 @@
                         <div class="card rounded-0 border-0 invoices bg-white">
                             <h4 class="p-2">{{$category->name}} Categorie is @if($category->active == "YES")<span class="text-success">Actief</span>
                              @else <span class="text-danger">Niet actief @endif</span></h4>
+                             <form action="{{asset('/category-active')}}" method="POST" class="form-inline bg-light pt-2 pl-2">
+                                    <input type="hidden" name="_token" value="Xv2KauZTTL38BSjjk5Ji49beMwanwvvZQG5Npgy9">                                <div class="input-group mb-2 mr-sm-2">
+                                <label class="sr-only" for="inlineFormInputName2">Name</label>
+                                <select name="partners" class="custom-select">
+                                                                        <option class="form-control" value="10">Company</option>
+                                                                    </select>
+                               
+                                </div>
+
+                                <div class="form-check mb-2 mr-sm-2">
+                                    
+                                    <label class="form-check-label text-success" for="inlineFormCheck">
+                                    Make company to be active
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                                </form>
                         </div>
                         <div class="row  facts-box ">
                         <div class="col-lg-5 mt-2">
