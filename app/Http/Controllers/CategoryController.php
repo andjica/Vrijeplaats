@@ -83,8 +83,8 @@ class CategoryController extends Controller
     public function show($id)
     {
         $category = Category::find($id) ?? abort(404);
-        
-        return view('admin.category.show', compact('category'), $this->data);
+        $icons = Icon::all();
+        return view('admin.category.show', compact('category', 'icons'), $this->data);
     }
 
     /**
@@ -105,9 +105,33 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        //
+      
+        $category = Category::find(request()->categoryId) ?? abort(404);
+        $category->name = request()->name;
+        $category->active = request()->active;
+        $category->tax = request()->tax;
+        $category->description = request()->description;
+       
+
+        if(request()->icons)
+        {
+            $icon = Icon::whereIn('id', request()->icons)->first();
+            $category->icon = $icon->name;
+        }
+        else
+        {
+            $category->icon = $category->icon;
+        }
+
+      
+            $category->save();
+
+            return redirect()->back()->with('success', 'Je veranderingen zijn bewaard');
+        
+
+    
     }
 
     /**
@@ -120,4 +144,8 @@ class CategoryController extends Controller
     {
         //
     }
+
+   
+
+    
 }

@@ -26642,11 +26642,10 @@ button.mfp-arrow:active {
 
 .modal-dialog {
 	margin-top:100px !important;
-    max-width: 100%;
+    max-width: 50%;
     margin: 0px auto;
     height: 100% !important;
     justify-content: center;
-    padding: 20px;
-    margin-right: 0px !important;
+   
    
 }

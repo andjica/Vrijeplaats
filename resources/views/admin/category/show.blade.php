@@ -10,65 +10,30 @@
         <div class="page-container">
             <div class="container-fluid">
                 <div class="page-content-wrapper d-flex flex-column justify-content-center">
-                    <div class="row">
+              
+                    <div class="row bg-white p-1">
                     <div class="col-xl-8">
                     <button class="btn btn-primary text-right  btn-sm mb-2" onclick="goBack()">   
                             <i class="fas fa-arrow-left"></i> Ga terug
                     </button>
-                        <div class="card rounded-0 border-0 invoices bg-white">
-                            <h4 class="p-2">{{$category->name}} Categorie is @if($category->active == "YES")<span class="text-success">Actief</span>
+                    <a href="{{asset('create-category')}}" class="btn btn-success text-right  btn-sm mb-2" onclick="goBack()">   
+                            + Een nieuwe categorie toevoegen
+                        </a>
+                        <div class="card rounded-0 border-0 invoices bg-white shadow-lg p-3">
+                        @if(session('success'))
+                            <div class="alert alert-success">
+                                {{session('success')}}
+                            </div>
+                            @endif
+                            <h4 class="p-2 mt-3">{{$category->name}} Categorie is @if($category->active == "YES")<span class="text-success">Actief</span>
+
                              @else <span class="text-danger">Niet actief @endif</span></h4>
-                             <form action="{{asset('/category-active')}}" method="POST" class="form-inline bg-light pt-2 pl-2">
-                                    <input type="hidden" name="_token" value="Xv2KauZTTL38BSjjk5Ji49beMwanwvvZQG5Npgy9">                                <div class="input-group mb-2 mr-sm-2">
-                                <label class="sr-only" for="inlineFormInputName2">Name</label>
-                                <select name="partners" class="custom-select">
-                                                                        <option class="form-control" value="10">Company</option>
-                                                                    </select>
-                               
-                                </div>
+                             @include('admin.category.edit')
 
-                                <div class="form-check mb-2 mr-sm-2">
-                                    
-                                    <label class="form-check-label text-success" for="inlineFormCheck">
-                                    Make company to be active
-                                    </label>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary mb-2">Submit</button>
-                                </form>
+                             
                         </div>
-                        <div class="row  facts-box ">
-                        <div class="col-lg-5 mt-2">
-                            <div class="card time-bookmark rounded-0 border-0 text-white">
-                                    <div class="card-body d-flex align-items-center p-0">
-                                        <div class="content mr-auto">
-                                            <span class="font-size-h1 font-weight-semibold lh-1 d-block">{{$category->posts->count()}}</span>
-                                            <span class="font-size-m">
-                                            Berichten in totaal uit deze categorie</span>
-                                        </div>
-                                        <div class="fact-icon">
-                                            <svg class="svg-inline--fa fa-bookmark fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bookmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path></svg><!-- <i class="fas fa-bookmark"></i> Font Awesome fontawesome.com -->
-                                        </div>
-                                    </div>
-                                </div>
-                           
-                            </div>
-                            <div class="col-lg-5 mt-2">
-                            <div class="card review rounded-0 border-0 text-white">
-                                    <div class="card-body d-flex align-items-center p-0">
-                                        <div class="content mr-auto">
-                                            <span class="font-size-h1 font-weight-semibold lh-1 d-block">{{$category->posts->count()}}</span>
-                                            <span class="font-size-m">
-                                            Berichten in totaal uit deze categorie</span>
-                                        </div>
-                                        <div class="fact-icon">
-                                            <svg class="svg-inline--fa fa-bookmark fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bookmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path></svg><!-- <i class="fas fa-bookmark"></i> Font Awesome fontawesome.com -->
-                                        </div>
-                                    </div>
-                                </div>
-                           
-                            </div>
-                    </div>
+                       
+                   
                 </div>
                 <div class="col-xl-4 mb-6 mb-xl-0 mt-7">
             <div class="card rounded-0 border-0 reccent-activities">
@@ -106,6 +71,38 @@
                 </div>
             </div>
         </div>
+                    </div>
+                    <div class="row  facts-box pb-2 bg-white">
+                        <div class="col-lg-5 mt-2">
+                            <div class="card time-bookmark rounded-0 border-0 text-white">
+                                    <div class="card-body d-flex align-items-center p-0">
+                                        <div class="content mr-auto">
+                                            <span class="font-size-h1 font-weight-semibold lh-1 d-block">{{$category->posts->count()}}</span>
+                                            <span class="font-size-m">
+                                            Berichten in totaal uit deze categorie</span>
+                                        </div>
+                                        <div class="fact-icon">
+                                            <svg class="svg-inline--fa fa-bookmark fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bookmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path></svg><!-- <i class="fas fa-bookmark"></i> Font Awesome fontawesome.com -->
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                            </div>
+                            <div class="col-lg-5 mt-2">
+                            <div class="card review rounded-0 border-0 text-white">
+                                    <div class="card-body d-flex align-items-center p-0">
+                                        <div class="content mr-auto">
+                                            <span class="font-size-h1 font-weight-semibold lh-1 d-block">{{$category->posts->count()}}</span>
+                                            <span class="font-size-m">
+                                            Berichten in totaal uit deze categorie</span>
+                                        </div>
+                                        <div class="fact-icon">
+                                            <svg class="svg-inline--fa fa-bookmark fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bookmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path></svg><!-- <i class="fas fa-bookmark"></i> Font Awesome fontawesome.com -->
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                            </div>
                     </div>
                 </div>
             </div>

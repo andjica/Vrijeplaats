@@ -39,8 +39,10 @@ class AdminController extends Controller
 
         $limitpurchases = Purchase::orderBy('created_at', 'desc')->limit(3)->get();
         
+        $countpurchases = Purchase::where('role_payment', 'USER')->count();
+       
 
-        return view('admin.index', compact('posts', 'users', 
+        return view('admin.index', compact('posts', 'users', 'countpurchases',
         'countusers', 'hotels', 'counthotels', 'expiredposts', 'countcategories', 'limitpurchases'), $this->data);
     }
 

@@ -15,7 +15,7 @@ class FrontController extends Controller
 
     public function __construct()
     {
-        $this->data['categories'] = Category::all();
+        $this->data['categories'] = Category::where('active', 'YES')->get();
         $this->data['cities'] = City::all();
 
         $timenow = Carbon::now();

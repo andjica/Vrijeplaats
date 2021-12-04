@@ -51,6 +51,9 @@
                     <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">
                     <li class="list-inline-item">
                         <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">numm of ticket</span>
+                        @php
+                            $post = \App\
+                        @endphp
                     </li>
                     <li class="list-inline-item separate"></li>
                     <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">€{{$p->price_first}}</span>
@@ -76,7 +79,8 @@
                     @if($datenow > $p->valid_until)
                     <span class="status experied">Experied</span>
                     @else
-                    <span class="status active">Active</span>
+                    <span class="status active">Active</span><br>
+                    <span class="status active">Geldig tot: {{ $p->valid_until}}</span>
                     @endif
                     </div>
                     </div>
@@ -148,6 +152,7 @@
                                 <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">
                                 <li class="list-inline-item">
                                     <span class="badge badge-success d-inline-block mr-1">{{$ex->count_of_ticket}}</span><span class="number">numm of ticket</span>
+
                                 </li>
                                 <li class="list-inline-item separate"></li>
                                 <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">€{{$p->price_first}}</span>

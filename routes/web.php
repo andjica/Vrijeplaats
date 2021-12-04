@@ -70,7 +70,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/insert-category', 'CategoryController@store');
     Route::get('/category/{id}', 'CategoryController@show');
     Route::get('/categories', 'CategoryController@index');
+    Route::post('/edit-category', 'CategoryController@update');
     Route::post('/category-active', 'CategoryController@active');
+    Route::post('/category-active-tax', 'CategoryController@activetax');
     Route::get('/admin-users', 'AdminController@users');
 });
 

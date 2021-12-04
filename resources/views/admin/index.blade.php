@@ -10,91 +10,48 @@
 <div class="page-container mt-7">
 <div class="container-fluid">
 <div class="page-content-wrapper d-flex flex-column justify-content-center">
-    <div class="features card-deck">
-        <div class="card rounded-0 border-0 bg-transparent mb-6">
-            <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
-                @isset($countposts)
-                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 text-primary lh-1">{{$countposts}}</span>
-                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Active <br> POSTS</span>
-                @endisset
-             </div>
-        </div>
-        <div class="card rounded-0 border-0 bg-transparent mb-6">
-        @isset($countusers)
-            <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
-                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 text-darker-light lh-1">{{$countusers}}</span>
-                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13"> geregistreerde<br> gebruikers</span>
-            </div>
-            @endisset
-        </div>
-    <div class="card rounded-0 border-0 bg-transparent mb-6">
-    @isset($counthotels)
-        <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
-            <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 published">{{$counthotels}}</span>
-            @isset($hotels)
-            <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">@php echo $hotels->category->icon @endphp posts from <br> {{$hotels->category->name}}</span>
-            @endisset
-        </div>
-        @endisset
-    </div>
-    <div class="card rounded-0 border-0 bg-transparent mb-6">
-        <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
-            @isset($expiredposts)
-            <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 experied">{{$expiredposts}}</span>
-            <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Experied<br> Posts</span>
-            @endisset
-        </div>
-    </div>
-    <div class="card rounded-0 border-0 bg-transparent mb-6">
-            <div class="card-body d-flex align-items-center p-6 bg-white">
-            @isset($countcategories)
-                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 active">{{$countcategories}}</span>
-                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Active campaign <br> Listings</span>
-                @endisset
-            </div>
-        </div>
-    </div>
+
 <div class="d-flex two-column mb-13 mx-n3">
 <div class="page-left mb-6 px-3">
-<div class="alert alert-success mb-6 alert-dismissible fade show d-flex align-items-center pr-3">
-<div class="font-size-lg py-0 mr-6">Your listing <a href="listing-details-full-image.html" class="font-weight-semibold link-hover-dark-primary">Hotel Govendor</a>
-has
-been
-approved!
-</div>
-<div class="ml-auto">
-<a href="#" class="alert-button py-0 font-size-h3 lh-1" data-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></a>
-</div>
-</div>
+
 <div class="facts-box mb-6 row">
-<div class="col-lg-4 mb-6 mb-xl-0">
-<div class="card view rounded-0 border-0 text-white">
-<div class="card-body d-flex align-items-center p-0">
-<div class="content mr-auto">
-<span class="font-size-h1 font-weight-semibold lh-1 d-block">824</span>
-<span class="font-size-lg">Total Views</span>
-</div>
-<div class="fact-icon">
-<svg class="icon icon-eye">
-<use xlink:href="#icon-eye"></use>
-</svg>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-4 mb-6 mb-xl-0">
-<div class="card review rounded-0 border-0 text-white">
-<div class="card-body d-flex align-items-center p-0">
-<div class="content mr-auto">
-<span class="font-size-h1 font-weight-semibold lh-1 d-block">73</span>
-<span class="font-size-lg">Total Reviews</span>
-</div>
-<div class="fact-icon">
-<i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-</div>
+    <div class="col-lg-4 mb-6 mb-xl-0">
+    <a href="{{asset('/categories')}}" class="link-light">
+        <div class="card view rounded-0 border-0 text-white">
+            <div class="card-body d-flex align-items-center p-0">
+                <div class="content mr-auto">
+                    @isset($countcategories)
+                        <span class="font-size-h1 font-weight-semibold lh-1 d-block">{{$countcategories}}</span>
+                    @endisset
+                    <span class="font-size-lg">Totaal categorieën</span>
+                </div>
+                <div class="fact-icon">
+                    <svg class="icon icon-eye">
+                        <use xlink:href="#icon-eye"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
+    <div class="col-lg-4 mb-6 mb-xl-0">
+        <a href="{{asset('/admin-invoices')}}" class="link-light">
+            <div class="card review rounded-0 border-0 text-white">
+                <div class="card-body d-flex align-items-center p-0">
+                    <div class="content mr-auto">
+                        @isset($countpurchases)
+                        <span class="font-size-h1 font-weight-semibold lh-1 d-block">{{$countpurchases}}</span>
+                        @endisset
+                        <span class="font-size-lg">Invoices cupons</span>
+                    </div>
+                    <div class="fact-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            </a>
+    </div>
+
 <div class="col-lg-4">
 <div class="card time-bookmark rounded-0 border-0 text-white">
 <div class="card-body d-flex align-items-center p-0">
@@ -139,7 +96,9 @@ approved!
                                 <td><a href="{{asset('/category/'.$c->id)}}" class="text-muted"><i class="fas fa-wrench"></i> Beheren</a></td>
                                 </tr>
                                 @endforeach
-                 
+                                <a href="{{asset('create-category')}}" class="btn btn-success text-right  btn-sm mb-2" onclick="goBack()">   
+                            + Een nieuwe categorie toevoegen
+                        </a>
                            
                             </tbody>
                             </table>
@@ -182,6 +141,50 @@ approved!
             </div>
         </div>
     </div>
+    </div>
+    <div class="features card-deck mt-3">
+        <div class="card rounded-0 border-0 bg-transparent mb-6">
+            <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
+                @isset($countposts)
+                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 text-primary lh-1">{{$countposts}}</span>
+                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Active <br> POSTS</span>
+                @endisset
+             </div>
+        </div>
+        <div class="card rounded-0 border-0 bg-transparent mb-6">
+        @isset($countusers)
+            <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
+                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 text-darker-light lh-1">{{$countusers}}</span>
+                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13"> geregistreerde<br> gebruikers</span>
+            </div>
+            @endisset
+        </div>
+    <div class="card rounded-0 border-0 bg-transparent mb-6">
+    @isset($counthotels)
+        <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
+            <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 published">{{$counthotels}}</span>
+            @isset($hotels)
+            <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">@php echo $hotels->category->icon @endphp posts from <br> {{$hotels->category->name}}</span>
+            @endisset
+        </div>
+        @endisset
+    </div>
+    <div class="card rounded-0 border-0 bg-transparent mb-6">
+        <div class="card-body d-flex align-items-center py-6 px-8 bg-white">
+            @isset($expiredposts)
+            <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 experied">{{$expiredposts}}</span>
+            <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Experied<br> Posts</span>
+            @endisset
+        </div>
+    </div>
+    <div class="card rounded-0 border-0 bg-transparent mb-6">
+            <div class="card-body d-flex align-items-center p-6 bg-white">
+            @isset($countcategories)
+                <span class="font-size-h1 font-weight-semibold d-inline-block mr-2 lh-1 active">{{$countcategories}}</span>
+                <span class="font-size-md font-weight-semibold text-uppercase text-dark lh-13">Active campaign <br> Listings</span>
+                @endisset
+            </div>
+        </div>
     </div>
 </div>
 <div class="page-right px-3">
