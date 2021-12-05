@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="mt-9">
+@include('user.top-campain')
+</div>
 <div class="container mt-5">
-
-    <section class="jumbotron text-center">
-    <div class="container mt-9">
-      <div class="row">
+      <div class="row bg-light p-2">
         <div class="col-lg-4">
           @include('user.sidebar')
         </div>
@@ -19,6 +18,20 @@
       <h1 class="jumbotron-heading">Begin</h1>
       <p class="lead text-muted">Welkom op de website van de Vrijeplaats. Op ons platform heeft u de 
           mogelijkheid om uw diensten en producten te verkopen en te bewerken.</p>
+          <div class="list-inline pb-8 flex-wrap my-n2">
+          @foreach($categories as $category)
+          <div class="list-inline-item py-2">
+              <a href="{{asset('/categorie/'.$category->link)}}" class="card border-0 link-hover-dark-white icon-box-style-01">
+              <div class="card-body p-0" style="font-size:27px">
+                  @php echo $category->icon @endphp
+                  <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
+                  {{$category->name}}
+                  </span>
+              </div>
+              </a>
+          </div>
+          @endforeach
+      </div>
       <p>
       @if(auth()->user()->role_id == 3)
         <a href="{{asset('/add-adv')}}" class="btn btn-primary my-2"><i class="fas fa-plus-circle"></i>&nbsp;Een nieuwe advertentie maken</a>

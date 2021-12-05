@@ -29,27 +29,18 @@
 </ul>
 </li>
 <li class="list-group-item p-0 mb-2 lh-15">
-<a href="panel-my-favourite.html" class="d-flex align-items-center link-hover-dark-primary font-size-md">
+<a href="{{asset('/admin-invoices')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
 <span class="d-inline-block mr-3"><i class="fas fa-bookmark"></i></span>
-<span>Invoices</span>
+<span>Invoices cupons</span>
 </a>
 </li>
-<li class="list-group-item p-0 mb-2 lh-15">
-    <a href="#invoice" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="fasse">
-    <span class="d-inline-block mr-3"><svg class="icon icon-receipt">
-        <use xlink:href="#icon-receipt"></use></svg></span>
-    <span>Invoices</span>
-    <span class=" ml-auto"><i class="fas fa-chevron-down"></i></span>
-    </a>
-        <ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="invoice">
-            <li class="list-group-item p-0 mb-2 lh-15">
-                <a href="{{asset('/admin-invoices')}}" class="link-hover-dark-primary font-size-md">Invoice
-                Listing - cupons</a></li>
-            <li class="list-group-item p-0 mb-2 lh-15"><a href="panel-invoice-details.html" class="link-hover-dark-primary font-size-md">Invoice
-                Details</a>
-            </li>
-        </ul>
-</li>
+<!-- <li class="list-group-item p-0 mb-2 lh-15">
+<a href="{{asset('/admin-invoices')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
+<span class="d-inline-block mr-3"><i class="fas fa-bookmark"></i></span>
+<span>Invoices cupons</span>
+</a>
+</li> -->
+
 <li class="list-group-item p-0 mb-2 lh-15">
 <a href="{{asset('/admin-users')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
 <span class="d-inline-block mr-3"><i class="fas fa-gift"></i></span>

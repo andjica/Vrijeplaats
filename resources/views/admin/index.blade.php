@@ -136,7 +136,7 @@
                         @endforeach
                     </tbody>
                  </table>
-                 <a href="" class="text-success">View more invoices</a>
+                 <a href="{{asset('/admin-invoices')}}" class="text-success">Meer facturen bekijken</a>
                 </div>
             </div>
         </div>

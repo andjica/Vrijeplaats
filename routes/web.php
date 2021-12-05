@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin-home', 'AdminController@index');
     Route::get('/admin-invoices', 'AdminController@invoices');
     Route::get('/admin-invoice={idinvoice}', 'AdminController@invoice');
+    Route::get('/role-invoices/{id}', 'AdminController@userinvoices');
     Route::get('/admin-posts', 'AdminController@posts');
     Route::get('/admin-partners', 'AdminController@partners');
 
@@ -73,7 +74,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/edit-category', 'CategoryController@update');
     Route::post('/category-active', 'CategoryController@active');
     Route::post('/category-active-tax', 'CategoryController@activetax');
+
     Route::get('/admin-users', 'AdminController@users');
+    Route::get('/users', 'AdminController@onlyusers');
+    
 });
 
 

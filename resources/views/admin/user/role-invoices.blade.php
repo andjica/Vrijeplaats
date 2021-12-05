@@ -11,39 +11,46 @@
             <div class="container-fluid">
                 <div class="page-content-wrapper d-flex flex-column justify-content-center">
                     <div class="row">
+                   
                     <div class="col-xl-10">
+                    <button class="btn btn-primary text-right  btn-sm mb-2" onclick="goBack()">   
+                            <i class="fas fa-arrow-left"></i> Ga terug
+                         </button>
+
                         <div class="card rounded-0 border-0 invoices">
                             <div class="card-body">
+                         
                                 <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
-                                Nummber of registered users <span class="badge badge-secondary">{{$users->count()}}</span></h5>
-                                <a href="" class="btn btn-outline-success text-dark border-bottom pb-2 mb-2">
-                                Sorteren op bedrijf <i class="fas fa-sort"></i><i class="fas fa-building text-success"></i></a>
-                                <a href="{{asset('/users')}}" class="btn btn-outline-success text-dark border-bottom pb-2 mb-2">
-                                Sorteren op gebruikers <i class="fas fa-sort"></i><i class="fas fa-users text-success"></i></a>
+                                Invoices</h5>
                                 <div class="table-responsive-sm">
                                 <table class="table text-left">
                                     <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>First name last name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Created account at</th>
-
+                                    <th>Date of purchase</th>
+                                    <th>User</th>
+                                    <th>Post</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Details</th>
                                 </tr>
                                 </thead>
                                     <tbody>
-                                     @foreach($users as $user)
+                                @foreach($invoices as $p)
                                     <tr>
-                                        <td>{{$user->id}}</td>
                                     <td>
-                                    {{$user->userview->firstname}} {{$user->userview->lastname}}
+                                    {{$p->inv_id}}
                                     </td>
-                                    <td>{{$user->email}}</td>
-                                    <td>{{$user->role->name}}</td>
-                                    <td>{{$user->created_at->format('d-m-Y')}}</td>
-                                    <td></td>
-                                    
+                                    <td>{{$p->created_at->format('d-m-Y')}}</td>
+                                    <td>{{$p->user->userview->firstname}} {{$p->user->userview->lastname}}</td>
+                                    <td>{{$p->post->title}}</td>
+                                    <td>{{$p->total}}</td>
+                                    <td><span class="status paid">Paid</span></td>
+                                    <td>
+                                        <a href="{{asset('/admin-invoice='.$p->inv_id)}}" class="link-hover-dark-blue">
+                                        <span class="status overdue">Details</span>
+                                        </a>
+                                    </td>
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -199,6 +199,7 @@ class HomeController extends Controller
 
     public function invoices()
     {
+        
         $purchases = Purchase::where('user_id', auth()->user()->id)->get();
         return view('user.invoices', compact('purchases'), $this->data);
     }

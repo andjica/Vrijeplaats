@@ -1,6 +1,10 @@
-@extends('layouts.template-login')
-
+@extends('layouts.template')
 @section('content')
+@php
+    $categories = \App\Category::where('active', 'YES')->get();
+    $cities = \App\City::all();
+@endphp
+<main class="py-4 home-main-login">
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8 mt-5">
@@ -72,4 +76,5 @@
         </div>
     </div>
 </div>
+</main>
 @endsection

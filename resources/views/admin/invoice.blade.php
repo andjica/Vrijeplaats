@@ -6,9 +6,9 @@
     <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap mt-11">
         @include('admin.sidebar')
         <div class="page-container mt-7">
-            <a href="" class="btn btn-primary text-right  btn-sm mb-2 ml-6" onclick="goBack()">   
-                <i class="fas fa-arrow-left"></i> Ga terug
-            </a>
+        <button class="btn btn-primary text-right  btn-sm mb-2 ml-6" onclick="goBack()">   
+                            <i class="fas fa-arrow-left"></i> Ga terug
+           </button>
             <div class="container-fluid">
                 @isset($purchase)
             <div class="page-content">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-4 mb-4 mb-md-0">
                         <div class="text-gray font-weight-medium text-uppercase mb-4">
-                        Bill to
+                        REKENING NAAR
                         </div>
                         <div class="text-dark font-size-md lh-1625">
                         <address>
@@ -59,9 +59,10 @@
                 <table class="table">
                 <thead>
                 <tr>
-                <th style="width:34%">items &amp; description</th>
-                <th>Ticket valid until</th>
-                <th>price</th>
+                <th style="width:34%">ITEMS en BESCHRIJVING:</th>
+                <th>KAART GELDIG TOT</th>
+                <th>Prijst</th>
+                <th>Belasting</th>
                 <th class="text-right">total</th>
                 </tr>
                 </thead>
@@ -72,7 +73,29 @@
 
                 </td>
                 <td>{{$purchase->post->valid_until}}</td>
-                <td>€{{$purchase->total}}</td>
+                <td>@if($purchase->post->category->tax == 21)
+                       @php 
+                     
+                            $tax = $purchase->post->price_discount / 1.21;
+                            $priceextax  = $purchase->post->price_discount - $tax;
+                            echo round($tax, 2);
+                       @endphp
+                    @else
+
+                    @endif
+                </td>
+                <td>@if($purchase->post->category->tax == 21)
+                       @php 
+                     
+                            $tax = $purchase->post->price_discount / 1.21;
+                            $priceextax  = $purchase->post->price_discount - $tax;
+                            echo round($priceextax, 2);
+                       @endphp
+                    @else
+
+                    @endif
+                </td>
+               
                 <td class="text-right">€{{$purchase->total}}</td>
                 </tr>
                 </tbody>

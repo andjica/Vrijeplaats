@@ -40,7 +40,7 @@
                     
                     @endphp
                     @isset($images)
-                    <a href="listing-details-full-image.html" class="store-image">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="store-image">
                     <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}">
                     </a>
                     @endisset
@@ -50,10 +50,7 @@
                     </a>
                     <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">
                     <li class="list-inline-item">
-                        <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">numm of ticket</span>
-                        @php
-                            $post = \App\
-                        @endphp
+                        <span class="badge badge-warning d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">numm of ticket</span><br>
                     </li>
                     <li class="list-inline-item separate"></li>
                     <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">€{{$p->price_first}}</span>
@@ -86,8 +83,11 @@
                     </div>
                     </div>
                     </div>
+                    
                     <div class="action ml-0 ml-lg-auto mt-3 mt-lg-0 align-items-center flex-wrap flex-sm-nowrap w-100 w-lg-auto">
-                    <a href="page-submit-listing.html" class="btn btn-light btn-icon-left mb-2 mb-sm-0 font-size-md">
+                    <h5 class="badge display-3 badge-success d-inline-block mr-1">{{$p->purchases->count()}}</h5><span class="h5">Aantal gekochte tickets</h5>
+
+                    <a href="" class="btn btn-light btn-icon-left mb-2 mb-sm-0 font-size-md">
                     <i class="fa fa-edit"></i>
                     Edit
                     </a>
@@ -95,6 +95,7 @@
                                 <i class="fa fa-trash-alt"></i>
                                 Overzicht
                     </button>
+
                     <div class="modal fade" id="post{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="postmodal" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -141,7 +142,7 @@
                                 
                                 @endphp
                                 @isset($imagesex)
-                                <a href="listing-details-full-image.html" class="store-image">
+                                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="store-image">
                                 <img src="{{asset('/images/posts/'.$imagesex->url)}}" alt="{{$imagesex->alt}}">
                                 </a>
                                 @endisset

@@ -35,7 +35,8 @@
                     </div>
                     <div class="col-md-4 mb-4 mb-md-0">
                         <div class="text-gray font-weight-medium text-uppercase mb-4">
-                        Bill to
+                        
+                            Rekening naar
                         </div>
                         <div class="text-dark font-size-md lh-1625">
                         <address>
@@ -46,7 +47,7 @@
                     </div>
                     <div class="col-md-4  ml-0 ml-md-auto text-left text-md-right">
                         <div class="text-gray font-weight-medium text-uppercase mb-4">
-                        information invoice
+                        FACTUUR INFORMATIE
                         </div>
                         <div class="text-dark font-size-md lh-1625">
                         <div class="">
@@ -69,9 +70,10 @@
                 <table class="table">
                 <thead>
                 <tr>
-                <th style="width:34%">items &amp; description</th>
-                <th>Ticket valid until</th>
-                <th>price</th>
+                <th style="width:34%">ITEMS en BESCHRIJVING:</th>
+                <th>KAART GELDIG TOT</th>
+                <th>Prijst</th>
+                <th>Belasting</th>
                 <th class="text-right">total</th>
                 </tr>
                 </thead>
@@ -82,7 +84,29 @@
 
                 </td>
                 <td>{{$purchase->post->valid_until}}</td>
-                <td>€{{$purchase->total}}</td>
+                <td>@if($purchase->post->category->tax == 21)
+                       @php 
+                     
+                            $tax = $purchase->post->price_discount / 1.21;
+                            $priceextax  = $purchase->post->price_discount - $tax;
+                            echo round($tax, 2);
+                       @endphp
+                    @else
+
+                    @endif
+                </td>
+                <td>@if($purchase->post->category->tax == 21)
+                       @php 
+                     
+                            $tax = $purchase->post->price_discount / 1.21;
+                            $priceextax  = $purchase->post->price_discount - $tax;
+                            echo round($priceextax, 2);
+                       @endphp
+                    @else
+
+                    @endif
+                </td>
+               
                 <td class="text-right">€{{$purchase->total}}</td>
                 </tr>
                 </tbody>
@@ -96,9 +120,9 @@
                 </div>
                 <div class="contact-info d-flex flex-wrap flex-md-nowrap font-size-md mt-13">
                 <a href="mailto:www.example.com" class="link-hover-dark-primary">www.vrijeplaats.nl</a>
-                <span class="separate text-dark">|</span>
+                <span class="separate text-dark">  &nbsp; | &nbsp; </span>
                 <a href="mailto:nfo@vrijeplaats.nl" class="link-hover-dark-primary">info@vrijeplaats.nl </a>
-                <span class="separate text-dark">|</span>
+                <span class="separate text-dark"> &nbsp;|  &nbsp;</span>
                 <span class="text-dark">(123) 123-456</span>
                 </div>
             </div>

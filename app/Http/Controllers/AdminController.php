@@ -89,4 +89,17 @@ class AdminController extends Controller
 
         return view('admin.user.users', compact('users'), $this->data);
     }
+
+    public function onlyusers()
+    {
+        $users = User::where('role_id', 2)->orderBy('created_at', 'desc')->get();
+        return view('admin.user.only-users',compact('users'), $this->data);
+    }
+
+    public function userinvoices($id)
+    {
+        $user = User::find($id);
+        $invoices =  $user->purchases;
+        return view('admin.user.role-invoices', compact('invoices', 'user'), $this->data);
+    }
 }

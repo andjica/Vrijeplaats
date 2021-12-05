@@ -42,6 +42,6 @@ class Post extends Model
 
     public function purchases()
     {
-        return $this->belongsTo(Purchase::class);
+        return $this->hasMany(Purchase::class);
     }
 }
