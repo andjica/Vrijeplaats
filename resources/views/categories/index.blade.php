@@ -2,7 +2,9 @@
 
 @section('content')
 
-@include('user.top-campain')
+<div class="mt-9">
+    @include('user.top-campain')
+</div>
 <section id="section-01" class="">
 <nav aria-label="breadcrumb m-3">
   <ol class="breadcrumb m-3 bg-light">

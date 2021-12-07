@@ -93,8 +93,16 @@ class AdminController extends Controller
     public function onlyusers()
     {
         $users = User::where('role_id', 2)->orderBy('created_at', 'desc')->get();
+
         return view('admin.user.only-users',compact('users'), $this->data);
     }
+    public function onlycompanies()
+    {
+        $users = User::where('role_id', 3)->orderBy('created_at', 'desc')->get();
+
+        return view('admin.user.only-users',compact('users'), $this->data);
+    }
+
 
     public function userinvoices($id)
     {

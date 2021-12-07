@@ -2,6 +2,12 @@
 
    
 @section('content')
+
+<div class="preload">
+<div class="loader" ><span>
+zoeken voor u...</span></div>
+</div>
+
 <div class="mt-9">
 @include('user.top-campain')
 
@@ -136,9 +142,10 @@
 
 
 </div>
-</div>
+
 
 </section>
+<div class="content">
 <section id="section-04" class="pt-12 pb-11 post-style-2 bg-gray-01">
 <div class="container">
 <div class="d-flex align-items-center mb-8 flex-wrap flex-sm-nowrap">
@@ -276,6 +283,10 @@ faucibus est sed facilisis viverra satanil...
 </div>
 </div>
 </section>
+
+
+</div>
+
   <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&callback=initMap&v=weekly"
       async
@@ -411,11 +422,61 @@ faucibus est sed facilisis viverra satanil...
     }
 
     console.log(cityname);
+    window.addEventListener("DOMContentLoaded",() => {
+	const replay = document.getElementById("replay");
+	let resetTimeout = null;
+	let btnTimeout = null;
+	// prevent keyboard interaction while the button is hidden
+	const tempHideBtn = btn => {
+		if (btn) {
+			const btnCS = window.getComputedStyle(btn);
+			let btnAnimDur = btnCS.getPropertyValue("animation-duration");
+
+			btnAnimDur = +btnAnimDur.split("s")[0] * 1e3;
+			btn.disabled = true;
+
+			clearTimeout(btnTimeout);
+			btnTimeout = setTimeout(() => {
+				btn.disabled = false;
+			}, btnAnimDur);
+		}
+	};
+
+	if (replay) {
+		let spinnerEls = [
+			"circle",
+			"worm-a",
+			"worm-b"
+		];
+		spinnerEls = spinnerEls.map(e => document.querySelector(`.check-spinner__${e}`));
+		// hide the button at start
+		tempHideBtn(replay);
+
+		replay.addEventListener("click",function() {
+			// kill the animations
+			spinnerEls.forEach(e => {
+				e.style.animation = "none";
+			});
+			this.style.animation = "none";
+
+			// restore them, hide the button again
+			clearTimeout(resetTimeout);
+			resetTimeout = setTimeout(() => {
+				spinnerEls.forEach(e => {
+					e.removeAttribute("style");
+				});
+				this.removeAttribute("style");
+				tempHideBtn(this);
+			}, 0);
+		});
+	}
+});
    
-  
+
+
 
         </script>
-
+        <script src="{{asset('/js/')}}/preloader.js"></script>
 
 @endsection
 

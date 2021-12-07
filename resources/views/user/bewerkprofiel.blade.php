@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="page-container mt-8">
     @include('user.top-campain')
 <div class="container border mt-2">

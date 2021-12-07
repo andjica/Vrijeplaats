@@ -21,16 +21,16 @@
                             <div class="card-body">
                          
                                 <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
-                                Invoices</h5>
+                                Facturen - <br>@isset($user) {{$user->name}} {{$user->userview->lastname}}@endisset</h5>
                                 <div class="table-responsive-sm">
                                 <table class="table text-left">
                                     <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Date of purchase</th>
-                                    <th>User</th>
+                                    <th>AANKOOPDATUM</th>
+                                    <th>Gebruiker</th>
                                     <th>Post</th>
-                                    <th>Price</th>
+                                    <th>Prijs</th>
                                     <th>Status</th>
                                     <th>Details</th>
                                 </tr>

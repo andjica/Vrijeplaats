@@ -9,18 +9,18 @@
         <div class="col-lg-4">
           @include('user.sidebar')
         </div>
-      <div class="col-lg-8">
+      <div class="col-lg-8 p-5">
       @if(session('success'))
       <div class="alert alert-success">
           {{session('success')}}
       </div>
       @endif
-      <h1 class="jumbotron-heading">Begin</h1>
-      <p class="lead text-muted">Welkom op de website van de Vrijeplaats. Op ons platform heeft u de 
+      <h3 class="pt-3">Begin</h3>
+      <p class="text-dark">Welkom op de website van de Vrijeplaats. Op ons platform heeft u de 
           mogelijkheid om uw diensten en producten te verkopen en te bewerken.</p>
           <div class="list-inline pb-8 flex-wrap my-n2">
           @foreach($categories as $category)
-          <div class="list-inline-item py-2">
+          <div class="list-inline-item mr-2 mt-2">
               <a href="{{asset('/categorie/'.$category->link)}}" class="card border-0 link-hover-dark-white icon-box-style-01">
               <div class="card-body p-0" style="font-size:27px">
                   @php echo $category->icon @endphp
@@ -31,8 +31,7 @@
               </a>
           </div>
           @endforeach
-      </div>
-      <p>
+          <p>
       @if(auth()->user()->role_id == 3)
         <a href="{{asset('/add-adv')}}" class="btn btn-primary my-2"><i class="fas fa-plus-circle"></i>&nbsp;Een nieuwe advertentie maken</a>
         @else
@@ -40,6 +39,8 @@
         @endif
         <a href="{{asset('/')}}" class="btn btn-secondary my-2">Zoek en surf verder</a>
       </p>
+      </div>
+     
     </div>
     </div>
     </div>

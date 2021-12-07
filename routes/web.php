@@ -77,7 +77,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/admin-users', 'AdminController@users');
     Route::get('/users', 'AdminController@onlyusers');
-    
+    Route::get('/companies', 'AdminController@onlycompanies');
 });
 
 
