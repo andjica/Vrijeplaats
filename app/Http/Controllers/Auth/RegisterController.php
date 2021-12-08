@@ -78,7 +78,7 @@ class RegisterController extends Controller
         $userinfo->firstname = $user->name;
         $userinfo->user_id = $user->id;
         
-        if($data['customercompany'] == 1)
+        if($data['customercompany'] == 2)
         {
             $userinfo->company = 'USER';
         }

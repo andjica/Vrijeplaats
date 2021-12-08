@@ -84,7 +84,7 @@ class AdminController extends Controller
 
     public function users()
     {
-        $users = User::orderBy('created_at', 'desc')->get();
+        $users = User::where('role_id', '!=', 1)->orderBy('created_at', 'desc')->get();
 
         return view('admin.user.users', compact('users'), $this->data);
     }

@@ -79,34 +79,47 @@
                 </thead>
                 <tbody>
                 <tr>
-                <td>{{$purchase->post->title}} - <br>{{$purchase->category->name}} <br>
-                {{$purchase->post->full_address}}<br>
-
-                </td>
-                <td>{{$purchase->post->valid_until}}</td>
-                <td>@if($purchase->post->category->tax == 21)
-                       @php 
-                     
-                            $tax = $purchase->post->price_discount / 1.21;
-                            $priceextax  = $purchase->post->price_discount - $tax;
-                            echo round($tax, 2);
-                       @endphp
+                <td>@if($purchase->post['title'] == null) 
+                      {{$purchase->role_payment}}
                     @else
+                        {{$purchase->post['title']}} - <br>{{$purchase->category['name']}} <br>
+                        {{$purchase->post['full_address']}} 
+                    @endif<br>
+                 </td>
+                <td>@if($purchase->post['valid_until'] == null) / @else{{$purchase->post['valid_until']}}@endif</td>
+                    @if($purchase->category_id == null)
+                    <td>21%</td>
+                    @else 
+                    <td> @if($purchase->post->category['tax'] == 21)
+                        @php 
+                        
+                                $tax = $purchase->post->price_discount / 1.21;
+                                $priceextax  = $purchase->post->price_discount - $tax;
+                                echo round($tax, 2);
+                        @endphp
+                        @else
 
-                    @endif
+                        @endif
+                        @endif
                 </td>
-                <td>@if($purchase->post->category->tax == 21)
-                       @php 
-                     
-                            $tax = $purchase->post->price_discount / 1.21;
-                            $priceextax  = $purchase->post->price_discount - $tax;
-                            echo round($priceextax, 2);
-                       @endphp
-                    @else
+                <td>
+                @if($purchase['category_id'] == null)
+                    €{{$purchase->tax}}
+                @else
+                    @if($purchase->post->category['tax'] == 21)
+                        @php 
+                        
+                                $tax = $purchase->post->price_discount / 1.21;
+                                $priceextax  = $purchase->post->price_discount - $tax;
+                                echo round($priceextax, 2);
+                        @endphp
+                        @else
 
-                    @endif
+                        @endif
+
                 </td>
-               
+                @endif
+                
                 <td class="text-right">€{{$purchase->total}}</td>
                 </tr>
                 </tbody>

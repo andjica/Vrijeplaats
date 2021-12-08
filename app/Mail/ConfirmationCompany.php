@@ -7,6 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+
 class ConfirmationCompany extends Mailable
 {
     use Queueable, SerializesModels;
@@ -31,9 +32,8 @@ class ConfirmationCompany extends Mailable
     {
        //for company - to send password
        return $this->from('info@vrijeplaats.nl')
-       ->subject('Vrijeplaats partner aanvraag, 
-       Bevestiging voor partnerschapsaanvraag')
-       ->to(request()->email)
-       ->view('emails.tonewpartner')->with('data', $this->data);
+       ->subject('Je profiel is klaar! Beheer en gebruik Vrijeplaats!')
+       ->to($company->email)
+       ->view('emails.confirmationcompany')->with('data', $this->data);
     }
 }

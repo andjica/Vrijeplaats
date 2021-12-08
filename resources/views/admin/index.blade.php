@@ -129,7 +129,7 @@
                         <a href="panel-invoice-details.html" class="link-hover-dark-blue">INV-00001</a>
                         </td>
                         <td>{{$p->created_at}}</td>
-                        <td>{{$p->post->title}}</td>
+                        <td>@if($p->post['title'] == null) {{$p->role_payment}} @else{{$p->post->title}}@endif</td>
                         <td>{{$p->total}}</td>
                         <td><span class="status paid">Paid</span></td>
                         </tr>

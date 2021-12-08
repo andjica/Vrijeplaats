@@ -47,7 +47,7 @@ class MolliePaymentController extends Controller
                 ],
                 'description' => 'Payment By codehunger', 
                 'redirectUrl' => route('payment.success'),
-                'webhookUrl'=>'webhooks.mollie' // after the payment completion where you to redirect
+                // 'webhookUrl'=> route('webhooks.mollie') // after the payment completion where you to redirect
                 ]);
             
             $payment = Mollie::api()->payments()->get($payment->id);
@@ -74,15 +74,15 @@ class MolliePaymentController extends Controller
         // if ($payment->isPaid() == TRUE)
         // {
             
-        //         $purchase = new Purchase();
-        //         $purchase->inv_id = time();
-        //         // $purchase->post_id = $post->id;
-        //         $purchase->user_id = auth()->user()->id;
-        //         // $purchase->category_id = $post->category_id;
-        //         $purchase->total = $post->price_first;
+                $purchase = new Purchase();
+                $purchase->inv_id = time();
+                $purchase->post_id = $post->id;
+                $purchase->user_id = auth()->user()->id;
+                $purchase->category_id = $post->category_id;
+                $purchase->total = $post->price_first;
         
                
-        //         $purchase->save(); // redirect customer to Mollie checkout page
+                $purchase->save(); // redirect customer to Mollie checkout page
             
       
         // }

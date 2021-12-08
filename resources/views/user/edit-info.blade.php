@@ -48,7 +48,7 @@
 <div class="col-sm-6">
 <label for="phone2" class="font-size-md text-dark font-weight-semibold mb-1">Telefoon
 <span class="text-secondary font-weight-normal">(Optional)</span></label>
-<input class="form-control" id="phone2" name="phone2" type="text" value="{{auth()->user()->userview->phone}}" placeholde="+316652158987">
+<input class="form-control" id="phone2" name="phone2" type="text" value="{{auth()->user()->userview->phone}}">
 <small id="phone2error" class="text-danger"></small>
 </div>
 </div>

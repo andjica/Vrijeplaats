@@ -16,10 +16,12 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->increments('id');
             $table->string('inv_id');
-            $table->integer('user_id')->unsigned()->index();
-            $table->integer('post_id')->unsigned()->index();
-            $table->integer('category_id');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('post_id')->unsigned()->nullable();
             $table->decimal('total');
+            $table->decimal('tax');
+            $table->string('role_payment');
+            $table->integer('category_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

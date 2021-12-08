@@ -20,7 +20,7 @@
                                 <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
                                 Invoices</h5>
                                 <div class="table-responsive-sm">
-                                <table class="table text-left">
+                                <table class="table text-left border">
                                     <thead>
                                 <tr>
                                     <th>ID</th>
@@ -38,17 +38,17 @@
                                     {{$p->inv_id}}
                                     </td>
                                     <td>{{$p->created_at->format('d-m-Y')}}</td>
-                                    <td>{{$p->post->title}}</td>
+                                    <td>@if($p->post_id == null) {{$p->role_payment}} @else{{$p->post->title}}@endif</td>
                                     <td>{{$p->total}}</td>
                                     @php 
                                         $now = Carbon\Carbon::now();
                                         
                                     @endphp
-                                    @if($now >= $p->post->valid_until)
-                                    <td><span class="status text-danger">{{$p->post->valid_until}}</span></td>
+                                    @if($now >= $p->post['valid_until'])
+                                    <td><span class="status text-danger">@if($p->post['valid_until'] == null) / @else{{$p->post->valid_until}} @endif</span></td>
 
                                     @else
-                                    <td><span class="status paid">{{$p->post->valid_until}}</span></td>
+                                    <td><span class="status paid"></span></td>
 
                                      @endif
                                     <td>

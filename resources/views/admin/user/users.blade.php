@@ -37,7 +37,7 @@
                                     <tr>
                                         <td>{{$user->id}}</td>
                                     <td>
-                                    {{$user->userview->firstname}} {{$user->userview->lastname}}
+                                {{$user->userview['firstname']}} {{$user->userview['lastname']}} 
                                     </td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->role->name}}</td>

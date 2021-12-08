@@ -44,7 +44,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function userview()
     {
-        return $this->hasOne(UserView::class);
+        return $this->hasOne(UserView::class, 'user_id');
     }
 
     public function purchases()

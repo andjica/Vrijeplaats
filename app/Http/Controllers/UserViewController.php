@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\EmailBecomePartner;
+use App\Mail\EmailConfirmationBecomePartner;
+use App\Mail\ConfirmationCompany;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\UserView;
 use App\Category;
 use App\City;
 use App\Post;
 use Carbon\Carbon;
-use App\Mail\EmailBecomePartner;
-use App\Mail\EmailConfirmationBecomePartner;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Hash;
+use App\Purchase;
+
 
 class UserViewController extends Controller
 {
@@ -202,13 +205,14 @@ class UserViewController extends Controller
 
     public function activatecompany()
     {
+        
        
         $companyname = request()->partners;
 
         $company = UserView::where('company_name', $companyname)->first() ?? abort(404);
-        $company->payed_status = 1;
         
-
+        
+        
         
         //generate password for new user - company in user table
         function rand_string( $length ) {
@@ -222,6 +226,7 @@ class UserViewController extends Controller
        
         //make password to user - company
         $hashedPassword = Hash::make($password);
+        
         $newUser = new User();
         $newUser->name = $company->firstname;
         $newUser->email = $company->email;
@@ -230,20 +235,40 @@ class UserViewController extends Controller
         $newUser->role_id = 3;
         $newUser->save();
 
-        if($newUser)
-        {
-            $company->user_id = $newUser->id;
-            try{
-            
-                $company->save();
-                return redirect()->back()->with('success', 'Het bedrijf is succesvol geactiveerd');
-            }
-            catch(\Throwable $e)
-            {
-                return abort(500);
-            }
-        }
+        $data = [
+            'contactperson' => $company->firstname,
+            'email' => $company->email,
+            'password' => $password
+        ];
 
+        
+        
+
+        Mail::send('emails.confirmationcompany', array('data' => $data), function($message) use ($data)
+        {       $message->from('info@vrijeplaats.nl', 'Je profiel is klaar!');
+                $message->to($data['email'])->subject('Beheer en gebruik Vrijeplaats!');
+        });
+        
+        $companyuser = UserView::find($company->id);
+        
+        $companyuser->user_id = $newUser->id;
+        $companyuser->payed_status = 1;
+        $companyuser->save();
+
+        $purchase = new Purchase();
+        $purchase->inv_id = time();
+        $purchase->user_id = $companyuser->user_id;
+
+        $btw = 60.44 / 1.21;
+        $btw = round($btw,2);
+        $tax = 60.44 - $btw;
+        
+        $purchase->tax = $tax;
+        $purchase->total = 60.44;
+        $purchase->role_payment = "Account activatie";
+        $purchase->save();
+        
+        return redirect()->back()->with('success', 'Het bedrijf is succesvol geactiveerd');
         
     }
 

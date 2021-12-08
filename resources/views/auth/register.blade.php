@@ -52,7 +52,7 @@
                             <div class="col-md-6">
                             <select name="customercompany" class="form-control">
                                 <option value="2">Customer</option>
-                                <option value="3">Company / business</option>
+                               
                             </select>
                             </div>
                         </div>

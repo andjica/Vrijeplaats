@@ -8,6 +8,7 @@
 @php
         $userId = auth()->user()->id;
         $user =\App\UserView::where('user_id', $userId)->first();
+      
         if(!$user):
 @endphp
 <div class="alert alert-warning fade show fadeIn" role="alert">
@@ -48,6 +49,7 @@
         if(!$user):
 @endphp
         @include('user.insert-info')
+        
 @php 
     
     else:
