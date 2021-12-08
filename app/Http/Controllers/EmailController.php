@@ -3,31 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\UserSignature;
 use Illuminate\Mail\Mailable;
 use App\Mail\EmailBecomePartner;
 use App\Mail\EmailConfirmationBecomePartner;
 use Illuminate\Support\Facades\Mail;
+use App\UserSignature;
+use App\UserView;
+
 class EmailController extends Controller
 {
     public function bepartner()
     {
-        $contactperson = request()->contactperson;
+        
+        $firstname = request()->contactperson;
+        $lastname = request()->lastname;
         $naambedrijf = request()->naambedrijf;
-        $adres = request()->adres;
+        $adres = request()->autocompleteaddress;
         $post = request()->post;
         $telefoon = request()->telefoon;
         $email = request()->email;
         $date = request()->datum;
         $signature = request()->signature;
-
-        $usersignature = new UserSignature();
-        $usersignature->contactperson = $contactperson;
+        
+        $usersignature = new UserView();
+        $usersignature->firstname = $firstname;
+        $usersignature->lastname = $lastname;
+        $usersignature->company = "Company";
         $usersignature->company_name = $naambedrijf;
-        $usersignature->adress = $adres;
+        $usersignature->address = $adres;
         $usersignature->post_code = $post;
         $usersignature->phone = $telefoon;
-        $usersignature->date = $date;
         $usersignature->email = $email;
         $usersignature->signature = $signature;
 

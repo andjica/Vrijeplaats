@@ -73,9 +73,14 @@ Partner Worden &amp; Vrijeplaats 2022</h1>
             @csrf
            
             <div class="col-sm-10 form-group">
-                <label for="contactpersoon" class="text-dark">Contactpersoon</labez>
-                <input class="form-control" placeholder="contactperson" name="contactperson" id="contactperson">
+                <label for="contactpersoon" class="text-dark">First name</labez>
+                <input class="form-control" placeholder="firstname" name="contactperson" id="contactperson">
                 <small class="text-danger" id="er-contactperson"></small>
+            </div>
+            <div class="col-sm-10 form-group">
+                <label for="contactpersoon" class="text-dark">Last name</labez>
+                <input class="form-control" placeholder="lastname" name="lastname" id="lastname">
+                <small class="text-danger" id="er-lastname"></small>
             </div>
             <div class="col-sm-10 form-group">
                 <label for="naam Bedrijf/Vereniging" class="text-dark">Naam Bedrijf/Vereniging</label>
@@ -83,10 +88,15 @@ Partner Worden &amp; Vrijeplaats 2022</h1>
                 <small class="text-danger" id="er-naambedrijf"></small>
             </div>
             <div class="col-sm-10 form-group">
-                <label for="adres" class="text-dark">Adres</label>
-                <input class="form-control" placeholder="Adres" name="adres" id="adres">
+            <label class="text-dark" for="address">Full Address
+            (Geolocation) </label>
+            <input type="text" name="autocompleteaddress" id="autocomplete" class="form-control pac-target-input" placeholder="Enter Location" autocomplete="off">
+
+                <input type="hidden" id="latitude" name="adresslatitude" class="form-control">
+                <input type="hidden" name="adresslongitude" id="longitude" class="form-control">
                 <small class="text-danger" id="er-adres"></small>
             </div>
+          
             <div class="col-sm-10 form-group">
                 <label for="Postc. Woonpl." class="text-dark">Postc. Woonpl.</label>
                 <input class="form-control" placeholder="Postc. Woonpl." name="post" id="postcode">

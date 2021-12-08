@@ -4,10 +4,23 @@ $("#contactperson").on('keyup' , function(){
  
     if(contactperson == "")
     {
-      $("#er-contactperson").text("Naam en achternaam is verplicht veld");
+      $("#er-contactperson").text("Naam  is verplicht veld");
     }
     else {
         $("#er-contactperson").text("");
+    }
+   });
+
+   $("#lastname").on('keyup' , function(){
+  
+    var lastname = $("#lastname").val();
+ 
+    if(lastname == "")
+    {
+      $("#er-clastname").text("Achternaam is verplicht veld");
+    }
+    else {
+        $("#er-lastname").text("");
     }
    });
  
@@ -24,9 +37,9 @@ $("#contactperson").on('keyup' , function(){
     }
    });
  
-   $("#adres").on('keyup' ,function(){
+   $("#autocomplete").on('keyup' ,function(){
     
-    var adres = $("#adres").val();
+    var adres = $("#autocomplete").val();
  
     if(adres == "")
     {
@@ -95,8 +108,9 @@ $("#contactperson").on('keyup' , function(){
    $('#becomepartner').on('submit', function(e){
      
      var nameofperson = $("#contactperson").val();
+     var lastname = $("#lastname").val();
      var companyname = $("#naambedrijf").val();
-     var address = $("#adres").val();
+     var address = $("#autocomplete").val();
      var postcode = $("#postcode").val();
      var phone = $("#telefoon").val();
      var emailaddress = $("#email").val();
@@ -116,6 +130,20 @@ $("#contactperson").on('keyup' , function(){
      else
      {
        document.getElementById('er-contactperson').innerHTML = "";
+      
+     }
+
+     if(lastname == "")
+     {
+        e.preventDefault();
+        errors.push = "Mistake";
+       
+        document.getElementById('er-lastname').innerHTML = "Achternaam is verplicht veld";
+       
+     }
+     else
+     {
+       document.getElementById('er-lastname').innerHTML = "";
       
      }
      

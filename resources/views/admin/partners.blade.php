@@ -30,7 +30,7 @@
                                 <label class="sr-only" for="inlineFormInputName2">Name</label>
                                 <select name="partners" class="custom-select">
                                     @foreach($noactive as $a)
-                                    <option  class="form-control" value="{{$a->id}}">{{$a->company_name}}</option>
+                                    <option  class="form-control" value="{{$a->company_name}}">{{$a->company_name}}</option>
                                     @endforeach
                                 </select>
                                
@@ -79,17 +79,17 @@
                                     {{$p->id}}
                                     </td>
                                     <td>{{$p->created_at}}</td>
-                                    <td>{{$p->userview->firstname}} {{$p->userview->lastname}}</td>
-                                    <td>{{$p->userview->company_name}}</td>
+                                    <td>{{$p->firstname}} {{$p->lastname}}</td>
+                                    <td>{{$p->company_name}}</td>
                                     <td>{{$p->email}}</td>
-                                    <td>{{$p->userview->phone}}</td>
-                                    <td>{{$p->userview->address}}, {{$p->userview->post_code}}</td>
-                                    @if($p->userview->payed_status == 0)
+                                    <td>{{$p->phone}}</td>
+                                    <td>{{$p->address}}, {{$p->post_code}}</td>
+                                    @if($p->payed_status == 0)
                                     <td><span class="text-danger">NO</span></td>
                                     @else
                                     <td><span class="text-success">YES</span></td>
                                     @endif
-                                    <td><a href="{{asset('/company/'.$p->userview->id)}}">find out</a></td>
+                                    <td><a href="{{asset('/company/'.$p->id)}}">find out</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

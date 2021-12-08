@@ -74,10 +74,9 @@ class AdminController extends Controller
 
     public function partners()
     {
-        $partners = User::where('role_id', 3)->orderBy('created_at', 'desc')->get();
+        $partners = UserView::where('company', 'Company')->orderBy('created_at', 'desc')->get();
         $noactive = UserView::where('payed_status', 0)
-        ->where('company', 'COMPANY')
-        ->where('company_name', '!=', NULL)
+        ->where('company', 'Company')
         ->get();
         
         return view('admin.partners', compact('partners', 'noactive'), $this->data);

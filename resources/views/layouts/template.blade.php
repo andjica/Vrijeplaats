@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" href="{{asset('/css/')}}/style.css">
 
-
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&libraries=places" ></script>
 </head>
 <body>
 <div id="site-wrapper" class="site-wrapper home-main">
@@ -28,7 +28,7 @@
 
 </div>
 @include('components.footer')
-
+<script type="text/javascript" src="{{asset('/js/')}}/google-geo-parameters.js"></script>
 </div>
 
 <!-- <script>

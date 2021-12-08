@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Mail\EmailBecomePartner;
 use App\Mail\EmailConfirmationBecomePartner;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
 
 class UserViewController extends Controller
 {
@@ -201,20 +202,49 @@ class UserViewController extends Controller
 
     public function activatecompany()
     {
-        $companyId = request()->partners;
+       
+        $companyname = request()->partners;
 
-        $company = UserView::where('id', $companyId)->first() ?? abort(404);
-
+        $company = UserView::where('company_name', $companyname)->first() ?? abort(404);
         $company->payed_status = 1;
+        
 
-        try{
-            $company->save();
-            return redirect()->back()->with('success', 'Het bedrijf is succesvol geactiveerd');
+        
+        //generate password for new user - company in user table
+        function rand_string( $length ) {
+
+            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return substr(str_shuffle($chars),0,$length);
+        
         }
-        catch(\Throwable $e)
+        
+        $password =  rand_string(8);
+       
+        //make password to user - company
+        $hashedPassword = Hash::make($password);
+        $newUser = new User();
+        $newUser->name = $company->firstname;
+        $newUser->email = $company->email;
+        $newUser->password = $hashedPassword;
+        $newUser->email_verified_at = Carbon::now();
+        $newUser->role_id = 3;
+        $newUser->save();
+
+        if($newUser)
         {
-            return abort(500);
+            $company->user_id = $newUser->id;
+            try{
+            
+                $company->save();
+                return redirect()->back()->with('success', 'Het bedrijf is succesvol geactiveerd');
+            }
+            catch(\Throwable $e)
+            {
+                return abort(500);
+            }
         }
+
+        
     }
 
     public function company($id)
