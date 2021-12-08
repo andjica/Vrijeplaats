@@ -56,8 +56,13 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'info@vrijeplaats.nl'),
+        'address' => env('MAIL_FROM_ADDRESS'),
         'name' => env('MAIL_FROM_NAME', 'Vrijeplaats'),
+    ],
+
+    'reply_to' => [
+        'address' => 'admin@vrijeplaats.nl',
+        'name' => 'Reply to name',
     ],
 
     /*
@@ -71,7 +76,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +89,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('MAIL_USERNAME', 'Vrijeplaats'),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('MAIL_PASSWORD', 'torbA4172'),
 
     /*
     |--------------------------------------------------------------------------

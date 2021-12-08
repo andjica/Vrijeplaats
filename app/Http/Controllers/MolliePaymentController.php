@@ -46,7 +46,8 @@ class MolliePaymentController extends Controller
                     'value' => $post->price_first, // You must send the correct number of decimals, thus we enforce the use of strings
                 ],
                 'description' => 'Payment By codehunger', 
-                'redirectUrl' => route('payment.success'), // after the payment completion where you to redirect
+                'redirectUrl' => route('payment.success'),
+                'webhookUrl'=>'webhooks.mollie' // after the payment completion where you to redirect
                 ]);
             
             $payment = Mollie::api()->payments()->get($payment->id);
@@ -134,7 +135,8 @@ class MolliePaymentController extends Controller
     }
    
         public function handle(Request $request) {
-        // $paymentId = $request->input('id');
+         $paymentId = $request->input('id');
+         return $paymentId;
         if($request->has('id'))
         {
             $payment = Mollie::api()->payments->get($request->get('id'));

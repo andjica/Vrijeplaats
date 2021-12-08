@@ -29,6 +29,7 @@ class EmailBecomePartner extends Mailable
      */
     public function build()
     {
+        //da stigne adminu
         return $this->from(request()->email)
         ->subject('Hallo, je hebt een nieuw bericht ontvangen over de nieuwe samenwerking van: '.request()->contactperson)
         ->to('info@vrijeplaats.nl')

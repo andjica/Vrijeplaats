@@ -8,10 +8,9 @@
 <div class="top-campaign">
     <div class="container">
         <div class="d-flex top-campaign-container">
-            <div class="content">   
+            <div class="content-s">   
         Mega up to
-
-            <span class="font-weight-bold">30% off </span>{{$post->title}}
+         <span class="font-weight-bold">30% off </span>{{$post->title}}
                 @php 
                     $image = $post->images;
                     $image = $image->first();

@@ -41,7 +41,7 @@ class EmailController extends Controller
             'date' => request()->datum,
             'signature' => request()->signature
         ]);
-        Mail::send(new EmailBecomePartner($data));
+       
         Mail::send(new EmailConfirmationBecomePartner($data));
         
             $usersignature->save();

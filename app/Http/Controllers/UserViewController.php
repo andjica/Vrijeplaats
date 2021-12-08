@@ -171,6 +171,7 @@ class UserViewController extends Controller
 
                 if($userinfo->send_to_admin == 0 && $userinfo->company == "Company")
                 {
+                   
                     $data = ([
                         'contactperson'=> request()->firstname2.request()->lastname2,
                         'naambedrijf' => request()->companyname,
@@ -182,6 +183,7 @@ class UserViewController extends Controller
                         'date' => Carbon::now(),
                         'signature' => request()->signature
                     ]);
+                    
                     Mail::send(new EmailBecomePartner($data));
                     Mail::send(new EmailConfirmationBecomePartner($data));
 
