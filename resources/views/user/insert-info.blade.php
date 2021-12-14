@@ -94,5 +94,5 @@ Plus
 <small id="instagramerror" class="text-danger"></small>
 </div>
 </div>
-<input type="submit" class="btn btn-primary btn-block font-size-lg" value="Save Change">
+<input type="submit" class="btn btn-primary btn-block font-size-lg" value="Opslaan">
 </form>

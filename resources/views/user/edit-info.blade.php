@@ -155,7 +155,7 @@ Plus
 </div>
 </div>
 <input type="hidden" name="email" value="{{auth()->user()->email}}">
-<input type="submit" class="btn btn-primary btn-block font-size-lg" value="Save Change">
+<input type="submit" class="btn btn-primary btn-block font-size-lg" value="Opslaan">
 </div>
 </div>
 </div>
