@@ -130,7 +130,7 @@ class HomeController extends Controller
         $randomactiveposts = Post::where('category_id', $category->id)
         ->where('valid_until', '>', $timenow)
         ->limit(3)->inRandomOrder()->get();
-        
+       
         if($post)
         {
             return view('categories.getpost', compact('post', 'category', 'city', 'randomactiveposts'), $this->data);
@@ -159,18 +159,19 @@ class HomeController extends Controller
         
         $category = Category::where('name', 'LIKE',  "%{$name}%")
         ->first();
-
+       
        
         $citysearch = request()->city;
+       
         $city = City::where('name', 'LIKE', "%{$citysearch}%")
         ->first();
-
+        
         $timenow = Carbon::now();
         $posts = Post::with('firstimage')->where('category_id', $category->id)
         ->where('city_id', $city->id)
         ->where('valid_until','>', $timenow)
         ->get();
-
+        
         $lastpost = Post::where('category_id', $category->id)
         ->where('city_id', $city->id)
         ->where('valid_until','>', $timenow)

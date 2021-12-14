@@ -36,8 +36,8 @@ class MolliePaymentController extends Controller
     public function preparePayment()
     {
         $post = Post::find(request()->postid) ?? abort(404);
-
-
+        
+        
         if($post)
         {
             $payment = Mollie::api()->payments()->create([
@@ -46,7 +46,7 @@ class MolliePaymentController extends Controller
                     'value' => $post->price_first, // You must send the correct number of decimals, thus we enforce the use of strings
                 ],
                 'description' => 'Payment By codehunger', 
-                'redirectUrl' => route('payment.success'),
+                'redirectUrl' => route('payment.success', ['id'=> $post->id]),
                 // 'webhookUrl'=> route('webhooks.mollie') // after the payment completion where you to redirect
                 ]);
             
@@ -67,21 +67,41 @@ class MolliePaymentController extends Controller
         
             
     }
-    public function paymentSuccess(Request $request) {
+    public function paymentSuccess($id) {
         
       
 
         // if ($payment->isPaid() == TRUE)
         // {
-            
+               $post = Post::find($id) ?? abort(404);
                 $purchase = new Purchase();
                 $purchase->inv_id = time();
                 $purchase->post_id = $post->id;
                 $purchase->user_id = auth()->user()->id;
                 $purchase->category_id = $post->category_id;
-                $purchase->total = $post->price_first;
-        
+                $purchase->total = $post->price_dicount;
+                
+                if($post->category->tax == 6)
+                {
+                   
+                    $posttax = $post->price_discount / 1.06;
+                    $posttax = round($posttax,2);
+                    
+                    $tax = $post->price_discount - $posttax;
+                   
+                    $purchase->tax = $tax;
+                }
+                else
+                {
+                    $posttax = $post->price_discount / 1.21;
+                    $posttax = round($posttax,2);
+                    
+                    $tax = $post->price_discount - $posttax;
+                   
+                    $purchase->tax = $tax;
+                }
                
+                $purchase->role_payment = "coupons";
                 $purchase->save(); // redirect customer to Mollie checkout page
             
       

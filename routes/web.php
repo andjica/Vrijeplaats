@@ -32,9 +32,11 @@ Route::get('/user-invoices', 'HomeController@invoices');
 Route::get('/user-invoice={idinvoice}', 'HomeController@invoice');
 
 
+//category city
+Route::get('/categorie={name}/city={city}', 'HomeController@categorycity');
 Route::get('/categorie={name}/city={city}/name={title}', 'HomeController@getpost');
 Route::get('/all-categories', 'HomeController@getallposts');
-Route::get('/categorie={name}/city={city}', 'HomeController@categorycity');
+
 //user edit
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
@@ -51,7 +53,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     //Mollie Payment 
     Route::get('/buy-ticket/{id}', 'MolliePaymentController@buyticket');
     Route::get('/mollie-paymnet','MolliePaymentController@preparePayment')->name('mollie.payment');
-    Route::get('/payment-success','MolliePaymentController@paymentSuccess')->name('payment.success');
+    Route::get('/payment-success/{id}','MolliePaymentController@paymentSuccess')->name('payment.success');
     Route::post('/webhooks-mollie', 'MolliePaymentController@handle')->name('webhooks.mollie');
     Route::get('/get-checkout-partnership', 'MolliePaymentController@handlePartnerShip');
     Route::get('/paymentforpartership', 'MolliePaymentController@paymentforpartership');
@@ -62,6 +64,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin-home', 'AdminController@index');
     Route::get('/admin-invoices', 'AdminController@invoices');
+    Route::get('/admin-coupon-invoices', 'AdminController@couponinvoices');
     Route::get('/admin-invoice={idinvoice}', 'AdminController@invoice');
     Route::get('/role-invoices/{id}', 'AdminController@userinvoices');
     Route::get('/admin-posts', 'AdminController@posts');
@@ -78,6 +81,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin-users', 'AdminController@users');
     Route::get('/users', 'AdminController@onlyusers');
     Route::get('/companies', 'AdminController@onlycompanies');
+
+    Route::get('/delete-user/{id}', 'AdminController@deleteuser');
+   
 });
 
 

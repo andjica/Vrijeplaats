@@ -3,7 +3,6 @@
 @section('content')
 
 
-
 <div id="wrapper-content" class="wrapper-content pt-0 pb-0">
 <div class="page-wrapper d-flex flex-wrap flex-xl-nowrap mt-11">
 @include('admin.sidebar')
@@ -19,9 +18,9 @@
     <a href="{{asset('/categories')}}" class="link-light">
         <div class="card view rounded-0 border-0 text-white">
             <div class="card-body d-flex align-items-center p-0">
-                <div class="content mr-auto">
+                <div class="content mr-auto text-white">
                     @isset($countcategories)
-                        <span class="font-size-h1 font-weight-semibold lh-1 d-block">{{$countcategories}}</span>
+                        <span class="font-size-h1 font-weight-semibold lh-1 d-block text-white">{{$countcategories}}</span>
                     @endisset
                     <span class="font-size-lg">Totaal categorieën</span>
                 </div>
@@ -35,7 +34,7 @@
         </a>
     </div>
     <div class="col-lg-4 mb-6 mb-xl-0">
-        <a href="{{asset('/admin-invoices')}}" class="link-light">
+        <a href="{{asset('/admin-coupon-invoices')}}" class="link-light">
             <div class="card review rounded-0 border-0 text-white">
                 <div class="card-body d-flex align-items-center p-0">
                     <div class="content mr-auto">
@@ -53,17 +52,21 @@
     </div>
 
 <div class="col-lg-4">
+<a href="{{asset('/admin-partners')}}" class="link-light">
 <div class="card time-bookmark rounded-0 border-0 text-white">
 <div class="card-body d-flex align-items-center p-0">
 <div class="content mr-auto">
-<span class="font-size-h1 font-weight-semibold lh-1 d-block">269</span>
-<span class="font-size-lg">Times Bookmarked</span>
+    @isset($newpartners)
+<span class="font-size-h1 font-weight-semibold lh-1 d-block">{{$newpartners}}</span>
+@endisset
+<span class="font-size-lg">Nieuwe partners</span>
 </div>
 <div class="fact-icon">
 <i class="fas fa-bookmark"></i>
 </div>
 </div>
 </div>
+</a>
 </div>
 </div>
  <div class="row tables">
@@ -129,7 +132,7 @@
                         <a href="panel-invoice-details.html" class="link-hover-dark-blue">INV-00001</a>
                         </td>
                         <td>{{$p->created_at}}</td>
-                        <td>@if($p->post['title'] == null) {{$p->role_payment}} @else{{$p->post->title}}@endif</td>
+                        <td>@if($p->post_id == null) {{$p->role_payment}} @else{{$p->post['title']}}@endif</td>
                         <td>{{$p->total}}</td>
                         <td><span class="status paid">Paid</span></td>
                         </tr>

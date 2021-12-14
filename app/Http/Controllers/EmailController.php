@@ -49,7 +49,7 @@ class EmailController extends Controller
        
         Mail::send(new EmailConfirmationBecomePartner($data));
         
-            $usersignature->save();
+        $usersignature->save();
         
         
 

@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar rounded">
   <div class="container-fluid">
     <div class="user-profile media align-items-center mb-6">
       <div class="image mr-3">

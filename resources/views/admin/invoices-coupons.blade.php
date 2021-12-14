@@ -36,14 +36,14 @@
                                 </tr>
                                 </thead>
                                     <tbody>
-                                    @foreach($purchases as $p)
+                                @foreach($purchases as $p)
                                     <tr>
                                     <td>
                                     {{$p->inv_id}}
                                     </td>
                                     <td>{{$p->created_at->format('d-m-Y')}}</td>
-                                    <td> {{$p->user['name']}} - {{$p->user['email']}} </td>
-                                    <td> {{$p->role_payment}} </td>
+                                    <td>{{$p->user->userview->firstname}} {{$p->user->userview->lastname}}</td>
+                                    <td>@if($p->post['title'] == null) {{$p->role_payment}} @else{{$p->post->title}}@endif</td>
                                     <td>{{$p->total}}</td>
                                     <td><span class="status paid">Paid</span></td>
                                     <td>

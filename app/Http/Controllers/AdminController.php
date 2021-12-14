@@ -39,17 +39,25 @@ class AdminController extends Controller
 
         $limitpurchases = Purchase::orderBy('created_at', 'desc')->limit(3)->get();
         
-        $countpurchases = Purchase::where('role_payment', 'USER')->count();
+        $countpurchases = Purchase::where('role_payment', 'coupons')->count();
        
+        $newpartners = UserView::where('payed_status', 0)->where('company', 'Company')->count();
+        
 
-        return view('admin.index', compact('posts', 'users', 'countpurchases',
+        return view('admin.index', compact('posts', 'users', 'countpurchases','newpartners',
         'countusers', 'hotels', 'counthotels', 'expiredposts', 'countcategories', 'limitpurchases'), $this->data);
     }
 
     public function invoices()
     {
-        $purchases = Purchase::orderBy('created_at', 'desc')->get();
+        $purchases = Purchase::orderBy('created_at', 'desc')->where('role_payment', 'Account activatie')->get();
         return view('admin.invoices', compact('purchases'), $this->data);
+    }
+
+    public function couponinvoices()
+    {
+        $purchases = Purchase::orderBy('created_at', 'desc')->where('role_payment', 'coupons')->get();
+        return view('admin.invoices-coupons', compact('purchases'), $this->data);
     }
 
     public function invoice($idinvoice)
@@ -108,5 +116,26 @@ class AdminController extends Controller
         $user = User::find($id);
         $invoices =  $user->purchases;
         return view('admin.user.role-invoices', compact('invoices', 'user'), $this->data);
+    }
+
+    public function deleteuser($id)
+    {
+        $userview = UserView::find($id);
+        $useremail = $userview->email;
+
+        $user = User::where('email', $useremail)->first();
+        
+        if($user == null)
+        {
+            $userview->delete();
+            return redirect()->back()->with('success', 'Je hebt de gebruiker succesvol verwijderd');
+        }
+        else
+        {
+            $userview->delete();
+            $user->delete();
+            //mora se nadju postovi i da se uklone
+            return redirect()->back()->with('success', 'Je hebt de gebruiker succesvol verwijderd');
+        }
     }
 }

@@ -31,15 +31,15 @@
 <li class="list-group-item p-0 mb-2 lh-15">
 <a href="{{asset('/admin-invoices')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
 <span class="d-inline-block mr-3"><i class="fas fa-bookmark"></i></span>
-<span>Invoices cupons</span>
+<span>Invoices accounts</span>
 </a>
 </li>
-<!-- <li class="list-group-item p-0 mb-2 lh-15">
-<a href="{{asset('/admin-invoices')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
+<li class="list-group-item p-0 mb-2 lh-15">
+<a href="{{asset('/admin-coupon-invoices')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
 <span class="d-inline-block mr-3"><i class="fas fa-bookmark"></i></span>
-<span>Invoices cupons</span>
+<span>Invoices coupons</span>
 </a>
-</li> -->
+</li>
 
 <li class="list-group-item p-0 mb-2 lh-15">
 <a href="{{asset('/admin-users')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">

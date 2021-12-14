@@ -38,19 +38,24 @@
                                     {{$p->inv_id}}
                                     </td>
                                     <td>{{$p->created_at->format('d-m-Y')}}</td>
-                                    <td>@if($p->post_id == null) {{$p->role_payment}} @else{{$p->post->title}}@endif</td>
+                                    <td>@if($p->post_id == null) {{$p->role_payment}} @else{{$p->post['title']}}@endif</td>
                                     <td>{{$p->total}}</td>
                                     @php 
                                         $now = Carbon\Carbon::now();
                                         
                                     @endphp
-                                    @if($now >= $p->post['valid_until'])
-                                    <td><span class="status text-danger">@if($p->post['valid_until'] == null) / @else{{$p->post->valid_until}} @endif</span></td>
-
+                                    @if($p->post_id == null) 
+                                    <td>/</td> 
                                     @else
-                                    <td><span class="status paid"></span></td>
-
-                                     @endif
+                                    <td>
+                                        
+                                            @if($now >= $p->post['valid_until'])
+                                            <span class="status text-danger">De coupon is verlopen {{$p->post['valid_until']}}</span>
+                                            @else
+                                            <span class="status text-success"> Active until {{$p->post['valid_until']}}   </span>
+                                            @endif
+                                   </td>
+                                    @endif
                                     <td>
                                         <a href="{{asset('/user-invoice='.$p->inv_id)}}" class="link-hover-dark-blue">
                                         <span class="status overdue">Details</span>

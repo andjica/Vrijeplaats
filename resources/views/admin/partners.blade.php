@@ -46,10 +46,7 @@
                                 <button type="submit" class="btn btn-primary mb-2">Submit</button>
                                 </form>
                               
-                                   <p class="ml-3 mt-2"> <b>Kies een bedrijf.</b><br>  Door op verzenden te klikken stelt u het bedrijf in staat om actief te worden, 
-                                    door het te activeren heeft het <br>bedrijf toegang tot het maken van berichten en andere mogelijkheden.<br>
-                                    Bedrijven die niet op de lijst staan ​​betekent dat ze nog niet alle 
-                                    originele gegevens hebben ingevuld en dat ze dan op de lijst komen om hun profiel te activeren.</p>
+                                   <p class="ml-3 mt-2"> Op deze manier laat je het bedrijf actief zijn. <br>Door op verzenden te klikken, ontving het bedrijf een e-mail met inloggegevens. Het drukt ook automatisch een factuur af die kan worden bekeken door zowel de beheerder als de gebruiker die het profiel activeert.</p>
                                
                             </div>
                         </div>
@@ -63,13 +60,14 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Datum van aanvraag</th>
-                                    <th>User</th>
-                                    <th>Company name</th>
+                                    <th>Gebruiker</th>
+                                    <th>NAAM VAN HET BEDRIJF</th>
                                     <th>Email</th>
                                     <th>Telefoon</th>
                                     <th>Adres en postcode</th>
                                     <th>Active STATUS</th>
-                                    <th>View more information</th>
+                                    <th>Bekijk meer informatie</th>
+                                    <th>Verwijderen</th>
                                 </tr>
                                 </thead>
                                     <tbody>
@@ -90,6 +88,31 @@
                                     <td><span class="text-success">YES</span></td>
                                     @endif
                                     <td><a href="{{asset('/company/'.$p->id)}}">find out</a></td>
+                                    <td> <button  class="btn btn-danger btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md" data-toggle="modal" data-target="#user{{$p->id}}">
+                                        <i class="fa fa-trash-alt"></i>
+                                            Overzicht
+                                    </button>
+                                    <div class="modal fade" id="user{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="postmodal" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="postmodals"><b>{{$p->company_name}}</b></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Om er zeker van te zijn dat u de gebruiker wilt verwijderen
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <a href="{{asset('/delete-user/'.$p->id)}}" class="btn btn-danger">
+                                                <i class="fas fa-trash"></i>Overzicht</a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
