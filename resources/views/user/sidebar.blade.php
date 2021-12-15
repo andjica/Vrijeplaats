@@ -46,6 +46,12 @@
         </a>
       </li>
       <li class="list-group-item p-0 mb-2 lh-15">
+        <a href="{{asset('/edit-password')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
+          <span class="d-inline-block mr-3"><i class="fas fa-key"></i></span>
+          <span>Verander het wachtwoord</span>
+        </a>
+      </li>
+      <li class="list-group-item p-0 mb-2 lh-15">
         <a href="{{asset('/logout')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
           <span class="d-inline-block mr-3"><svg class="icon icon-exit"><use xlink:href="#icon-exit"></use></svg></span>
           <span>Uiloggen</span>
