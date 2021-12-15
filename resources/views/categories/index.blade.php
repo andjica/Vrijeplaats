@@ -2,6 +2,10 @@
 
 @section('content')
 
+<div class="preload">
+<div class="loader" ><span>
+zoeken voor u...</span></div>
+</div>
 <div class="mt-9">
     @include('user.top-campain')
 </div>
@@ -10,8 +14,10 @@
   <ol class="breadcrumb m-3 bg-light">
     <li class="breadcrumb-item"><a href="{{asset('/')}}">Home</a></li>
     @isset($category)
-    <li class="breadcrumb-item"><a href="{{asset('/categorie/'.$category->link)}}">{{$category->name}}</a></li>
-    @endisset
+        <li class="breadcrumb-item">
+            <a href="{{asset('/categorie/'.$category->link)}}">{{$category->name}}</a>
+        </li>
+        @endisset
   </ol>
 </nav>
 <div class="container" id="container-desk">
@@ -25,17 +31,17 @@
                     <div class="d-flex align-items-center flex-wrap flex-lg-nowrap border-bottom py-4 py-lg-0">
                     <div class="store media align-items-stretch py-4">
                     @php 
-                    $images = $p->images;
-                    $images = $images->first();
+                    $post = \App\Post::where('id', $p->id)->first();
+                    $images = $post->images->first();
                     
-                    @endphp
-                    @isset($images)
-                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="store-image">
+                   @endphp
+                   @isset($images)
+                    <a href="listing-details-full-image.html" class="store-image">
                     <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}">
                     </a>
                     @endisset
                     <div class="media-body px-0 pt-4 pt-md-0">
-                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
+                    <a href="" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
                         <span class="letter-spacing-25">{{$p->title}} </span>
                     </a>
                     <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">
@@ -43,14 +49,15 @@
                         <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">numm of ticket</span>
                     </li>
                     <li class="list-inline-item separate"></li>
-                    <li class="list-inline-item"><span class="mr-1">From</span><span class="text-danger font-weight-semibold">€{{$p->price_first}}</span>
+                    <li class="list-inline-item"><span class="mr-1">From</span>
+                    <span class="text-danger font-weight-semibold">€{{$p->price_discount}}</span>
                     </li>
                     <li class="list-inline-item separate"></li>
                     <li class="list-inline-item"><a href="#" class="link-hover-secondary-primary">
                    
                     <i class="fas fa-gift"></i>
                          
-                    <span>{{$p->category->name}}</span>
+                    <span>{{$category->name}}</span>
                     </a></li>
                     </ul>
                     <div class="border-top pt-2 d-flex">
@@ -74,7 +81,7 @@
                     </div>
                     <div class="action ml-0 ml-lg-auto mt-3 mt-lg-0 align-items-center flex-wrap flex-sm-nowrap w-100 w-lg-auto">
                   
-                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
+                    <a href="" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
                    
                         FIND OUT
                     </a>
@@ -86,7 +93,7 @@
       
          
         <div class="d-flex justify-content-center mt-2 mb-3">
-            {{ $posts->links() }}
+           
         </div>
         </div>
         @php
@@ -250,5 +257,6 @@ faucibus est sed facilisis viverra satanil...
 </div>
 </div>
 </section>
+<script src="{{asset('/js/')}}/preloader.js"></script>
 
 @endsection

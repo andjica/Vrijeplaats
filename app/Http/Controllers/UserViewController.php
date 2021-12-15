@@ -279,6 +279,7 @@ class UserViewController extends Controller
         return view('admin.company.company', compact('company'), $this->data);
     }
 
+    
     /**
      * Update the specified resource in storage.
      *

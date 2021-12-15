@@ -70,22 +70,32 @@
 <div class="font-size-lg mb-4">
 Bekijk hier een van onze grootste aanbod vrijeplaatsen!
 </div>
-    <div class="row pl-3">
-    <div class="list-inline ">
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="list-inline list-w">
         @foreach($categories as $category)
+       
         <div class="list-inline-item py-2">
-            <a href="{{asset('/categorie/'.$category->link)}}" class="card border-0 link-hover-dark-white icon-box-style-01">
-            <div class="card-body p-0" style="font-size:27px">
+        <form method="POST" action="{{asset('/categorie/location')}}" class="findlocation">
+            @csrf
+            <input type="hidden" name="categoryId" id="categoryId" value="{{$category->id}}">
+            <input type="hidden"  id="latitudes" name="latitude" value="">
+            <input type="hidden"  id="longlatitudes" name="longlatitude" value="">
+            <button type="submit" class="card border-0 link-hover-dark-white icon-box-style-01  shadow">
+            <div class="card-body p-0  st-btn" style="font-size:27px">
                 @php echo $category->icon @endphp
                 <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
                 {{$category->name}}
                 </span>
             </div>
-            </a>
+            </button>
+            </form>
         </div>
+       
         @endforeach
     </div>
-</div>
+    </div>
+    </div>
 <div class="home-main-how-it-work bg-white pt-11">
 <div class="container">
 <h2 class="mb-8">
@@ -153,6 +163,7 @@ De beste deals en laagste prijzen zorgen voor de ideale vrije plaats bij u in de
 </div>
 </div>
 </div>
+
 
 
 </section>

@@ -32,6 +32,7 @@ Route::get('/user-invoices', 'HomeController@invoices');
 Route::get('/user-invoice={idinvoice}', 'HomeController@invoice');
 
 
+Route::post('/categorie/location', 'HomeController@categorylocation');
 //category city
 Route::get('/categorie={name}/city={city}', 'HomeController@categorycity');
 Route::get('/categorie={name}/city={city}/name={title}', 'HomeController@getpost');
@@ -57,6 +58,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('/webhooks-mollie', 'MolliePaymentController@handle')->name('webhooks.mollie');
     Route::get('/get-checkout-partnership', 'MolliePaymentController@handlePartnerShip');
     Route::get('/paymentforpartership', 'MolliePaymentController@paymentforpartership');
+
+    Route::get('/edit-password', 'ChangePasswordController@index');
+    Route::post('/change-password', 'ChangePasswordController@store')->name('change.password');
     
 });
 

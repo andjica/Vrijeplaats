@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Category;
 use App\UserView;
 use App\Post;
@@ -214,5 +215,34 @@ class HomeController extends Controller
         $p = $purchase->user->userview->address;
         
         return view('user.invoice', compact('purchase'), $this->data);
+    }
+
+    public function categorylocation()
+    {
+        $latitude = request()->latitude;
+        $longitude = request()->longlatitude;
+
+        $category = Category::find(request()->categoryId) ?? abort (404);
+    
+        $posts = DB::table("cities")
+        ->join('posts', 'cities.id', '=', 'posts.city_id')
+        ->select(DB::raw("cities.id, 
+        ( 3959 * acos( cos( radians('$latitude') ) 
+        * cos( radians( geo_latitude ) ) * cos( radians( geo_long_latitude ) 
+        - radians('$longitude') ) + sin( radians('$latitude') ) * 
+        sin( radians( geo_latitude  ) ) ) ) AS distance"), 'posts.*')
+        ->havingRaw('distance < 50')->orderBy('distance')
+        ->get();  
+    
+        if($posts->count() == 0)
+        {
+            return view('errors.404', $this->data,['error' => '
+            Er zijn momenteel geen categorieën bij jou in de buurt geselecteerd']);
+        }
+        else
+        {
+            
+            return view('categories.index', compact('category', 'posts'), $this->data);
+        }
     }
 }

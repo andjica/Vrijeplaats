@@ -29,6 +29,7 @@
 </div>
 @include('components.footer')
 <script type="text/javascript" src="{{asset('/js/')}}/google-geo-parameters.js"></script>
+
 </div>
 
 <!-- <script>
@@ -57,6 +58,8 @@
 		})
   });
     </script> -->
+  <script src="{{asset('/js/')}}/get-current-location.js">
 
+    </script>
 </body>
 </html>

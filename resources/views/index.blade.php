@@ -11,8 +11,6 @@
      @include('components.other-categories')
 
 
-
-
-
+     <p id="demo"></p>
 
 @endsection
