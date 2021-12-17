@@ -21,12 +21,35 @@ zoeken voor u...</span></div>
   </ol>
 </nav>
 <div class="container" id="container-desk">
+    <div class="btn-group-sm d-flex" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-outline-light text-muted">Left</button>
+        <button type="button" class="btn btn-outline-light text-muted">Middle</button>
+
+        <button type="button" class="btn btn-outline-light text-muted d-b-google"  id="googlemapview">
+            <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
+        </button>
+
+        <a href="#map" class="mobilepro btn btn-outline-light text-muted">
+            <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
+        </a>
+        
+            <select id="sortby" class="form-control" style="width:10%">
+                <option value="0" class="form-control">Sort by</option>
+                <option value="LowerPrice" class="form-control">Lower price</option>
+                <option value="HigerPrice" class="form-control">Higer price</option>
+            </select>
+       
+
+    </div> 
+    
+</div>
+<div class="container" id="container-desk">
 
 <div class="row">
     <div class="col-lg-6">
  
     <div class="store-listing-style-04">
-        @foreach($posts as $p)
+        @foreach($postsa as $p)
             <div class="store-listing-item">
                     <div class="d-flex align-items-center flex-wrap flex-lg-nowrap border-bottom py-4 py-lg-0">
                     <div class="store media align-items-stretch py-4">
@@ -96,24 +119,13 @@ zoeken voor u...</span></div>
            
         </div>
         </div>
-        @php
-           $postfirst =   $posts->first();
-          
-        @endphp
-        @isset($postfirst)
+      
         <div class="col-lg-6 pl-0">
-            <div class="mapouter">
-                <div class="gmap_canvas">
-                <iframe width="100%" height="1680px" id="gmap_canvas" src="https://maps.google.com/maps?q={{$postfirst->geo_address_latitude}}+{{$postfirst->geo_address_longlatitude}}&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                     frameborder="0" scrolling="no" marginheight="0" 
-                    marginwidth="0"></iframe><a href="https://123movies-to.org"></a>
-                    <br><style>.mapouter{position:relative;text-align:right;height:1680px;width:100%;}</style>
-                    <a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>
-                    .gmap_canvas {overflow:hidden;background:none!important;height:1680px;width:100%;}</style>
-                </div>
-            </div>
+            <div id="map" class="mapice"></div>
+           
+           </div>
         </div>
-        @endisset
+      
 
 
 </div>
@@ -257,6 +269,205 @@ faucibus est sed facilisis viverra satanil...
 </div>
 </div>
 </section>
+
+  @php 
+  $timenow = \Carbon\Carbon::now();
+   $city = \App\City::where('id', $post->city_id)->first();
+   $postsandjica = \App\Post::with('firstimage')->where('category_id', $category->id)
+        ->where('city_id', $city->id)
+        ->where('valid_until','>', $timenow)->get();
+  @endphp
+
+  <script>
+     
+     var category = <?php echo $category ?>;
+     var city = <?php echo $city ?>;
+     var posts = <?php  echo $postsandjica; ?>;
+    
+     navigator.geolocation.getCurrentPosition(
+        function (position) {
+            initMap(position.coords.latitude, position.coords.longitude)
+        },
+        function errorCallback(error) {
+            console.log(error)
+        }
+        );
+
+    function initMap(lat, lng) {
+     
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: { lat: parseFloat(lat), lng: parseFloat(lng)},
+        fullscreenControl: true
+     });
+
+     var locations = [];
+    
+     const obj = posts;
+     
+     let categorylink = category['link'];
+     let cityname = city['name'];
+     // Prints "name Jean-Luc Picard" followed by "rank Captain"
+     Object.keys(obj).forEach(key => {
+     
+     console.log(key, obj[key]['geo_address_latitude']);
+     
+
+     locations[key] =
+     
+         [
+             {
+                 lat: parseFloat((key, obj[key]['geo_address_latitude'])),
+                 lng:  parseFloat((key, obj[key]['geo_address_longlatitude'])) 
+             }, 
+             (key, obj[key]['title']),
+             (key, obj[key]['main_description']),
+             (key, obj[key]['valid_until']),
+             (key, obj[key]['firstimage']['url']), 
+             (key, obj[key]['price_first']), 
+             categorylink,
+             cityname,
+             (key, obj[key]['price_discount'])
+         ]; 
+
+    
+         
+   
+     });
+
+
+const image = {
+ url: "http://vrijeplaats.nl/public/images/map.png",
+ // This marker is 20 pixels wide by 32 pixels high.
+ size: new google.maps.Size(30, 55),
+ // The origin for this image is (0, 0).
+ origin: new google.maps.Point(0, 0),
+ // The anchor for this image is the base of the flagpole at (0, 32).
+ anchor: new google.maps.Point(0, 1),
+};
+// Create an info window to share between markers.
+const infoWindow = new google.maps.InfoWindow();
+
+
+locations.forEach(([position, title, desc,valid_until, firstimage, firstprice,categorylink, cityname, price], i) => {
+ const marker = new google.maps.Marker({
+
+   animation: google.maps.Animation.DROP,
+   position,
+   map,
+   icon: image,
+   title: `${title}`,
+   label:{
+     text : `${price}€`,
+     color: '#ed008c',
+     fontSize: "16px",
+     fontWeight: "bold"
+   },
+   infoWindowContent : `
+<div class="card" style="padding:10px">
+
+<h5 class="g-title-s">${title}</h5>
+   <span class="status active">Active until <small>${valid_until}</small><br>
+   <img src="../images/posts/${firstimage}" class="img-fluid mt-2 mb-2 d-block" width="120px">
+   
+   <p class="mb-2"><del class="text-danger display-5">${firstprice}</del> <b class="text-dark">€${price}</b></span></p>
+  
+   
+   <a class="btn btn-primary g-btn" href="http://vrijeplaats.nl/public/categorie=${categorylink}/city=${cityname}/name=${title}">Find out</a>
+   </div>
+   `,
+   optimized: false,
+  
+
+ });
+
+
+ 
+ // Add a click listener for each marker, and set up the info window.
+ marker.addListener("click", () => {
+  
+   infoWindow.setContent(marker.infoWindowContent);
+   infoWindow.open(marker.getMap(), marker);
+  
+
+ });
+ 
+});
+}
+ $('#googlemapview').click(function(){
+     var map = document.querySelector(".gm-style");
+     map.requestFullscreen();
+ });
+ let categoryname = category['name'];
+ 
+ var i = 0, strLength =  categoryname.length;
+ for(i; i <  strLength; i++) {
+     categoryname =  categoryname.replace(" ", "+");
+ }
+
+ let cityname = city['name'];
+
+ var i = 0, strLengthCity =  cityname.length;
+ for(i; i <  strLengthCity; i++) {
+     cityname =  cityname.replace(" ", "+");
+ }
+
+ console.log(cityname);
+ window.addEventListener("DOMContentLoaded",() => {
+ const replay = document.getElementById("replay");
+ let resetTimeout = null;
+ let btnTimeout = null;
+ // prevent keyboard interaction while the button is hidden
+ const tempHideBtn = btn => {
+     if (btn) {
+         const btnCS = window.getComputedStyle(btn);
+         let btnAnimDur = btnCS.getPropertyValue("animation-duration");
+
+         btnAnimDur = +btnAnimDur.split("s")[0] * 1e3;
+         btn.disabled = true;
+
+         clearTimeout(btnTimeout);
+         btnTimeout = setTimeout(() => {
+             btn.disabled = false;
+         }, btnAnimDur);
+     }
+ };
+
+ if (replay) {
+     let spinnerEls = [
+         "circle",
+         "worm-a",
+         "worm-b"
+     ];
+     spinnerEls = spinnerEls.map(e => document.querySelector(`.check-spinner__${e}`));
+     // hide the button at start
+     tempHideBtn(replay);
+
+     replay.addEventListener("click",function() {
+         // kill the animations
+         spinnerEls.forEach(e => {
+             e.style.animation = "none";
+         });
+         this.style.animation = "none";
+
+         // restore them, hide the button again
+         clearTimeout(resetTimeout);
+         resetTimeout = setTimeout(() => {
+             spinnerEls.forEach(e => {
+                 e.removeAttribute("style");
+             });
+             this.removeAttribute("style");
+             tempHideBtn(this);
+         }, 0);
+     });
+ }
+});
+
+
+
+
+     </script>
 <script src="{{asset('/js/')}}/preloader.js"></script>
 
 @endsection

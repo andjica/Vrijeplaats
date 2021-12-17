@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Response;
 use App\Category;
 use App\UserView;
 use App\Post;
@@ -224,7 +225,7 @@ class HomeController extends Controller
 
         $category = Category::find(request()->categoryId) ?? abort (404);
     
-        $posts = DB::table("cities")
+        $postsa = DB::table("cities")
         ->join('posts', 'cities.id', '=', 'posts.city_id')
         ->select(DB::raw("cities.id, 
         ( 3959 * acos( cos( radians('$latitude') ) 
@@ -234,7 +235,8 @@ class HomeController extends Controller
         ->havingRaw('distance < 50')->orderBy('distance')
         ->get();  
     
-        if($posts->count() == 0)
+        
+        if($postsa->count() == 0)
         {
             return view('errors.404', $this->data,['error' => '
             Er zijn momenteel geen categorieën bij jou in de buurt geselecteerd']);
@@ -242,7 +244,7 @@ class HomeController extends Controller
         else
         {
             
-            return view('categories.index', compact('category', 'posts'), $this->data);
+            return view('categories.index', compact('category', 'postsa', 'latitude', 'longitude'), $this->data);
         }
     }
 }
