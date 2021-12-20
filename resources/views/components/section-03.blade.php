@@ -34,7 +34,8 @@
                 <use xlink:href="#icon-expand"></use>
                 </svg>
                 </a>
-                <a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="0" data-original-title="Bookmark"><i class="fa fa-bookmark"></i></a>
+                <a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="0" data-original-title="Bookmark">
+                    <i class="fa fa-bookmark"></i></a>
                 <a href="#" class="item" data-toggle="tooltip" data-placement="top" title="" tabindex="0" data-original-title="Compare">
                 <svg class="icon icon-chart-bars">
                 <use xlink:href="#icon-chart-bars"></use>

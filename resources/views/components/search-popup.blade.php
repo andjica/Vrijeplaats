@@ -70,8 +70,8 @@ Or browse the highlights
         <form method="POST" action="{{asset('/categorie/location')}}" class="findlocation">
             @csrf
             <input type="hidden" name="categoryId" id="categoryId" value="{{$category->id}}">
-            <input type="hidden"  id="latitudes2" name="latitude" value="">
-            <input type="hidden"  id="longlatitudes2" name="longlatitude" value="">
+            <input type="hidden" class="latitudes"  name="latitude" value="">
+            <input type="hidden" class="longlatitudes"  name="longlatitude" value="">
             <button type="submit" class="card border-0 link-hover-dark-white icon-box-style-01  shadow">
             <div class="card-body p-0  st-btn" style="font-size:27px">
                 @php echo $category->icon @endphp
@@ -87,7 +87,7 @@ Or browse the highlights
     </div>
     </div>
     </div>
-<a href="#" class="d-inline-block button-close mt-11 pt-1 text-dark font-size-lg font-weight-semibold text-decoration-none">
+<a href="#" aria-label="Close" class="d-inline-block button-close mt-11 pt-1 text-dark font-size-lg font-weight-semibold text-decoration-none">
 <span class="d-block"><i class="fa fa-times"></i></span>
 <span class="d-block">Close</span>
 </a>

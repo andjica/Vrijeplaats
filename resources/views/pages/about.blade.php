@@ -18,9 +18,9 @@ We’re Building The Destination For Getting Things Done
 <div class="about-intro text-center pt-12 pb-11">
 <div class="container">
 <div class="jumbotron mb-9 bg-transparent p-0 text-dark">
-<h3 class="mb-7">
-Solving One Big Problem
-</h3>
+<h1 class="mb-7">
+Over Vrijeplaats
+</h1>
 <p class="lead mb-0 font-size-lg font-weight-normal lh-18">In 2009, three friends—Marco,
 Jonathan, and Sander—noticed a
 problem.

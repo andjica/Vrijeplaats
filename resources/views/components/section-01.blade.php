@@ -41,7 +41,7 @@
         </div>
         </div>
             <div class="col-xl-4 mb-4 mb-xl-0 py-2 px-4 bg-white position-relative rounded-right  shadow">
-                <label for="key-word" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Welke gewenste locatie?</label>
+                <label for="region" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Welke gewenste locatie?</label>
                 <div class="input-group dropdown show">
                 <input type="text"  autocomplete="true" name="city" id="region" class="form-control form-control-mini border-0 px-0 bg-transparent" placeholder="Rotterdam" data-toggle="dropdown" aria-haspopup="true">
                 <a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
@@ -79,8 +79,8 @@ Bekijk hier een van onze grootste aanbod vrijeplaatsen!
         <form method="POST" action="{{asset('/categorie/location')}}" class="findlocation">
             @csrf
             <input type="hidden" name="categoryId" id="categoryId" value="{{$category->id}}">
-            <input type="hidden"  id="latitudes" name="latitude" value="">
-            <input type="hidden"  id="longlatitudes" name="longlatitude" value="">
+            <input type="hidden" class="latitudes" id="latitudes" name="latitude" value="">
+            <input type="hidden" class="longlatitudes" id="longlatitudes" name="longlatitude" value="">
             <button type="submit" class="card border-0 link-hover-dark-white icon-box-style-01  shadow">
             <div class="card-body p-0  st-btn" style="font-size:27px">
                 @php echo $category->icon @endphp

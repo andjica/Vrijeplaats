@@ -12,11 +12,12 @@
         }
         function showPosition(position)
         {
-          document.getElementById("latitudes").setAttribute('value',position.coords.latitude);
-         
-          document.getElementById('longlatitudes').setAttribute('value', position.coords.longitude );
+          // document.getElementsByClassName("latitudes").setAttribute('value',position.coords.latitude);
+          $('.latitudes').val(position.coords.latitude);  
+          $('.longlatitudes').val(position.coords.longitude);  
+          // document.getElementsByClassName('longlatitudes').setAttribute('value', position.coords.longitude );
           
-          document.getElementById("latitudes2").setAttribute('value',position.coords.latitude);
-          document.getElementById('longlatitudes2').setAttribute('value', position.coords.longitude );
+          // document.getElementsByClassName("latitudes2").setAttribute('value',position.coords.latitude);
+          // document.getElementsByClassName('longlatitudes2').setAttribute('value', position.coords.longitude );
         }
         getLocation();

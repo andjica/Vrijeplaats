@@ -224,27 +224,44 @@ class HomeController extends Controller
         $longitude = request()->longlatitude;
 
         $category = Category::find(request()->categoryId) ?? abort (404);
-    
-        $postsa = DB::table("cities")
-        ->join('posts', 'cities.id', '=', 'posts.city_id')
-        ->select(DB::raw("cities.id, 
-        ( 3959 * acos( cos( radians('$latitude') ) 
-        * cos( radians( geo_latitude ) ) * cos( radians( geo_long_latitude ) 
-        - radians('$longitude') ) + sin( radians('$latitude') ) * 
-        sin( radians( geo_latitude  ) ) ) ) AS distance"), 'posts.*')
-        ->havingRaw('distance < 50')->orderBy('distance')
-        ->get();  
-    
+        $timenow = Carbon::now();
         
-        if($postsa->count() == 0)
+        if($latitude && $longitude)
         {
-            return view('errors.404', $this->data,['error' => '
-            Er zijn momenteel geen categorieën bij jou in de buurt geselecteerd']);
+            
+            $postsa = DB::table("cities")
+            ->join('posts', 'cities.id', '=', 'posts.city_id')
+            ->select(DB::raw("cities.id, 
+            ( 3959 * acos( cos( radians('$latitude') ) 
+            * cos( radians( geo_latitude ) ) * cos( radians( geo_long_latitude ) 
+            - radians('$longitude') ) + sin( radians('$latitude') ) * 
+            sin( radians( geo_latitude  ) ) ) ) AS distance"), 'posts.*')
+            ->where('posts.category_id', $category->id)
+            ->where('posts.valid_until', '>', $timenow)
+            ->havingRaw('distance < 50')->orderBy('distance')
+            ->get();  
+        
+            
+            
+            if($postsa->count() == 0)
+            {
+                return view('errors.404', $this->data,['error' => '
+                Er zijn momenteel geen categorieën bij jou in de buurt geselecteerd']);
+            }
+            else
+            {
+               
+                return view('categories.index', compact('category', 'postsa', 'latitude', 'longitude'), $this->data);
+            }
         }
         else
         {
+            $postsa = Post::where('category_id', $category->id)
+            ->where('valid_until', '>', $timenow)
+            ->get();
             
             return view('categories.index', compact('category', 'postsa', 'latitude', 'longitude'), $this->data);
         }
+       
     }
 }

@@ -19,18 +19,32 @@
       <p class="text-dark">Welkom op de website van de Vrijeplaats. Op ons platform heeft u de 
           mogelijkheid om uw diensten en producten te verkopen en te bewerken.</p>
           <div class="list-inline pb-8 flex-wrap my-n2">
-          @foreach($categories as $category)
-          <div class="list-inline-item mr-2 mt-2">
-              <a href="{{asset('/categorie/'.$category->link)}}" class="card border-0 link-hover-dark-white icon-box-style-01">
-              <div class="card-body p-0" style="font-size:27px">
-                  @php echo $category->icon @endphp
-                  <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-                  {{$category->name}}
-                  </span>
-              </div>
-              </a>
-          </div>
-          @endforeach
+          <div class="row">
+    <div class="col-lg-12">
+    <div class="list-inline list-w">
+        @foreach($categories as $category)
+       
+        <div class="list-inline-item py-2">
+        <form method="POST" action="{{asset('/categorie/location')}}" class="findlocation">
+            @csrf
+            <input type="hidden" name="categoryId" id="categoryId" value="{{$category->id}}">
+            <input type="hidden"  class="latitudes"  name="latitude" value="">
+            <input type="hidden"  class="longlatitudes" name="longlatitude" value="">
+            <button type="submit" class="card border-0 link-hover-dark-white icon-box-style-01  shadow">
+            <div class="card-body p-0  st-btn" style="font-size:27px">
+                @php echo $category->icon @endphp
+                <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
+                {{$category->name}}
+                </span>
+            </div>
+            </button>
+            </form>
+        </div>
+       
+        @endforeach
+    </div>
+    </div>
+    </div>
           <p>
       @if(auth()->user()->role_id == 3)
         <a href="{{asset('/add-adv')}}" class="btn btn-primary my-2"><i class="fas fa-plus-circle"></i>&nbsp;Een nieuwe advertentie maken</a>

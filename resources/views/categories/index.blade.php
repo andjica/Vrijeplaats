@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@isset($category)
+    @section('title', $category->name, '|')
+@endisset
 @section('content')
 
 <div class="preload">

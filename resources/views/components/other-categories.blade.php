@@ -20,7 +20,7 @@ De laatste</span>
                 <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="hover-scale">
                     @php $images = $p->images->first();
                     @endphp
-                    <img src="{{asset('/images/posts/'.$images->url)}}" alt="product 1" class="card-img-top image">
+                    <img src="{{asset('/images/posts/'.$images->url)}}" alt="product 1" class="card-img-top image" width="100%">
                 </a>
                 <div class="card-body px-0">
                 <div class="mb-2">
@@ -34,7 +34,7 @@ De laatste</span>
                         <span class="text-gray">Active until {{$p->valid_until}}</span>
                     </li>
                     <li class="list-inline-item">
-                        <a href="" class="link-hover-dark-primary">created by: {{$p->user->userview->firstname}} {{$p->user->userview->lastname}}</a>
+                        <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="link-hover-dark-primary">created by: {{$p->user->userview->firstname}} {{$p->user->userview->lastname}}</a>
                     </li>
                 </ul>
                 </div>
