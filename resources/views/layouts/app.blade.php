@@ -15,7 +15,16 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <meta name="description" content="Vrijeplaats">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="icon" href="{{asset('/images/')}}/map.png" sizes="18x26">
+
+
+    <meta property="og:url" content="https://vrijeplaats.nl/public" />
+    <meta property="og:title" content="Vrijeplaats">
+    <meta property="og:description" content="Bekijk hier een van onze grootste aanbod vrijeplaatsen!">
+    <meta property="og:type" content="website">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('/css/')}}/fontawesome.css">

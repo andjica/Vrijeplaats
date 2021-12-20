@@ -104,7 +104,7 @@ zoeken voor u...</span></div>
                     </div>
                     <div class="action ml-0 ml-lg-auto mt-3 mt-lg-0 align-items-center flex-wrap flex-sm-nowrap w-100 w-lg-auto">
                   
-                    <a href="" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
+                    <a href="{{asset('/categorie='.$post->category->link.'/city='.$post->city->name.'/name='.$post->title)}}" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
                    
                         FIND OUT
                     </a>

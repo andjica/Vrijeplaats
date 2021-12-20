@@ -23,26 +23,26 @@ BTW NL862556508B01</p>
 <div class="font-size-md font-weight-semibold text-dark mb-4">
 Company
 </div>
-<ul class="list-group list-group-flush list-group-borderless">
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="page-about.html" class="link-hover-secondary-primary">About Us</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="#" class="link-hover-secondary-primary">Team</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="#" class="link-hover-secondary-primary">Careers</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="#" class="link-hover-secondary-primary">Investors</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="page-contact.html" class="link-hover-secondary-primary">Contact Us</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="#" class="link-hover-secondary-primary">Offices</a>
-</li>
-</ul>
+    <ul class="list-group list-group-flush list-group-borderless">
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="{{asset('/about')}}" class="link-hover-secondary-primary">Over Vrijeplaats</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="{{asset('/become-partner')}}" class="link-hover-secondary-primary">Partner Woorden</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="#" class="link-hover-secondary-primary">Careers</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="#" class="link-hover-secondary-primary">Investors</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="{{asset('/contact')}}" class="link-hover-secondary-primary">Contact</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="#" class="link-hover-secondary-primary">Offices</a>
+      </li>
+    </ul>
 </div>
 <div class="col-md-6 col-lg mb-6 mb-lg-0">
 <div class="font-size-md font-weight-semibold text-dark mb-4">

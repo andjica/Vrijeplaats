@@ -5,7 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Vrijeplaats | </title>
+<meta name="description" content="Vrijeplaats">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="icon" href="{{asset('/images/')}}/map.png" sizes="18x26">
+
+
+<meta property="og:url" content="https://vrijeplaats.nl/public" />
+<meta property="og:title" content="Vrijeplaats">
+<meta property="og:description" content="Bekijk hier een van onze grootste aanbod vrijeplaatsen!">
+<meta property="og:type" content="website">
 <script src="/cdn-cgi/apps/head/2oc_RD5SS6wgN5SiQnSEnWVNHg8.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"data-auto-a11y="true"></script>
 
