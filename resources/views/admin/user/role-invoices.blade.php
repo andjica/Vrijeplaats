@@ -43,7 +43,7 @@
                                     </td>
                                     <td>{{$p->created_at->format('d-m-Y')}}</td>
                                     <td>{{$p->user->userview->firstname}} {{$p->user->userview->lastname}}</td>
-                                    <td>{{$p->post->title}}</td>
+                                    <td>@if($p->role_payment == "Account activatie") {{$p->role_payment}} @else @endif</td>
                                     <td>{{$p->total}}</td>
                                     <td><span class="status paid">Paid</span></td>
                                     <td>

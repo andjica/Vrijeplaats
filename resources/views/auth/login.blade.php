@@ -1,4 +1,5 @@
 @extends('layouts.template')
+@section('title', 'Inloggen')
 @section('content')
 @php
     $categories = \App\Category::where('active', 'YES')->get();

@@ -41,12 +41,12 @@
 </a>
 </li>
 
-<li class="list-group-item p-0 mb-2 lh-15">
+<!-- <li class="list-group-item p-0 mb-2 lh-15">
 <a href="{{asset('/admin-users')}}" class="d-flex align-items-center link-hover-dark-primary font-size-md">
 <span class="d-inline-block mr-3"><i class="fas fa-gift"></i></span>
 <span>All Users</span>
 </a>
-</li>
+</li> -->
 <li class="list-group-item p-0 mb-2 lh-15">
 <a href="#adcampaign" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="fasse">
 <span class="d-inline-block mr-3"><i class="fas fa-bullhorn"></i></span>
@@ -57,8 +57,20 @@
 <li class="list-group-item p-0 mb-2 lh-15">
     <a href="{{asset('/admin-partners')}}" class="link-hover-dark-primary font-size-md">
 New partners</a></li>
-<li class="list-group-item p-0 mb-2 lh-15"><a href="panel-ad-campaigns-start-new.html" class="link-hover-dark-primary font-size-md">Ad
-Campaigns Start new</a></li>
+
+</ul>
+</li>
+<li class="list-group-item p-0 mb-2 lh-15">
+<a href="#users" class="d-flex align-items-center link-hover-dark-primary font-size-md" data-toggle="collapse" aria-expanded="fasse">
+<span class="d-inline-block mr-3"><i class="fas fa-users"></i></span>
+<span>Users</span>
+<span class=" ml-auto"> <i class="fas fa-chevron-down"></i></span>
+</a>
+<ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="users">
+<li class="list-group-item p-0 mb-2 lh-15">
+    <a href="{{asset('/users')}}" class="link-hover-dark-primary font-size-md">Alle users</a></li>
+<li class="list-group-item p-0 mb-2 lh-15">
+    <a href="{{asset('/companies')}}" class="link-hover-dark-primary font-size-md">Alle companies</a></li>
 </ul>
 </li>
 <li class="list-group-item p-0 mb-2 lh-15">
@@ -69,7 +81,7 @@ Campaigns Start new</a></li>
 </a>
 <ul class="submenu collapse list-group list-group-flush list-group-borderless pt-2 mb-0 sidebar-menu" id="review">
 <li class="list-group-item p-0 mb-2 lh-15">
-    <a href="{{asset('/create-category')}}" class="link-hover-dark-primary font-size-md">Create category</a></li>
+    <a href="{{asset('/create-category')}}" class="link-hover-dark-primary font-size-md">Maak een categorie</a></li>
 <li class="list-group-item p-0 mb-2 lh-15">
     <a href="{{asset('/categories')}}" class="link-hover-dark-primary font-size-md">Alle categorieën</a></li>
 </ul>

@@ -32,7 +32,8 @@
     <link rel="stylesheet" href="{{asset('/css/')}}/slick.css">
     <link rel="stylesheet" href="{{asset('/css/')}}/animate.css">
 
-    <link rel="stylesheet" href="{{asset('/css/')}}/style.css">
+    
+    <link rel="stylesheet" href="{{asset('/css/')}}/style.min.css"> 
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&libraries=places" ></script>
 
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
@@ -63,9 +64,7 @@
     <script type="text/javascript" src="{{asset('/js/')}}/edit-info.js"></script>
     <script type="text/javascript" src="{{asset('/js/')}}/insert-adv.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="{{asset('/js/')}}/get-current-location.js">
-
-</script>
+    <script src="{{asset('/js/')}}/get-current-location.js"></script>
  
 </body>
 </html>

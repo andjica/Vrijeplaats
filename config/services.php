@@ -39,5 +39,10 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+    'mollie' => [
+        'client_id' => env('MOLLIE_CLIENT_ID', 'app_xxx'),
+        'client_secret' => env('MOLLIE_CLIENT_SECRET'),
+        'redirect' => env('MOLLIE_REDIRECT_URI'),
+    ],
 
 ];

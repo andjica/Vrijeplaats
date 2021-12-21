@@ -14,9 +14,9 @@
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize border-bottom pb-2 mb-2">
                                 Nummber of registered users <span class="badge badge-secondary">{{$users->count()}}</span></h5>
-                                <a href="" class="btn btn-outline-success text-dark border-bottom pb-2 mb-2">
+                                <a href="{{asset('/companies')}}" class="btn btn-outline-success text-dark border-bottom pb-2 mb-2">
                                 Sorteren op bedrijf <i class="fas fa-sort"></i><i class="fas fa-building text-success"></i></a>
-                                <a href="" class="btn btn-outline-success text-dark border-bottom pb-2 mb-2">
+                                <a href="{{asset('/users')}}" class="btn btn-outline-success text-dark border-bottom pb-2 mb-2">
                                 Sorteren op gebruikers <i class="fas fa-sort"></i><i class="fas fa-users text-success"></i></a>
                                 <div class="table-responsive-sm">
                                 <h5 class="text-dark mt-3 mb-0">Zoek gebruiker</h5>
@@ -44,7 +44,7 @@
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->role->name}}</td>
                                     <td>{{$user->created_at->format('d-m-Y')}}</td>
-                                    <td><a href="">View more</a></td>
+                                    <td><a href="{{asset('/company/'.$user->userview->id)}}">View more</a></td>
                                     <td><a href="{{asset('/role-invoices/'.$user->id)}}"><i class="fas fa-file-invoice"></i>View all</a></td>
                                     
                                     </tr>

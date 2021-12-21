@@ -1,15 +1,22 @@
 @extends('layouts.app')
-
+@isset($city)
+@section('title', $city->name)
 @section('content')
 
-@include('user.top-campain')
+<div class="preload">
+<div class="loader" ><span>
+zoeken voor u...</span></div>
+</div>
+<div class="mt-9">
+    @include('user.top-campain')
+</div>
 <section id="section-01" class="">
 <nav aria-label="breadcrumb m-3">
   <ol class="breadcrumb m-3 bg-light">
     <li class="breadcrumb-item"><a href="{{asset('/')}}">Home</a></li>
-    @isset($city)
+
     <li class="breadcrumb-item"><a href="{{asset('/city/'.$city->name)}}">{{$city->name}}</a></li>
-    @endisset
+   
   </ol>
 </nav>
 <div class="container" id="container-desk">
@@ -248,5 +255,6 @@ faucibus est sed facilisis viverra satanil...
 </div>
 </div>
 </section>
-
+<script src="{{asset('/js/')}}/preloader.js"></script>
+@endisset
 @endsection

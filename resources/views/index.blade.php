@@ -1,5 +1,6 @@
 @extends('layouts.template')
 
+@section('title', 'Reizen, coupons en kortingen')
 @section('content')
 
   

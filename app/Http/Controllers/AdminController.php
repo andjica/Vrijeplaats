@@ -115,6 +115,7 @@ class AdminController extends Controller
     {
         $user = User::find($id);
         $invoices =  $user->purchases;
+        
         return view('admin.user.role-invoices', compact('invoices', 'user'), $this->data);
     }
 

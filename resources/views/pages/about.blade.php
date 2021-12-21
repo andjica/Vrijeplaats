@@ -1,5 +1,8 @@
 @extends('layouts.template')
 
+@section('title', 'Over Vrijeplaats')
+
+
 @section('content')
 
 <div class="banner">

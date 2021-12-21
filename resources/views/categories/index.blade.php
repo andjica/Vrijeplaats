@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
-@isset($category)
-    @section('title', $category->name, '|')
+@isset($title)
+ 
+      @section('title', $title )
+
 @endisset
+
+
 @section('content')
 
 <div class="preload">
@@ -19,6 +23,11 @@ zoeken voor u...</span></div>
     @isset($category)
         <li class="breadcrumb-item">
             <a href="{{asset('/categorie/'.$category->link)}}">{{$category->name}}</a>
+        </li>
+        @endisset
+        @isset($category)
+        <li class="breadcrumb-item">
+            <a href="{{asset('/city/'.$city->name)}}">{{$city->name}}</a>
         </li>
         @endisset
   </ol>
@@ -67,7 +76,7 @@ zoeken voor u...</span></div>
                     </a>
                     @endisset
                     <div class="media-body px-0 pt-4 pt-md-0">
-                    <a href="" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
+                    <a href="{{asset('/categorie='.$post->category->link.'/city='.$post->city->name.'/name='.$post->title)}}" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
                         <span class="letter-spacing-25">{{$p->title}} </span>
                     </a>
                     <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">

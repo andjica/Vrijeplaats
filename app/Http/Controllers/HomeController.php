@@ -187,7 +187,8 @@ class HomeController extends Controller
         }
         if($posts->count() != 0)
         {
-            return view('categories.filter-category-city', compact('posts', 'city', 'category', 'lastpost'), $this->data);
+            $title = $category->name.' | '.$city->name;
+            return view('categories.filter-category-city', compact('posts', 'city', 'category', 'lastpost', 'title'), $this->data);
         }
         else if($posts->count() == 0)
         {
@@ -241,7 +242,8 @@ class HomeController extends Controller
             ->havingRaw('distance < 50')->orderBy('distance')
             ->get();  
         
-            
+           
+          
             
             if($postsa->count() == 0)
             {
@@ -249,9 +251,12 @@ class HomeController extends Controller
                 Er zijn momenteel geen categorieën bij jou in de buurt geselecteerd']);
             }
             else
-            {
-               
-                return view('categories.index', compact('category', 'postsa', 'latitude', 'longitude'), $this->data);
+            {   
+                $cityId =  $postsa[0]->city_id;
+                $city = City::find($cityId);
+    
+                $title = $category->name.' | '.$city->name;
+                return view('categories.index', compact('postsa','category', 'city', 'latitude', 'longitude', 'title'), $this->data);
             }
         }
         else
@@ -260,7 +265,9 @@ class HomeController extends Controller
             ->where('valid_until', '>', $timenow)
             ->get();
             
-            return view('categories.index', compact('category', 'postsa', 'latitude', 'longitude'), $this->data);
+            $title = $category->name;
+
+            return view('categories.index', compact('postsa','category', 'city', 'latitude', 'longitude', 'title'), $this->data);
         }
        
     }

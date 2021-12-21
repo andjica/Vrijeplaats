@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Vrijeplaats | @yield('title')</title>
+
 <meta name="description" content="Vrijeplaats">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,7 +25,7 @@
 <link rel="stylesheet" href="{{asset('/css/')}}/slick.css">
 <link rel="stylesheet" href="{{asset('/css/')}}/animate.css">
 
-<link rel="stylesheet" href="{{asset('/css/')}}/style.css">
+<link rel="stylesheet" href="{{asset('/css/')}}/style.min.css">
 
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&libraries=places" ></script>
 </head>

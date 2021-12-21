@@ -54,7 +54,7 @@
                     </li>
                     <li class="list-inline-item separate"></li>
                     <li class="list-inline-item"><span class="mr-1">From</span>
-                    <span class="text-danger font-weight-semibold">€{{$post->price_first}}</span></li>
+                    <span class="text-danger font-weight-semibold">€{{$post->price_discount}}</span></li>
                     <li class="list-inline-item separate"></li>
                         <li class="list-inline-item">
                         <a href="{{asset('/categorie/'.$post->category->link)}}" class="link-hover-secondary-primary" tabindex="0">
@@ -115,13 +115,13 @@
         <li class="list-group-item d-flex justify-content-between bg-light">
           <div class="text-success">
             <h6 class="my-0">Total price</h6>
-            <small>€{{$post->price_first}}</small>
+            <small>€{{$post->price_discount}}</small>
           </div>
           
         </li>
         <li class="list-group-item d-flex justify-content-between">
           <span>Total (EUR)</span>
-          <strong>€{{$post->price_first}}</strong>
+          <strong>€{{$post->price_discount}}</strong>
         </li>
       </ul>
 

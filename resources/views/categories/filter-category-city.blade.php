@@ -1,5 +1,9 @@
 @extends('layouts.app')
-   
+@isset($title)
+ 
+ @section('title', $title )
+
+@endisset
 @section('content')
 
 <div class="preload">
