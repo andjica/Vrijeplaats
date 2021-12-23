@@ -1,7 +1,10 @@
 @php
-    $category = \App\Category::whereIn('id', [2,3])->where('active', 'YES')->inRandomOrder()->first();
+    $timenow = \Carbon\Carbon::now();
     
-    $post = \App\Post::where('category_id', $category->id)->inRandomOrder()->first();
+    
+    $post = \App\Post::where('category_id', 2)
+    ->where('valid_until', '>', $timenow)
+    ->inRandomOrder()->first();
     
 @endphp
 @isset($post)

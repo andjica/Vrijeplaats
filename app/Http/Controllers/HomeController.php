@@ -76,14 +76,14 @@ class HomeController extends Controller
         
         $category = Category::where('link', 'LIKE',  "%{$name}%")->first();
        
-       
+      
         if($category)
         {
             
-            $posts = Post::where('category_id', $category->id)
+            $postsa = Post::where('category_id', $category->id)
             ->orderBy('created_at', 'desc')->paginate(5);
             
-            return view('categories.index', compact('category', 'posts'), $this->data);
+            return view('categories.index', compact('category', 'postsa'), $this->data);
         }
         else
         {

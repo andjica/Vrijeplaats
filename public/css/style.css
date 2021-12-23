@@ -2542,8 +2542,8 @@ pre code {
 	background-color: rgba(255, 255, 255, .075)
 }
 .icon-box-style-01 {
-	width: 130px;
-	height: 120px;
+	width: 100px;
+	height: 100px;
 	text-align: center;
 	
 }
@@ -2567,15 +2567,25 @@ pre code {
 
 	.list-w
 	{
-		width:85% !important;
+		text-align: center;
+		margin: 0px auto;
+	}
+	.m-auto
+	{
 		margin: 0px auto;
 	}
 	.icon-box-style-01 {
-		width: 155px;
-		height: 120px;
+		width: 80px;
+		height: 80px;
+		
 		text-align: center;
 		
 	}
+	.card-text:last-child {
+		margin-bottom: 0;
+		font-size: 8px !important;
+	}
+	
 }
 
 @media(max-width:767.98px) {
@@ -6831,7 +6841,23 @@ input[type=button].btn-block {
 	flex-direction: column;
 	min-width: 0;
 	word-wrap: break-word;
-	background-color: #fff;
+	background-color: white;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, .125);
+	border-radius: 3px
+}
+.card-pink {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: var(--pink);
 	background-clip: border-box;
 	border: 1px solid rgba(0, 0, 0, .125);
 	border-radius: 3px
@@ -6978,6 +7004,11 @@ input[type=button].btn-block {
 }
 
 @media(min-width:576px) {
+	.st-btn
+	{
+		margin: 0px auto !important;
+		margin-top: 22px !important;
+	}
 	.card-group {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -9546,7 +9577,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-	background-color: #ff5a5f!important
+	background-color: #ed008c!important
 }
 
 a.bg-primary:hover,
@@ -21962,8 +21993,8 @@ iframe {
 
 .home-main-intro {
 	
-	background-image: url("../images/other/banner.jpg");
-	 background-size: contain;
+	background-image: url("../images/other/banner2.jpg");
+	background-size: contain;
 	background-repeat: no-repeat;
 	position: relative;
 	z-index: 1;
@@ -22010,7 +22041,7 @@ iframe {
 	.home-main-intro
 	{	
 		padding-top: 156px;
-		background-position: 0px 68px;
+		
 	
 	}
 
@@ -26292,7 +26323,7 @@ button.mfp-arrow:active {
 
 .card-text:last-child {
 	margin-bottom: 0;
-	font-size: 13px !important;
+	font-size: 10px !important;
 }
 
 .fadeIn{
@@ -26467,10 +26498,18 @@ button.mfp-arrow:active {
 		display: none;
 	}
 
+	.top-campaign
+	{
+		font-size: 11px;
+	}
 	
 	.banner{
 		background-image: url("https://vrijeplaats.nl/public/images/other/bannergirl.jpg");
 		background-position: -10px 33px;
+	}
+	.card-text:last-child
+	{
+		font-size: 8px !important;
 	}
 }
 
@@ -26478,10 +26517,6 @@ button.mfp-arrow:active {
 
 
 
-.card-text:last-child {
-    margin-bottom: 0;
-    font-size: 11px !important;
-}
 
 .text-login
 {
@@ -26734,11 +26769,7 @@ button.mfp-arrow:active {
   }
 }
 
-.st-btn
-{
-	margin: 0px auto !important;
-    margin-top: 22px !important;
-}
+
 
 .bg-info-primary
 {

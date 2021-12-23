@@ -5,13 +5,17 @@
     $categories = \App\Category::where('active', 'YES')->get();
     $cities = \App\City::all();
 @endphp
-<main class="py-4 home-main-login">
-<div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8 mt-5">
-            <div class="card mt-5">
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 mt-10">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Inloggen Vrijeplaats</h1>
+        <p class="col-lg-10 fs-4"> Vrijeplaats heeft tal van aanbiedingen voor u samengesteld van interessante activiteiten. Begin je surf met een snelle zoekopdracht. Door op een van de categorieën te klikken vindt vreplaats aanbiedingen bij jou in de buurt.</p>
+        @include('components.categories-search') 
+    </div>
+      <div class="col-md-10 mx-auto col-lg-5 mt-2">
+      <div class="card mt-5">
             <div class="card-header text-center bg-white">
-            <h1 class="text-login text-center">{{ __('Inloggen Vrijeplaats') }}</h1>
+          
             <img src="{{asset('/images/other/')}}/mobile.jpg" class="img-fluid" width="350px">
             </div>
                 <div class="card-body">
@@ -74,8 +78,8 @@
                     </form>
                 </div>
             </div>
-        </div>
+      </div>
     </div>
-</div>
-</main>
+  </div>
+
 @endsection

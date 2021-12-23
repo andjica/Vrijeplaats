@@ -28,10 +28,10 @@ class FrontController extends Controller
         $timenow = Carbon::now();
         
         $posts = Post::where('valid_until', '>', $timenow)
-        ->inRandomOrder()->limit(3)->get();
+        ->inRandomOrder()->limit(4)->get();
 
         $lastposts = Post::where('valid_until', '>', $timenow)
-        ->orderBy('created_at', 'desc')->limit(3)->get();
+        ->orderBy('created_at', 'desc')->limit(4)->get();
 
         return view('index', compact('posts', 'lastposts'), $this->data);
     }

@@ -5,8 +5,8 @@
 <div class="container">
 <div class="mb-7">
 <h1 class="mb-0">
-<span class="font-weight-semibold">Hot Deals </span>
-<span class="font-weight-light">Bekijk hier onze vrijeplaatsen</span>
+<span class="d-block slideInLeft animated m-font-intro">Hot Deals </span>
+<span class="font-weight-light d-block fadeInRight animated n-font-intro">Bekijk hier onze vrijeplaatsen</span>
 </h1>
 </div>
 
@@ -14,7 +14,7 @@
 <div class="container">
 <div class="row">
         @foreach($posts as $p)
-        <div class="col-lg-4" data-animate="zoomIn">
+        <div class="col-lg-3 p-5" data-animate="zoomIn">
                 <div class="store card border-0 rounded-0">
                 <div class="position-relative store-image">
                     @php 
@@ -25,23 +25,16 @@
                     <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}" class="card-img-top rounded-0">
                 </a>
                 <div class="image-content position-absolute d-flex align-items-center">
-                <div class="content-left">
-                <div class="badge badge-primary">Featured</div>
-                </div>
-                <div class="content-right ml-auto d-flex w-lg show-link">
-                <a href="{{asset('/images/posts/'.$images->url)}}" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="0" data-original-title="Quickview">
-                <svg class="icon icon-expand">
-                <use xlink:href="#icon-expand"></use>
-                </svg>
-                </a>
-                <a href="#" class="item marking" data-toggle="tooltip" data-placement="top" title="" tabindex="0" data-original-title="Bookmark">
-                    <i class="fa fa-bookmark"></i></a>
-                <a href="#" class="item" data-toggle="tooltip" data-placement="top" title="" tabindex="0" data-original-title="Compare">
-                <svg class="icon icon-chart-bars">
-                <use xlink:href="#icon-chart-bars"></use>
-                </svg>
-                </a>
-                </div>
+                    <div class="content-left bg-primary">
+                        <div class="badge badge-primary">Featured</div>
+                    </div>
+                    <div class="content-right ml-auto d-flex w-lg show-link">
+                        <a href="{{asset('/images/posts/'.$images->url)}}" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="0" data-original-title="Quickview">
+                            <svg class="icon icon-expand">
+                                <use xlink:href="#icon-expand"></use>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 </div>
             <div class="card-body px-0 pb-0 pt-3">
@@ -77,8 +70,8 @@
                     <i class="fa fa-map-marker-alt">
                     </i>
                     </span>
-                    <a href="#" class="text-secondary text-decoration-none link-hover-secondary-blue" tabindex="0">
-                    {{$p->full_address}}</a>
+                    <small class="text-secondary text-decoration-none link-hover-secondary-blue" tabindex="0">
+                    {{$p->full_address}}</small>
                     </li>
                     <li class="list-inline-item separate"></li>
                     <li class="list-inline-item">

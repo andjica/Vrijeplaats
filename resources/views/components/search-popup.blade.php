@@ -63,28 +63,7 @@ Or browse the highlights
 </div>
 <div class="row">
     <div class="col-lg-12">
-    <div class="list-inline list-w">
-        @foreach($categories as $category)
-       
-        <div class="list-inline-item py-2">
-        <form method="POST" action="{{asset('/categorie/location')}}" class="findlocation">
-            @csrf
-            <input type="hidden" name="categoryId" id="categoryId" value="{{$category->id}}">
-            <input type="hidden" class="latitudes"  name="latitude" value="">
-            <input type="hidden" class="longlatitudes"  name="longlatitude" value="">
-            <button type="submit" class="card border-0 link-hover-dark-white icon-box-style-01  shadow">
-            <div class="card-body p-0  st-btn" style="font-size:27px">
-                @php echo $category->icon @endphp
-                <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
-                {{$category->name}}
-                </span>
-            </div>
-            </button>
-            </form>
-        </div>
-       
-        @endforeach
-    </div>
+    @include('components.categories-search')
     </div>
     </div>
 <a href="#" aria-label="Close" class="d-inline-block button-close mt-11 pt-1 text-dark font-size-lg font-weight-semibold text-decoration-none">

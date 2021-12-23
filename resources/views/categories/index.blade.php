@@ -20,12 +20,12 @@ zoeken voor u...</span></div>
 <nav aria-label="breadcrumb m-3">
   <ol class="breadcrumb m-3 bg-light">
     <li class="breadcrumb-item"><a href="{{asset('/')}}">Home</a></li>
-    @isset($category)
+        @isset($category)
         <li class="breadcrumb-item">
             <a href="{{asset('/categorie/'.$category->link)}}">{{$category->name}}</a>
         </li>
         @endisset
-        @isset($category)
+        @isset($city)
         <li class="breadcrumb-item">
             <a href="{{asset('/city/'.$city->name)}}">{{$city->name}}</a>
         </li>

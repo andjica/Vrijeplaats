@@ -2,7 +2,7 @@
 <div class="footer-second">
  <div class="container">
 <div class="row">
-<div class="col-sm-6 col-lg-4 mb-6 mb-lg-0">
+<div class="col-lg-3 mb-lg-0">
 <div class="mb-8"><img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats" class="img-fluid"></div>
 <div class="mb-7">
 <div class="font-size-md font-weight-semibold text-dark mb-4">Vrijeplaats Hoofdkantoor</div>
@@ -18,6 +18,18 @@ BTW NL862556508B01</p>
 <div class="region pt-1">
 
 </div>
+</div>
+<div class="col-md-6 col-lg mb-6 mb-lg-0">
+<div class="font-size-md font-weight-semibold text-dark mb-4">
+Categories
+</div>
+<ul class="list-group list-group-flush list-group-borderless">
+  @foreach($categories as $category)
+  <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+    <a href="{{asset('/categorie/'.$category->link)}}" class="link-hover-secondary-primary">@php echo $category->icon @endphp {{$category->name}}</a>
+  </li>
+  @endforeach
+</ul>
 </div>
 <div class="col-md-6 col-lg mb-6 mb-lg-0">
 <div class="font-size-md font-weight-semibold text-dark mb-4">
@@ -44,6 +56,7 @@ Company
       </li>
     </ul>
 </div>
+
 <div class="col-md-6 col-lg mb-6 mb-lg-0">
 <div class="font-size-md font-weight-semibold text-dark mb-4">
 Quick Links
