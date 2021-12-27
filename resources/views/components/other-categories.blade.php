@@ -48,7 +48,7 @@ De laatste</span>
                     </li>
                     <li class="list-inline-item separate"></li>
                     <li class="list-inline-item"><span class="mr-1">From</span>
-                    <span class="text-danger font-weight-semibold">€{{$p->price_first}}</span></li>
+                    <span class="text-danger font-weight-semibold">€{{$p->price_discount}}</span></li>
                     <li class="list-inline-item separate"></li>
                         <li class="list-inline-item">
                         <a href="{{asset('/categorie/'.$p->category->link)}}" class="link-hover-secondary-primary" tabindex="0">

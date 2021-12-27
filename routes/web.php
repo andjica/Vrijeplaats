@@ -55,7 +55,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/buy-ticket/{id}', 'MolliePaymentController@buyticket');
     Route::get('/mollie-paymnet','MolliePaymentController@preparePayment')->name('mollie.payment');
     Route::get('/payment-success/{id}','MolliePaymentController@paymentSuccess')->name('payment.success');
-    Route::post('/webhooks-mollie', 'MolliePaymentController@webhooks')->name('webhooks.mollie');
+    Route::post('/webhooks-mollie', 'MolliePaymentController@handle')->name('webhooks.mollie');
     Route::get('/get-checkout-partnership', 'MolliePaymentController@handlePartnerShip');
     Route::get('/paymentforpartership', 'MolliePaymentController@paymentforpartership');
 

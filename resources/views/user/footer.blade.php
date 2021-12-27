@@ -1,87 +1,62 @@
-
-<!-- <div class="for-mobile-only">
-    <div class="container">
-        <div class="row d-flex">
-            <div class="col-lg-2-s">
-                <img src="{{asset('/')}}/images/home.png">
-                <p>test</p>
-            </div> 
-            <div class="col-lg-2-s">
-            <i class="far fa-grin-beam text-primary fa-2x"></i>
-            <p>test</p>
-
-            </div>
-            <div class="col-lg-2-s">
-                <img src="{{asset('/')}}/images/logo.jpeg" class="rounded">
-            <p>test</p>
-
-            </div>
-            <div class="col-lg-2-s">
-                <img src="{{asset('/')}}/images/home.png">
-            <p>test</p>
-
-            </div>
-            <div class="col-lg-2-s">
-                <img src="{{asset('/')}}/images/home.png">
-            <p>test</p>
-
-            </div>
-        </div> 
-    </div>    
-</div>  -->
-
-
 <footer class="main-footer main-footer-style-01 bg-pattern-01 pt-12 pb-8">
 <div class="footer-second">
  <div class="container">
 <div class="row">
-<div class="col-sm-6 col-lg-4 mb-6 mb-lg-0">
+<div class="col-lg-3 mb-lg-0">
 <div class="mb-8"><img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats" class="img-fluid"></div>
 <div class="mb-7">
-<div class="font-size-md font-weight-semibold text-dark mb-4">Global Headquaters</div>
+<div class="font-size-md font-weight-semibold text-dark mb-4">Vrijeplaats Hoofdkantoor</div>
 <p class="mb-0">
-90 Fifth Avenue, 3rd Floor<br>
-New York NY 10011<br>
-212.913.9058</p>
+Onderdeel van : Abosaver B.V
+Stationsweg Oost 281B
+3931ER Woudenberg
+Nederland
+info@abosaver.com
+KVK 82660689
+BTW NL862556508B01</p>
 </div>
 <div class="region pt-1">
-<div class="font-size-md font-weight-semibold text-dark mb-2">Recent Region</div>
-<form>
-<div class="select-custom bg-white">
-<select class="form-control bg-transparent">
-<option value="1">San Fracisco, CA</option>
-<option value="1">New York</option>
-<option value="1">LA</option>
-</select>
+
 </div>
-</form>
 </div>
+<div class="col-md-6 col-lg mb-6 mb-lg-0">
+<div class="font-size-md font-weight-semibold text-dark mb-4">
+Categories
+</div>
+<ul class="list-group list-group-flush list-group-borderless">
+  @foreach($categories as $category)
+  <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+    <a href="{{asset('/categorie/'.$category->link)}}" class="link-hover-secondary-primary">@php echo $category->icon @endphp {{$category->name}}</a>
+  </li>
+  @endforeach
+</ul>
 </div>
 <div class="col-md-6 col-lg mb-6 mb-lg-0">
 <div class="font-size-md font-weight-semibold text-dark mb-4">
 Company
 </div>
-<ul class="list-group list-group-flush list-group-borderless">
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="page-about.html" class="link-hover-secondary-primary">About Us</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="#" class="link-hover-secondary-primary">Team</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="#" class="link-hover-secondary-primary">Careers</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="#" class="link-hover-secondary-primary">Investors</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="page-contact.html" class="link-hover-secondary-primary">Contact Us</a>
-</li>
-<li class="list-group-item px-0 lh-1625 bg-transparent py-1">
-<a href="#" class="link-hover-secondary-primary">Offices</a>
-</li>
-</ul>
+    <ul class="list-group list-group-flush list-group-borderless">
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="{{asset('/about')}}" class="link-hover-secondary-primary">Over Vrijeplaats</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="{{asset('/become-partner')}}" class="link-hover-secondary-primary">Partner Woorden</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="#" class="link-hover-secondary-primary">Careers</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="#" class="link-hover-secondary-primary">Investors</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="{{asset('/contact')}}" class="link-hover-secondary-primary">Contact</a>
+      </li>
+      <li class="list-group-item px-0 lh-1625 bg-transparent py-1">
+        <a href="#" class="link-hover-secondary-primary">Offices</a>
+      </li>
+    </ul>
 </div>
+
 <div class="col-md-6 col-lg mb-6 mb-lg-0">
 <div class="font-size-md font-weight-semibold text-dark mb-4">
 Quick Links
