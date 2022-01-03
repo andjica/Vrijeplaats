@@ -93,7 +93,12 @@ class MolliePaymentController extends Controller
             {
                 echo "Payment received.";
             }
-            
+            $response=array();
+            $response['status']=1;
+            $response['msg']="success";
+            $response['statuscode']=200;
+            $response['data']=$payment->getCheckoutUrl();
+
             return redirect($payment->getCheckoutUrl(), 303);
                    
                
@@ -135,15 +140,16 @@ class MolliePaymentController extends Controller
                 ],
                 'description' => 'Payment for parthership By user:'.$user->name.' '.$user->email, 
                 'redirectUrl' => route('payment.success'),
-                'webhookUrl' => route('webhooks.mollie')
-                
+                'webhookUrl' => 'https://vrijeplaats.nl/public/webhooks-mollie',
+                'method' => ['ideal', 'creditcard']
               
                  // after the payment completion where you to redirect
                 ]);
             
              $payment = Mollie::api()->payments()->get($payment->id);
              
-            return redirect($payment->getCheckoutUrl(), 303);
+            
+  
                    
                
                
@@ -154,37 +160,12 @@ class MolliePaymentController extends Controller
             return abort(404);
         }
     }
-   
-        // public function handle(Request $request) {
-        //  $paymentId = $request->input('id');
-       
-        // if($request->has('id'))
-        // {
-        //     $payment = Mollie::api()->payments->get($request->get('id'));
-    
-        //     if ($payment->isPaid())
-        //     {
-        //         $purchase = new Purchase();
-        //         $purchase->inv_id = time();
-        //         // $purchase->post_id = $post->id;
-        //         $purchase->user_id = auth()->user()->id;
-        //         // $purchase->category_id = $post->category_id;
-        //         $purchase->total = 60.44;
-            
-                
-        //         $purchase->save(); 
-        //     }
-        // }
-        // return;
-
-        
-    // }
-
+  
     public function handle(Request $request){
 
       
-      
-        $payment = $mollie->payments->get($request->id);
+        
+        $payment = Mollie::api()->payments->get($request->id);
         $statusOfPayment='';
     
         if ($payment->isPaid() && !$payment->hasRefunds() && !$payment->hasChargebacks()) {
@@ -238,8 +219,8 @@ class MolliePaymentController extends Controller
         }
 
         
-        $UserTransaction= Purchases::where('inv_id',$payment->id)->first();
-        $UserTransaction->status=$statusOfPayment;
+        $UserTransaction= Purchases::where('inv_id', $payment->id)->first();
+        $UserTransaction->status= $statusOfPayment;
         $UserTransaction->save();
     }
 
