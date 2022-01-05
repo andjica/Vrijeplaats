@@ -26,7 +26,7 @@
         @csrf
         <div class="row align-items-end no-gutters mb-5 rounded">
         <div class="col-xl-6 mb-4 mb-xl-0 py-2 px-4 bg-white  position-relative  shadow b-orange">
-        <label for="key-word" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Wat zoek je precies? <i class="fas fa-search"></i></label>
+        <label for="key-word" class="font-size-md font-weight-semibold text-dark mb-0 lh-1">Wat zoek je precies? <i class="fas fa-search"></i>=]</label>
         <div class="input-group dropdown show">
         <input type="text" autocomplete="true" id="key-word" name="category"
         class="form-control form-control-mini border-0 px-0 bg-transparent"

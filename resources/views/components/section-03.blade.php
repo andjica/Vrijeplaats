@@ -4,10 +4,10 @@
 <section id="section-03" class="pb-8 our-directory">
 <div class="container">
 <div class="mb-7">
-<h1 class="mb-0">
+<h2 class="mb-0">
 <span class="d-block slideInLeft animated m-font-intro">Hot Deals </span>
 <span class="font-weight-light d-block fadeInRight animated n-font-intro">Bekijk hier onze vrijeplaatsen</span>
-</h1>
+</h2>
 </div>
 
 </div>
@@ -38,7 +38,7 @@
                 </div>
                 </div>
             <div class="card-body px-0 pb-0 pt-3">
-                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0">
+                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" aria-label="reizen" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0">
                     <span class="letter-spacing-25">{{$p->title}}</span>
                 </a>
                 <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
