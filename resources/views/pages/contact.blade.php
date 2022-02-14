@@ -2,7 +2,15 @@
 @section('title', 'Contact')
 
 @section('content')
-
+<style>
+        input.btn.btn-primary.btn-lg.btn-block.font-size-md.btn-lg.lh-base {
+    width: 20%;
+    margin: 0px auto;
+    border-radius: 10px;
+    color: white !important;
+    border-right: 7px solid blue;
+}
+</style>
 <div class="banner">
 <div class="container">
 <div class="banner-content text-center">

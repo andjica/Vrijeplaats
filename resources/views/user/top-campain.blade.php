@@ -11,23 +11,64 @@
 <div class="top-campaign">
     <div class="container">
         <div class="d-flex top-campaign-container">
-            <div class="content-s">   
+            <div class="content-s col-lg-8 klucic">   
         Mega up to
-         <span class="font-weight-bold">30% off </span>{{$post->title}}
+         <span class="font-weight-bold"></span>{{$post->title}}
                 @php 
                     $image = $post->images;
                     $image = $image->first();
                 @endphp
                 @isset($image)
-                    <img src="{{asset('/images/posts/'.$image->url)}}" class="img-fluid" width="60px"> 
+                     <img src="{{asset('/images/posts/'.$image->url)}}" class="img-fluid" style="width: 82px;
+    border-radius: 14px;
+    margin-top: -2px;
+    float: right;
+    margin-right: -205px;
+    max-height: 56px;
+    height: 56px;"> 
+
                 @endisset
-                er achter komen <a href="{{asset('/categorie='.$post->category->link.'/city='.$post->city->name.'/name='.$post->title)}}" class="code"> koop coupon</a> <span class="font-weight-bold">onderneem actie !</span>
             </div>
-        <div class=" ml-auto campaign-action">
-        <a href="#" id="campaign-close-button" class="close-button">
-            <i class="fa fa-times"></i></a>
+            <div class="col-lg-4">
+            <a href="{{asset('/categorie='.$post->category->link.'/city='.$post->city->name.'/name='.$post->title)}}" class="code"> Coupon Kopen! <i class="fa fa-shopping-cart"></i> </a> 
+
+            </div>
+
         </div>
-        </div>
+
     </div>
 </div>
 @endisset
+
+
+<style>
+    .klucic{
+        color: white !important;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 2.4;
+    }
+    .top-campaign .code {
+    background: white;
+    display: inline-block;
+    color: #ed008c !important;
+    right: -24px;
+    font-weight: 600;
+    position: relative;
+    width: 184px !important;
+    text-align: center !important;
+    height: 52px !important;
+    border-radius: 14px;
+    float: right;
+    line-height: 3 !important;
+}
+.home-main-intro .heading h1 {
+    font-size: 62px !important;
+    line-height: .93;
+    letter-spacing: -.05em;
+}
+
+ul.navbar-nav.container {
+    margin-top: -10px;
+}
+</style>

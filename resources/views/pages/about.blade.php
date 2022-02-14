@@ -5,6 +5,26 @@
 
 @section('content')
 
+<style>
+
+ .counter {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    width: 100% !important;
+    padding: 10px 0;
+}
+span.counterup.text-primary.font-size-h1.lh-12 {
+    color: blue !important;
+    /* background: #ed008c; */
+    /* padding: 42px; */
+    /* border-radius: 100%; */
+}
+</style>
 <div class="banner">
 <div class="container">
 <div class="banner-content text-center">

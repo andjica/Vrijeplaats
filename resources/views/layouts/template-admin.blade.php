@@ -19,6 +19,11 @@
 
 
 </head>
+<style>
+    a.nav-link {
+    color: white !important;
+}
+</style>
 <body>
 <div id="site-wrapper" class="site-wrapper panel dashboards">
 

@@ -15,7 +15,7 @@ zoeken voor u...</span></div>
 @include('user.top-campain')
 
 </div>
-<section id="section-01" class="">
+<section id="section-01" class="" style="    margin-top: 147px;">
 <nav aria-label="breadcrumb m-3">
   <ol class="breadcrumb m-3 bg-light">
     <li class="breadcrumb-item">
@@ -72,7 +72,7 @@ zoeken voor u...</span></div>
                     @endphp
                     @isset($images)
                     <a href="listing-details-full-image.html" class="store-image">
-                    <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}">
+                    <img src="{{asset('/images/posts/'.$images->url)}}" class="svets" alt="{{$images->alt}}">
                     </a>
                     @endisset
                     <div class="media-body px-0 pt-4 pt-md-0">
@@ -81,11 +81,11 @@ zoeken voor u...</span></div>
                     </a>
                     <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">
                     <li class="list-inline-item">
-                        <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">numm of ticket</span>
+                        <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">Totaal aantal tickets</span>
                     </li>
                     <li class="list-inline-item separate"></li>
                     <li class="list-inline-item">
-                        <span class="mr-1">From</span>
+                        <span class="mr-1">Prijs vanaf: </span>
                         <span class="text-danger font-weight-semibold">€{{$p->price_discount}}</span>
                     </li>
                     <li class="list-inline-item separate"></li>
@@ -97,19 +97,18 @@ zoeken voor u...</span></div>
                     </a></li>
                     </ul>
                     <div class="border-top pt-2 d-flex">
-                    <span class="d-inline-block mr-1"><i class="fa fa-map-marker-alt">
-                    </i>
-                    </span>
-                    <a href="#" class="text-secondary text-decoration-none address">{{$p->full_address}}</a>
-                    <div class="ml-0 ml-sm-auto">
+                   
+                    <a href="#" class="text-secondary text-decoration-none address col-lg-6"><i class="fa fa-map-marker-alt">
+                    </i> {{$p->full_address}}</a>
+                    <div class="ml-0 ml-sm-auto col-lg-6">
                     <span class="label">Status:</span>
                     @php 
                         $datenow =  Carbon\Carbon::now();
                     @endphp
                     @if($datenow > $p->valid_until)
-                    <span class="status experied">Experied</span>
+                    <span class="status experied">afgelopen</span>
                     @else
-                    <span class="status active">Active until <small>{{$p->valid_until}}</small></span>
+                    <span class="status active">Actief tot en met: <small>{{$p->valid_until}}</small></span>
                     @endif
                     </div>
                     </div>
@@ -119,8 +118,8 @@ zoeken voor u...</span></div>
                   
                     <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
                    
-                        FIND OUT
-                    </a>
+                    Bekijk ticket <i class="fa fa-arrow-right"></i>                    
+                </a>
                     </div>
                     </div>
                     </div>
@@ -289,7 +288,72 @@ faucibus est sed facilisis viverra satanil...
 
 
 </div>
-
+<style>
+    .ml-0.ml-sm-auto.col-lg-6 {
+    font-size: 12px;
+    /* white-space: nowrap; */
+    /* position: relative; */
+    /* top: 10px; */
+    background: white;
+    margin-left: 20px !important;
+    border-radius: 16px;
+    line-height: 2;
+    padding-top: inherit;
+    font-weight: bold;
+    color: black !important;
+}
+a.text-secondary.text-decoration-none.address {
+    font-size: 10px;
+    background: white !important;
+    padding: 10px;
+    color: black !important;
+    font-weight: bold;
+    border-radius: 16px !important;
+}
+    a.text-secondary.text-decoration-none.address {
+    font-size: 10px;
+    background: white !important;
+    padding: 10px;
+}
+    a.btn.btn-primary.btn-icon-left.mb-2.mb-sm-0.px-5.font-size-md {
+    border-radius: 16px;
+    color: white !important;
+    width: 100% !important;
+}
+  .footer-second {
+    background: #f5f5f5;
+    color: black !important;
+}
+.d-flex.align-items-center.flex-wrap.flex-lg-nowrap.border-bottom.py-4.py-lg-0 {
+    background: #f5f5f5 !important;
+    margin-bottom: 10px !important;
+    border-radius: 16px !important;
+}
+img.svets {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 10px !important;
+}
+ul.list-inline.store-meta.mb-3.font-size-sm.d-flex.align-items-center.flex-wrap {
+    font-weight: bold;
+    color: black;
+}
+.store .badge {
+    color: #fff;
+    background: blue;
+    padding: 10px;
+    width: 60px;
+    text-align: center;
+    border-radius: 10px;
+}
+.action.ml-0.ml-lg-auto.mt-3.mt-lg-0.align-items-center.flex-wrap.flex-sm-nowrap.w-100.w-lg-auto {
+    text-align: center;
+    float: left;
+    margin: 0px auto !important;
+}
+</style>
   <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&callback=initMap&v=weekly"
       async
@@ -385,7 +449,7 @@ faucibus est sed facilisis viverra satanil...
       <p class="mb-2"><del class="text-danger display-5">${firstprice}</del> <b class="text-dark">€${price}</b></span></p>
      
       
-      <a class="btn btn-primary g-btn" href="http://vrijeplaats.nl/public/categorie=${categorylink}/city=${cityname}/name=${title}">Find out</a>
+      <a class="btn btn-primary g-btn" href="http://vrijeplaats.nl/public/categorie=${categorylink}/city=${cityname}/name=${title}">Bekijk ticket <i class="fa fa-arrow-right"></i></a>
       </div>
       `,
       optimized: false,
@@ -480,6 +544,6 @@ faucibus est sed facilisis viverra satanil...
 
         </script>
         <script src="{{asset('/js/')}}/preloader.js"></script>
-
+       
 @endsection
 

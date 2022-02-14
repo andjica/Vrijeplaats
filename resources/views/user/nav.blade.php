@@ -7,14 +7,14 @@
 <span></span>
 </div>
 <a class="navbar-brand navbar-brand-mobile" href="{{asset('/')}}">
-<img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats">
+<img src="{{asset('/images/')}}/pp-removebg-preview.png" alt="Vrijeplaats">
 </a>
 <a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
     <i class="fas fa-search"></i></a>
 </div>
 <div class="collapse navbar-collapse" id="navbar-main-menu" style="    height: 80px;">
 <a class="navbar-brand d-none d-xl-block mr-auto" style="max-height: 80px !important; border-radius: 100%;" href="{{asset('/')}}">
-<img src="{{asset('/images/')}}/logo.jpeg" style=" border-radius: 100%;" alt="TheDir">
+<img src="{{asset('/images/')}}/pp-removebg-preview.png" style=" border-radius: 100%;" alt="TheDir">
 </a>
 <ul class="navbar-nav">
 <li class="nav-item">
@@ -38,7 +38,7 @@
 
 @if(auth()->user())
 <li class="nav-item dropdown">
-<a class="nav-link" href="{{asset('/logout')}}"><i class="fas fa-sign-out-alt"></i> Uitloggen</a>
+<a class="nav-link" href="{{asset('/logout')}}"> Uitloggen</a>
 </li>
 @else
 <li class="nav-item dropdown">

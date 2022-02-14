@@ -1,11 +1,55 @@
-<footer class="main-footer main-footer-style-01 bg-pattern-01 pt-12 pb-8">
+<style>
+  .footer-second {
+    background: #edf0f5;
+    color: black !important;
+}
+
+
+.font-size-md {
+    /* text-align: center; */
+    margin: 0px auto;
+    padding: 10px;
+    color: black !important;
+    text-align: left !important;
+}
+
+.col-lg-4.mb-4.mb-lg-0.px-0.px-lg-4 {
+    padding: 20px !important;
+    background: #f5f5f5;
+    color: white !important;
+    width: 30% !important;
+    max-width: 32% !important;
+    margin-right: 10px;
+    border-radius: 20px !important;
+    height: 300px;
+    color: white !important;
+}
+.text-black{
+  color:black !important;
+}
+.nh1{
+  border: 2px solid white !important;
+    border-radius: 20px !important;
+    padding: 4px !important;
+    width: 100%;
+    background: #ed008c;
+    justify-content: center;
+    color: white !important;
+    text-align: center;
+    font-weight: bold;
+    height: 48px;
+    line-height: 2;
+}
+</style>
+
+
+<footer class="main-footer main-footer-style-01 bg-pattern-01 pt-12 pb-8" >
 <div class="footer-second">
  <div class="container">
 <div class="row">
 <div class="col-lg-3 mb-lg-0">
-<div class="mb-8"><img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats" class="img-fluid"></div>
 <div class="mb-7">
-<div class="font-size-md font-weight-semibold text-dark mb-4">Vrijeplaats Hoofdkantoor</div>
+<div class="font-size-md font-weight-semibold text-black mb-4">Vrijeplaats Hoofdkantoor</div>
 <p class="mb-0">
 Onderdeel van : Abosaver B.V
 Stationsweg Oost 281B
@@ -16,7 +60,7 @@ KVK 82660689
 BTW NL862556508B01</p>
 </div>
 <div class="region pt-1">
-
+<a class="nav-link nh1" href="http://localhost/vrijeplaats/public/register"><svg class="svg-inline--fa fa-user-alt fa-w-16" style="margin-right: 10px;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"></path></svg><!-- <i class="fas fa-user-alt" style="margin-right:10px;"></i> Font Awesome fontawesome.com --> Aanmelden</a>
 </div>
 </div>
 <div class="col-md-6 col-lg mb-6 mb-lg-0">
@@ -366,3 +410,4 @@ account
 </symbol>
 </defs>
 </svg>
+

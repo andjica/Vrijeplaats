@@ -256,5 +256,15 @@ faucibus est sed facilisis viverra satanil...
 </div>
 </section>
 <script src="{{asset('/js/')}}/preloader.js"></script>
+
+<style>
+    .d-flex.align-items-center.flex-wrap.flex-lg-nowrap.border-bottom.py-4.py-lg-0 {
+    background: white !important;
+    margin-bottom: 10px !important;
+    border-radius: 16px !important;
+    border: 4px solid #e5e5e5 !important;
+    padding: 10px;
+}
+</style>
 @endisset
 @endsection

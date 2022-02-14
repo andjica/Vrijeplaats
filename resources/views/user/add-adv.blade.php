@@ -8,6 +8,35 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 @endsection
 @section('content')
+<style>
+    .card-body.px-0.pt-6 {
+    background: white;
+    padding: 10px !important;
+    color: white !important;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 15px 2px #000000;
+    box-shadow: 0px 0px 15px 2px #d7d7d7;
+}
+input.btn.btn-success.btn-lg.btn-block {
+    width: 20%;
+    margin: 0px auto;
+    border-radius: 10px;
+    background: #ed008c;
+    border-right: 7px solid blue;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    font-size: 17px;
+}
+.card.border-0.p-0 {
+    background: white;
+    padding: 10px !important;
+    color: white !important;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 15px 2px #000000;
+    box-shadow: 0px 0px 15px 2px #d7d7d7;
+}
+</style>
 <div class="container" style="margin-top:100px">
     <div class="row">
         <div class="col-lg-3">
@@ -17,7 +46,6 @@
         <div class="row">
             <div class="col-md-6">
             <div class="card border-0 p-0">
-            <img src="{{asset('/images/')}}/other/services.jpg" alt="Submit listing 01" class="card-img-top">
             <div class="card-body px-0 pt-6">
             <form id="insert-advertising" method="POST" action="{{asset('/insert-advertising')}}" enctype="multipart/form-data">
                 @csrf
@@ -72,7 +100,6 @@
             </div>
             <div class="col-md-6 ">
             <div class="card border-0 p-0">
-            <img src="{{asset('/images/')}}/other/services1.jpg" alt="Submit listing 02" class="card-img-top img-fluid">
          
             <div class="form-group mb-4">
             <label for="category" class="text-dark font-weight-semibold font-size-md mb-2 lh-15">Category</label>

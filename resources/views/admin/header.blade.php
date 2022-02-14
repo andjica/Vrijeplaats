@@ -3,243 +3,150 @@
 <div class="container-fluid">
 <nav class="navbar navbar-expand-xl">
 <div class="header-mobile d-flex d-xl-none flex-fill justify-content-between align-items-center">
+
 <div class="navbar-toggler toggle-icon" data-toggle="collapse" data-target="#navbar-main-menu">
 <span></span>
 </div>
+<a href="{{asset('/')}}">
+<img src="{{asset('/images/')}}/logosmall.jpeg" alt="Vrijeplaats" class="logo-image">
+</a>
+
+</div>
+<div class="collapse navbar-collapse" id="navbar-main-menu" style="    height: 80px;">
+
+<ul class="navbar-nav container">
+
+<div class="col-lg-2" style="    margin-left: -100px; margin-right:-220px;">
 <a class="navbar-brand navbar-brand-mobile" href="{{asset('/')}}">
-<img src="{{asset('/images/')}}/logosmall.jpeg" alt="VrijePlaats" width="70px">
+<img src="{{asset('/images/')}}/logosmall.jpeg" alt="Vrijeplaats" style="border-radius:100%;">
 </a>
-<a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
-<i class="fas fa-search"></i></a>
 </div>
-<div class="collapse navbar-collapse" id="navbar-main-menu">
-<a class="navbar-brand d-none d-xl-block" href="{{asset('/')}}">
-<img src="{{asset('/images/')}}/logosmall.jpeg" alt="VrijePlaats"  width="70px">
+<div class="col-lg-5 bruv">
+  
+<li class="nav-item">
+<a class="nav-link text-dark" href="#">Home <span class="caret"><i class="fa fa-angle-down"></i></span></a>
+<ul class="sub-menu x-animated x-fadeInUp">
+<li class="nav-item"><a class="nav-link" href="{{asset('/')}}">Home</a>
+</li>
+@foreach($categories as $c)
+<li class="nav-item"><a class="nav-link" href="{{asset('/categorie/'.$c->link)}}">{{$c->name}}</a>
+</li>
+@endforeach
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{asset('about')}}">Over Vrijeplaats</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{asset('become-partner')}}">Partner worden
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{asset('contact')}}">Contact</a>
 
-</a>
-<div class="form-search form-search-style-04 d-flex mr-auto">
-<form>
-<div class="d-flex align-items-center">
-<div class="form-search-items d-flex">
-<div class="form-search-item d-flex align-items-center what border-right">
-<label for="key-word">What</label>
-<div class="input-group dropdown show bg-transparent">
-<input type="text" autocomplete="off" id="key-word" name="key-word" class="form-control bg-transparent border-0" placeholder="Ex: food, service, barber, hotel" data-toggle="dropdown" aria-haspopup="true">
-<a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
- <i class="fal fa-chevron-down"></i>
-</a>
-<ul class="dropdown-menu form-search-ajax" aria-labelledby="key-word">
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-<svg class="icon icon-pizza">
-<use xlink:href="#icon-pizza"></use>
-</svg>
-<span class="font-size-md">Foods &amp; Restaurants</span>
-</a>
+
+
 </li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-<svg class="icon icon-bed">
-<use xlink:href="#icon-bed"></use>
-</svg>
-<span class="font-size-md">Hotels &amp; Resorts</span>
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-<svg class="icon icon-pharmaceutical">
-<use xlink:href="#icon-pharmaceutical"></use>
-</svg>
-<span class="font-size-md">Healths &amp; Medicals</span>
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-<svg class="icon icon-cog">
-<use xlink:href="#icon-cog"></use>
-</svg>
-<span class="font-size-md">Services</span>
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-<svg class="icon icon-car">
-<use xlink:href="#icon-car"></use>
-</svg>
-<span class="font-size-md">Automotive</span>
-</a>
-</li>
-</ul>
-</div>
-</div>
-<div class="form-search-item d-flex align-items-center where">
- <label for="region">Where</label>
-<div class="input-group dropdown show bg-transparent">
-<input type="text" autocomplete="off" id="region" name="region" class="form-control bg-transparent border-0" placeholder="San Francisco" data-toggle="dropdown" aria-haspopup="true">
-<a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
-<i class="fal fa-chevron-down"></i>
-</a>
-<ul class="dropdown-menu form-search-ajax" aria-labelledby="region">
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-Austin
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-Boston
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-Chicago
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-Denver
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-Los Angeles
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-New York
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-San Francisco
-</a>
-</li>
-<li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-Seattle
-</a>
-</li>
- <li class="dropdown-item item">
-<a href="#" class="link-hover-dark-white">
-Washington
-</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<button type="submit" class="btn btn-primary"><i class="fas fa-search"></i>
-</button>
-</div>
-</form>
-</div>
-<ul class="navbar-nav">
-<li class="nav-item">
-<a class="nav-link" href="#">Explore<span class="caret"><i class="fas fa-angle-down"></i></span></a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item">
-<a class="nav-link" href="#"> layout
-<span class="caret"><i class="fas fa-angle-down"></i></span>
-</a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item"><a class="nav-link" href="explore-full-map-grid.html"> full
-map grid</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-full-map-list.html"> full
-map list</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-half-map-grid.html"> half
-map grid</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-half-map-list.html"> half
-map list</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-sidebar-grid.html"> sidebar
-grid</a></li>
-<li class="nav-item"><a class="nav-link" href="explore-sidebar-list.html"> sidebar
-list</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Listing details
-<span class="caret"><i class="fas fa-angle-down"></i></span>
-</a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item"><a class="nav-link" href="listing-details-full-gallery.html">
-full gallery</a></li>
- <li class="nav-item"><a class="nav-link" href="listing-details-full-image.html">
-full image</a></li>
-<li class="nav-item"><a class="nav-link" href="listing-details-full-map.html">
-full map</a></li>
-<li class="nav-item"><a class="nav-link" href="listing-details-gallery.html">gallery</a>
-</li>
-<li class="nav-item"><a class="nav-link" href="listing-details-image.html"> image</a>
-</li>
-<li class="nav-item"><a class="nav-link" href="listing-details-no-image.html"> no
-image</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Blog <span class="caret"><i class="fas fa-angle-down"></i></span></a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item">
-<a class="nav-link" href="#">Blog layout<span class="caret"><i class="fas fa-angle-down"></i></span></a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item"><a class="nav-link" href="blog-listing-grid.html">
-grid</a></li>
-<li class="nav-item"><a class="nav-link" href="blog-listing-large-image.html">
-large image</a></li>
-<li class="nav-item"><a class="nav-link" href="blog-listing-with-sidebar.html">
-with sidebar</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Post
-<span class="caret"><i class="fas fa-angle-down"></i></span>
-</a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item"><a class="nav-link" href="blog-single-audio.html">
-audio</a></li>
-<li class="nav-item"><a class="nav-link" href="blog-single-gallery.html">
-gallery</a></li>
-<li class="nav-item"><a class="nav-link" href="blog-single-image.html">
-image</a></li>
-<li class="nav-item"><a class="nav-link" href="blog-single-video.html">video</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Docs <span class="caret"><i class="fas fa-angle-down"></i></span></a>
-<ul class="sub-menu x-animated x-fadeInUp">
-<li class="nav-item">
-<a class="nav-link" href="document/introduction.html">Documentation</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="starter/introduction.html">Get started
-</a>
-</li>
-</ul>
-</li>
-</ul>
-<div class="header-customize justify-content-end align-items-center d-none d-xl-flex">
-<div class="header-customize-item button-search">
-<a class="mobile-button-search" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
+<li class="nav-item mobile12">
+
+<a class="mobile-button-search nav-link" aria-label="Search popup" href="#search-popup" data-gtf-mfp="true" data-mfp-options="{&quot;type&quot;:&quot;inline&quot;,&quot;mainClass&quot;:&quot;mfp-move-from-top mfp-align-top search-popup-bg&quot;,&quot;closeOnBgClick&quot;:false,&quot;showCloseBtn&quot;:false}">
     <i class="fas fa-search"></i></a>
-</div>
-@if(auth()->user())
-<div class="header-customize-item">
-<a href="{{asset('/logout')}}" class="link">
-<svg class="icon icon-user-circle-o">
-<use xlink:href="#icon-user-circle-o"></use>
-</svg>
-Logout</a>
-</div>
-@endif
 
+</li>
 </div>
+
+
+
+<div class="col-lg-5 bruv" style="float: right;
+    text-align: right;
+    justify-content: right; margin-right: -100px;">
+
+  @if(auth()->user())
+<li class="nav-item dropdown">
+<a class="nav-link" href="{{asset('/logout')}}"> Uiloggen</a>
+</li>
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="{{asset('/home')}}"> Portaal</a>
+
+</li>
+@else
+<li class="nav-item dropdown">
+<a class="nav-link" href="{{asset('/login')}}"> Inloggen</a>
+</li>
+
+
+@endif
+<li class="nav-item">
+<a href="{{asset('add-adv')}}" class="nav-link">Deal
+plaatsen
+</a>
+
+
+</li>
+<li class="nav-item dropdown ">
+<a class="nav-link nh" href="{{asset('/register')}}"><i class="fas fa-user-alt" style="margin-right:10px;"></i> Aanmelden</a>
+</li>
+  </div>
 </div>
-</nav>
+
+
+
+</ul>
+
+
+
+               
+            </nav>
 </div>
 </div></div>
 </header>
+
+<Style>
+    .dashboards .facts-box .card {
+    padding: 37px 50px;
+    color: #fff;
+    background: blue;
+    height: 100%;
+    border-radius: 16px !important;
+    text-align: center;
+    white-space: nowrap;
+}
+a.nav-link.nh {
+    border: 2px solid white;
+    border-radius: 22px;
+    height: 38px;
+    width: 161px;
+    text-align: center;
+    color: white !important;
+    padding-left: 19px !important;
+}
+span.font-size-md.font-weight-semibold.text-uppercase.text-dark.lh-13 {
+    font-size: 12px !important;
+    text-transform: capitalize !important;
+    color: white !important;
+
+}
+.card-body.d-flex.align-items-center.p-6.bg-white {
+    display: grid !important;
+    text-align: center;
+    background: blue !important;
+    border-radius: 16px !important;
+    color: white !important;
+}
+.card-body.d-flex.align-items-center.py-6.px-8.bg-white {
+    display: grid !important;
+    text-align: center;
+    color: white !important;
+
+}
+.card-body.d-flex.align-items-center.py-6.px-8.bg-white {
+    display: grid !important;
+    text-align: center;
+    background: blue !important;
+    border-radius: 16px !important;
+    color: white !important;
+}
+</Style>
