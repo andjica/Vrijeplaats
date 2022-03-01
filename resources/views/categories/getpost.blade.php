@@ -269,7 +269,7 @@
                         $images = $p->images->first();
                         
                     @endphp
-                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" tabindex="0">
+                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" tabindex="0">
                     <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}" class="card-img-top rounded-0">
                 </a>
                 <div class="image-content position-absolute d-flex align-items-center">
@@ -292,7 +292,7 @@
                 </div>
                 </div>
             <div class="card-body px-0 pb-0 pt-3">
-                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0">
+                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0">
                     <span class="letter-spacing-25">{{$p->title}}</span>
                 </a>
                 <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">

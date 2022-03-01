@@ -25,7 +25,7 @@
 </div>
 <div class="container">
 <div class="row">
-        @foreach($posts as $p)
+        @foreach($randomactiveposts as $p)
         <div class="col-lg-3 p-5" data-animate="zoomIn">
                 <div class="store card border-0 rounded-0">
                 <div class="position-relative store-image">

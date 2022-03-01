@@ -116,18 +116,18 @@ class HomeController extends Controller
         
     }
 
-    public function getpost($name, $city, $title)
+    public function getpost($name, $city, $title, $id)
     {
 
+        
         $category = Category::where('link', 'LIKE',  "%{$name}%")
         ->first();
-       
+      
         $city = City::where('name', 'LIKE', "%{$city}%")
         ->first();
-       
-        $post = Post::where('title', 'LIKE',  "%{$title}%")
-        ->where('category_id', $category->id)->first();
-
+        
+        $post = Post::where('id', $id)->first();
+      
         $timenow = Carbon::now();
         $randomactiveposts = Post::where('category_id', $category->id)
         ->where('valid_until', '>', $timenow)

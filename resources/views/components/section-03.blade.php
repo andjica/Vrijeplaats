@@ -26,6 +26,7 @@
 <div class="container">
 <div class="row h890">
         @foreach($posts as $p)
+        {{$p->id}}
         <div class="col-lg-3 p-5" data-animate="zoomIn">
                 <div class="store card border-0 rounded-0">
                 <div class="position-relative store-image">
@@ -33,7 +34,7 @@
                         $images = $p->images->first();
                         
                     @endphp
-                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" tabindex="0">
+                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" tabindex="0">
                     <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}" class="next card-img-top rounded-0">
                 </a>
                 <div class="image-content position-absolute d-flex align-items-center">

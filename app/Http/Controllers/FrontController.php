@@ -32,8 +32,10 @@ class FrontController extends Controller
 
         $lastposts = Post::where('valid_until', '>', $timenow)
         ->orderBy('created_at', 'desc')->limit(4)->get();
-
-        return view('index', compact('posts', 'lastposts'), $this->data);
+        $randomactiveposts = Post::where('valid_until', '>', $timenow)
+        ->inRandomOrder()->get();
+        
+        return view('index', compact('posts', 'lastposts', 'randomactiveposts'), $this->data);
     }
 
     public function about()

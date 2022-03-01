@@ -35,7 +35,7 @@ Route::get('/user-invoice={idinvoice}', 'HomeController@invoice');
 Route::post('/categorie/location', 'HomeController@categorylocation');
 //category city
 Route::get('/categorie={name}/city={city}', 'HomeController@categorycity');
-Route::get('/categorie={name}/city={city}/name={title}', 'HomeController@getpost');
+Route::get('/categorie={name}/city={city}/name={title}/post={id}', 'HomeController@getpost');
 Route::get('/all-categories', 'HomeController@getallposts');
 
 //user edit
