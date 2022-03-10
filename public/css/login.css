@@ -1,5 +1,5 @@
 .bg-blue{
-    background:blue;
+    background:#004eff !important;
     border-radius:10px;
 
 }
@@ -9,10 +9,10 @@ color: black !important;
 border-radius: 10px;
 }
 .card.mt-5 {
-margin-top: 1.5rem!important;
-border-radius: 16px !important;
-background: blue;
-color: white !important;
+/* margin-top: 1.5rem!important;
+border-radius: 16px !important; */
+background: #eff0f1 !important;
+color: black !important;
 }
 p.mt-3.mb-0 {
 color: black !important;

@@ -19,13 +19,7 @@
                     $image = $image->first();
                 @endphp
                 @isset($image)
-                     <img src="{{asset('/images/posts/'.$image->url)}}" class="img-fluid" style="width: 82px;
-    border-radius: 14px;
-    margin-top: -2px;
-    float: right;
-    margin-right: -205px;
-    max-height: 56px;
-    height: 56px;"> 
+                     <img src="{{asset('/images/posts/'.$image->url)}}" class="img-fluid img-cupon"> 
 
                 @endisset
             </div>

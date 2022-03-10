@@ -3,7 +3,8 @@
  <div class="container">
 <div class="row">
 <div class="col-lg-3 mb-lg-0">
-<div class="mb-8"><img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats" class="img-fluid"></div>
+<div class="mb-8">
+  <img src="{{asset('/images/')}}/logo.jpeg" alt="Vrijeplaats" class="img-fluid"></div>
 <div class="mb-7">
 <div class="font-size-md font-weight-semibold text-dark mb-4">Vrijeplaats Hoofdkantoor</div>
 <p class="mb-0">

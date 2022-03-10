@@ -1,21 +1,26 @@
 @extends('layouts.template')
 @section('title', 'Inloggen')
+
 @section('css')
 <link rel="stylesheet" href="{{asset('/css/')}}/login.css">
 @endsection
+
 @section('content')
 @php
     $categories = \App\Category::where('active', 'YES')->get();
     $cities = \App\City::all();
 @endphp
-<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+@include('user.top-campain')
+<div class="container col-xl-10 col-xxl-8 px-4 py-11">
     <div class="row align-items-center g-lg-5 mt-10">
-      <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 mb-3">Inloggen Vrijeplaats</h1>
-        <p class="col-lg-10 fs-4"> Vrijeplaats heeft tal van aanbiedingen voor u samengesteld van interessante activiteiten. Begin je surf met een snelle zoekopdracht. Door op een van de categorieën te klikken vindt vreplaats aanbiedingen bij jou in de buurt.</p>
+      <div class="col-lg-6 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mt-7">Inloggen Vrijeplaats</h1><br>
+        <p class="fs-4"> Vrijeplaats heeft tal van aanbiedingen voor u samengesteld van interessante activiteiten. Begin je surf met een snelle zoekopdracht. Door op een van de categorieën te klikken vindt vreplaats aanbiedingen bij jou in de buurt.</p>
+        <div class="mt-8">
         @include('components.categories-search') 
+        </div>
     </div>
-      <div class="col-md-10 mx-auto col-lg-5 mt-2">
+      <div class="col-md-10 mx-auto col-lg-6 mt-2">
       <div class="card mt-5">
             <div class="card-header text-center bg-white">
           

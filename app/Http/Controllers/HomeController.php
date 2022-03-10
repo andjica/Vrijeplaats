@@ -188,6 +188,7 @@ class HomeController extends Controller
         if($posts->count() != 0)
         {
             $title = $category->name.' | '.$city->name;
+            
             return view('categories.filter-category-city', compact('posts', 'city', 'category', 'lastpost', 'title'), $this->data);
         }
         else if($posts->count() == 0)

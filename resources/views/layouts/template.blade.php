@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="{{asset('/css/')}}/slick.css">
 <link rel="stylesheet" href="{{asset('/css/')}}/animate.css">
 
-<link rel="stylesheet" href="{{asset('/css/')}}/style.min.css">
+<link rel="stylesheet" href="{{asset('/css/')}}/style.css">
 @yield('css')
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&libraries=places" ></script>
 </head>

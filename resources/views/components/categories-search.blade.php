@@ -8,8 +8,8 @@
             <input type="hidden" class="longlatitudes" id="longlatitudes" name="longlatitude" value="">
             <button type="submit" class="card-pink border-0 link-hover-dark-white icon-box-style-01  shadow-lg">
             <div class="card-body m-auto p-0  st-btn text-white" style="font-size:18px">
-            <img src="{{asset('/icons/'.$category->icon)}}" class="img-fluid1">
-                <span class="card-text font-size-md font-weight-semibold d-block text-white">
+            <img src="{{asset('/icons/'.$category->icon)}}" class="img-fluid1 mt-3" width="45px">
+                <span class="card-text  font-weight-semibold d-block text-white text-center">
                 {{$category->name}}
                 </span>
             </div>
