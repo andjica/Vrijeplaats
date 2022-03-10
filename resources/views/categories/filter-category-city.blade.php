@@ -36,9 +36,7 @@ zoeken voor u...</span></div>
 </nav>
 <div class="container" id="container-desk">
     <div class="btn-group-sm d-flex" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-outline-light text-muted">Left</button>
-        <button type="button" class="btn btn-outline-light text-muted">Middle</button>
-
+      
         <button type="button" class="btn btn-outline-light text-muted d-b-google"  id="googlemapview">
             <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
         </button>
@@ -47,12 +45,7 @@ zoeken voor u...</span></div>
             <img src="{{asset('/images/')}}/map.png" class="img-fluid" width="15px"> Map
         </a>
         
-            <select id="sortby" class="form-control" style="width:10%">
-                <option value="0" class="form-control">Sort by</option>
-                <option value="LowerPrice" class="form-control">Lower price</option>
-                <option value="HigerPrice" class="form-control">Higer price</option>
-            </select>
-       
+        
 
     </div> 
     
@@ -71,12 +64,12 @@ zoeken voor u...</span></div>
                     
                     @endphp
                     @isset($images)
-                    <a href="" class="store-image">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" class="store-image">
                     <img src="{{asset('/images/posts/'.$images->url)}}" class="svets" alt="{{$images->alt}}">
                     </a>
                     @endisset
                     <div class="media-body px-0 pt-0 pt-md-0">
-                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
                         <span class="letter-spacing-25">{{$p->title}} </span>
                     </a>
                     <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">
@@ -127,7 +120,7 @@ zoeken voor u...</span></div>
                     </div>
                     <div class="action ml-0 ml-lg-auto mt-3 mt-lg-0 align-items-center flex-wrap flex-sm-nowrap w-100 w-lg-auto">
                   
-                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
                    
                     Bekijk ticket <i class="fa fa-arrow-right"></i>                    
                 </a>

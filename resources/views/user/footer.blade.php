@@ -150,9 +150,7 @@ Rights Resevered. Design
 by <a href="http://dfambusiness.com/" class="link-hover-dark-primary font-weight-semibold">Dfam Digital Agency</a>
 </div>
 </div>
-<div class="back-top text-left text-lg-right gtf-back-to-top in">
-<a href="#" class="link-hover-secondary-primary"><i class="fa fa-arrow-up"></i><span>Back To Top</span></a>
-</div>
+
 </div>
 </div>
 </div>

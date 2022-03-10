@@ -26,7 +26,7 @@
 <div class="container">
 <div class="row h890" id="dealss">
         @foreach($posts as $p)
-        {{$p->id}}
+      
         <div class="col-lg-3 p-5" data-animate="zoomIn">
                 <div class="store card border-0 rounded-0">
                 <div class="position-relative store-image">
@@ -52,24 +52,12 @@
                      
 
                     </div>
-                    <!--<div class="content-right ml-auto d-flex w-lg show-link">
-                        <a href="{{asset('/images/posts/'.$images->url)}}" class="item viewing" data-toggle="tooltip" data-placement="top" title="" data-gtf-mfp="true" tabindex="0" data-original-title="Quickview">
-                            <svg class="icon icon-expand">
-                                <use xlink:href="#icon-expand"></use>
-                            </svg>
-                        </a>
-                    </div>-->
                 </div>
                 </div>
             <div class="card-body px-0 pb-0 pt-3">
-                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" aria-label="reizen" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0">
+                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" aria-label="reizen" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0">
                     <span class="letter-spacing-25">{{$p->title}}</span>
                 </a>
-                <ul class="list-inline store-meta mb-0 font-size-sm d-flex align-items-center flex-wrap">
-                   
-                  
-                      
-                </ul>
                 <div class="media">
                     <div class="media-body lh-14 font-size-sm">
                         {{$p->main_description}}

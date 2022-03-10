@@ -1,5 +1,8 @@
 @extends('layouts.template')
 @section('title', 'Inloggen')
+@section('css')
+<link rel="stylesheet" href="{{asset('/css/')}}/login.css">
+@endsection
 @section('content')
 @php
     $categories = \App\Category::where('active', 'YES')->get();

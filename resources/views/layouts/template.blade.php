@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="{{asset('/css/')}}/animate.css">
 
 <link rel="stylesheet" href="{{asset('/css/')}}/style.min.css">
-
+@yield('css')
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&libraries=places" ></script>
 </head>
 <body>
@@ -38,6 +38,7 @@
 @yield('content')
 
 </div>
+
 @include('components.footer')
 <script type="text/javascript" src="{{asset('/js/')}}/google-geo-parameters.js"></script>
 
