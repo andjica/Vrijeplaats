@@ -8,7 +8,7 @@
 
         
             <div class="mb-2">
-            <h2 class="mb-0 d-flex">
+            <h2 class="mb-0 d-flex nestani">
             <span class="d-block slideInLeft animated m-font-intro mr-4">Hot Deals </span> bekijk onze leukste deals
             </h2>
             </div>
@@ -24,7 +24,7 @@
     </div>
 </div>
 <div class="container">
-<div class="row h890">
+<div class="row h890" id="dealss">
         @foreach($posts as $p)
         {{$p->id}}
         <div class="col-lg-3 p-5" data-animate="zoomIn">

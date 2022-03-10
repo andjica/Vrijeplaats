@@ -9,7 +9,7 @@
 
 @isset($post)
 
-<div class="container">
+<div class="container" style="padding: 0px;">
          @include('categories.slider-hotel')
 </div>
 <div class="page-title bg-gray-06 pt-8 pb-3">
@@ -269,7 +269,7 @@
                         $images = $p->images->first();
                         
                     @endphp
-                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" tabindex="0">
+                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" tabindex="0">
                     <img src="{{asset('/images/posts/'.$images->url)}}" alt="{{$images->alt}}" class="card-img-top rounded-0">
                 </a>
                 <div class="image-content position-absolute d-flex align-items-center">
@@ -292,7 +292,7 @@
                 </div>
                 </div>
             <div class="card-body px-0 pb-0 pt-3">
-                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0">
+                <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="card-title h5 text-dark d-inline-block mb-2" tabindex="0">
                     <span class="letter-spacing-25">{{$p->title}}</span>
                 </a>
                 <ul class="list-inline store-meta mb-4 font-size-sm d-flex align-items-center flex-wrap">
@@ -336,6 +336,55 @@
                     </div>
                 
         @endforeach
+        <style>
+@media screen and (max-width:668px){
+    .circle-fly {
+    position: relative;
+    bottom: 80px;
+    color: green;
+    left: -31px;
+    display: none;
+}
+.page-title .breadcrumb {
+    padding: 6px 0;
+    display: none;
+}
+.text-titlepost {
+    margin-top: -32px;
+    font-size: 30px;
+}
+.badge-warning {
+    color: #212529;
+    background-color: #145cff;
+    padding: 10px;
+    width: 60px;
+    border-radius: 10px;
+}
+.get-ticket {
+    background-image: url(../images/other/pointing.jpg);
+    background-position: right;
+    background-size: contain;
+    height: 250px;
+    background-repeat: no-repeat;
+    background: white;
+}
+.btn-primary {
+    background: #ed008c!important;
+    color: white !important;
+    font-weight: bold;
+    font-size: 20px !important;
+    justify-content: center;
+    margin: 12px;
+}
+.page-title.bg-gray-06.pt-8.pb-3 {
+    background: white !important;
+}
+
+
+}
+
+
+</style>
         </div>
         <!-- End Random Active -->
        @include('components.other-categories')

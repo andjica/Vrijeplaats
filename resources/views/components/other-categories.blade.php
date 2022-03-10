@@ -8,7 +8,7 @@
 
         
             <div class="mb-2">
-            <h2 class="mb-0">
+            <h2 class="mb-0 nestani">
             <span class="d-block slideInLeft animated m-font-intro"><strong>Laatste kans! </strong> Wees er snel bij want deze zijn zo weg!</span>
             </h2>
             </div>
@@ -24,7 +24,7 @@
     </div>
 </div>
 <div class="container">
-<div class="row">
+<div class="row h890">
         @foreach($randomactiveposts as $p)
         <div class="col-lg-3 p-5" data-animate="zoomIn">
                 <div class="store card border-0 rounded-0">
@@ -110,7 +110,6 @@
         </div>
 
 </section>
-
 
 <style>
 .next:hover {

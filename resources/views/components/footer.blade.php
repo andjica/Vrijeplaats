@@ -12,8 +12,8 @@
     color: black !important;
     text-align: left !important;
 }
-
-.col-lg-4.mb-4.mb-lg-0.px-0.px-lg-4 {
+@media screen and (min-width:669px){
+  .col-lg-4.mb-4.mb-lg-0.px-0.px-lg-4 {
     padding: 20px !important;
     background: #f5f5f5;
     color: white !important;
@@ -24,6 +24,8 @@
     height: 300px;
     color: white !important;
 }
+}
+
 .text-black{
   color:black !important;
 }

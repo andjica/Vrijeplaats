@@ -66,3 +66,111 @@
 </div>
 </div></div>
 </header>
+
+<div class="mobile-app-footer">
+      <div class="container">
+      <div class="toolbar-inner row">
+      <div class="col-lg-2"><a href="{{asset('/')}}" class="link"><img class="ucos" src="https://cdn-icons-png.flaticon.com/512/846/846449.png">home</a></div>
+      <div class="col-lg-2"><a href="{{asset('/categorie/location')}}" class="link"><img class="ucos" src="https://cdn-icons-png.flaticon.com/512/2618/2618576.png">deals </a></div>
+      <div class="col-lg-2"><a href="{{asset('/')}}" class="link"><img class="ucos" src="https://cdn-icons-png.flaticon.com/512/1216/1216895.png">dichtbij </a></div>
+      <div class="col-lg-2"><a href="{{asset('/')}}" class="link"><img class="ucos" src="https://cdn-icons-png.flaticon.com/512/879/879757.png">acties </a></div>
+      <div class="col-lg-2"><a href="{{asset('/')}}admin-home" class="link"><img class="ucos" src="https://cdn-icons-png.flaticon.com/512/2099/2099058.png">settings </a></div>
+    </div>
+      </div>
+    </div> 
+
+    <style>
+        @media screen and (max-width:668px){
+   
+   .logo-image {
+border-radius: 100%;
+width: 170px !important;
+position: fixed;
+text-align: center;
+margin: 0 auto;
+right: 18%;
+left: 16%;
+top: -54px !important;
+}
+.col-lg-4.mb-4.mb-lg-0.px-0.px-lg-4 {
+padding: 20px !important;
+background: #f5f5f5;
+color: white !important;
+width: 100% !important;
+max-width: 100% !important;
+margin-right: 10px;
+border-radius: 20px !important;
+height: 100% !important;
+color: white !important;
+}
+.form-search.form-search-style-02 .btn {
+font-size: 20px;
+border-radius: 20px;
+color: white !important;
+position: relative;
+top: 0px !important;
+left: 0px !important;
+}
+.h890 {
+width: 100% !important;
+margin: 0px auto;
+}
+img.ucos {
+max-width: 24px;
+margin: 0px auto;
+}
+.p-4.p-sm-5.rounded-3.bg-coupon {
+display: none;
+}
+.main-footer {
+padding-bottom: 55px;
+display: none;
+}
+.col-lg-2 {
+width: auto;
+display: grid;
+text-align: center;
+margin: 0px auto;
+justify-content: center;
+align-items: center;
+}
+.mobile-app-footer {
+position: fixed;
+width: 100%;
+bottom: 0;
+background: white;
+z-index: 100000000 !important;
+text-align: center;
+margin: 0px auto;
+justify-content: center;
+align-items: center;
+}
+
+a.link {
+color: black;
+font-weight: bold;
+}
+.mobile-app-footer {
+position: fixed;
+width: 100%;
+bottom: 0;
+}
+.store .content-left .badge {
+padding: 5px 8px;
+width: 72px;
+height: 40px;
+text-align: center;
+border-radius: 10px;
+padding-top: 10px;
+font-size: 19px;
+background: blue;
+margin-left: 11px !important;
+}
+}
+
+@media screen and (min-width:669px){
+.mobile-app-footer {
+display:none !important;
+}
+}
+    </style>

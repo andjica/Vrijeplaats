@@ -63,7 +63,7 @@ zoeken voor u...</span></div>
     <div class="store-listing-style-04">
         @foreach($posts as $p)
             <div class="store-listing-item">
-                    <div class="d-flex align-items-center flex-wrap flex-lg-nowrap border-bottom py-4 py-lg-0">
+                    <div class="d-flex align-items-center flex-wrap flex-lg-nowrap border-bottom py-0 py-lg-0">
                     <div class="store media align-items-stretch py-4">
                     @php 
                     $images = $p->images;
@@ -71,30 +71,41 @@ zoeken voor u...</span></div>
                     
                     @endphp
                     @isset($images)
-                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" class="store-image">
+                    <a href="" class="store-image">
                     <img src="{{asset('/images/posts/'.$images->url)}}" class="svets" alt="{{$images->alt}}">
                     </a>
                     @endisset
-                    <div class="media-body px-0 pt-4 pt-md-0">
-                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
+                    <div class="media-body px-0 pt-0 pt-md-0">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="font-size-lg font-weight-semibold text-dark d-inline-block mb-2 lh-1">
                         <span class="letter-spacing-25">{{$p->title}} </span>
                     </a>
                     <ul class="list-inline store-meta mb-3 font-size-sm d-flex align-items-center flex-wrap">
                     <li class="list-inline-item">
-                        <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">Totaal aantal tickets</span>
+                        <span class="badge badge-success d-inline-block mr-1">{{$p->count_of_ticket}}</span><span class="number">Aantal tickets</span>
                     </li>
                     <li class="list-inline-item separate"></li>
-                    <li class="list-inline-item">
-                        <span class="mr-1">Prijs vanaf: </span>
-                        <span class="text-danger font-weight-semibold">€{{$p->price_discount}}</span>
+                    <li class="list-inline-item" style="display: grid;
+    text-align: center;">
+                    <span class="text-dark font-weight-semibold" style="    background: #ed008c;
+    color: white !important;
+    padding: 4px;
+    border-radius: 11px;">€{{$p->price_discount}}</span>
+                        <span class="mr-1">Prijs: </span>
+                       
                     </li>
                     <li class="list-inline-item separate"></li>
-                    <li class="list-inline-item"><a href="#" class="link-hover-secondary-primary">
+
+                    <li class="list-inline-item" style="display: grid; text-align: center;">
+                    <div class="button" style="    background: #ed008c;
+    color: gold;
+    padding: 4px;
+    border-radius: 10px;">
+                          <i class="fa fa-star"></i>
+                        </div>
+                 <span>4.5/5</span>
+                       
+                    </li>
                    
-                    <i class="fas fa-gift"></i>
-                         
-                    <span>{{$p->category->name}}</span>
-                    </a></li>
                     </ul>
                     <div class="border-top pt-2 d-flex">
                    
@@ -116,7 +127,7 @@ zoeken voor u...</span></div>
                     </div>
                     <div class="action ml-0 ml-lg-auto mt-3 mt-lg-0 align-items-center flex-wrap flex-sm-nowrap w-100 w-lg-auto">
                   
-                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title.'/post='.$p->id)}}" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
+                    <a href="{{asset('/categorie='.$p->category->link.'/city='.$p->city->name.'/name='.$p->title)}}" class="btn btn-primary btn-icon-left  mb-2 mb-sm-0 px-5 font-size-md">
                    
                     Bekijk ticket <i class="fa fa-arrow-right"></i>                    
                 </a>
@@ -352,6 +363,14 @@ ul.list-inline.store-meta.mb-3.font-size-sm.d-flex.align-items-center.flex-wrap 
     text-align: center;
     float: left;
     margin: 0px auto !important;
+}
+@media screen and (max-width:668px){
+    .store .store-meta .list-inline-item:not(:last-child) {
+        display: inline-grid;
+    text-align: center;
+    justify-content: center;
+    margin-right: 32px;
+}
 }
 </style>
   <script

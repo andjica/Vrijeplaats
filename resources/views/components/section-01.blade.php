@@ -75,7 +75,7 @@
         </form>
         </div>
         <br>
-        <h3 style="text-align: center;
+        <h3 class="appversion" style="text-align: center;
     color: white;">Of selecteer een van deze categorieen</h3>
     <br>
         <div class="col-lg-12 y0">
@@ -197,17 +197,7 @@ De beste deals en laagste prijzen zorgen voor de ideale vrije plaats bij u in de
     top: -71px;
     left: 938px;
 }
-.col-lg-4.mb-4.mb-lg-0.px-0.px-lg-4 {
-    padding: 20px !important;
-    background: #edf0f5 !important;
-    color: white !important;
-    width: 30% !important;
-    max-width: 32% !important;
-    margin-right: 10px;
-    border-radius: 20px !important;
-    height: 300px;
-    color: white !important;
-}
+
     .col-xl-6.mb-4.mb-xl-0.py-2.px-4.bg-white.position-relative.shadow.b-orange {
     border: 0px !important;
     border-top-left-radius: 0px !important;
@@ -333,18 +323,7 @@ p.mt-3.mb-0 {
     border-radius: 20px !important;
     text-align: center;
 }
-.col-lg-4.mb-4.mb-lg-0.px-0.px-lg-4 {
-    padding: 20px !important;
-    background: lightgray;
-    color: white !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-right: 10px;
-    border-radius: 20px !important;
-    height: 300px;
-    border:none !important;
-    color: white !important;
-}
+
     img.img-fluid {
         width: 82px !important;
         border-radius: 14px !important;
@@ -406,9 +385,6 @@ img.img-fluid1 {
     height: 47px;
     margin-top: 11px;
 }
-.col-lg-4.mb-4.mb-lg-0.px-0.px-lg-4:nth-child(2){
-    border:none !important;
-    border-left:none !important;
-}
+
 
 </style>

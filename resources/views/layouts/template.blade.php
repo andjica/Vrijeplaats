@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="icon" href="{{asset('/images/')}}/map.png" sizes="18x26">
+<link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
 
 
 <meta property="og:url" content="https://vrijeplaats.nl/public" />
