@@ -6857,10 +6857,11 @@ input[type=button].btn-block {
 	flex-direction: column;
 	min-width: 0;
 	word-wrap: break-word;
-	background-color: var(--pink);
+	background-color: white;
 	background-clip: border-box;
 	border: 1px solid rgba(0, 0, 0, .125);
-	border-radius: 3px
+	border-radius: 3px;
+	color: black;
 }
 
 .card>hr {
@@ -26554,10 +26555,7 @@ button.mfp-arrow:active {
     cursor: pointer
 }
 
-.text-titlepost
-{
-	margin-top: -55px;
-}
+
 
 .logo-image
 {

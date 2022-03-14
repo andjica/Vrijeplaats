@@ -1,5 +1,5 @@
 @extends('layouts.app')
-   
+@section('title', $posttitle)
 @section('content')
 <script src="{{asset('/vendors/')}}/jquery.min.js"></script>
 
@@ -30,7 +30,10 @@
                             <div class="coupon p-3 bg-warning">
                                 <div class="row no-gutters">
                                     <div class="col-md-4 border-right">
-                                        <div class="d-flex flex-column align-items-center"><img src="https://i.imgur.com/XwBlVpS.png"><span class="d-block">T-labs</span><span class="text-black-50">Shoes</span></div>
+                                        <div class="d-flex flex-column align-items-center">
+                                            <img src="https://i.imgur.com/XwBlVpS.png">
+                                            <span class="d-block">T-labs</span>
+                                            <span class="text-black-50">Shoes</span></div>
                                     </div>
                                     <div class="col-md-8">
                                         <div>
@@ -42,16 +45,14 @@
                                     </div>
                                 </div>
                             </div>
-                </div>
-                        <h3 class="text-dark text-titlepost">{{$post->title}} </h3>
-                          
+                        </div>
+                        <h3 class="text-dark text-titlepost mb-0">{{$post->title}} </h3>
+                            <h5><span class="badge badge-warning">{{$post->count_of_ticket}}</span>
+                                <span>numm of availible tickets</span></h5>
                         </div>
                         <br>
                         <ul class="list-inline store-meta d-flex flex-wrap align-items-center ml-2">
-                            <li class="list-inline-item">
-                            <h5><span class="badge badge-warning">{{$post->count_of_ticket}}</span>
-                                <span>numm of availible tickets</span></h5>
-                            </li>
+                         
                             <li class="list-inline-item separate"></li>
                             @if($post->category->id == 2)
                             <li class="list-inline-item">
@@ -324,7 +325,7 @@
                     <i class="fa fa-map-marker-alt">
                     </i>
                     </span>
-                    <a href="#" class="text-secondary text-decoration-none link-hover-secondary-blue" tabindex="0">
+                    <a href="#" class="text-dark text-decoration-none link-hover-secondary-blue" tabindex="0">
                     {{$p->full_address}}</a>
                     </li>
                     <li class="list-inline-item separate"></li>

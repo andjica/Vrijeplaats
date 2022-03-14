@@ -14,7 +14,9 @@ use Mollie\Laravel\Facades\Mollie;
 class MolliePaymentController extends Controller
 {
     public $data = [];
-
+    protected $except = [
+        'webhook',
+    ];
     public function __construct()
     {
         $this->middleware(['auth', 'verified']);
@@ -49,9 +51,10 @@ class MolliePaymentController extends Controller
                     'currency' => 'EUR', // Type of currency you want to send
                     'value' => $post->price_discount, // You must send the correct number of decimals, thus we enforce the use of strings
                 ],
+                'method' =>null,
                 'description' => 'Payment By codehunger', 
                 'redirectUrl' => route('payment.success', ['id'=> $post->id]),
-                'webhookUrl'=> 'https://vrijeplaats.nl/public/webhooks-mollie' // after the payment completion where you to redirect
+                'webhookUrl'   => route('webhooks.mollie'), // after the payment completion where you to redirect
                 ]);
                
            
@@ -140,7 +143,7 @@ class MolliePaymentController extends Controller
                 ],
                 'description' => 'Payment for parthership By user:'.$user->name.' '.$user->email, 
                 'redirectUrl' => route('payment.success'),
-                'webhookUrl' => 'https://vrijeplaats.nl/public/webhooks-mollie',
+                'webhookUrl' => 'http://f1dc-87-116-164-196.ngrok.io',
                 'method' => ['ideal', 'creditcard']
               
                  // after the payment completion where you to redirect
@@ -161,11 +164,12 @@ class MolliePaymentController extends Controller
         }
     }
   
-    public function handle(Request $request){
+    public function handle(Request $request)
+    {
 
       
         
-        $payment = Mollie::api()->payments->get($request->id);
+        $payment = Mollie::api()->payments->get(request()->id);
         $statusOfPayment='';
     
         if ($payment->isPaid() && !$payment->hasRefunds() && !$payment->hasChargebacks()) {

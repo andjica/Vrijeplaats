@@ -4,8 +4,8 @@
 <div class="mt-9">
 @include('user.top-campain')
 </div>
-<div class="container mt-5">
-      <div class="row bg-light p-2">
+<div class="container">
+      <div class="row bg-light p-11">
         <div class="col-lg-4">
           @include('user.sidebar')
         </div>
@@ -21,7 +21,9 @@
           <div class="list-inline pb-8 flex-wrap my-n2">
           <div class="row">
       <div class="col-lg-12">
-      @include('components.categories-search')
+       
+        @include('components.categories-search')
+       
     </div>
     </div>
           <p>

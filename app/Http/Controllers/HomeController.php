@@ -135,7 +135,9 @@ class HomeController extends Controller
        
         if($post)
         {
-            return view('categories.getpost', compact('post', 'category', 'city', 'randomactiveposts'), $this->data);
+            $posttitle = $post->title." from ".$post->city->name;
+           
+            return view('categories.getpost', compact('post', 'category', 'city', 'randomactiveposts', 'posttitle'), $this->data);
 
         }
         else

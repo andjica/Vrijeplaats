@@ -57,13 +57,14 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/payment-success/{id}','MolliePaymentController@paymentSuccess')->name('payment.success');
     Route::get('/get-checkout-partnership', 'MolliePaymentController@handlePartnerShip');
     Route::get('/paymentforpartership', 'MolliePaymentController@paymentforpartership');
+    Route::get('/webhooks-mollie', 'MolliePaymentController@handle')->name('webhooks.mollie');
+
 
     Route::get('/edit-password', 'ChangePasswordController@index');
     Route::post('/change-password', 'ChangePasswordController@store')->name('change.password');
     
 });
 
-Route::post('/webhooks-mollie', 'MolliePaymentController@handle')->name('webhooks.mollie');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin-home', 'AdminController@index');

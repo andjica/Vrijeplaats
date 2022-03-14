@@ -24,7 +24,7 @@
                 @endisset
             </div>
             <div class="col-lg-4">
-            <a href="{{asset('/categorie='.$post->category->link.'/city='.$post->city->name.'/name='.$post->title)}}" class="code"> Coupon Kopen! <i class="fa fa-shopping-cart"></i> </a> 
+            <a href="{{asset('/categorie='.$post->category->link.'/city='.$post->city->name.'/name='.$post->title.'/post='.$post->id)}}" class="code"> Coupon Kopen! <i class="fa fa-shopping-cart"></i> </a> 
 
             </div>
 

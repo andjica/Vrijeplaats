@@ -35,7 +35,7 @@
 
     <link rel="stylesheet" href="{{asset('/css/')}}/fulltoko.css">
 
-    <link rel="stylesheet" href="{{asset('/css/')}}/style.min.css"> 
+    <link rel="stylesheet" href="{{asset('/css/')}}/style.css"> 
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAdAhrknlhXmlBUhZ5NzvWr1REqAwpzXr0&libraries=places" ></script>
 
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
